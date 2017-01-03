@@ -89,7 +89,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.FSharp">
-      <HintPath>..\packages\Xamarin.Forms.FSharp.0.1.2-beta\lib\portable45-net45+win8+wp8+wpa81\Xamarin.Forms.FSharp.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.FSharp.0.1.4-beta\lib\portable45-net45+win8+wp8+wpa81\Xamarin.Forms.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">

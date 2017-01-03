@@ -53,7 +53,6 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.FSharp.targets" />
   <ItemGroup>
     <AndroidAsset Include="Assets\AboutAssets.txt" />
-    <Compile Include="Resources\Resource.designer.fs" />
     <None Include="Resources\AboutResources.txt" />
     <AndroidResource Include="Resources\layout\Main.axml">
       <SubType>Designer</SubType>
@@ -107,6 +106,10 @@
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Android.FSharp.ResourceProvider.Runtime">
+      <HintPath>..\packages\Xamarin.Android.FSharp.ResourceProvider.1.0.0.13\lib\Xamarin.Android.FSharp.ResourceProvider.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
       <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.23.3.0\lib\MonoAndroid403\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
       <Private>True</Private>
@@ -144,7 +147,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.FSharp">
-      <HintPath>..\packages\Xamarin.Forms.FSharp.0.1.2-beta\lib\portable45-net45+win8+wp8+wpa81\Xamarin.Forms.FSharp.dll</HintPath>
+      <HintPath>..\packages\Xamarin.Forms.FSharp.0.1.4-beta\lib\portable45-net45+win8+wp8+wpa81\Xamarin.Forms.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
