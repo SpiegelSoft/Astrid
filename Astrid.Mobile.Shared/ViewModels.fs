@@ -13,4 +13,3 @@ type DashboardViewModel(?host: IScreen) =
     interface IRoutableViewModel with
         member __.HostScreen = host
         member __.UrlPathSegment = "Dashboard"
-

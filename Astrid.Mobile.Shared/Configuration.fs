@@ -7,5 +7,3 @@ type Configuration() =
     interface IConfiguration with
         member __.MobileServiceUri = None
         member __.AppName = AppName
-
-
