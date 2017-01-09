@@ -1,6 +1,6 @@
 ﻿namespace Astrid.Mobile.Shared
 
-open Xamarin.Forms.FSharp
+open XamarinForms.Reactive.FSharp
 
 type Configuration() =
     let [<Literal>] AppName = "Astrid";

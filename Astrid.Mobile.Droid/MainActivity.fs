@@ -4,8 +4,10 @@ open Android.Content.PM
 open Android.App
 
 open Xamarin.Forms.Platform.Android
-open Xamarin.Forms.FSharp
 open Xamarin.Forms
+
+open XamarinForms.Reactive.FSharp.LocatorDefaults
+open XamarinForms.Reactive.FSharp
 
 open ReactiveUI.XamForms
 open ReactiveUI
@@ -20,7 +22,9 @@ type IAstridPlatform = inherit IPlatform
 
 type DroidPlatform() =
     interface IAstridPlatform with
-        member __.GetMainPage() = new RoutedViewHost() :> Page
+        member __.GetMainPage() = 
+            let host = new RoutedViewHost()
+            host :> Page
 
 [<Activity (Label = "Astrid.Mobile.Droid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity () =
@@ -29,9 +33,6 @@ type MainActivity () =
         base.OnCreate(bundle)
         XamarinForms.Init(this, bundle)
         let platform = new DroidPlatform() :> IAstridPlatform
-        let application = new App<IAstridPlatform>(platform, new UiContext(this), new Configuration())
-        this.LoadApplication(application)
-        Locator.Current.GetService<IScreen>().Router.Navigate.Execute(new DashboardViewModel()) |> ignore
-
-
-
+        let dvm = new DashboardViewModel()
+        let application = new App<IAstridPlatform>(platform, new UiContext(this), new Configuration(), dvm)
+        this.LoadApplication application

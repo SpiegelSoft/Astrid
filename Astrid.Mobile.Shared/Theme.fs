@@ -1,6 +1,7 @@
 ﻿namespace Astrid.Mobile.Shared
 
-open Xamarin.Forms.FSharp.Themes
+open XamarinForms.Reactive.FSharp.Themes
+
 open Xamarin.Forms
 
 module Themes =

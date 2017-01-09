@@ -1,8 +1,9 @@
 ﻿namespace Astrid.Mobile.Shared
 
-open Xamarin.Forms.FSharp.ViewHelpers
-open Xamarin.Forms.FSharp.Themes
-open Xamarin.Forms.FSharp
+open XamarinForms.Reactive.FSharp.ViewHelpers
+open XamarinForms.Reactive.FSharp.Themes
+open XamarinForms.Reactive.FSharp
+
 open Xamarin.Forms
 
 type DashboardView(theme: Theme) as this = 

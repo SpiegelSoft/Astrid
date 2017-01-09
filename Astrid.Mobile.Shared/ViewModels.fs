@@ -2,7 +2,7 @@
 
 open ReactiveUI
 
-open Xamarin.Forms.FSharp
+open XamarinForms.Reactive.FSharp
 
 open LocatorDefaults
 
