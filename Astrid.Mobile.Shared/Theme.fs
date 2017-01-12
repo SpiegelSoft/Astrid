@@ -7,8 +7,8 @@ open Xamarin.Forms
 module Themes =
     let AstridTheme = 
         DefaultTheme 
-            |> withBackgroundColor (Color.Navy)
-            |> withLabelSetters 
+            |> applyBackgroundColor (Color.Navy)
+            |> applyLabelSetters 
                 [
                     new Setter(Property = Label.TextColorProperty, Value = Color.Yellow)
                     new Setter(Property = Label.FontAttributesProperty, Value = FontAttributes.Bold)
