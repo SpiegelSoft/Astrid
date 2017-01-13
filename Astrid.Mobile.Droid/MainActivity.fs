@@ -4,23 +4,24 @@ open Android.Content.PM
 open Android.App
 
 open Xamarin.Forms.Platform.Android
+open Xamarin.Forms.Maps
 open Xamarin.Forms
 
 open XamarinForms.Reactive.FSharp
 
 open ReactiveUI.XamForms
+open ReactiveUI
 
 open Astrid.Mobile.Shared
 
 type XamarinForms = Xamarin.Forms.Forms
 
-type IAstridPlatform = inherit IPlatform
-
 type DroidPlatform() =
+    let geocoder = new Geocoder()
     interface IAstridPlatform with
-        member __.GetMainPage() = 
-            let host = new RoutedViewHost()
-            host :> Page
+        member __.GetMainPage() = new RoutedViewHost() :> Page
+        member __.RegisterDependencies(_) = 0 |> ignore
+        member __.Geocoder = geocoder
 
 [<Activity (Label = "Astrid.Mobile.Droid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity () =
@@ -29,5 +30,5 @@ type MainActivity () =
         base.OnCreate(bundle)
         XamarinForms.Init(this, bundle)
         Xamarin.FormsMaps.Init(this, bundle)
-        let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), new DashboardViewModel())
+        let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), fun () -> new DashboardViewModel() :> IRoutableViewModel)
         this.LoadApplication application

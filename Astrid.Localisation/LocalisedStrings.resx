@@ -120,4 +120,7 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Astrid</value>
   </data>
+  <data name="SearchForAPlaceOfInterest" xml:space="preserve">
+    <value>Search for a place of interest...</value>
+  </data>
 </root>

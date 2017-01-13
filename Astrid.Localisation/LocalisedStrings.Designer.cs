@@ -69,5 +69,14 @@ namespace Astrid.Localisation {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search for a place of interest....
+        /// </summary>
+        public static string SearchForAPlaceOfInterest {
+            get {
+                return ResourceManager.GetString("SearchForAPlaceOfInterest", resourceCulture);
+            }
+        }
     }
 }
