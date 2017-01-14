@@ -85,7 +85,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GeographicLib">
-      <HintPath>..\packages\GeographicLib.FSharp.1.0.0\lib\portable45-net45+win8+wp8+wpa81\GeographicLib.dll</HintPath>
+      <HintPath>..\packages\GeographicLib.FSharp.1.0.0.2\lib\portable45-net45+win8+wp8+wpa81\GeographicLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
@@ -95,11 +95,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ReactiveUI">
-      <HintPath>..\packages\reactiveui-core.7.0.0\lib\MonoAndroid403\ReactiveUI.dll</HintPath>
+      <HintPath>..\packages\reactiveui-core.7.1.0\lib\MonoAndroid403\ReactiveUI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ReactiveUI.XamForms">
-      <HintPath>..\packages\reactiveui-xamforms.7.0.0\lib\portable-net45+netcore45+wp8+wpa81+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ReactiveUI.XamForms.dll</HintPath>
+      <HintPath>..\packages\reactiveui-xamforms.7.1.0\lib\portable-net45+netcore45+wp8+wpa81+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ReactiveUI.XamForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Splat">
@@ -196,7 +196,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.1.13-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.1.23-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

@@ -13,6 +13,7 @@ open ReactiveUI.XamForms
 open ReactiveUI
 
 open Astrid.Mobile.Shared
+open Xamarin.Forms.Maps.Android
 
 type XamarinForms = Xamarin.Forms.Forms
 
@@ -23,6 +24,9 @@ type DroidPlatform() =
         member __.RegisterDependencies(_) = 0 |> ignore
         member __.Geocoder = geocoder
 
+type GeographicMapRenderer() = inherit MapRenderer()
+
+[<assembly: ExportRendererAttribute (typeof<GeographicMap>, typeof<GeographicMapRenderer>)>] do ()
 [<Activity (Label = "Astrid.Mobile.Droid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity () =
     inherit FormsApplicationActivity ()
@@ -32,3 +36,5 @@ type MainActivity () =
         Xamarin.FormsMaps.Init(this, bundle)
         let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), fun () -> new DashboardViewModel() :> IRoutableViewModel)
         this.LoadApplication application
+        let y = Xamarin.Forms.Forms.Context
+        y |> ignore
