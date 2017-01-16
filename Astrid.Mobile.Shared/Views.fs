@@ -6,8 +6,6 @@ open XamarinForms.Reactive.FSharp
 
 open Xamarin.Forms
 
-open GeographicLib
-
 open Astrid.Localisation
 
 type DashboardView(theme: Theme) as this = 

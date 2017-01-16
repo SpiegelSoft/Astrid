@@ -36,5 +36,3 @@ type MainActivity () =
         Xamarin.FormsMaps.Init(this, bundle)
         let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), fun () -> new DashboardViewModel() :> IRoutableViewModel)
         this.LoadApplication application
-        let y = Xamarin.Forms.Forms.Context
-        y |> ignore

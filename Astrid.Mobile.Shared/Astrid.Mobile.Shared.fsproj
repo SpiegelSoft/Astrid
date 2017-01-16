@@ -57,7 +57,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="GeographicLib">
-      <HintPath>..\packages\GeographicLib.FSharp.1.0.0.2\lib\portable45-net45+win8+wp8+wpa81\GeographicLib.dll</HintPath>
+      <HintPath>..\packages\GeographicLib.FSharp.1.0.0.3\lib\portable45-net45+win8+wp8+wpa81\GeographicLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">
@@ -109,7 +109,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.1.23-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.1.24-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
