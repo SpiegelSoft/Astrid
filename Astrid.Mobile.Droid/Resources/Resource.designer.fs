@@ -21,10 +21,10 @@ namespace Astrid.Mobile.Droid
     #nowarn "51" // address-of operator can occur in the code
     #nowarn "1183" // unused 'this' reference
     
-    exception ReturnExceptionf02026439c5f448bab5e58d6a6e17963 of obj
-    exception ReturnNoneExceptionf02026439c5f448bab5e58d6a6e17963
+    exception ReturnException149b1ab83a704150975f26bf1774652c of obj
+    exception ReturnNoneException149b1ab83a704150975f26bf1774652c
     [<AutoOpen>]
-    module FuncConvertFinalOverloadf02026439c5f448bab5e58d6a6e17963 =
+    module FuncConvertFinalOverload149b1ab83a704150975f26bf1774652c =
       // This extension member adds to the FuncConvert type and is the last resort member in the method overloading rules. 
       type global.Microsoft.FSharp.Core.FuncConvert with
           /// A utility function to convert function values from tupled to curried form
@@ -38,6 +38,8 @@ namespace Astrid.Mobile.Droid
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
             static member UpdateIdValues  () =
                 global.Splat.Resource.String.library_name <- Resource_String.library_name
+                global.SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName <- Resource_String.ApplicationName
+                global.SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello <- Resource_String.Hello
                 global.Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize <- Resource_Attribute.actionBarSize
 
 
@@ -3179,11 +3181,11 @@ namespace Astrid.Mobile.Droid
         
         (* partial *)Resource_String () =
             static do Android.Runtime.ResourceIdManager.UpdateIdValues()
-            // aapt resource value: 0x7f060047
-            static member ApplicationName = 2131099719
-            
             // aapt resource value: 0x7f060046
-            static member Hello = 2131099718
+            static member ApplicationName = 2131099718
+            
+            // aapt resource value: 0x7f060045
+            static member Hello = 2131099717
             
             // aapt resource value: 0x7f06002e
             static member abc_action_bar_home_description = 2131099694
@@ -3344,8 +3346,8 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f06001e
             static member common_signin_button_text_long = 2131099678
             
-            // aapt resource value: 0x7f060045
-            static member library_name = 2131099717
+            // aapt resource value: 0x7f060047
+            static member library_name = 2131099719
             
             // aapt resource value: 0x7f06001f
             static member mr_button_content_description = 2131099679

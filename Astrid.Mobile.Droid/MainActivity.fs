@@ -1,9 +1,13 @@
 ﻿namespace Astrid.Mobile.Droid
 
+open System.IO
+open System
+
 open Android.Content.PM
 open Android.App
 
 open Xamarin.Forms.Platform.Android
+open Xamarin.Forms.Maps.Android
 open Xamarin.Forms.Maps
 open Xamarin.Forms
 
@@ -13,16 +17,17 @@ open ReactiveUI.XamForms
 open ReactiveUI
 
 open Astrid.Mobile.Shared
-open Xamarin.Forms.Maps.Android
 
 type XamarinForms = Xamarin.Forms.Forms
 
 type DroidPlatform() =
     let geocoder = new Geocoder()
+    static let appFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
     interface IAstridPlatform with
         member __.GetMainPage() = new RoutedViewHost() :> Page
         member __.RegisterDependencies(_) = 0 |> ignore
         member __.Geocoder = geocoder
+        member __.GetLocalFilePath fileName = Path.Combine(fileName, appFolderPath)
 
 type GeographicMapRenderer() = inherit MapRenderer()
 
