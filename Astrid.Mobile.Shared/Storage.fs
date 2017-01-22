@@ -1,41 +1,68 @@
 ﻿namespace Astrid.Mobile.Shared
 
-open System.Linq
+open System.Collections.Generic
 open System
 
+open SQLiteNetExtensionsAsync.Extensions
+open SQLiteNetExtensions.Extensions
+open SQLiteNetExtensions.Attributes
+open SQLite.Net.Attributes
+open SQLite.Net.Async
+open SQLite.Net
+
+open GeographicLib
+
+open XamarinForms.Reactive.FSharp.ExpressionConversion
 open XamarinForms.Reactive.FSharp
 
-open SQLite
-open System.Threading.Tasks
+module internal SqliteEntities =
+    type [<Table("PlaceOfInterest")>] PlaceOfInterestEntity(placeOfInterest: PlaceOfInterest) =
+        [<PrimaryKey; AutoIncrement>] member val Id = 0 with get, set
+        [<MaxLength(256); Unique>] member val Label = placeOfInterest.Label with get, set
+        member val LatitudeDegrees = placeOfInterest.Location.Latitude / 1.0<deg> with get, set
+        member val LongitudeDegrees = placeOfInterest.Location.Longitude / 1.0<deg> with get, set
+        [<OneToMany(CascadeOperations = CascadeOperation.All)>] member val Address = new List<PlaceOfInterestAddressLineEntity>() with get, set
+        new() = new PlaceOfInterestEntity({ Label = String.Empty; Address = [||]; Location = new GeodesicLocation() })
+        member this.PlaceOfInterest() =
+            {
+                Label = this.Label;
+                Address = this.Address |> Seq.map (fun lineEntity -> lineEntity.Line) |> Array.ofSeq
+                Location = new GeodesicLocation(1.0<deg> * this.LatitudeDegrees, 1.0<deg> * this.LongitudeDegrees)
+            }
 
-type [<Table("PlaceOfInterest")>] PlaceOfInterestEntity() =
-    [<PrimaryKey; AutoIncrement>] member val Id = 0 with get, set
-    [<MaxLength(256); Unique>] member val Label = String.Empty with get, set
-    member val LatitudeDegrees = 0.0 with get, set
-    member val LongitudeDegrees = 0.0 with get, set
+    and [<Table("PlaceOfInterestAddress")>] PlaceOfInterestAddressLineEntity(line: string) =
+        [<PrimaryKey; AutoIncrement>] member val Id = 0 with get, set
+        [<MaxLength(256)>] member val Line = line with get, set
+        [<ForeignKey(typeof<PlaceOfInterestEntity>)>] member val PlaceOfInterestId = 0 with get, set
+        [<ManyToOne>] member val PlaceOfInterest = Unchecked.defaultof<PlaceOfInterestEntity> with get, set
+        new() = new PlaceOfInterestAddressLineEntity(String.Empty)
 
-and [<Table("PlaceOfInterestAddress")>] PlaceOfInterestAddressLineEntity() =
-    [<PrimaryKey; AutoIncrement>] member val Id = 0 with get, set
-    [<MaxLength(256)>] member val Line = String.Empty with get, set
-    [<Indexed>] member val PlaceOfInterestId = 0 with get, set
-
+open SqliteEntities
 type PlaceOfInterestRepository(dbPath) =
     let conn = new SQLiteAsyncConnection(dbPath)
+    let placesOfInterest (entities:PlaceOfInterestEntity seq) = entities |> Seq.map (fun p -> p.PlaceOfInterest()) |> Array.ofSeq
     do
         conn.CreateTableAsync<PlaceOfInterestEntity>().Wait()
         conn.CreateTableAsync<PlaceOfInterestAddressLineEntity>().Wait()
     member __.AddPlaceOfInterestAsync(placeOfInterest:PlaceOfInterest) =
         async {
-            let position = XamarinGeographic.position placeOfInterest.Location
-            let addPlaceOfInterest (c:SQLiteConnection) =
-                let placeOfInterestId = c.Insert(new PlaceOfInterestEntity(Label = placeOfInterest.Label, LatitudeDegrees = position.Latitude, LongitudeDegrees = position.Longitude))
-                for line in placeOfInterest.Address do c.Insert(new PlaceOfInterestAddressLineEntity(Line = line, PlaceOfInterestId = placeOfInterestId)) |> ignore
+            let addPlaceOfInterest (c:SQLiteConnection) = c.InsertWithChildren(new PlaceOfInterestEntity(placeOfInterest)) |> ignore
             do! conn.RunInTransactionAsync(addPlaceOfInterest) |> Async.AwaitTask
         }
-    member __.GetAllPlacesOfInterest() =
+    member __.GetAllPlacesOfInterestAsync() =
         async {
-            let! allPlacesOfInterest = conn.QueryAsync<PlaceOfInterestEntity>("SELECT Id, Label, LatitudeDegrees, LongitudeDegrees FROM PlaceOfInterest") |> Async.AwaitTask
-            let x = conn.Table<PlaceOfInterestAddressLineEntity>(). allPlacesOfInterest.Select(fun p -> p.Label).to
-            //for place
+            let! entities = conn.GetAllWithChildrenAsync<PlaceOfInterestEntity>() |> Async.AwaitTask
+            return entities |> placesOfInterest
         }
-    interface IDisposable with member __.Dispose() = conn.Dispose()
+    member __.GetPlacesOfInterestInRegionAsync(northWest: GeodesicLocation, southEast: GeodesicLocation) =
+        let southLatitudeDegrees, northLatitudeDegrees = southEast.Latitude / 1.0<deg>, northWest.Latitude / 1.0<deg>
+        let westLongitudeDegrees, eastLongitudeDegrees = northWest.Longitude / 1.0<deg>, southEast.Longitude / 1.0<deg>
+        let regionCrossesInternationalDateLine = southEast.Longitude < northWest.Longitude
+        let liesInRegion = 
+            match regionCrossesInternationalDateLine with
+            | false -> toLinq <@ fun (p:PlaceOfInterestEntity) -> p.LatitudeDegrees >= southLatitudeDegrees && p.LatitudeDegrees <= northLatitudeDegrees && p.LongitudeDegrees >= westLongitudeDegrees && p.LongitudeDegrees <= eastLongitudeDegrees @>
+            | true -> toLinq <@ fun (p:PlaceOfInterestEntity) -> p.LatitudeDegrees >= southLatitudeDegrees && p.LatitudeDegrees <= northLatitudeDegrees && not (p.LongitudeDegrees < westLongitudeDegrees && p.LongitudeDegrees > eastLongitudeDegrees) @>
+        async {
+            let! entities = conn.GetAllWithChildrenAsync<PlaceOfInterestEntity>(liesInRegion) |> Async.AwaitTask
+            return entities |> placesOfInterest
+        }
