@@ -12,6 +12,8 @@ open SQLite.Net
 
 open GeographicLib
 
+open Xamarin.Forms.Maps
+
 open XamarinForms.Reactive.FSharp.ExpressionConversion
 open XamarinForms.Reactive.FSharp
 
@@ -38,23 +40,13 @@ module internal SqliteEntities =
         new() = new PlaceOfInterestAddressLineEntity(String.Empty)
 
 open SqliteEntities
-type PlaceOfInterestRepository(dbPath) =
-    let conn = new SQLiteAsyncConnection(dbPath)
+type PlaceOfInterestRepository(platform, dbPath) =
+    let conn = new SQLiteAsyncConnection(fun() -> (new SQLiteConnectionWithLock(platform, dbPath)))
     let placesOfInterest (entities:PlaceOfInterestEntity seq) = entities |> Seq.map (fun p -> p.PlaceOfInterest()) |> Array.ofSeq
     do
         conn.CreateTableAsync<PlaceOfInterestEntity>().Wait()
         conn.CreateTableAsync<PlaceOfInterestAddressLineEntity>().Wait()
-    member __.AddPlaceOfInterestAsync(placeOfInterest:PlaceOfInterest) =
-        async {
-            let addPlaceOfInterest (c:SQLiteConnection) = c.InsertWithChildren(new PlaceOfInterestEntity(placeOfInterest)) |> ignore
-            do! conn.RunInTransactionAsync(addPlaceOfInterest) |> Async.AwaitTask
-        }
-    member __.GetAllPlacesOfInterestAsync() =
-        async {
-            let! entities = conn.GetAllWithChildrenAsync<PlaceOfInterestEntity>() |> Async.AwaitTask
-            return entities |> placesOfInterest
-        }
-    member __.GetPlacesOfInterestInRegionAsync(northWest: GeodesicLocation, southEast: GeodesicLocation) =
+    let placesOfInterestInBoundingBox (northWest: GeodesicLocation) (southEast: GeodesicLocation) =
         let southLatitudeDegrees, northLatitudeDegrees = southEast.Latitude / 1.0<deg>, northWest.Latitude / 1.0<deg>
         let westLongitudeDegrees, eastLongitudeDegrees = northWest.Longitude / 1.0<deg>, southEast.Longitude / 1.0<deg>
         let regionCrossesInternationalDateLine = southEast.Longitude < northWest.Longitude
@@ -66,3 +58,26 @@ type PlaceOfInterestRepository(dbPath) =
             let! entities = conn.GetAllWithChildrenAsync<PlaceOfInterestEntity>(liesInRegion) |> Async.AwaitTask
             return entities |> placesOfInterest
         }
+    member __.AddPlaceOfInterestAsync(placeOfInterest:PlaceOfInterest) =
+        async {
+            let addPlaceOfInterest (c:SQLiteConnection) = c.InsertWithChildren(new PlaceOfInterestEntity(placeOfInterest)) |> ignore
+            do! conn.RunInTransactionAsync(addPlaceOfInterest) |> Async.AwaitTask
+        }
+    member __.GetAllPlacesOfInterestAsync() =
+        async {
+            let! entities = conn.GetAllWithChildrenAsync<PlaceOfInterestEntity>() |> Async.AwaitTask
+            return entities |> placesOfInterest
+        }
+    member __.GetPlacesOfInterestAsync(centre: GeodesicLocation, radius: float<m>) =
+        let geodesic = Geodesic.WGS84
+        let westSide, eastSide = geodesic.Location centre -90.0<deg> radius, geodesic.Location centre 90.0<deg> radius
+        let northWest, southEast = geodesic.Location westSide 0.0<deg> radius, geodesic.Location eastSide 180.0<deg> radius
+        async {
+            let! placesOfInterest = placesOfInterestInBoundingBox northWest southEast
+            return placesOfInterest |> Array.filter (fun p -> geodesic.Distance p.Location centre <= radius)
+        }
+
+type IAstridPlatform = 
+    inherit IPlatform
+    abstract member Geocoder: Geocoder
+    abstract member PlacesOfInterest: PlaceOfInterestRepository

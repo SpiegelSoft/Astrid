@@ -13,6 +13,9 @@ open Xamarin.Forms
 
 open XamarinForms.Reactive.FSharp
 
+open SQLite.Net.Platform.XamarinAndroid
+open SQLite.Net
+
 open ReactiveUI.XamForms
 open ReactiveUI
 
@@ -23,11 +26,16 @@ type XamarinForms = Xamarin.Forms.Forms
 type DroidPlatform() =
     let geocoder = new Geocoder()
     static let appFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
+    static do Directory.CreateDirectory(appFolderPath) |> ignore
+    let localFilePath fileName = Path.Combine(fileName, appFolderPath)
+    let repositoryPath = localFilePath "AstridRepository.db3"
+    let placesOfInterest = new PlaceOfInterestRepository(new SQLitePlatformAndroid(), new SQLiteConnectionString(repositoryPath, true))
     interface IAstridPlatform with
         member __.GetMainPage() = new RoutedViewHost() :> Page
         member __.RegisterDependencies(_) = 0 |> ignore
         member __.Geocoder = geocoder
-        member __.GetLocalFilePath fileName = Path.Combine(fileName, appFolderPath)
+        member __.PlacesOfInterest = placesOfInterest
+        member __.GetLocalFilePath fileName = localFilePath fileName
 
 type GeographicMapRenderer() = inherit MapRenderer()
 
