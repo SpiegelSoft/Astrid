@@ -35,7 +35,7 @@ type DashboardView(theme: Theme) as this =
                     |])
                 theme.GenerateMap(fun m -> this.Map <- m)
                     |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.Location @>, <@ fun (v:DashboardView) -> (v.Map: GeographicMap).Center @>, id, id)
-                    |> withPinBinding(this.ViewModel.Markers, this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.Markers @>, <@ fun (v:DashboardView) -> (v.Map: GeographicMap).PinnedLocations @>, PinConversion.toPin)
+                    |> withPinBinding(this.ViewModel.Markers, PinConversion.toPin)
             |]) |> createFromColumns :> View
     member val AddressSearchBar = Unchecked.defaultof<SearchBar> with get, set
     member val Title = Unchecked.defaultof<Label> with get, set

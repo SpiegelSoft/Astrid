@@ -17,7 +17,7 @@ open Xamarin.Forms.Maps
 open XamarinForms.Reactive.FSharp.ExpressionConversion
 open XamarinForms.Reactive.FSharp
 
-module internal SqliteEntities =
+module SqliteEntities =
     type [<Table("PlaceOfInterest")>] PlaceOfInterestEntity(placeOfInterest: PlaceOfInterest) =
         [<PrimaryKey; AutoIncrement>] member val Id = 0 with get, set
         [<MaxLength(256); Unique>] member val Label = placeOfInterest.Label with get, set

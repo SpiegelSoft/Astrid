@@ -2,6 +2,7 @@
 
 open GeographicLib
 
+[<StructuralEquality; NoComparison>]
 type PlaceOfInterest = 
     {
         Label: string

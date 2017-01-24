@@ -26,9 +26,8 @@ type XamarinForms = Xamarin.Forms.Forms
 type DroidPlatform() =
     let geocoder = new Geocoder()
     static let appFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
-    static do Directory.CreateDirectory(appFolderPath) |> ignore
-    let localFilePath fileName = Path.Combine(fileName, appFolderPath)
-    let repositoryPath = localFilePath "AstridRepository.db3"
+    let localFilePath fileName = Path.Combine(appFolderPath, fileName)
+    let repositoryPath = localFilePath "AstridRepository"
     let placesOfInterest = new PlaceOfInterestRepository(new SQLitePlatformAndroid(), new SQLiteConnectionString(repositoryPath, true))
     interface IAstridPlatform with
         member __.GetMainPage() = new RoutedViewHost() :> Page

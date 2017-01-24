@@ -14,12 +14,14 @@ open LocatorDefaults
 
 open GeographicLib
 
+[<StructuralEquality; NoComparison>]
 type SearchResult =
     {
         SearchedForAddress: string
         Location: GeodesicLocation
     }
 
+[<StructuralEquality; NoComparison>]
 type MapMarker =
     | SearchResult of SearchResult
     | PlaceOfInterest of PlaceOfInterest
@@ -28,7 +30,7 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
     inherit ReactiveViewModel()
     let host, platform = LocateIfNone host, LocateIfNone platform
     let geocoder = platform.Geocoder
-    let mutable markers = new ReactiveList<MapMarker>([SearchResult { SearchedForAddress = "Test"; Location = new GeodesicLocation(51.4<deg>, -0.02<deg>) }])
+    let markers = new ReactiveList<MapMarker>()
     let commandSubscriptions = new CompositeDisposable()
     let geocodeAddress(vm: DashboardViewModel) =
         let vm = match box vm with | null -> this | _ -> vm
