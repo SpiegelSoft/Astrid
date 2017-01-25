@@ -35,6 +35,7 @@ type DashboardView(theme: Theme) as this =
                     |])
                 theme.GenerateMap(fun m -> this.Map <- m)
                     |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.Location @>, <@ fun (v:DashboardView) -> (v.Map: GeographicMap).Center @>, id, id)
+                    |> withRoutingEffect (new SearchResultEffect()) |> withRoutingEffect (new PlaceOfInterestEffect())
                     |> withPinBinding(this.ViewModel.Markers, PinConversion.toPin)
             |]) |> createFromColumns :> View
     member val AddressSearchBar = Unchecked.defaultof<SearchBar> with get, set

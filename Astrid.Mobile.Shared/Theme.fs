@@ -4,6 +4,9 @@ open XamarinForms.Reactive.FSharp.Themes
 
 open Xamarin.Forms
 
+type SearchResultEffect() = inherit RoutingEffect("Astrid.SearchResultEffect")
+type PlaceOfInterestEffect() = inherit RoutingEffect("Astrid.PlaceOfInterestEffect")
+
 module Themes =
     let AstridTheme = 
         DefaultTheme 

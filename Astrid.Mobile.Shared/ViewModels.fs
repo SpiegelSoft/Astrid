@@ -33,6 +33,8 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
     let markers = new ReactiveList<MapMarker>()
     let commandSubscriptions = new CompositeDisposable()
     let geocodeAddress(vm: DashboardViewModel) =
+        let searchMarkers = markers |> Seq.choose (fun m -> match m with | SearchResult _ -> Some m | _ -> None) |> Array.ofSeq
+        for searchMarker in searchMarkers do markers.Remove(searchMarker) |> ignore
         let vm = match box vm with | null -> this | _ -> vm
         async {
             let searchAddress = vm.SearchAddress
@@ -44,7 +46,6 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
         match searchResults |> Seq.tryHead with
         | Some r -> this.Location <- r.Location
         | None -> searchResults |> ignore
-        this.RaisePropertyChanged("Markers")
     let searchForAddressCommand = ReactiveCommand.CreateFromTask geocodeAddress
     let mutable searchAddress = String.Empty
     let mutable location = new GeodesicLocation(51.4<deg>, -0.02<deg>)
