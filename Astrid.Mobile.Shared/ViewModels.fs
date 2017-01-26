@@ -38,14 +38,15 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
         let vm = match box vm with | null -> this | _ -> vm
         async {
             let searchAddress = vm.SearchAddress
-            let! results = geocoder.GetPositionsForAddressAsync(searchAddress) |> Async.AwaitTask
-            return results |> Seq.map (fun r -> { SearchedForAddress = searchAddress; Location = new GeodesicLocation(r.Latitude * 1.0<deg>, r.Longitude * 1.0<deg>) })
+            let! positions = geocoder.GetPositionsForAddressAsync(searchAddress) |> Async.AwaitTask
+            let searchResults = positions |> Seq.map (fun r -> { SearchedForAddress = searchAddress; Location = XamarinGeographic.geodesicLocation r })
+            searchResults |> Seq.map SearchResult |> Seq.iter markers.Add
+            return searchResults
         } |> Async.StartAsTask
     let showResults searchResults = 
-        searchResults |> Seq.map SearchResult |> Seq.iter markers.Add
         match searchResults |> Seq.tryHead with
         | Some r -> this.Location <- r.Location
-        | None -> searchResults |> ignore
+        | None -> this.Message <- { Title = LocalisedStrings.NoResultsFound; Message = String.Format(LocalisedStrings.NoResultsFoundForAddress, this.SearchAddress); Accept = LocalisedStrings.OK }
     let searchForAddressCommand = ReactiveCommand.CreateFromTask geocodeAddress
     let mutable searchAddress = String.Empty
     let mutable location = new GeodesicLocation(51.4<deg>, -0.02<deg>)

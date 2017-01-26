@@ -3,7 +3,9 @@
 open System.IO
 open System
 
+open Android.Gms.Maps.Model
 open Android.Content.PM
+open Android.Gms.Maps
 open Android.App
 
 open Xamarin.Forms.Platform.Android
@@ -19,7 +21,11 @@ open SQLite.Net
 open ReactiveUI.XamForms
 open ReactiveUI
 
+open GeographicLib
+
 open Astrid.Mobile.Shared
+open System.Reactive.Linq
+open System.Reactive.Subjects
 
 type XamarinForms = Xamarin.Forms.Forms
 
@@ -40,11 +46,18 @@ type GeographicMapRenderer() = inherit MapRenderer()
 
 [<assembly: ExportRendererAttribute (typeof<GeographicMap>, typeof<GeographicMapRenderer>)>] do ()
 [<Activity (Label = "Astrid.Mobile.Droid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
-type MainActivity () =
-    inherit FormsApplicationActivity ()
+type MainActivity() =
+    inherit FormsApplicationActivity()
+    let mapLoaded =  new Subject<GoogleMap>()
     override this.OnCreate (bundle) =
         base.OnCreate(bundle)
         XamarinForms.Init(this, bundle)
         Xamarin.FormsMaps.Init(this, bundle)
         let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), fun () -> new DashboardViewModel() :> IRoutableViewModel)
         this.LoadApplication application
+    override __.Dispose(disposing) = if disposing then mapLoaded.Dispose(); base.Dispose(disposing)
+    interface ILoadGoogleMap with member this.MapLoaded mapView = mapView.GetMapAsync(this); mapLoaded.AsObservable()
+    interface IOnMapReadyCallback with 
+        member __.OnMapReady googleMap = mapLoaded.OnNext googleMap
+        member __.Handle = base.Handle
+        member __.Dispose() = base.Dispose()

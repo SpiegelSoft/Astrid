@@ -14,8 +14,8 @@ open Astrid.Localisation
 module PinConversion =
     let toPin (marker: MapMarker) =
         match marker with
-        | SearchResult result -> new Pin(Type = PinType.SearchResult, Address = result.SearchedForAddress, Position = (result.Location |> XamarinGeographic.position), Label = "Search Result")
-        | PlaceOfInterest poi -> new Pin(Type = PinType.Place, Address = String.Join(Environment.NewLine, poi.Address), Position = (poi.Location |> XamarinGeographic.position))
+        | SearchResult result -> new GeographicPin(result.Location, "Search Result", PinType.SearchResult)
+        | PlaceOfInterest poi -> new GeographicPin(poi.Location, poi.Label, PinType.Place)
 
 type DashboardView(theme: Theme) as this = 
     inherit ContentPage<DashboardViewModel, DashboardView>(theme)
@@ -35,7 +35,7 @@ type DashboardView(theme: Theme) as this =
                     |])
                 theme.GenerateMap(fun m -> this.Map <- m)
                     |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.Location @>, <@ fun (v:DashboardView) -> (v.Map: GeographicMap).Center @>, id, id)
-                    |> withRoutingEffect (new SearchResultEffect()) |> withRoutingEffect (new PlaceOfInterestEffect())
+                    |> withRoutingEffect (new PinnedLocationEffect())
                     |> withPinBinding(this.ViewModel.Markers, PinConversion.toPin)
             |]) |> createFromColumns :> View
     member val AddressSearchBar = Unchecked.defaultof<SearchBar> with get, set

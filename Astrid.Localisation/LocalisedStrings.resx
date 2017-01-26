@@ -120,6 +120,15 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Astrid</value>
   </data>
+  <data name="NoResultsFound" xml:space="preserve">
+    <value>No Results Found</value>
+  </data>
+  <data name="NoResultsFoundForAddress" xml:space="preserve">
+    <value>No results have been found for the address {0}</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
   <data name="SearchForAPlaceOfInterest" xml:space="preserve">
     <value>Search for a place of interest...</value>
   </data>
