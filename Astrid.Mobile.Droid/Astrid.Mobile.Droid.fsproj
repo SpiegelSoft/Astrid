@@ -71,7 +71,7 @@
     <AndroidResource Include="Resources\drawable\Icon.png" />
     <Compile Include="Properties\AssemblyInfo.fs" />
     <None Include="Properties\AndroidManifest.xml" />
-    <Compile Include="CustomEffects.fs" />
+    <Compile Include="Rendering.fs" />
     <Compile Include="MainActivity.fs" />
     <None Include="GettingStarted.Xamarin" />
     <Content Include="packages.config" />

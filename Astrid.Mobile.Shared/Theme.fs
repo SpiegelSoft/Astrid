@@ -4,8 +4,6 @@ open XamarinForms.Reactive.FSharp.Themes
 
 open Xamarin.Forms
 
-type PinnedLocationEffect() = inherit RoutingEffect("Astrid.PinnedLocationEffect")
-
 module Themes =
     let AstridTheme = 
         DefaultTheme 

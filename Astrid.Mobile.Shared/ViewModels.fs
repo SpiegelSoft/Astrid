@@ -50,11 +50,10 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
     let searchForAddressCommand = ReactiveCommand.CreateFromTask geocodeAddress
     let mutable searchAddress = String.Empty
     let mutable location = new GeodesicLocation(51.4<deg>, -0.02<deg>)
-    override __.SubscribeToCommands() = 
-        searchForAddressCommand.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults) |> commandSubscriptions.Add
+    override __.SubscribeToCommands() = searchForAddressCommand.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults) |> commandSubscriptions.Add
     override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
     member __.Title with get() = LocalisedStrings.AppTitle
-    member __.SearchForAddress with get() = searchForAddressCommand
+    member __.SearchForAddressCommand with get() = searchForAddressCommand
     member this.SearchAddress with get() = searchAddress and set(value) = this.RaiseAndSetIfChanged(&searchAddress, value, "SearchAddress") |> ignore
     member this.Location with get() = location and set(value) = this.RaiseAndSetIfChanged(&location, value, "Location") |> ignore
     member __.Markers with get() = markers

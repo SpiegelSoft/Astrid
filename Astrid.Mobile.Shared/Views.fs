@@ -31,11 +31,10 @@ type DashboardView(theme: Theme) as this =
                         theme.GenerateSearchBar(fun sb -> this.AddressSearchBar <- sb)
                             |> withSearchBarPlaceholder LocalisedStrings.SearchForAPlaceOfInterest
                             |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.SearchAddress @>, <@ fun (v: DashboardView) -> (v.AddressSearchBar: SearchBar).Text @>, id, id)
-                            |> withSearchCommand this.ViewModel.SearchForAddress
+                            |> withSearchCommand this.ViewModel.SearchForAddressCommand
                     |])
                 theme.GenerateMap(fun m -> this.Map <- m)
                     |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.Location @>, <@ fun (v:DashboardView) -> (v.Map: GeographicMap).Center @>, id, id)
-                    |> withRoutingEffect (new PinnedLocationEffect())
                     |> withPinBinding(this.ViewModel.Markers, PinConversion.toPin)
             |]) |> createFromColumns :> View
     member val AddressSearchBar = Unchecked.defaultof<SearchBar> with get, set
