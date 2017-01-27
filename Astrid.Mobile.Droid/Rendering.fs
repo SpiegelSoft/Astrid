@@ -20,18 +20,22 @@ open ReactiveUI
 type GeographicMapRenderer() =
     inherit MapRenderer()
     let mutable formsMap = Unchecked.defaultof<GeographicMap>
+    let mutable googleMap = Unchecked.defaultof<GoogleMap>
     let subscriptions = new CompositeDisposable()
+    let infoWindowClicked _ eventArgs = eventArgs |> ignore
+    let infoWindowEventHandler = new EventHandler<Android.Gms.Maps.GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
     override this.OnElementChanged e =
         base.OnElementChanged(e)
         match box e.OldElement with
         | null -> e |> ignore
-        | _ -> e |> ignore
+        | _ -> googleMap.InfoWindowClick.RemoveHandler infoWindowEventHandler
         match box e.NewElement with
         | null -> e |> ignore
         | _ -> formsMap <- e.NewElement :?> GeographicMap; base.Control.GetMapAsync(this)
     override __.Dispose(disposing) = if disposing then subscriptions.Clear()
     interface IOnMapReadyCallback with 
-        member __.OnMapReady googleMap =
+        member this.OnMapReady map =
+            googleMap <- map
             let pinsUpdated _ = 
                 googleMap.Clear()
                 for pin in formsMap.PinnedLocations do 
@@ -44,6 +48,8 @@ type GeographicMapRenderer() =
                     googleMap.AddMarker marker |> ignore
             formsMap.PinnedLocations.ItemsAdded.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinsUpdated) |> subscriptions.Add
             formsMap.PinnedLocations.ItemsRemoved.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinsUpdated) |> subscriptions.Add
+            googleMap.InfoWindowClick.AddHandler infoWindowEventHandler
+            googleMap.SetInfoWindowAdapter this
     interface Android.Gms.Maps.GoogleMap.IInfoWindowAdapter with
         member __.GetInfoContents(marker: Marker): Android.Views.View = failwith "Not implemented yet"
         member __.GetInfoWindow(marker: Marker): Android.Views.View = failwith "Not implemented yet"
