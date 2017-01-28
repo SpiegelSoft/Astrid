@@ -18,19 +18,19 @@ open XamarinForms.Reactive.FSharp.ExpressionConversion
 open XamarinForms.Reactive.FSharp
 
 module SqliteEntities =
-    type [<Table("PlaceOfInterest")>] PlaceOfInterestEntity(placeOfInterest: PlaceOfInterest) =
+    type [<Table("PlaceOfInterest")>] PlaceOfInterestEntity(placeOfInterest: PlaceOfInterest, location: GeodesicLocation) =
         [<PrimaryKey; AutoIncrement>] member val Id = 0 with get, set
         [<MaxLength(256); Unique>] member val Label = placeOfInterest.Label with get, set
-        member val LatitudeDegrees = placeOfInterest.Location.Latitude / 1.0<deg> with get, set
-        member val LongitudeDegrees = placeOfInterest.Location.Longitude / 1.0<deg> with get, set
+        member val LatitudeDegrees = location.Latitude / 1.0<deg> with get, set
+        member val LongitudeDegrees = location.Longitude / 1.0<deg> with get, set
         [<OneToMany(CascadeOperations = CascadeOperation.All)>] member val Address = new List<PlaceOfInterestAddressLineEntity>() with get, set
-        new() = new PlaceOfInterestEntity({ Label = String.Empty; Address = [||]; Location = new GeodesicLocation() })
+        new() = new PlaceOfInterestEntity({ Label = String.Empty; Address = [||] }, new GeodesicLocation())
         member this.PlaceOfInterest() =
             {
                 Label = this.Label;
                 Address = this.Address |> Seq.map (fun lineEntity -> lineEntity.Line) |> Array.ofSeq
-                Location = new GeodesicLocation(1.0<deg> * this.LatitudeDegrees, 1.0<deg> * this.LongitudeDegrees)
             }
+        member this.Location = new GeodesicLocation(1.0<deg> * this.LatitudeDegrees, 1.0<deg> * this.LongitudeDegrees)
 
     and [<Table("PlaceOfInterestAddress")>] PlaceOfInterestAddressLineEntity(line: string) =
         [<PrimaryKey; AutoIncrement>] member val Id = 0 with get, set
@@ -42,7 +42,7 @@ module SqliteEntities =
 open SqliteEntities
 type PlaceOfInterestRepository(platform, dbPath) =
     let conn = new SQLiteAsyncConnection(fun() -> (new SQLiteConnectionWithLock(platform, dbPath)))
-    let placesOfInterest (entities:PlaceOfInterestEntity seq) = entities |> Seq.map (fun p -> p.PlaceOfInterest()) |> Array.ofSeq
+    let placesOfInterest (entities:PlaceOfInterestEntity seq) = entities |> Seq.map (fun p -> (p.PlaceOfInterest(), p.Location)) |> Array.ofSeq
     do
         conn.CreateTableAsync<PlaceOfInterestEntity>().Wait()
         conn.CreateTableAsync<PlaceOfInterestAddressLineEntity>().Wait()
@@ -58,9 +58,9 @@ type PlaceOfInterestRepository(platform, dbPath) =
             let! entities = conn.GetAllWithChildrenAsync<PlaceOfInterestEntity>(liesInRegion) |> Async.AwaitTask
             return entities |> placesOfInterest
         }
-    member __.AddPlaceOfInterestAsync(placeOfInterest:PlaceOfInterest) =
+    member __.AddPlaceOfInterestAsync(placeOfInterest: PlaceOfInterest, location: GeodesicLocation) =
         async {
-            let addPlaceOfInterest (c:SQLiteConnection) = c.InsertWithChildren(new PlaceOfInterestEntity(placeOfInterest)) |> ignore
+            let addPlaceOfInterest (c:SQLiteConnection) = c.InsertWithChildren(new PlaceOfInterestEntity(placeOfInterest, location)) |> ignore
             do! conn.RunInTransactionAsync(addPlaceOfInterest) |> Async.AwaitTask
         }
     member __.GetAllPlacesOfInterestAsync() =
@@ -74,7 +74,7 @@ type PlaceOfInterestRepository(platform, dbPath) =
         let northWest, southEast = geodesic.Location westSide 0.0<deg> radius, geodesic.Location eastSide 180.0<deg> radius
         async {
             let! placesOfInterest = placesOfInterestInBoundingBox northWest southEast
-            return placesOfInterest |> Array.filter (fun p -> geodesic.Distance p.Location centre <= radius)
+            return placesOfInterest |> Array.filter (fun (p, l) -> geodesic.Distance l centre <= radius)
         }
 
 type IAstridPlatform = 

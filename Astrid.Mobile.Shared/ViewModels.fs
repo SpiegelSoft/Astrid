@@ -15,35 +15,33 @@ open LocatorDefaults
 open GeographicLib
 
 [<StructuralEquality; NoComparison>]
-type SearchResult =
-    {
-        SearchedForAddress: string
-        Location: GeodesicLocation
-    }
-
-[<StructuralEquality; NoComparison>]
-type MapMarker =
-    | SearchResult of SearchResult
+type LocationDetails =
+    | SearchResult of string
     | PlaceOfInterest of PlaceOfInterest
 
+type MarkerViewModel(location, details: LocationDetails) =
+    inherit ReactiveObject()
+    member val Location = location
+    member val Details = details
+
 type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
-    inherit ReactiveViewModel()
+    inherit PageViewModel()
     let host, platform = LocateIfNone host, LocateIfNone platform
     let geocoder = platform.Geocoder
-    let markers = new ReactiveList<MapMarker>()
+    let markers = new ReactiveList<MarkerViewModel>()
     let commandSubscriptions = new CompositeDisposable()
     let geocodeAddress(vm: DashboardViewModel) =
-        let searchMarkers = markers |> Seq.choose (fun m -> match m with | SearchResult _ -> Some m | _ -> None) |> Array.ofSeq
+        let searchMarkers = markers |> Seq.choose (fun m -> match m.Details with | SearchResult _ -> Some m | _ -> None) |> Array.ofSeq
         for searchMarker in searchMarkers do markers.Remove(searchMarker) |> ignore
         let vm = match box vm with | null -> this | _ -> vm
         async {
             let searchAddress = vm.SearchAddress
             let! positions = geocoder.GetPositionsForAddressAsync(searchAddress) |> Async.AwaitTask
-            let searchResults = positions |> Seq.map (fun r -> { SearchedForAddress = searchAddress; Location = XamarinGeographic.geodesicLocation r })
-            searchResults |> Seq.map SearchResult |> Seq.iter markers.Add
+            let searchResults = positions |> Seq.map (fun r -> new MarkerViewModel(XamarinGeographic.geodesicLocation r, SearchResult searchAddress))
+            searchResults |> Seq.iter markers.Add
             return searchResults
         } |> Async.StartAsTask
-    let showResults searchResults = 
+    let showResults (searchResults: MarkerViewModel seq) = 
         match searchResults |> Seq.tryHead with
         | Some r -> this.Location <- r.Location
         | None -> this.Message <- { Title = LocalisedStrings.NoResultsFound; Message = String.Format(LocalisedStrings.NoResultsFoundForAddress, this.SearchAddress); Accept = LocalisedStrings.OK }
