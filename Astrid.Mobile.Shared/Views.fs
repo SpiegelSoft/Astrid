@@ -21,15 +21,17 @@ module PinConversion =
 type MarkerInfoWindow(theme: Theme) =
     inherit ContentView<MarkerViewModel>(theme)
     do base.Content <- 
-        theme.GenerateGrid([|"Auto"; "Auto"|], [|"Auto"; "Auto"|]) |> withColumn(
-            [|
-                theme.GenerateLabel()
-                theme.GenerateLabel()
-            |]) |> thenColumn(
-            [|
-                theme.GenerateLabel()
-                theme.GenerateLabel()
-            |]) |> createFromColumns :> View
+        let content = 
+            theme.GenerateGrid([|"*"; "*"|], [|"*"; "*"|]) |> withColumn(
+                [|
+                    theme.GenerateLabel() |> withBackgroundColor(Color.Aqua) |> withContent("Hello")
+                    theme.GenerateLabel() |> withBackgroundColor(Color.Aqua) |> withContent("World")
+                |]) |> thenColumn(
+                [|
+                    theme.GenerateLabel() |> withBackgroundColor(Color.Aqua) |> withContent("Foo")
+                    theme.GenerateLabel() |> withBackgroundColor(Color.Aqua) |> withContent("Bar")
+                |]) |> createFromColumns |> withBackgroundColor(Color.Yellow)  :> View
+        new Frame(Content = content)
     new() = new MarkerInfoWindow(Themes.AstridTheme)
 
 type DashboardView(theme: Theme) as this = 

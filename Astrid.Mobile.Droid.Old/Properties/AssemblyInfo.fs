@@ -13,7 +13,7 @@ module AssemblyInfo =
   [<assembly: AssemblyConfiguration("")>]
   [<assembly: AssemblyCompany("")>]
   [<assembly: AssemblyProduct("Astrid.Mobile.Droid")>]
-  [<assembly: AssemblyCopyright("Copyright ©  2017")>]
+  [<assembly: AssemblyCopyright("Copyright ©  2016")>]
   [<assembly: AssemblyTrademark("")>]
   [<assembly: AssemblyCulture("")>]
 
