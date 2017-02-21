@@ -21,10 +21,10 @@ namespace Astrid.Mobile.Droid
     #nowarn "51" // address-of operator can occur in the code
     #nowarn "1183" // unused 'this' reference
     
-    exception ReturnException07f9d4a1a7164469a6e43941d0d405a6 of obj
-    exception ReturnNoneException07f9d4a1a7164469a6e43941d0d405a6
+    exception ReturnExceptionfb257e044d504c8a86bfc4834f7b361c of obj
+    exception ReturnNoneExceptionfb257e044d504c8a86bfc4834f7b361c
     [<AutoOpen>]
-    module FuncConvertFinalOverload07f9d4a1a7164469a6e43941d0d405a6 =
+    module FuncConvertFinalOverloadfb257e044d504c8a86bfc4834f7b361c =
       // This extension member adds to the FuncConvert type and is the last resort member in the method overloading rules. 
       type global.Microsoft.FSharp.Core.FuncConvert with
           /// A utility function to convert function values from tupled to curried form
@@ -113,1103 +113,1103 @@ namespace Astrid.Mobile.Droid
         
         (* partial *)Resource_Attribute () =
             static do Android.Runtime.ResourceIdManager.UpdateIdValues()
-            // aapt resource value: 0x7f0100aa
-            static member actionBarDivider = 2130772138
-            
-            // aapt resource value: 0x7f0100ab
-            static member actionBarItemBackground = 2130772139
-            
-            // aapt resource value: 0x7f0100a4
-            static member actionBarPopupTheme = 2130772132
-            
-            // aapt resource value: 0x7f0100a9
-            static member actionBarSize = 2130772137
-            
-            // aapt resource value: 0x7f0100a6
-            static member actionBarSplitStyle = 2130772134
-            
-            // aapt resource value: 0x7f0100a5
-            static member actionBarStyle = 2130772133
-            
-            // aapt resource value: 0x7f0100a0
-            static member actionBarTabBarStyle = 2130772128
-            
-            // aapt resource value: 0x7f01009f
-            static member actionBarTabStyle = 2130772127
-            
-            // aapt resource value: 0x7f0100a1
-            static member actionBarTabTextStyle = 2130772129
-            
-            // aapt resource value: 0x7f0100a7
-            static member actionBarTheme = 2130772135
-            
-            // aapt resource value: 0x7f0100a8
-            static member actionBarWidgetTheme = 2130772136
-            
-            // aapt resource value: 0x7f0100c5
-            static member actionButtonStyle = 2130772165
-            
-            // aapt resource value: 0x7f0100c1
-            static member actionDropDownStyle = 2130772161
-            
-            // aapt resource value: 0x7f010116
-            static member actionLayout = 2130772246
-            
-            // aapt resource value: 0x7f0100ac
-            static member actionMenuTextAppearance = 2130772140
-            
-            // aapt resource value: 0x7f0100ad
-            static member actionMenuTextColor = 2130772141
-            
-            // aapt resource value: 0x7f0100b0
-            static member actionModeBackground = 2130772144
-            
-            // aapt resource value: 0x7f0100af
-            static member actionModeCloseButtonStyle = 2130772143
-            
-            // aapt resource value: 0x7f0100b2
-            static member actionModeCloseDrawable = 2130772146
-            
-            // aapt resource value: 0x7f0100b4
-            static member actionModeCopyDrawable = 2130772148
-            
-            // aapt resource value: 0x7f0100b3
-            static member actionModeCutDrawable = 2130772147
-            
-            // aapt resource value: 0x7f0100b8
-            static member actionModeFindDrawable = 2130772152
-            
-            // aapt resource value: 0x7f0100b5
-            static member actionModePasteDrawable = 2130772149
-            
-            // aapt resource value: 0x7f0100ba
-            static member actionModePopupWindowStyle = 2130772154
-            
-            // aapt resource value: 0x7f0100b6
-            static member actionModeSelectAllDrawable = 2130772150
-            
-            // aapt resource value: 0x7f0100b7
-            static member actionModeShareDrawable = 2130772151
-            
-            // aapt resource value: 0x7f0100b1
-            static member actionModeSplitBackground = 2130772145
-            
-            // aapt resource value: 0x7f0100ae
-            static member actionModeStyle = 2130772142
-            
-            // aapt resource value: 0x7f0100b9
-            static member actionModeWebSearchDrawable = 2130772153
-            
-            // aapt resource value: 0x7f0100a2
-            static member actionOverflowButtonStyle = 2130772130
-            
-            // aapt resource value: 0x7f0100a3
-            static member actionOverflowMenuStyle = 2130772131
-            
-            // aapt resource value: 0x7f010118
-            static member actionProviderClass = 2130772248
-            
-            // aapt resource value: 0x7f010117
-            static member actionViewClass = 2130772247
-            
-            // aapt resource value: 0x7f0100cd
-            static member activityChooserViewStyle = 2130772173
-            
-            // aapt resource value: 0x7f0100f1
-            static member alertDialogButtonGroupStyle = 2130772209
-            
-            // aapt resource value: 0x7f0100f2
-            static member alertDialogCenterButtons = 2130772210
-            
-            // aapt resource value: 0x7f0100f0
-            static member alertDialogStyle = 2130772208
-            
-            // aapt resource value: 0x7f0100f3
-            static member alertDialogTheme = 2130772211
-            
-            // aapt resource value: 0x7f010106
-            static member allowStacking = 2130772230
-            
-            // aapt resource value: 0x7f010107
-            static member alpha = 2130772231
-            
-            // aapt resource value: 0x7f010161
-            static member ambientEnabled = 2130772321
-            
-            // aapt resource value: 0x7f01010e
-            static member arrowHeadLength = 2130772238
-            
-            // aapt resource value: 0x7f01010f
-            static member arrowShaftLength = 2130772239
-            
-            // aapt resource value: 0x7f0100f8
-            static member autoCompleteTextViewStyle = 2130772216
-            
-            // aapt resource value: 0x7f010075
-            static member background = 2130772085
-            
-            // aapt resource value: 0x7f010077
-            static member backgroundSplit = 2130772087
-            
-            // aapt resource value: 0x7f010076
-            static member backgroundStacked = 2130772086
-            
-            // aapt resource value: 0x7f01014b
-            static member backgroundTint = 2130772299
-            
-            // aapt resource value: 0x7f01014c
-            static member backgroundTintMode = 2130772300
-            
-            // aapt resource value: 0x7f010110
-            static member barLength = 2130772240
-            
-            // aapt resource value: 0x7f010040
-            static member behavior_autoHide = 2130772032
-            
-            // aapt resource value: 0x7f01001d
-            static member behavior_hideable = 2130771997
-            
-            // aapt resource value: 0x7f010049
-            static member behavior_overlapTop = 2130772041
-            
-            // aapt resource value: 0x7f01001c
-            static member behavior_peekHeight = 2130771996
-            
-            // aapt resource value: 0x7f01001e
-            static member behavior_skipCollapsed = 2130771998
-            
-            // aapt resource value: 0x7f01003e
-            static member borderWidth = 2130772030
-            
-            // aapt resource value: 0x7f0100ca
-            static member borderlessButtonStyle = 2130772170
-            
-            // aapt resource value: 0x7f010038
-            static member bottomSheetDialogTheme = 2130772024
-            
-            // aapt resource value: 0x7f010039
-            static member bottomSheetStyle = 2130772025
-            
-            // aapt resource value: 0x7f0100c7
-            static member buttonBarButtonStyle = 2130772167
-            
-            // aapt resource value: 0x7f0100f6
-            static member buttonBarNegativeButtonStyle = 2130772214
-            
-            // aapt resource value: 0x7f0100f7
-            static member buttonBarNeutralButtonStyle = 2130772215
-            
-            // aapt resource value: 0x7f0100f5
-            static member buttonBarPositiveButtonStyle = 2130772213
-            
-            // aapt resource value: 0x7f0100c6
-            static member buttonBarStyle = 2130772166
-            
-            // aapt resource value: 0x7f010140
-            static member buttonGravity = 2130772288
-            
-            // aapt resource value: 0x7f01008a
-            static member buttonPanelSideLayout = 2130772106
-            
-            // aapt resource value: 0x7f01016b
-            static member buttonSize = 2130772331
-            
-            // aapt resource value: 0x7f0100f9
-            static member buttonStyle = 2130772217
-            
-            // aapt resource value: 0x7f0100fa
-            static member buttonStyleSmall = 2130772218
-            
-            // aapt resource value: 0x7f010108
-            static member buttonTint = 2130772232
-            
-            // aapt resource value: 0x7f010109
-            static member buttonTintMode = 2130772233
-            
-            // aapt resource value: 0x7f010152
-            static member cameraBearing = 2130772306
-            
-            // aapt resource value: 0x7f010163
-            static member cameraMaxZoomPreference = 2130772323
-            
-            // aapt resource value: 0x7f010162
-            static member cameraMinZoomPreference = 2130772322
-            
-            // aapt resource value: 0x7f010153
-            static member cameraTargetLat = 2130772307
-            
-            // aapt resource value: 0x7f010154
-            static member cameraTargetLng = 2130772308
-            
-            // aapt resource value: 0x7f010155
-            static member cameraTilt = 2130772309
-            
-            // aapt resource value: 0x7f010156
-            static member cameraZoom = 2130772310
-            
-            // aapt resource value: 0x7f010000
-            static member cardBackgroundColor = 2130771968
-            
-            // aapt resource value: 0x7f010001
-            static member cardCornerRadius = 2130771969
-            
-            // aapt resource value: 0x7f010002
-            static member cardElevation = 2130771970
-            
-            // aapt resource value: 0x7f010003
-            static member cardMaxElevation = 2130771971
-            
-            // aapt resource value: 0x7f010005
-            static member cardPreventCornerOverlap = 2130771973
-            
-            // aapt resource value: 0x7f010004
-            static member cardUseCompatPadding = 2130771972
-            
-            // aapt resource value: 0x7f0100fb
-            static member checkboxStyle = 2130772219
-            
-            // aapt resource value: 0x7f0100fc
-            static member checkedTextViewStyle = 2130772220
-            
-            // aapt resource value: 0x7f01016a
-            static member circleCrop = 2130772330
-            
-            // aapt resource value: 0x7f010123
-            static member closeIcon = 2130772259
-            
-            // aapt resource value: 0x7f010087
-            static member closeItemLayout = 2130772103
-            
-            // aapt resource value: 0x7f010142
-            static member collapseContentDescription = 2130772290
-            
-            // aapt resource value: 0x7f010141
-            static member collapseIcon = 2130772289
-            
-            // aapt resource value: 0x7f01002b
-            static member collapsedTitleGravity = 2130772011
-            
-            // aapt resource value: 0x7f010025
-            static member collapsedTitleTextAppearance = 2130772005
-            
-            // aapt resource value: 0x7f01010a
-            static member color = 2130772234
-            
-            // aapt resource value: 0x7f0100e8
-            static member colorAccent = 2130772200
-            
-            // aapt resource value: 0x7f0100ef
-            static member colorBackgroundFloating = 2130772207
-            
-            // aapt resource value: 0x7f0100ec
-            static member colorButtonNormal = 2130772204
-            
-            // aapt resource value: 0x7f0100ea
-            static member colorControlActivated = 2130772202
-            
-            // aapt resource value: 0x7f0100eb
-            static member colorControlHighlight = 2130772203
-            
-            // aapt resource value: 0x7f0100e9
-            static member colorControlNormal = 2130772201
-            
-            // aapt resource value: 0x7f0100e6
-            static member colorPrimary = 2130772198
-            
-            // aapt resource value: 0x7f0100e7
-            static member colorPrimaryDark = 2130772199
-            
-            // aapt resource value: 0x7f01016c
-            static member colorScheme = 2130772332
-            
-            // aapt resource value: 0x7f0100ed
-            static member colorSwitchThumbNormal = 2130772205
-            
-            // aapt resource value: 0x7f010128
-            static member commitIcon = 2130772264
-            
-            // aapt resource value: 0x7f010080
-            static member contentInsetEnd = 2130772096
-            
-            // aapt resource value: 0x7f010084
-            static member contentInsetEndWithActions = 2130772100
-            
-            // aapt resource value: 0x7f010081
-            static member contentInsetLeft = 2130772097
-            
-            // aapt resource value: 0x7f010082
-            static member contentInsetRight = 2130772098
-            
-            // aapt resource value: 0x7f01007f
-            static member contentInsetStart = 2130772095
-            
-            // aapt resource value: 0x7f010083
-            static member contentInsetStartWithNavigation = 2130772099
-            
-            // aapt resource value: 0x7f010006
-            static member contentPadding = 2130771974
-            
-            // aapt resource value: 0x7f01000a
-            static member contentPaddingBottom = 2130771978
-            
-            // aapt resource value: 0x7f010007
-            static member contentPaddingLeft = 2130771975
-            
-            // aapt resource value: 0x7f010008
-            static member contentPaddingRight = 2130771976
-            
-            // aapt resource value: 0x7f010009
-            static member contentPaddingTop = 2130771977
-            
-            // aapt resource value: 0x7f010026
-            static member contentScrim = 2130772006
-            
-            // aapt resource value: 0x7f0100ee
-            static member controlBackground = 2130772206
-            
-            // aapt resource value: 0x7f01005f
-            static member counterEnabled = 2130772063
-            
-            // aapt resource value: 0x7f010060
-            static member counterMaxLength = 2130772064
-            
-            // aapt resource value: 0x7f010062
-            static member counterOverflowTextAppearance = 2130772066
-            
-            // aapt resource value: 0x7f010061
-            static member counterTextAppearance = 2130772065
-            
-            // aapt resource value: 0x7f010078
-            static member customNavigationLayout = 2130772088
-            
-            // aapt resource value: 0x7f010122
-            static member defaultQueryHint = 2130772258
-            
-            // aapt resource value: 0x7f0100bf
-            static member dialogPreferredPadding = 2130772159
-            
-            // aapt resource value: 0x7f0100be
-            static member dialogTheme = 2130772158
-            
-            // aapt resource value: 0x7f01006e
-            static member displayOptions = 2130772078
-            
-            // aapt resource value: 0x7f010074
-            static member divider = 2130772084
-            
-            // aapt resource value: 0x7f0100cc
-            static member dividerHorizontal = 2130772172
-            
-            // aapt resource value: 0x7f010114
-            static member dividerPadding = 2130772244
-            
-            // aapt resource value: 0x7f0100cb
-            static member dividerVertical = 2130772171
-            
-            // aapt resource value: 0x7f01010c
-            static member drawableSize = 2130772236
-            
-            // aapt resource value: 0x7f010069
-            static member drawerArrowStyle = 2130772073
-            
-            // aapt resource value: 0x7f0100de
-            static member dropDownListViewStyle = 2130772190
-            
-            // aapt resource value: 0x7f0100c2
-            static member dropdownListPreferredItemHeight = 2130772162
-            
-            // aapt resource value: 0x7f0100d3
-            static member editTextBackground = 2130772179
-            
-            // aapt resource value: 0x7f0100d2
-            static member editTextColor = 2130772178
-            
-            // aapt resource value: 0x7f0100fd
-            static member editTextStyle = 2130772221
-            
-            // aapt resource value: 0x7f010085
-            static member elevation = 2130772101
-            
-            // aapt resource value: 0x7f01005d
-            static member errorEnabled = 2130772061
-            
-            // aapt resource value: 0x7f01005e
-            static member errorTextAppearance = 2130772062
-            
-            // aapt resource value: 0x7f010089
-            static member expandActivityOverflowButtonDrawable = 2130772105
-            
-            // aapt resource value: 0x7f010017
-            static member expanded = 2130771991
-            
-            // aapt resource value: 0x7f01002c
-            static member expandedTitleGravity = 2130772012
-            
-            // aapt resource value: 0x7f01001f
-            static member expandedTitleMargin = 2130771999
-            
-            // aapt resource value: 0x7f010023
-            static member expandedTitleMarginBottom = 2130772003
-            
-            // aapt resource value: 0x7f010022
-            static member expandedTitleMarginEnd = 2130772002
-            
-            // aapt resource value: 0x7f010020
-            static member expandedTitleMarginStart = 2130772000
-            
-            // aapt resource value: 0x7f010021
-            static member expandedTitleMarginTop = 2130772001
-            
-            // aapt resource value: 0x7f010024
-            static member expandedTitleTextAppearance = 2130772004
-            
-            // aapt resource value: 0x7f010016
-            static member externalRouteEnabledDrawable = 2130771990
-            
-            // aapt resource value: 0x7f01003c
-            static member fabSize = 2130772028
-            
-            // aapt resource value: 0x7f010041
-            static member foregroundInsidePadding = 2130772033
-            
-            // aapt resource value: 0x7f01010d
-            static member gapBetweenBars = 2130772237
-            
-            // aapt resource value: 0x7f010124
-            static member goIcon = 2130772260
-            
-            // aapt resource value: 0x7f010047
-            static member headerLayout = 2130772039
-            
-            // aapt resource value: 0x7f01006a
-            static member height = 2130772074
-            
-            // aapt resource value: 0x7f01007e
-            static member hideOnContentScroll = 2130772094
-            
-            // aapt resource value: 0x7f010063
-            static member hintAnimationEnabled = 2130772067
-            
-            // aapt resource value: 0x7f01005c
-            static member hintEnabled = 2130772060
-            
-            // aapt resource value: 0x7f01005b
-            static member hintTextAppearance = 2130772059
-            
-            // aapt resource value: 0x7f0100c4
-            static member homeAsUpIndicator = 2130772164
-            
-            // aapt resource value: 0x7f010079
-            static member homeLayout = 2130772089
-            
-            // aapt resource value: 0x7f010072
-            static member icon = 2130772082
-            
-            // aapt resource value: 0x7f010120
-            static member iconifiedByDefault = 2130772256
-            
-            // aapt resource value: 0x7f010169
-            static member imageAspectRatio = 2130772329
-            
-            // aapt resource value: 0x7f010168
-            static member imageAspectRatioAdjust = 2130772328
-            
-            // aapt resource value: 0x7f0100d4
-            static member imageButtonStyle = 2130772180
-            
-            // aapt resource value: 0x7f01007b
-            static member indeterminateProgressStyle = 2130772091
-            
-            // aapt resource value: 0x7f010088
-            static member initialActivityCount = 2130772104
-            
-            // aapt resource value: 0x7f010048
-            static member insetForeground = 2130772040
-            
-            // aapt resource value: 0x7f01006b
-            static member isLightTheme = 2130772075
-            
-            // aapt resource value: 0x7f010045
-            static member itemBackground = 2130772037
-            
-            // aapt resource value: 0x7f010043
-            static member itemIconTint = 2130772035
-            
-            // aapt resource value: 0x7f01007d
-            static member itemPadding = 2130772093
-            
-            // aapt resource value: 0x7f010046
-            static member itemTextAppearance = 2130772038
-            
-            // aapt resource value: 0x7f010044
-            static member itemTextColor = 2130772036
-            
-            // aapt resource value: 0x7f010030
-            static member keylines = 2130772016
-            
-            // aapt resource value: 0x7f010166
-            static member latLngBoundsNorthEastLatitude = 2130772326
-            
-            // aapt resource value: 0x7f010167
-            static member latLngBoundsNorthEastLongitude = 2130772327
-            
-            // aapt resource value: 0x7f010164
-            static member latLngBoundsSouthWestLatitude = 2130772324
-            
-            // aapt resource value: 0x7f010165
-            static member latLngBoundsSouthWestLongitude = 2130772325
-            
-            // aapt resource value: 0x7f01011f
-            static member layout = 2130772255
-            
-            // aapt resource value: 0x7f01014d
-            static member layoutManager = 2130772301
-            
-            // aapt resource value: 0x7f010033
-            static member layout_anchor = 2130772019
-            
-            // aapt resource value: 0x7f010035
-            static member layout_anchorGravity = 2130772021
-            
-            // aapt resource value: 0x7f010032
-            static member layout_behavior = 2130772018
-            
-            // aapt resource value: 0x7f01002e
-            static member layout_collapseMode = 2130772014
-            
-            // aapt resource value: 0x7f01002f
-            static member layout_collapseParallaxMultiplier = 2130772015
-            
-            // aapt resource value: 0x7f010037
-            static member layout_dodgeInsetEdges = 2130772023
-            
-            // aapt resource value: 0x7f010036
-            static member layout_insetEdge = 2130772022
-            
-            // aapt resource value: 0x7f010034
-            static member layout_keyline = 2130772020
-            
-            // aapt resource value: 0x7f01001a
-            static member layout_scrollFlags = 2130771994
-            
-            // aapt resource value: 0x7f01001b
-            static member layout_scrollInterpolator = 2130771995
-            
-            // aapt resource value: 0x7f0100e5
-            static member listChoiceBackgroundIndicator = 2130772197
-            
-            // aapt resource value: 0x7f0100c0
-            static member listDividerAlertDialog = 2130772160
-            
-            // aapt resource value: 0x7f01008e
-            static member listItemLayout = 2130772110
-            
-            // aapt resource value: 0x7f01008b
-            static member listLayout = 2130772107
-            
-            // aapt resource value: 0x7f010105
-            static member listMenuViewStyle = 2130772229
-            
-            // aapt resource value: 0x7f0100df
-            static member listPopupWindowStyle = 2130772191
-            
-            // aapt resource value: 0x7f0100d9
-            static member listPreferredItemHeight = 2130772185
-            
-            // aapt resource value: 0x7f0100db
-            static member listPreferredItemHeightLarge = 2130772187
-            
-            // aapt resource value: 0x7f0100da
-            static member listPreferredItemHeightSmall = 2130772186
-            
-            // aapt resource value: 0x7f0100dc
-            static member listPreferredItemPaddingLeft = 2130772188
-            
-            // aapt resource value: 0x7f0100dd
-            static member listPreferredItemPaddingRight = 2130772189
-            
-            // aapt resource value: 0x7f010157
-            static member liteMode = 2130772311
-            
-            // aapt resource value: 0x7f010073
-            static member logo = 2130772083
-            
-            // aapt resource value: 0x7f010145
-            static member logoDescription = 2130772293
-            
-            // aapt resource value: 0x7f010151
-            static member mapType = 2130772305
-            
-            // aapt resource value: 0x7f01004a
-            static member maxActionInlineWidth = 2130772042
-            
-            // aapt resource value: 0x7f01013f
-            static member maxButtonHeight = 2130772287
-            
-            // aapt resource value: 0x7f010112
-            static member measureWithLargestChild = 2130772242
-            
-            // aapt resource value: 0x7f01000b
-            static member mediaRouteAudioTrackDrawable = 2130771979
-            
-            // aapt resource value: 0x7f01000c
-            static member mediaRouteButtonStyle = 2130771980
-            
-            // aapt resource value: 0x7f01000d
-            static member mediaRouteCloseDrawable = 2130771981
-            
-            // aapt resource value: 0x7f01000e
-            static member mediaRouteControlPanelThemeOverlay = 2130771982
-            
-            // aapt resource value: 0x7f01000f
-            static member mediaRouteDefaultIconDrawable = 2130771983
-            
-            // aapt resource value: 0x7f010010
-            static member mediaRoutePauseDrawable = 2130771984
-            
-            // aapt resource value: 0x7f010011
-            static member mediaRoutePlayDrawable = 2130771985
-            
-            // aapt resource value: 0x7f010012
-            static member mediaRouteSpeakerGroupIconDrawable = 2130771986
-            
-            // aapt resource value: 0x7f010013
-            static member mediaRouteSpeakerIconDrawable = 2130771987
-            
-            // aapt resource value: 0x7f010014
-            static member mediaRouteTheme = 2130771988
-            
-            // aapt resource value: 0x7f010015
-            static member mediaRouteTvIconDrawable = 2130771989
-            
-            // aapt resource value: 0x7f010042
-            static member menu = 2130772034
-            
-            // aapt resource value: 0x7f01008c
-            static member multiChoiceItemLayout = 2130772108
-            
-            // aapt resource value: 0x7f010144
-            static member navigationContentDescription = 2130772292
-            
-            // aapt resource value: 0x7f010143
-            static member navigationIcon = 2130772291
-            
-            // aapt resource value: 0x7f01006d
-            static member navigationMode = 2130772077
-            
-            // aapt resource value: 0x7f01011b
-            static member overlapAnchor = 2130772251
-            
-            // aapt resource value: 0x7f01011d
-            static member paddingBottomNoButtons = 2130772253
-            
-            // aapt resource value: 0x7f010149
-            static member paddingEnd = 2130772297
-            
-            // aapt resource value: 0x7f010148
-            static member paddingStart = 2130772296
-            
-            // aapt resource value: 0x7f01011e
-            static member paddingTopNoTitle = 2130772254
-            
-            // aapt resource value: 0x7f0100e2
-            static member panelBackground = 2130772194
-            
-            // aapt resource value: 0x7f0100e4
-            static member panelMenuListTheme = 2130772196
-            
-            // aapt resource value: 0x7f0100e3
-            static member panelMenuListWidth = 2130772195
-            
-            // aapt resource value: 0x7f010066
-            static member passwordToggleContentDescription = 2130772070
-            
-            // aapt resource value: 0x7f010065
-            static member passwordToggleDrawable = 2130772069
-            
-            // aapt resource value: 0x7f010064
-            static member passwordToggleEnabled = 2130772068
-            
-            // aapt resource value: 0x7f010067
-            static member passwordToggleTint = 2130772071
-            
-            // aapt resource value: 0x7f010068
-            static member passwordToggleTintMode = 2130772072
-            
-            // aapt resource value: 0x7f0100d0
-            static member popupMenuStyle = 2130772176
-            
-            // aapt resource value: 0x7f010086
-            static member popupTheme = 2130772102
-            
-            // aapt resource value: 0x7f0100d1
-            static member popupWindowStyle = 2130772177
-            
-            // aapt resource value: 0x7f010119
-            static member preserveIconSpacing = 2130772249
-            
-            // aapt resource value: 0x7f01003d
-            static member pressedTranslationZ = 2130772029
-            
-            // aapt resource value: 0x7f01007c
-            static member progressBarPadding = 2130772092
-            
-            // aapt resource value: 0x7f01007a
-            static member progressBarStyle = 2130772090
-            
-            // aapt resource value: 0x7f01012a
-            static member queryBackground = 2130772266
-            
-            // aapt resource value: 0x7f010121
-            static member queryHint = 2130772257
-            
-            // aapt resource value: 0x7f0100fe
-            static member radioButtonStyle = 2130772222
-            
-            // aapt resource value: 0x7f0100ff
-            static member ratingBarStyle = 2130772223
-            
-            // aapt resource value: 0x7f010100
-            static member ratingBarStyleIndicator = 2130772224
-            
-            // aapt resource value: 0x7f010101
-            static member ratingBarStyleSmall = 2130772225
-            
-            // aapt resource value: 0x7f01014f
-            static member reverseLayout = 2130772303
-            
-            // aapt resource value: 0x7f01003b
-            static member rippleColor = 2130772027
-            
-            // aapt resource value: 0x7f01016d
-            static member scopeUris = 2130772333
-            
-            // aapt resource value: 0x7f01002a
-            static member scrimAnimationDuration = 2130772010
-            
-            // aapt resource value: 0x7f010029
-            static member scrimVisibleHeightTrigger = 2130772009
-            
-            // aapt resource value: 0x7f010126
-            static member searchHintIcon = 2130772262
-            
-            // aapt resource value: 0x7f010125
-            static member searchIcon = 2130772261
-            
-            // aapt resource value: 0x7f0100d8
-            static member searchViewStyle = 2130772184
-            
-            // aapt resource value: 0x7f010102
-            static member seekBarStyle = 2130772226
-            
-            // aapt resource value: 0x7f0100c8
-            static member selectableItemBackground = 2130772168
-            
-            // aapt resource value: 0x7f0100c9
-            static member selectableItemBackgroundBorderless = 2130772169
-            
-            // aapt resource value: 0x7f010115
-            static member showAsAction = 2130772245
-            
-            // aapt resource value: 0x7f010113
-            static member showDividers = 2130772243
-            
-            // aapt resource value: 0x7f010136
-            static member showText = 2130772278
-            
-            // aapt resource value: 0x7f01008f
-            static member showTitle = 2130772111
-            
-            // aapt resource value: 0x7f01008d
-            static member singleChoiceItemLayout = 2130772109
-            
-            // aapt resource value: 0x7f01014e
-            static member spanCount = 2130772302
-            
-            // aapt resource value: 0x7f01010b
-            static member spinBars = 2130772235
-            
-            // aapt resource value: 0x7f0100c3
-            static member spinnerDropDownItemStyle = 2130772163
-            
-            // aapt resource value: 0x7f010103
-            static member spinnerStyle = 2130772227
-            
-            // aapt resource value: 0x7f010135
-            static member splitTrack = 2130772277
-            
-            // aapt resource value: 0x7f010090
-            static member srcCompat = 2130772112
-            
-            // aapt resource value: 0x7f010150
-            static member stackFromEnd = 2130772304
-            
-            // aapt resource value: 0x7f01011c
-            static member state_above_anchor = 2130772252
-            
-            // aapt resource value: 0x7f010018
-            static member state_collapsed = 2130771992
-            
-            // aapt resource value: 0x7f010019
-            static member state_collapsible = 2130771993
-            
-            // aapt resource value: 0x7f010031
-            static member statusBarBackground = 2130772017
-            
-            // aapt resource value: 0x7f010027
-            static member statusBarScrim = 2130772007
-            
-            // aapt resource value: 0x7f01011a
-            static member subMenuArrow = 2130772250
-            
-            // aapt resource value: 0x7f01012b
-            static member submitBackground = 2130772267
-            
-            // aapt resource value: 0x7f01006f
-            static member subtitle = 2130772079
-            
-            // aapt resource value: 0x7f010138
-            static member subtitleTextAppearance = 2130772280
-            
-            // aapt resource value: 0x7f010147
-            static member subtitleTextColor = 2130772295
-            
-            // aapt resource value: 0x7f010071
-            static member subtitleTextStyle = 2130772081
-            
-            // aapt resource value: 0x7f010129
-            static member suggestionRowLayout = 2130772265
-            
-            // aapt resource value: 0x7f010133
-            static member switchMinWidth = 2130772275
-            
-            // aapt resource value: 0x7f010134
-            static member switchPadding = 2130772276
-            
-            // aapt resource value: 0x7f010104
-            static member switchStyle = 2130772228
-            
-            // aapt resource value: 0x7f010132
-            static member switchTextAppearance = 2130772274
-            
-            // aapt resource value: 0x7f01004e
-            static member tabBackground = 2130772046
-            
-            // aapt resource value: 0x7f01004d
-            static member tabContentStart = 2130772045
-            
-            // aapt resource value: 0x7f010050
-            static member tabGravity = 2130772048
-            
-            // aapt resource value: 0x7f01004b
-            static member tabIndicatorColor = 2130772043
-            
-            // aapt resource value: 0x7f01004c
-            static member tabIndicatorHeight = 2130772044
-            
-            // aapt resource value: 0x7f010052
-            static member tabMaxWidth = 2130772050
-            
-            // aapt resource value: 0x7f010051
-            static member tabMinWidth = 2130772049
-            
-            // aapt resource value: 0x7f01004f
-            static member tabMode = 2130772047
-            
-            // aapt resource value: 0x7f01005a
-            static member tabPadding = 2130772058
-            
-            // aapt resource value: 0x7f010059
-            static member tabPaddingBottom = 2130772057
-            
-            // aapt resource value: 0x7f010058
-            static member tabPaddingEnd = 2130772056
-            
-            // aapt resource value: 0x7f010056
-            static member tabPaddingStart = 2130772054
-            
-            // aapt resource value: 0x7f010057
-            static member tabPaddingTop = 2130772055
-            
-            // aapt resource value: 0x7f010055
-            static member tabSelectedTextColor = 2130772053
-            
-            // aapt resource value: 0x7f010053
-            static member tabTextAppearance = 2130772051
-            
-            // aapt resource value: 0x7f010054
-            static member tabTextColor = 2130772052
-            
-            // aapt resource value: 0x7f010094
-            static member textAllCaps = 2130772116
-            
-            // aapt resource value: 0x7f0100bb
-            static member textAppearanceLargePopupMenu = 2130772155
-            
-            // aapt resource value: 0x7f0100e0
-            static member textAppearanceListItem = 2130772192
-            
-            // aapt resource value: 0x7f0100e1
-            static member textAppearanceListItemSmall = 2130772193
+            // aapt resource value: 0x7f0100bc
+            static member actionBarDivider = 2130772156
             
             // aapt resource value: 0x7f0100bd
-            static member textAppearancePopupMenuHeader = 2130772157
+            static member actionBarItemBackground = 2130772157
             
-            // aapt resource value: 0x7f0100d6
-            static member textAppearanceSearchResultSubtitle = 2130772182
+            // aapt resource value: 0x7f0100b6
+            static member actionBarPopupTheme = 2130772150
             
-            // aapt resource value: 0x7f0100d5
-            static member textAppearanceSearchResultTitle = 2130772181
+            // aapt resource value: 0x7f0100bb
+            static member actionBarSize = 2130772155
             
-            // aapt resource value: 0x7f0100bc
-            static member textAppearanceSmallPopupMenu = 2130772156
+            // aapt resource value: 0x7f0100b8
+            static member actionBarSplitStyle = 2130772152
             
-            // aapt resource value: 0x7f0100f4
-            static member textColorAlertDialogListItem = 2130772212
+            // aapt resource value: 0x7f0100b7
+            static member actionBarStyle = 2130772151
             
-            // aapt resource value: 0x7f01003a
-            static member textColorError = 2130772026
+            // aapt resource value: 0x7f0100b2
+            static member actionBarTabBarStyle = 2130772146
+            
+            // aapt resource value: 0x7f0100b1
+            static member actionBarTabStyle = 2130772145
+            
+            // aapt resource value: 0x7f0100b3
+            static member actionBarTabTextStyle = 2130772147
+            
+            // aapt resource value: 0x7f0100b9
+            static member actionBarTheme = 2130772153
+            
+            // aapt resource value: 0x7f0100ba
+            static member actionBarWidgetTheme = 2130772154
             
             // aapt resource value: 0x7f0100d7
-            static member textColorSearchUrl = 2130772183
+            static member actionButtonStyle = 2130772183
             
-            // aapt resource value: 0x7f01014a
-            static member theme = 2130772298
+            // aapt resource value: 0x7f0100d3
+            static member actionDropDownStyle = 2130772179
             
-            // aapt resource value: 0x7f010111
-            static member thickness = 2130772241
+            // aapt resource value: 0x7f010128
+            static member actionLayout = 2130772264
             
-            // aapt resource value: 0x7f010131
-            static member thumbTextPadding = 2130772273
+            // aapt resource value: 0x7f0100be
+            static member actionMenuTextAppearance = 2130772158
             
-            // aapt resource value: 0x7f01012c
-            static member thumbTint = 2130772268
+            // aapt resource value: 0x7f0100bf
+            static member actionMenuTextColor = 2130772159
             
-            // aapt resource value: 0x7f01012d
-            static member thumbTintMode = 2130772269
+            // aapt resource value: 0x7f0100c2
+            static member actionModeBackground = 2130772162
             
-            // aapt resource value: 0x7f010091
-            static member tickMark = 2130772113
+            // aapt resource value: 0x7f0100c1
+            static member actionModeCloseButtonStyle = 2130772161
             
-            // aapt resource value: 0x7f010092
-            static member tickMarkTint = 2130772114
+            // aapt resource value: 0x7f0100c4
+            static member actionModeCloseDrawable = 2130772164
             
-            // aapt resource value: 0x7f010093
-            static member tickMarkTintMode = 2130772115
+            // aapt resource value: 0x7f0100c6
+            static member actionModeCopyDrawable = 2130772166
             
-            // aapt resource value: 0x7f01006c
-            static member title = 2130772076
+            // aapt resource value: 0x7f0100c5
+            static member actionModeCutDrawable = 2130772165
             
-            // aapt resource value: 0x7f01002d
-            static member titleEnabled = 2130772013
+            // aapt resource value: 0x7f0100ca
+            static member actionModeFindDrawable = 2130772170
             
-            // aapt resource value: 0x7f010139
-            static member titleMargin = 2130772281
+            // aapt resource value: 0x7f0100c7
+            static member actionModePasteDrawable = 2130772167
             
-            // aapt resource value: 0x7f01013d
-            static member titleMarginBottom = 2130772285
+            // aapt resource value: 0x7f0100cc
+            static member actionModePopupWindowStyle = 2130772172
             
-            // aapt resource value: 0x7f01013b
-            static member titleMarginEnd = 2130772283
+            // aapt resource value: 0x7f0100c8
+            static member actionModeSelectAllDrawable = 2130772168
             
-            // aapt resource value: 0x7f01013a
-            static member titleMarginStart = 2130772282
+            // aapt resource value: 0x7f0100c9
+            static member actionModeShareDrawable = 2130772169
             
-            // aapt resource value: 0x7f01013c
-            static member titleMarginTop = 2130772284
+            // aapt resource value: 0x7f0100c3
+            static member actionModeSplitBackground = 2130772163
             
-            // aapt resource value: 0x7f01013e
-            static member titleMargins = 2130772286
+            // aapt resource value: 0x7f0100c0
+            static member actionModeStyle = 2130772160
             
-            // aapt resource value: 0x7f010137
-            static member titleTextAppearance = 2130772279
+            // aapt resource value: 0x7f0100cb
+            static member actionModeWebSearchDrawable = 2130772171
             
-            // aapt resource value: 0x7f010146
-            static member titleTextColor = 2130772294
+            // aapt resource value: 0x7f0100b4
+            static member actionOverflowButtonStyle = 2130772148
             
-            // aapt resource value: 0x7f010070
-            static member titleTextStyle = 2130772080
+            // aapt resource value: 0x7f0100b5
+            static member actionOverflowMenuStyle = 2130772149
             
-            // aapt resource value: 0x7f010028
-            static member toolbarId = 2130772008
+            // aapt resource value: 0x7f01012a
+            static member actionProviderClass = 2130772266
             
-            // aapt resource value: 0x7f0100cf
-            static member toolbarNavigationButtonStyle = 2130772175
+            // aapt resource value: 0x7f010129
+            static member actionViewClass = 2130772265
             
-            // aapt resource value: 0x7f0100ce
-            static member toolbarStyle = 2130772174
+            // aapt resource value: 0x7f0100df
+            static member activityChooserViewStyle = 2130772191
             
-            // aapt resource value: 0x7f01012e
-            static member track = 2130772270
+            // aapt resource value: 0x7f010103
+            static member alertDialogButtonGroupStyle = 2130772227
             
-            // aapt resource value: 0x7f01012f
-            static member trackTint = 2130772271
+            // aapt resource value: 0x7f010104
+            static member alertDialogCenterButtons = 2130772228
             
-            // aapt resource value: 0x7f010130
-            static member trackTintMode = 2130772272
+            // aapt resource value: 0x7f010102
+            static member alertDialogStyle = 2130772226
             
-            // aapt resource value: 0x7f010158
-            static member uiCompass = 2130772312
+            // aapt resource value: 0x7f010105
+            static member alertDialogTheme = 2130772229
             
-            // aapt resource value: 0x7f010160
-            static member uiMapToolbar = 2130772320
+            // aapt resource value: 0x7f010118
+            static member allowStacking = 2130772248
             
-            // aapt resource value: 0x7f010159
-            static member uiRotateGestures = 2130772313
+            // aapt resource value: 0x7f010119
+            static member alpha = 2130772249
             
-            // aapt resource value: 0x7f01015a
-            static member uiScrollGestures = 2130772314
+            // aapt resource value: 0x7f010010
+            static member ambientEnabled = 2130771984
             
-            // aapt resource value: 0x7f01015b
-            static member uiTiltGestures = 2130772315
+            // aapt resource value: 0x7f010120
+            static member arrowHeadLength = 2130772256
             
-            // aapt resource value: 0x7f01015c
-            static member uiZoomControls = 2130772316
+            // aapt resource value: 0x7f010121
+            static member arrowShaftLength = 2130772257
+            
+            // aapt resource value: 0x7f01010a
+            static member autoCompleteTextViewStyle = 2130772234
+            
+            // aapt resource value: 0x7f010087
+            static member background = 2130772103
+            
+            // aapt resource value: 0x7f010089
+            static member backgroundSplit = 2130772105
+            
+            // aapt resource value: 0x7f010088
+            static member backgroundStacked = 2130772104
             
             // aapt resource value: 0x7f01015d
-            static member uiZoomGestures = 2130772317
-            
-            // aapt resource value: 0x7f01003f
-            static member useCompatPadding = 2130772031
+            static member backgroundTint = 2130772317
             
             // aapt resource value: 0x7f01015e
-            static member useViewLifecycle = 2130772318
+            static member backgroundTintMode = 2130772318
             
-            // aapt resource value: 0x7f010127
-            static member voiceIcon = 2130772263
+            // aapt resource value: 0x7f010122
+            static member barLength = 2130772258
             
-            // aapt resource value: 0x7f010095
-            static member windowActionBar = 2130772117
+            // aapt resource value: 0x7f010052
+            static member behavior_autoHide = 2130772050
             
-            // aapt resource value: 0x7f010097
-            static member windowActionBarOverlay = 2130772119
+            // aapt resource value: 0x7f01002f
+            static member behavior_hideable = 2130772015
             
-            // aapt resource value: 0x7f010098
-            static member windowActionModeOverlay = 2130772120
+            // aapt resource value: 0x7f01005b
+            static member behavior_overlapTop = 2130772059
+            
+            // aapt resource value: 0x7f01002e
+            static member behavior_peekHeight = 2130772014
+            
+            // aapt resource value: 0x7f010030
+            static member behavior_skipCollapsed = 2130772016
+            
+            // aapt resource value: 0x7f010050
+            static member borderWidth = 2130772048
+            
+            // aapt resource value: 0x7f0100dc
+            static member borderlessButtonStyle = 2130772188
+            
+            // aapt resource value: 0x7f01004a
+            static member bottomSheetDialogTheme = 2130772042
+            
+            // aapt resource value: 0x7f01004b
+            static member bottomSheetStyle = 2130772043
+            
+            // aapt resource value: 0x7f0100d9
+            static member buttonBarButtonStyle = 2130772185
+            
+            // aapt resource value: 0x7f010108
+            static member buttonBarNegativeButtonStyle = 2130772232
+            
+            // aapt resource value: 0x7f010109
+            static member buttonBarNeutralButtonStyle = 2130772233
+            
+            // aapt resource value: 0x7f010107
+            static member buttonBarPositiveButtonStyle = 2130772231
+            
+            // aapt resource value: 0x7f0100d8
+            static member buttonBarStyle = 2130772184
+            
+            // aapt resource value: 0x7f010152
+            static member buttonGravity = 2130772306
             
             // aapt resource value: 0x7f01009c
-            static member windowFixedHeightMajor = 2130772124
+            static member buttonPanelSideLayout = 2130772124
             
-            // aapt resource value: 0x7f01009a
-            static member windowFixedHeightMinor = 2130772122
+            // aapt resource value: 0x7f01001a
+            static member buttonSize = 2130771994
+            
+            // aapt resource value: 0x7f01010b
+            static member buttonStyle = 2130772235
+            
+            // aapt resource value: 0x7f01010c
+            static member buttonStyleSmall = 2130772236
+            
+            // aapt resource value: 0x7f01011a
+            static member buttonTint = 2130772250
+            
+            // aapt resource value: 0x7f01011b
+            static member buttonTintMode = 2130772251
+            
+            // aapt resource value: 0x7f010001
+            static member cameraBearing = 2130771969
+            
+            // aapt resource value: 0x7f010012
+            static member cameraMaxZoomPreference = 2130771986
+            
+            // aapt resource value: 0x7f010011
+            static member cameraMinZoomPreference = 2130771985
+            
+            // aapt resource value: 0x7f010002
+            static member cameraTargetLat = 2130771970
+            
+            // aapt resource value: 0x7f010003
+            static member cameraTargetLng = 2130771971
+            
+            // aapt resource value: 0x7f010004
+            static member cameraTilt = 2130771972
+            
+            // aapt resource value: 0x7f010005
+            static member cameraZoom = 2130771973
+            
+            // aapt resource value: 0x7f010163
+            static member cardBackgroundColor = 2130772323
+            
+            // aapt resource value: 0x7f010164
+            static member cardCornerRadius = 2130772324
+            
+            // aapt resource value: 0x7f010165
+            static member cardElevation = 2130772325
+            
+            // aapt resource value: 0x7f010166
+            static member cardMaxElevation = 2130772326
+            
+            // aapt resource value: 0x7f010168
+            static member cardPreventCornerOverlap = 2130772328
+            
+            // aapt resource value: 0x7f010167
+            static member cardUseCompatPadding = 2130772327
+            
+            // aapt resource value: 0x7f01010d
+            static member checkboxStyle = 2130772237
+            
+            // aapt resource value: 0x7f01010e
+            static member checkedTextViewStyle = 2130772238
+            
+            // aapt resource value: 0x7f010019
+            static member circleCrop = 2130771993
+            
+            // aapt resource value: 0x7f010135
+            static member closeIcon = 2130772277
             
             // aapt resource value: 0x7f010099
-            static member windowFixedWidthMajor = 2130772121
+            static member closeItemLayout = 2130772121
             
-            // aapt resource value: 0x7f01009b
-            static member windowFixedWidthMinor = 2130772123
+            // aapt resource value: 0x7f010154
+            static member collapseContentDescription = 2130772308
             
-            // aapt resource value: 0x7f01009d
-            static member windowMinWidthMajor = 2130772125
+            // aapt resource value: 0x7f010153
+            static member collapseIcon = 2130772307
             
-            // aapt resource value: 0x7f01009e
-            static member windowMinWidthMinor = 2130772126
+            // aapt resource value: 0x7f01003d
+            static member collapsedTitleGravity = 2130772029
+            
+            // aapt resource value: 0x7f010037
+            static member collapsedTitleTextAppearance = 2130772023
+            
+            // aapt resource value: 0x7f01011c
+            static member color = 2130772252
+            
+            // aapt resource value: 0x7f0100fa
+            static member colorAccent = 2130772218
+            
+            // aapt resource value: 0x7f010101
+            static member colorBackgroundFloating = 2130772225
+            
+            // aapt resource value: 0x7f0100fe
+            static member colorButtonNormal = 2130772222
+            
+            // aapt resource value: 0x7f0100fc
+            static member colorControlActivated = 2130772220
+            
+            // aapt resource value: 0x7f0100fd
+            static member colorControlHighlight = 2130772221
+            
+            // aapt resource value: 0x7f0100fb
+            static member colorControlNormal = 2130772219
+            
+            // aapt resource value: 0x7f0100f8
+            static member colorPrimary = 2130772216
+            
+            // aapt resource value: 0x7f0100f9
+            static member colorPrimaryDark = 2130772217
+            
+            // aapt resource value: 0x7f01001b
+            static member colorScheme = 2130771995
+            
+            // aapt resource value: 0x7f0100ff
+            static member colorSwitchThumbNormal = 2130772223
+            
+            // aapt resource value: 0x7f01013a
+            static member commitIcon = 2130772282
+            
+            // aapt resource value: 0x7f010092
+            static member contentInsetEnd = 2130772114
             
             // aapt resource value: 0x7f010096
-            static member windowNoTitle = 2130772118
+            static member contentInsetEndWithActions = 2130772118
+            
+            // aapt resource value: 0x7f010093
+            static member contentInsetLeft = 2130772115
+            
+            // aapt resource value: 0x7f010094
+            static member contentInsetRight = 2130772116
+            
+            // aapt resource value: 0x7f010091
+            static member contentInsetStart = 2130772113
+            
+            // aapt resource value: 0x7f010095
+            static member contentInsetStartWithNavigation = 2130772117
+            
+            // aapt resource value: 0x7f010169
+            static member contentPadding = 2130772329
+            
+            // aapt resource value: 0x7f01016d
+            static member contentPaddingBottom = 2130772333
+            
+            // aapt resource value: 0x7f01016a
+            static member contentPaddingLeft = 2130772330
+            
+            // aapt resource value: 0x7f01016b
+            static member contentPaddingRight = 2130772331
+            
+            // aapt resource value: 0x7f01016c
+            static member contentPaddingTop = 2130772332
+            
+            // aapt resource value: 0x7f010038
+            static member contentScrim = 2130772024
+            
+            // aapt resource value: 0x7f010100
+            static member controlBackground = 2130772224
+            
+            // aapt resource value: 0x7f010071
+            static member counterEnabled = 2130772081
+            
+            // aapt resource value: 0x7f010072
+            static member counterMaxLength = 2130772082
+            
+            // aapt resource value: 0x7f010074
+            static member counterOverflowTextAppearance = 2130772084
+            
+            // aapt resource value: 0x7f010073
+            static member counterTextAppearance = 2130772083
+            
+            // aapt resource value: 0x7f01008a
+            static member customNavigationLayout = 2130772106
+            
+            // aapt resource value: 0x7f010134
+            static member defaultQueryHint = 2130772276
+            
+            // aapt resource value: 0x7f0100d1
+            static member dialogPreferredPadding = 2130772177
+            
+            // aapt resource value: 0x7f0100d0
+            static member dialogTheme = 2130772176
+            
+            // aapt resource value: 0x7f010080
+            static member displayOptions = 2130772096
+            
+            // aapt resource value: 0x7f010086
+            static member divider = 2130772102
+            
+            // aapt resource value: 0x7f0100de
+            static member dividerHorizontal = 2130772190
+            
+            // aapt resource value: 0x7f010126
+            static member dividerPadding = 2130772262
+            
+            // aapt resource value: 0x7f0100dd
+            static member dividerVertical = 2130772189
+            
+            // aapt resource value: 0x7f01011e
+            static member drawableSize = 2130772254
+            
+            // aapt resource value: 0x7f01007b
+            static member drawerArrowStyle = 2130772091
+            
+            // aapt resource value: 0x7f0100f0
+            static member dropDownListViewStyle = 2130772208
+            
+            // aapt resource value: 0x7f0100d4
+            static member dropdownListPreferredItemHeight = 2130772180
+            
+            // aapt resource value: 0x7f0100e5
+            static member editTextBackground = 2130772197
+            
+            // aapt resource value: 0x7f0100e4
+            static member editTextColor = 2130772196
+            
+            // aapt resource value: 0x7f01010f
+            static member editTextStyle = 2130772239
+            
+            // aapt resource value: 0x7f010097
+            static member elevation = 2130772119
+            
+            // aapt resource value: 0x7f01006f
+            static member errorEnabled = 2130772079
+            
+            // aapt resource value: 0x7f010070
+            static member errorTextAppearance = 2130772080
+            
+            // aapt resource value: 0x7f01009b
+            static member expandActivityOverflowButtonDrawable = 2130772123
+            
+            // aapt resource value: 0x7f010029
+            static member expanded = 2130772009
+            
+            // aapt resource value: 0x7f01003e
+            static member expandedTitleGravity = 2130772030
+            
+            // aapt resource value: 0x7f010031
+            static member expandedTitleMargin = 2130772017
+            
+            // aapt resource value: 0x7f010035
+            static member expandedTitleMarginBottom = 2130772021
+            
+            // aapt resource value: 0x7f010034
+            static member expandedTitleMarginEnd = 2130772020
+            
+            // aapt resource value: 0x7f010032
+            static member expandedTitleMarginStart = 2130772018
+            
+            // aapt resource value: 0x7f010033
+            static member expandedTitleMarginTop = 2130772019
+            
+            // aapt resource value: 0x7f010036
+            static member expandedTitleTextAppearance = 2130772022
+            
+            // aapt resource value: 0x7f010028
+            static member externalRouteEnabledDrawable = 2130772008
+            
+            // aapt resource value: 0x7f01004e
+            static member fabSize = 2130772046
+            
+            // aapt resource value: 0x7f010053
+            static member foregroundInsidePadding = 2130772051
+            
+            // aapt resource value: 0x7f01011f
+            static member gapBetweenBars = 2130772255
+            
+            // aapt resource value: 0x7f010136
+            static member goIcon = 2130772278
+            
+            // aapt resource value: 0x7f010059
+            static member headerLayout = 2130772057
+            
+            // aapt resource value: 0x7f01007c
+            static member height = 2130772092
+            
+            // aapt resource value: 0x7f010090
+            static member hideOnContentScroll = 2130772112
+            
+            // aapt resource value: 0x7f010075
+            static member hintAnimationEnabled = 2130772085
+            
+            // aapt resource value: 0x7f01006e
+            static member hintEnabled = 2130772078
+            
+            // aapt resource value: 0x7f01006d
+            static member hintTextAppearance = 2130772077
+            
+            // aapt resource value: 0x7f0100d6
+            static member homeAsUpIndicator = 2130772182
+            
+            // aapt resource value: 0x7f01008b
+            static member homeLayout = 2130772107
+            
+            // aapt resource value: 0x7f010084
+            static member icon = 2130772100
+            
+            // aapt resource value: 0x7f010132
+            static member iconifiedByDefault = 2130772274
+            
+            // aapt resource value: 0x7f010018
+            static member imageAspectRatio = 2130771992
+            
+            // aapt resource value: 0x7f010017
+            static member imageAspectRatioAdjust = 2130771991
+            
+            // aapt resource value: 0x7f0100e6
+            static member imageButtonStyle = 2130772198
+            
+            // aapt resource value: 0x7f01008d
+            static member indeterminateProgressStyle = 2130772109
+            
+            // aapt resource value: 0x7f01009a
+            static member initialActivityCount = 2130772122
+            
+            // aapt resource value: 0x7f01005a
+            static member insetForeground = 2130772058
+            
+            // aapt resource value: 0x7f01007d
+            static member isLightTheme = 2130772093
+            
+            // aapt resource value: 0x7f010057
+            static member itemBackground = 2130772055
+            
+            // aapt resource value: 0x7f010055
+            static member itemIconTint = 2130772053
+            
+            // aapt resource value: 0x7f01008f
+            static member itemPadding = 2130772111
+            
+            // aapt resource value: 0x7f010058
+            static member itemTextAppearance = 2130772056
+            
+            // aapt resource value: 0x7f010056
+            static member itemTextColor = 2130772054
+            
+            // aapt resource value: 0x7f010042
+            static member keylines = 2130772034
+            
+            // aapt resource value: 0x7f010015
+            static member latLngBoundsNorthEastLatitude = 2130771989
+            
+            // aapt resource value: 0x7f010016
+            static member latLngBoundsNorthEastLongitude = 2130771990
+            
+            // aapt resource value: 0x7f010013
+            static member latLngBoundsSouthWestLatitude = 2130771987
+            
+            // aapt resource value: 0x7f010014
+            static member latLngBoundsSouthWestLongitude = 2130771988
+            
+            // aapt resource value: 0x7f010131
+            static member layout = 2130772273
             
             // aapt resource value: 0x7f01015f
-            static member zOrderOnTop = 2130772319
+            static member layoutManager = 2130772319
+            
+            // aapt resource value: 0x7f010045
+            static member layout_anchor = 2130772037
+            
+            // aapt resource value: 0x7f010047
+            static member layout_anchorGravity = 2130772039
+            
+            // aapt resource value: 0x7f010044
+            static member layout_behavior = 2130772036
+            
+            // aapt resource value: 0x7f010040
+            static member layout_collapseMode = 2130772032
+            
+            // aapt resource value: 0x7f010041
+            static member layout_collapseParallaxMultiplier = 2130772033
+            
+            // aapt resource value: 0x7f010049
+            static member layout_dodgeInsetEdges = 2130772041
+            
+            // aapt resource value: 0x7f010048
+            static member layout_insetEdge = 2130772040
+            
+            // aapt resource value: 0x7f010046
+            static member layout_keyline = 2130772038
+            
+            // aapt resource value: 0x7f01002c
+            static member layout_scrollFlags = 2130772012
+            
+            // aapt resource value: 0x7f01002d
+            static member layout_scrollInterpolator = 2130772013
+            
+            // aapt resource value: 0x7f0100f7
+            static member listChoiceBackgroundIndicator = 2130772215
+            
+            // aapt resource value: 0x7f0100d2
+            static member listDividerAlertDialog = 2130772178
+            
+            // aapt resource value: 0x7f0100a0
+            static member listItemLayout = 2130772128
+            
+            // aapt resource value: 0x7f01009d
+            static member listLayout = 2130772125
+            
+            // aapt resource value: 0x7f010117
+            static member listMenuViewStyle = 2130772247
+            
+            // aapt resource value: 0x7f0100f1
+            static member listPopupWindowStyle = 2130772209
+            
+            // aapt resource value: 0x7f0100eb
+            static member listPreferredItemHeight = 2130772203
+            
+            // aapt resource value: 0x7f0100ed
+            static member listPreferredItemHeightLarge = 2130772205
+            
+            // aapt resource value: 0x7f0100ec
+            static member listPreferredItemHeightSmall = 2130772204
+            
+            // aapt resource value: 0x7f0100ee
+            static member listPreferredItemPaddingLeft = 2130772206
+            
+            // aapt resource value: 0x7f0100ef
+            static member listPreferredItemPaddingRight = 2130772207
+            
+            // aapt resource value: 0x7f010006
+            static member liteMode = 2130771974
+            
+            // aapt resource value: 0x7f010085
+            static member logo = 2130772101
+            
+            // aapt resource value: 0x7f010157
+            static member logoDescription = 2130772311
+            
+            // aapt resource value: 0x7f010000
+            static member mapType = 2130771968
+            
+            // aapt resource value: 0x7f01005c
+            static member maxActionInlineWidth = 2130772060
+            
+            // aapt resource value: 0x7f010151
+            static member maxButtonHeight = 2130772305
+            
+            // aapt resource value: 0x7f010124
+            static member measureWithLargestChild = 2130772260
+            
+            // aapt resource value: 0x7f01001d
+            static member mediaRouteAudioTrackDrawable = 2130771997
+            
+            // aapt resource value: 0x7f01001e
+            static member mediaRouteButtonStyle = 2130771998
+            
+            // aapt resource value: 0x7f01001f
+            static member mediaRouteCloseDrawable = 2130771999
+            
+            // aapt resource value: 0x7f010020
+            static member mediaRouteControlPanelThemeOverlay = 2130772000
+            
+            // aapt resource value: 0x7f010021
+            static member mediaRouteDefaultIconDrawable = 2130772001
+            
+            // aapt resource value: 0x7f010022
+            static member mediaRoutePauseDrawable = 2130772002
+            
+            // aapt resource value: 0x7f010023
+            static member mediaRoutePlayDrawable = 2130772003
+            
+            // aapt resource value: 0x7f010024
+            static member mediaRouteSpeakerGroupIconDrawable = 2130772004
+            
+            // aapt resource value: 0x7f010025
+            static member mediaRouteSpeakerIconDrawable = 2130772005
+            
+            // aapt resource value: 0x7f010026
+            static member mediaRouteTheme = 2130772006
+            
+            // aapt resource value: 0x7f010027
+            static member mediaRouteTvIconDrawable = 2130772007
+            
+            // aapt resource value: 0x7f010054
+            static member menu = 2130772052
+            
+            // aapt resource value: 0x7f01009e
+            static member multiChoiceItemLayout = 2130772126
+            
+            // aapt resource value: 0x7f010156
+            static member navigationContentDescription = 2130772310
+            
+            // aapt resource value: 0x7f010155
+            static member navigationIcon = 2130772309
+            
+            // aapt resource value: 0x7f01007f
+            static member navigationMode = 2130772095
+            
+            // aapt resource value: 0x7f01012d
+            static member overlapAnchor = 2130772269
+            
+            // aapt resource value: 0x7f01012f
+            static member paddingBottomNoButtons = 2130772271
+            
+            // aapt resource value: 0x7f01015b
+            static member paddingEnd = 2130772315
+            
+            // aapt resource value: 0x7f01015a
+            static member paddingStart = 2130772314
+            
+            // aapt resource value: 0x7f010130
+            static member paddingTopNoTitle = 2130772272
+            
+            // aapt resource value: 0x7f0100f4
+            static member panelBackground = 2130772212
+            
+            // aapt resource value: 0x7f0100f6
+            static member panelMenuListTheme = 2130772214
+            
+            // aapt resource value: 0x7f0100f5
+            static member panelMenuListWidth = 2130772213
+            
+            // aapt resource value: 0x7f010078
+            static member passwordToggleContentDescription = 2130772088
+            
+            // aapt resource value: 0x7f010077
+            static member passwordToggleDrawable = 2130772087
+            
+            // aapt resource value: 0x7f010076
+            static member passwordToggleEnabled = 2130772086
+            
+            // aapt resource value: 0x7f010079
+            static member passwordToggleTint = 2130772089
+            
+            // aapt resource value: 0x7f01007a
+            static member passwordToggleTintMode = 2130772090
+            
+            // aapt resource value: 0x7f0100e2
+            static member popupMenuStyle = 2130772194
+            
+            // aapt resource value: 0x7f010098
+            static member popupTheme = 2130772120
+            
+            // aapt resource value: 0x7f0100e3
+            static member popupWindowStyle = 2130772195
+            
+            // aapt resource value: 0x7f01012b
+            static member preserveIconSpacing = 2130772267
+            
+            // aapt resource value: 0x7f01004f
+            static member pressedTranslationZ = 2130772047
+            
+            // aapt resource value: 0x7f01008e
+            static member progressBarPadding = 2130772110
+            
+            // aapt resource value: 0x7f01008c
+            static member progressBarStyle = 2130772108
+            
+            // aapt resource value: 0x7f01013c
+            static member queryBackground = 2130772284
+            
+            // aapt resource value: 0x7f010133
+            static member queryHint = 2130772275
+            
+            // aapt resource value: 0x7f010110
+            static member radioButtonStyle = 2130772240
+            
+            // aapt resource value: 0x7f010111
+            static member ratingBarStyle = 2130772241
+            
+            // aapt resource value: 0x7f010112
+            static member ratingBarStyleIndicator = 2130772242
+            
+            // aapt resource value: 0x7f010113
+            static member ratingBarStyleSmall = 2130772243
+            
+            // aapt resource value: 0x7f010161
+            static member reverseLayout = 2130772321
+            
+            // aapt resource value: 0x7f01004d
+            static member rippleColor = 2130772045
+            
+            // aapt resource value: 0x7f01001c
+            static member scopeUris = 2130771996
+            
+            // aapt resource value: 0x7f01003c
+            static member scrimAnimationDuration = 2130772028
+            
+            // aapt resource value: 0x7f01003b
+            static member scrimVisibleHeightTrigger = 2130772027
+            
+            // aapt resource value: 0x7f010138
+            static member searchHintIcon = 2130772280
+            
+            // aapt resource value: 0x7f010137
+            static member searchIcon = 2130772279
+            
+            // aapt resource value: 0x7f0100ea
+            static member searchViewStyle = 2130772202
+            
+            // aapt resource value: 0x7f010114
+            static member seekBarStyle = 2130772244
+            
+            // aapt resource value: 0x7f0100da
+            static member selectableItemBackground = 2130772186
+            
+            // aapt resource value: 0x7f0100db
+            static member selectableItemBackgroundBorderless = 2130772187
+            
+            // aapt resource value: 0x7f010127
+            static member showAsAction = 2130772263
+            
+            // aapt resource value: 0x7f010125
+            static member showDividers = 2130772261
+            
+            // aapt resource value: 0x7f010148
+            static member showText = 2130772296
+            
+            // aapt resource value: 0x7f0100a1
+            static member showTitle = 2130772129
+            
+            // aapt resource value: 0x7f01009f
+            static member singleChoiceItemLayout = 2130772127
+            
+            // aapt resource value: 0x7f010160
+            static member spanCount = 2130772320
+            
+            // aapt resource value: 0x7f01011d
+            static member spinBars = 2130772253
+            
+            // aapt resource value: 0x7f0100d5
+            static member spinnerDropDownItemStyle = 2130772181
+            
+            // aapt resource value: 0x7f010115
+            static member spinnerStyle = 2130772245
+            
+            // aapt resource value: 0x7f010147
+            static member splitTrack = 2130772295
+            
+            // aapt resource value: 0x7f0100a2
+            static member srcCompat = 2130772130
+            
+            // aapt resource value: 0x7f010162
+            static member stackFromEnd = 2130772322
+            
+            // aapt resource value: 0x7f01012e
+            static member state_above_anchor = 2130772270
+            
+            // aapt resource value: 0x7f01002a
+            static member state_collapsed = 2130772010
+            
+            // aapt resource value: 0x7f01002b
+            static member state_collapsible = 2130772011
+            
+            // aapt resource value: 0x7f010043
+            static member statusBarBackground = 2130772035
+            
+            // aapt resource value: 0x7f010039
+            static member statusBarScrim = 2130772025
+            
+            // aapt resource value: 0x7f01012c
+            static member subMenuArrow = 2130772268
+            
+            // aapt resource value: 0x7f01013d
+            static member submitBackground = 2130772285
+            
+            // aapt resource value: 0x7f010081
+            static member subtitle = 2130772097
+            
+            // aapt resource value: 0x7f01014a
+            static member subtitleTextAppearance = 2130772298
+            
+            // aapt resource value: 0x7f010159
+            static member subtitleTextColor = 2130772313
+            
+            // aapt resource value: 0x7f010083
+            static member subtitleTextStyle = 2130772099
+            
+            // aapt resource value: 0x7f01013b
+            static member suggestionRowLayout = 2130772283
+            
+            // aapt resource value: 0x7f010145
+            static member switchMinWidth = 2130772293
+            
+            // aapt resource value: 0x7f010146
+            static member switchPadding = 2130772294
+            
+            // aapt resource value: 0x7f010116
+            static member switchStyle = 2130772246
+            
+            // aapt resource value: 0x7f010144
+            static member switchTextAppearance = 2130772292
+            
+            // aapt resource value: 0x7f010060
+            static member tabBackground = 2130772064
+            
+            // aapt resource value: 0x7f01005f
+            static member tabContentStart = 2130772063
+            
+            // aapt resource value: 0x7f010062
+            static member tabGravity = 2130772066
+            
+            // aapt resource value: 0x7f01005d
+            static member tabIndicatorColor = 2130772061
+            
+            // aapt resource value: 0x7f01005e
+            static member tabIndicatorHeight = 2130772062
+            
+            // aapt resource value: 0x7f010064
+            static member tabMaxWidth = 2130772068
+            
+            // aapt resource value: 0x7f010063
+            static member tabMinWidth = 2130772067
+            
+            // aapt resource value: 0x7f010061
+            static member tabMode = 2130772065
+            
+            // aapt resource value: 0x7f01006c
+            static member tabPadding = 2130772076
+            
+            // aapt resource value: 0x7f01006b
+            static member tabPaddingBottom = 2130772075
+            
+            // aapt resource value: 0x7f01006a
+            static member tabPaddingEnd = 2130772074
+            
+            // aapt resource value: 0x7f010068
+            static member tabPaddingStart = 2130772072
+            
+            // aapt resource value: 0x7f010069
+            static member tabPaddingTop = 2130772073
+            
+            // aapt resource value: 0x7f010067
+            static member tabSelectedTextColor = 2130772071
+            
+            // aapt resource value: 0x7f010065
+            static member tabTextAppearance = 2130772069
+            
+            // aapt resource value: 0x7f010066
+            static member tabTextColor = 2130772070
+            
+            // aapt resource value: 0x7f0100a6
+            static member textAllCaps = 2130772134
+            
+            // aapt resource value: 0x7f0100cd
+            static member textAppearanceLargePopupMenu = 2130772173
+            
+            // aapt resource value: 0x7f0100f2
+            static member textAppearanceListItem = 2130772210
+            
+            // aapt resource value: 0x7f0100f3
+            static member textAppearanceListItemSmall = 2130772211
+            
+            // aapt resource value: 0x7f0100cf
+            static member textAppearancePopupMenuHeader = 2130772175
+            
+            // aapt resource value: 0x7f0100e8
+            static member textAppearanceSearchResultSubtitle = 2130772200
+            
+            // aapt resource value: 0x7f0100e7
+            static member textAppearanceSearchResultTitle = 2130772199
+            
+            // aapt resource value: 0x7f0100ce
+            static member textAppearanceSmallPopupMenu = 2130772174
+            
+            // aapt resource value: 0x7f010106
+            static member textColorAlertDialogListItem = 2130772230
+            
+            // aapt resource value: 0x7f01004c
+            static member textColorError = 2130772044
+            
+            // aapt resource value: 0x7f0100e9
+            static member textColorSearchUrl = 2130772201
+            
+            // aapt resource value: 0x7f01015c
+            static member theme = 2130772316
+            
+            // aapt resource value: 0x7f010123
+            static member thickness = 2130772259
+            
+            // aapt resource value: 0x7f010143
+            static member thumbTextPadding = 2130772291
+            
+            // aapt resource value: 0x7f01013e
+            static member thumbTint = 2130772286
+            
+            // aapt resource value: 0x7f01013f
+            static member thumbTintMode = 2130772287
+            
+            // aapt resource value: 0x7f0100a3
+            static member tickMark = 2130772131
+            
+            // aapt resource value: 0x7f0100a4
+            static member tickMarkTint = 2130772132
+            
+            // aapt resource value: 0x7f0100a5
+            static member tickMarkTintMode = 2130772133
+            
+            // aapt resource value: 0x7f01007e
+            static member title = 2130772094
+            
+            // aapt resource value: 0x7f01003f
+            static member titleEnabled = 2130772031
+            
+            // aapt resource value: 0x7f01014b
+            static member titleMargin = 2130772299
+            
+            // aapt resource value: 0x7f01014f
+            static member titleMarginBottom = 2130772303
+            
+            // aapt resource value: 0x7f01014d
+            static member titleMarginEnd = 2130772301
+            
+            // aapt resource value: 0x7f01014c
+            static member titleMarginStart = 2130772300
+            
+            // aapt resource value: 0x7f01014e
+            static member titleMarginTop = 2130772302
+            
+            // aapt resource value: 0x7f010150
+            static member titleMargins = 2130772304
+            
+            // aapt resource value: 0x7f010149
+            static member titleTextAppearance = 2130772297
+            
+            // aapt resource value: 0x7f010158
+            static member titleTextColor = 2130772312
+            
+            // aapt resource value: 0x7f010082
+            static member titleTextStyle = 2130772098
+            
+            // aapt resource value: 0x7f01003a
+            static member toolbarId = 2130772026
+            
+            // aapt resource value: 0x7f0100e1
+            static member toolbarNavigationButtonStyle = 2130772193
+            
+            // aapt resource value: 0x7f0100e0
+            static member toolbarStyle = 2130772192
+            
+            // aapt resource value: 0x7f010140
+            static member track = 2130772288
+            
+            // aapt resource value: 0x7f010141
+            static member trackTint = 2130772289
+            
+            // aapt resource value: 0x7f010142
+            static member trackTintMode = 2130772290
+            
+            // aapt resource value: 0x7f010007
+            static member uiCompass = 2130771975
+            
+            // aapt resource value: 0x7f01000f
+            static member uiMapToolbar = 2130771983
+            
+            // aapt resource value: 0x7f010008
+            static member uiRotateGestures = 2130771976
+            
+            // aapt resource value: 0x7f010009
+            static member uiScrollGestures = 2130771977
+            
+            // aapt resource value: 0x7f01000a
+            static member uiTiltGestures = 2130771978
+            
+            // aapt resource value: 0x7f01000b
+            static member uiZoomControls = 2130771979
+            
+            // aapt resource value: 0x7f01000c
+            static member uiZoomGestures = 2130771980
+            
+            // aapt resource value: 0x7f010051
+            static member useCompatPadding = 2130772049
+            
+            // aapt resource value: 0x7f01000d
+            static member useViewLifecycle = 2130771981
+            
+            // aapt resource value: 0x7f010139
+            static member voiceIcon = 2130772281
+            
+            // aapt resource value: 0x7f0100a7
+            static member windowActionBar = 2130772135
+            
+            // aapt resource value: 0x7f0100a9
+            static member windowActionBarOverlay = 2130772137
+            
+            // aapt resource value: 0x7f0100aa
+            static member windowActionModeOverlay = 2130772138
+            
+            // aapt resource value: 0x7f0100ae
+            static member windowFixedHeightMajor = 2130772142
+            
+            // aapt resource value: 0x7f0100ac
+            static member windowFixedHeightMinor = 2130772140
+            
+            // aapt resource value: 0x7f0100ab
+            static member windowFixedWidthMajor = 2130772139
+            
+            // aapt resource value: 0x7f0100ad
+            static member windowFixedWidthMinor = 2130772141
+            
+            // aapt resource value: 0x7f0100af
+            static member windowMinWidthMajor = 2130772143
+            
+            // aapt resource value: 0x7f0100b0
+            static member windowMinWidthMinor = 2130772144
+            
+            // aapt resource value: 0x7f0100a8
+            static member windowNoTitle = 2130772136
+            
+            // aapt resource value: 0x7f01000e
+            static member zOrderOnTop = 2130771982
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
 
 
@@ -1240,332 +1240,332 @@ namespace Astrid.Mobile.Droid
         
         (* partial *)Resource_Color () =
             static do Android.Runtime.ResourceIdManager.UpdateIdValues()
-            // aapt resource value: 0x7f080052
-            static member abc_background_cache_hint_selector_material_dark = 2131230802
+            // aapt resource value: 0x7f070052
+            static member abc_background_cache_hint_selector_material_dark = 2131165266
             
-            // aapt resource value: 0x7f080053
-            static member abc_background_cache_hint_selector_material_light = 2131230803
+            // aapt resource value: 0x7f070053
+            static member abc_background_cache_hint_selector_material_light = 2131165267
             
-            // aapt resource value: 0x7f080054
-            static member abc_btn_colored_borderless_text_material = 2131230804
+            // aapt resource value: 0x7f070054
+            static member abc_btn_colored_borderless_text_material = 2131165268
             
-            // aapt resource value: 0x7f080055
-            static member abc_btn_colored_text_material = 2131230805
+            // aapt resource value: 0x7f070055
+            static member abc_btn_colored_text_material = 2131165269
             
-            // aapt resource value: 0x7f080056
-            static member abc_color_highlight_material = 2131230806
+            // aapt resource value: 0x7f070056
+            static member abc_color_highlight_material = 2131165270
             
-            // aapt resource value: 0x7f080057
-            static member abc_hint_foreground_material_dark = 2131230807
+            // aapt resource value: 0x7f070057
+            static member abc_hint_foreground_material_dark = 2131165271
             
-            // aapt resource value: 0x7f080058
-            static member abc_hint_foreground_material_light = 2131230808
+            // aapt resource value: 0x7f070058
+            static member abc_hint_foreground_material_light = 2131165272
             
-            // aapt resource value: 0x7f080010
-            static member abc_input_method_navigation_guard = 2131230736
+            // aapt resource value: 0x7f070014
+            static member abc_input_method_navigation_guard = 2131165204
             
-            // aapt resource value: 0x7f080059
-            static member abc_primary_text_disable_only_material_dark = 2131230809
+            // aapt resource value: 0x7f070059
+            static member abc_primary_text_disable_only_material_dark = 2131165273
             
-            // aapt resource value: 0x7f08005a
-            static member abc_primary_text_disable_only_material_light = 2131230810
+            // aapt resource value: 0x7f07005a
+            static member abc_primary_text_disable_only_material_light = 2131165274
             
-            // aapt resource value: 0x7f08005b
-            static member abc_primary_text_material_dark = 2131230811
+            // aapt resource value: 0x7f07005b
+            static member abc_primary_text_material_dark = 2131165275
             
-            // aapt resource value: 0x7f08005c
-            static member abc_primary_text_material_light = 2131230812
+            // aapt resource value: 0x7f07005c
+            static member abc_primary_text_material_light = 2131165276
             
-            // aapt resource value: 0x7f08005d
-            static member abc_search_url_text = 2131230813
+            // aapt resource value: 0x7f07005d
+            static member abc_search_url_text = 2131165277
             
-            // aapt resource value: 0x7f080011
-            static member abc_search_url_text_normal = 2131230737
+            // aapt resource value: 0x7f070015
+            static member abc_search_url_text_normal = 2131165205
             
-            // aapt resource value: 0x7f080012
-            static member abc_search_url_text_pressed = 2131230738
+            // aapt resource value: 0x7f070016
+            static member abc_search_url_text_pressed = 2131165206
             
-            // aapt resource value: 0x7f080013
-            static member abc_search_url_text_selected = 2131230739
+            // aapt resource value: 0x7f070017
+            static member abc_search_url_text_selected = 2131165207
             
-            // aapt resource value: 0x7f08005e
-            static member abc_secondary_text_material_dark = 2131230814
+            // aapt resource value: 0x7f07005e
+            static member abc_secondary_text_material_dark = 2131165278
             
-            // aapt resource value: 0x7f08005f
-            static member abc_secondary_text_material_light = 2131230815
+            // aapt resource value: 0x7f07005f
+            static member abc_secondary_text_material_light = 2131165279
             
-            // aapt resource value: 0x7f080060
-            static member abc_tint_btn_checkable = 2131230816
+            // aapt resource value: 0x7f070060
+            static member abc_tint_btn_checkable = 2131165280
             
-            // aapt resource value: 0x7f080061
-            static member abc_tint_default = 2131230817
+            // aapt resource value: 0x7f070061
+            static member abc_tint_default = 2131165281
             
-            // aapt resource value: 0x7f080062
-            static member abc_tint_edittext = 2131230818
+            // aapt resource value: 0x7f070062
+            static member abc_tint_edittext = 2131165282
             
-            // aapt resource value: 0x7f080063
-            static member abc_tint_seek_thumb = 2131230819
+            // aapt resource value: 0x7f070063
+            static member abc_tint_seek_thumb = 2131165283
             
-            // aapt resource value: 0x7f080064
-            static member abc_tint_spinner = 2131230820
+            // aapt resource value: 0x7f070064
+            static member abc_tint_spinner = 2131165284
             
-            // aapt resource value: 0x7f080065
-            static member abc_tint_switch_thumb = 2131230821
+            // aapt resource value: 0x7f070065
+            static member abc_tint_switch_thumb = 2131165285
             
-            // aapt resource value: 0x7f080066
-            static member abc_tint_switch_track = 2131230822
+            // aapt resource value: 0x7f070066
+            static member abc_tint_switch_track = 2131165286
             
-            // aapt resource value: 0x7f080014
-            static member accent_material_dark = 2131230740
+            // aapt resource value: 0x7f070018
+            static member accent_material_dark = 2131165208
             
-            // aapt resource value: 0x7f080015
-            static member accent_material_light = 2131230741
+            // aapt resource value: 0x7f070019
+            static member accent_material_light = 2131165209
             
-            // aapt resource value: 0x7f080016
-            static member background_floating_material_dark = 2131230742
+            // aapt resource value: 0x7f07001a
+            static member background_floating_material_dark = 2131165210
             
-            // aapt resource value: 0x7f080017
-            static member background_floating_material_light = 2131230743
+            // aapt resource value: 0x7f07001b
+            static member background_floating_material_light = 2131165211
             
-            // aapt resource value: 0x7f080018
-            static member background_material_dark = 2131230744
+            // aapt resource value: 0x7f07001c
+            static member background_material_dark = 2131165212
             
-            // aapt resource value: 0x7f080019
-            static member background_material_light = 2131230745
+            // aapt resource value: 0x7f07001d
+            static member background_material_light = 2131165213
             
-            // aapt resource value: 0x7f08001a
-            static member bright_foreground_disabled_material_dark = 2131230746
+            // aapt resource value: 0x7f07001e
+            static member bright_foreground_disabled_material_dark = 2131165214
             
-            // aapt resource value: 0x7f08001b
-            static member bright_foreground_disabled_material_light = 2131230747
+            // aapt resource value: 0x7f07001f
+            static member bright_foreground_disabled_material_light = 2131165215
             
-            // aapt resource value: 0x7f08001c
-            static member bright_foreground_inverse_material_dark = 2131230748
+            // aapt resource value: 0x7f070020
+            static member bright_foreground_inverse_material_dark = 2131165216
             
-            // aapt resource value: 0x7f08001d
-            static member bright_foreground_inverse_material_light = 2131230749
+            // aapt resource value: 0x7f070021
+            static member bright_foreground_inverse_material_light = 2131165217
             
-            // aapt resource value: 0x7f08001e
-            static member bright_foreground_material_dark = 2131230750
+            // aapt resource value: 0x7f070022
+            static member bright_foreground_material_dark = 2131165218
             
-            // aapt resource value: 0x7f08001f
-            static member bright_foreground_material_light = 2131230751
+            // aapt resource value: 0x7f070023
+            static member bright_foreground_material_light = 2131165219
             
-            // aapt resource value: 0x7f080020
-            static member button_material_dark = 2131230752
+            // aapt resource value: 0x7f070024
+            static member button_material_dark = 2131165220
             
-            // aapt resource value: 0x7f080021
-            static member button_material_light = 2131230753
+            // aapt resource value: 0x7f070025
+            static member button_material_light = 2131165221
             
-            // aapt resource value: 0x7f080000
-            static member cardview_dark_background = 2131230720
+            // aapt resource value: 0x7f07004e
+            static member cardview_dark_background = 2131165262
             
-            // aapt resource value: 0x7f080001
-            static member cardview_light_background = 2131230721
+            // aapt resource value: 0x7f07004f
+            static member cardview_light_background = 2131165263
             
-            // aapt resource value: 0x7f080002
-            static member cardview_shadow_end_color = 2131230722
+            // aapt resource value: 0x7f070050
+            static member cardview_shadow_end_color = 2131165264
             
-            // aapt resource value: 0x7f080003
-            static member cardview_shadow_start_color = 2131230723
+            // aapt resource value: 0x7f070051
+            static member cardview_shadow_start_color = 2131165265
             
-            // aapt resource value: 0x7f080067
-            static member common_google_signin_btn_text_dark = 2131230823
+            // aapt resource value: 0x7f070067
+            static member common_google_signin_btn_text_dark = 2131165287
             
-            // aapt resource value: 0x7f08004a
-            static member common_google_signin_btn_text_dark_default = 2131230794
+            // aapt resource value: 0x7f070000
+            static member common_google_signin_btn_text_dark_default = 2131165184
             
-            // aapt resource value: 0x7f08004b
-            static member common_google_signin_btn_text_dark_disabled = 2131230795
+            // aapt resource value: 0x7f070001
+            static member common_google_signin_btn_text_dark_disabled = 2131165185
             
-            // aapt resource value: 0x7f08004c
-            static member common_google_signin_btn_text_dark_focused = 2131230796
+            // aapt resource value: 0x7f070002
+            static member common_google_signin_btn_text_dark_focused = 2131165186
             
-            // aapt resource value: 0x7f08004d
-            static member common_google_signin_btn_text_dark_pressed = 2131230797
+            // aapt resource value: 0x7f070003
+            static member common_google_signin_btn_text_dark_pressed = 2131165187
             
-            // aapt resource value: 0x7f080068
-            static member common_google_signin_btn_text_light = 2131230824
+            // aapt resource value: 0x7f070068
+            static member common_google_signin_btn_text_light = 2131165288
             
-            // aapt resource value: 0x7f08004e
-            static member common_google_signin_btn_text_light_default = 2131230798
+            // aapt resource value: 0x7f070004
+            static member common_google_signin_btn_text_light_default = 2131165188
             
-            // aapt resource value: 0x7f08004f
-            static member common_google_signin_btn_text_light_disabled = 2131230799
+            // aapt resource value: 0x7f070005
+            static member common_google_signin_btn_text_light_disabled = 2131165189
             
-            // aapt resource value: 0x7f080050
-            static member common_google_signin_btn_text_light_focused = 2131230800
+            // aapt resource value: 0x7f070006
+            static member common_google_signin_btn_text_light_focused = 2131165190
             
-            // aapt resource value: 0x7f080051
-            static member common_google_signin_btn_text_light_pressed = 2131230801
+            // aapt resource value: 0x7f070007
+            static member common_google_signin_btn_text_light_pressed = 2131165191
             
-            // aapt resource value: 0x7f080004
-            static member design_bottom_navigation_shadow_color = 2131230724
+            // aapt resource value: 0x7f070008
+            static member design_bottom_navigation_shadow_color = 2131165192
             
-            // aapt resource value: 0x7f080069
-            static member design_error = 2131230825
+            // aapt resource value: 0x7f070069
+            static member design_error = 2131165289
             
-            // aapt resource value: 0x7f080005
-            static member design_fab_shadow_end_color = 2131230725
+            // aapt resource value: 0x7f070009
+            static member design_fab_shadow_end_color = 2131165193
             
-            // aapt resource value: 0x7f080006
-            static member design_fab_shadow_mid_color = 2131230726
+            // aapt resource value: 0x7f07000a
+            static member design_fab_shadow_mid_color = 2131165194
             
-            // aapt resource value: 0x7f080007
-            static member design_fab_shadow_start_color = 2131230727
+            // aapt resource value: 0x7f07000b
+            static member design_fab_shadow_start_color = 2131165195
             
-            // aapt resource value: 0x7f080008
-            static member design_fab_stroke_end_inner_color = 2131230728
+            // aapt resource value: 0x7f07000c
+            static member design_fab_stroke_end_inner_color = 2131165196
             
-            // aapt resource value: 0x7f080009
-            static member design_fab_stroke_end_outer_color = 2131230729
+            // aapt resource value: 0x7f07000d
+            static member design_fab_stroke_end_outer_color = 2131165197
             
-            // aapt resource value: 0x7f08000a
-            static member design_fab_stroke_top_inner_color = 2131230730
+            // aapt resource value: 0x7f07000e
+            static member design_fab_stroke_top_inner_color = 2131165198
             
-            // aapt resource value: 0x7f08000b
-            static member design_fab_stroke_top_outer_color = 2131230731
+            // aapt resource value: 0x7f07000f
+            static member design_fab_stroke_top_outer_color = 2131165199
             
-            // aapt resource value: 0x7f08000c
-            static member design_snackbar_background_color = 2131230732
+            // aapt resource value: 0x7f070010
+            static member design_snackbar_background_color = 2131165200
             
-            // aapt resource value: 0x7f08000d
-            static member design_textinput_error_color_dark = 2131230733
+            // aapt resource value: 0x7f070011
+            static member design_textinput_error_color_dark = 2131165201
             
-            // aapt resource value: 0x7f08000e
-            static member design_textinput_error_color_light = 2131230734
+            // aapt resource value: 0x7f070012
+            static member design_textinput_error_color_light = 2131165202
             
-            // aapt resource value: 0x7f08006a
-            static member design_tint_password_toggle = 2131230826
+            // aapt resource value: 0x7f07006a
+            static member design_tint_password_toggle = 2131165290
             
-            // aapt resource value: 0x7f080022
-            static member dim_foreground_disabled_material_dark = 2131230754
+            // aapt resource value: 0x7f070026
+            static member dim_foreground_disabled_material_dark = 2131165222
             
-            // aapt resource value: 0x7f080023
-            static member dim_foreground_disabled_material_light = 2131230755
+            // aapt resource value: 0x7f070027
+            static member dim_foreground_disabled_material_light = 2131165223
             
-            // aapt resource value: 0x7f080024
-            static member dim_foreground_material_dark = 2131230756
+            // aapt resource value: 0x7f070028
+            static member dim_foreground_material_dark = 2131165224
             
-            // aapt resource value: 0x7f080025
-            static member dim_foreground_material_light = 2131230757
+            // aapt resource value: 0x7f070029
+            static member dim_foreground_material_light = 2131165225
             
-            // aapt resource value: 0x7f080026
-            static member foreground_material_dark = 2131230758
+            // aapt resource value: 0x7f07002a
+            static member foreground_material_dark = 2131165226
             
-            // aapt resource value: 0x7f080027
-            static member foreground_material_light = 2131230759
+            // aapt resource value: 0x7f07002b
+            static member foreground_material_light = 2131165227
             
-            // aapt resource value: 0x7f080028
-            static member highlighted_text_material_dark = 2131230760
+            // aapt resource value: 0x7f07002c
+            static member highlighted_text_material_dark = 2131165228
             
-            // aapt resource value: 0x7f080029
-            static member highlighted_text_material_light = 2131230761
+            // aapt resource value: 0x7f07002d
+            static member highlighted_text_material_light = 2131165229
             
-            // aapt resource value: 0x7f08002a
-            static member material_blue_grey_800 = 2131230762
+            // aapt resource value: 0x7f07002e
+            static member material_blue_grey_800 = 2131165230
             
-            // aapt resource value: 0x7f08002b
-            static member material_blue_grey_900 = 2131230763
+            // aapt resource value: 0x7f07002f
+            static member material_blue_grey_900 = 2131165231
             
-            // aapt resource value: 0x7f08002c
-            static member material_blue_grey_950 = 2131230764
+            // aapt resource value: 0x7f070030
+            static member material_blue_grey_950 = 2131165232
             
-            // aapt resource value: 0x7f08002d
-            static member material_deep_teal_200 = 2131230765
+            // aapt resource value: 0x7f070031
+            static member material_deep_teal_200 = 2131165233
             
-            // aapt resource value: 0x7f08002e
-            static member material_deep_teal_500 = 2131230766
+            // aapt resource value: 0x7f070032
+            static member material_deep_teal_500 = 2131165234
             
-            // aapt resource value: 0x7f08002f
-            static member material_grey_100 = 2131230767
+            // aapt resource value: 0x7f070033
+            static member material_grey_100 = 2131165235
             
-            // aapt resource value: 0x7f080030
-            static member material_grey_300 = 2131230768
+            // aapt resource value: 0x7f070034
+            static member material_grey_300 = 2131165236
             
-            // aapt resource value: 0x7f080031
-            static member material_grey_50 = 2131230769
+            // aapt resource value: 0x7f070035
+            static member material_grey_50 = 2131165237
             
-            // aapt resource value: 0x7f080032
-            static member material_grey_600 = 2131230770
+            // aapt resource value: 0x7f070036
+            static member material_grey_600 = 2131165238
             
-            // aapt resource value: 0x7f080033
-            static member material_grey_800 = 2131230771
+            // aapt resource value: 0x7f070037
+            static member material_grey_800 = 2131165239
             
-            // aapt resource value: 0x7f080034
-            static member material_grey_850 = 2131230772
+            // aapt resource value: 0x7f070038
+            static member material_grey_850 = 2131165240
             
-            // aapt resource value: 0x7f080035
-            static member material_grey_900 = 2131230773
+            // aapt resource value: 0x7f070039
+            static member material_grey_900 = 2131165241
             
-            // aapt resource value: 0x7f08000f
-            static member notification_action_color_filter = 2131230735
+            // aapt resource value: 0x7f070013
+            static member notification_action_color_filter = 2131165203
             
-            // aapt resource value: 0x7f080036
-            static member notification_icon_bg_color = 2131230774
+            // aapt resource value: 0x7f07003a
+            static member notification_icon_bg_color = 2131165242
             
-            // aapt resource value: 0x7f080037
-            static member notification_material_background_media_default_color = 2131230775
+            // aapt resource value: 0x7f07003b
+            static member notification_material_background_media_default_color = 2131165243
             
-            // aapt resource value: 0x7f080038
-            static member primary_dark_material_dark = 2131230776
+            // aapt resource value: 0x7f07003c
+            static member primary_dark_material_dark = 2131165244
             
-            // aapt resource value: 0x7f080039
-            static member primary_dark_material_light = 2131230777
+            // aapt resource value: 0x7f07003d
+            static member primary_dark_material_light = 2131165245
             
-            // aapt resource value: 0x7f08003a
-            static member primary_material_dark = 2131230778
+            // aapt resource value: 0x7f07003e
+            static member primary_material_dark = 2131165246
             
-            // aapt resource value: 0x7f08003b
-            static member primary_material_light = 2131230779
+            // aapt resource value: 0x7f07003f
+            static member primary_material_light = 2131165247
             
-            // aapt resource value: 0x7f08003c
-            static member primary_text_default_material_dark = 2131230780
+            // aapt resource value: 0x7f070040
+            static member primary_text_default_material_dark = 2131165248
             
-            // aapt resource value: 0x7f08003d
-            static member primary_text_default_material_light = 2131230781
+            // aapt resource value: 0x7f070041
+            static member primary_text_default_material_light = 2131165249
             
-            // aapt resource value: 0x7f08003e
-            static member primary_text_disabled_material_dark = 2131230782
+            // aapt resource value: 0x7f070042
+            static member primary_text_disabled_material_dark = 2131165250
             
-            // aapt resource value: 0x7f08003f
-            static member primary_text_disabled_material_light = 2131230783
+            // aapt resource value: 0x7f070043
+            static member primary_text_disabled_material_light = 2131165251
             
-            // aapt resource value: 0x7f080040
-            static member ripple_material_dark = 2131230784
+            // aapt resource value: 0x7f070044
+            static member ripple_material_dark = 2131165252
             
-            // aapt resource value: 0x7f080041
-            static member ripple_material_light = 2131230785
+            // aapt resource value: 0x7f070045
+            static member ripple_material_light = 2131165253
             
-            // aapt resource value: 0x7f080042
-            static member secondary_text_default_material_dark = 2131230786
+            // aapt resource value: 0x7f070046
+            static member secondary_text_default_material_dark = 2131165254
             
-            // aapt resource value: 0x7f080043
-            static member secondary_text_default_material_light = 2131230787
+            // aapt resource value: 0x7f070047
+            static member secondary_text_default_material_light = 2131165255
             
-            // aapt resource value: 0x7f080044
-            static member secondary_text_disabled_material_dark = 2131230788
+            // aapt resource value: 0x7f070048
+            static member secondary_text_disabled_material_dark = 2131165256
             
-            // aapt resource value: 0x7f080045
-            static member secondary_text_disabled_material_light = 2131230789
+            // aapt resource value: 0x7f070049
+            static member secondary_text_disabled_material_light = 2131165257
             
-            // aapt resource value: 0x7f080046
-            static member switch_thumb_disabled_material_dark = 2131230790
+            // aapt resource value: 0x7f07004a
+            static member switch_thumb_disabled_material_dark = 2131165258
             
-            // aapt resource value: 0x7f080047
-            static member switch_thumb_disabled_material_light = 2131230791
+            // aapt resource value: 0x7f07004b
+            static member switch_thumb_disabled_material_light = 2131165259
             
-            // aapt resource value: 0x7f08006b
-            static member switch_thumb_material_dark = 2131230827
+            // aapt resource value: 0x7f07006b
+            static member switch_thumb_material_dark = 2131165291
             
-            // aapt resource value: 0x7f08006c
-            static member switch_thumb_material_light = 2131230828
+            // aapt resource value: 0x7f07006c
+            static member switch_thumb_material_light = 2131165292
             
-            // aapt resource value: 0x7f080048
-            static member switch_thumb_normal_material_dark = 2131230792
+            // aapt resource value: 0x7f07004c
+            static member switch_thumb_normal_material_dark = 2131165260
             
-            // aapt resource value: 0x7f080049
-            static member switch_thumb_normal_material_light = 2131230793
+            // aapt resource value: 0x7f07004d
+            static member switch_thumb_normal_material_light = 2131165261
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
 
 
@@ -1574,449 +1574,449 @@ namespace Astrid.Mobile.Droid
         
         (* partial *)Resource_Dimension () =
             static do Android.Runtime.ResourceIdManager.UpdateIdValues()
-            // aapt resource value: 0x7f09003b
-            static member abc_action_bar_content_inset_material = 2131296315
+            // aapt resource value: 0x7f0a0038
+            static member abc_action_bar_content_inset_material = 2131361848
             
-            // aapt resource value: 0x7f09003c
-            static member abc_action_bar_content_inset_with_nav = 2131296316
+            // aapt resource value: 0x7f0a0039
+            static member abc_action_bar_content_inset_with_nav = 2131361849
             
-            // aapt resource value: 0x7f090030
-            static member abc_action_bar_default_height_material = 2131296304
+            // aapt resource value: 0x7f0a002d
+            static member abc_action_bar_default_height_material = 2131361837
             
-            // aapt resource value: 0x7f09003d
-            static member abc_action_bar_default_padding_end_material = 2131296317
+            // aapt resource value: 0x7f0a003a
+            static member abc_action_bar_default_padding_end_material = 2131361850
             
-            // aapt resource value: 0x7f09003e
-            static member abc_action_bar_default_padding_start_material = 2131296318
+            // aapt resource value: 0x7f0a003b
+            static member abc_action_bar_default_padding_start_material = 2131361851
             
-            // aapt resource value: 0x7f090044
-            static member abc_action_bar_elevation_material = 2131296324
+            // aapt resource value: 0x7f0a0041
+            static member abc_action_bar_elevation_material = 2131361857
             
-            // aapt resource value: 0x7f090045
-            static member abc_action_bar_icon_vertical_padding_material = 2131296325
+            // aapt resource value: 0x7f0a0042
+            static member abc_action_bar_icon_vertical_padding_material = 2131361858
             
-            // aapt resource value: 0x7f090046
-            static member abc_action_bar_overflow_padding_end_material = 2131296326
+            // aapt resource value: 0x7f0a0043
+            static member abc_action_bar_overflow_padding_end_material = 2131361859
             
-            // aapt resource value: 0x7f090047
-            static member abc_action_bar_overflow_padding_start_material = 2131296327
+            // aapt resource value: 0x7f0a0044
+            static member abc_action_bar_overflow_padding_start_material = 2131361860
             
-            // aapt resource value: 0x7f090031
-            static member abc_action_bar_progress_bar_size = 2131296305
+            // aapt resource value: 0x7f0a002e
+            static member abc_action_bar_progress_bar_size = 2131361838
             
-            // aapt resource value: 0x7f090048
-            static member abc_action_bar_stacked_max_height = 2131296328
+            // aapt resource value: 0x7f0a0045
+            static member abc_action_bar_stacked_max_height = 2131361861
             
-            // aapt resource value: 0x7f090049
-            static member abc_action_bar_stacked_tab_max_width = 2131296329
+            // aapt resource value: 0x7f0a0046
+            static member abc_action_bar_stacked_tab_max_width = 2131361862
             
-            // aapt resource value: 0x7f09004a
-            static member abc_action_bar_subtitle_bottom_margin_material = 2131296330
+            // aapt resource value: 0x7f0a0047
+            static member abc_action_bar_subtitle_bottom_margin_material = 2131361863
             
-            // aapt resource value: 0x7f09004b
-            static member abc_action_bar_subtitle_top_margin_material = 2131296331
+            // aapt resource value: 0x7f0a0048
+            static member abc_action_bar_subtitle_top_margin_material = 2131361864
             
-            // aapt resource value: 0x7f09004c
-            static member abc_action_button_min_height_material = 2131296332
+            // aapt resource value: 0x7f0a0049
+            static member abc_action_button_min_height_material = 2131361865
             
-            // aapt resource value: 0x7f09004d
-            static member abc_action_button_min_width_material = 2131296333
+            // aapt resource value: 0x7f0a004a
+            static member abc_action_button_min_width_material = 2131361866
             
-            // aapt resource value: 0x7f09004e
-            static member abc_action_button_min_width_overflow_material = 2131296334
+            // aapt resource value: 0x7f0a004b
+            static member abc_action_button_min_width_overflow_material = 2131361867
             
-            // aapt resource value: 0x7f09002f
-            static member abc_alert_dialog_button_bar_height = 2131296303
+            // aapt resource value: 0x7f0a002c
+            static member abc_alert_dialog_button_bar_height = 2131361836
             
-            // aapt resource value: 0x7f09004f
-            static member abc_button_inset_horizontal_material = 2131296335
+            // aapt resource value: 0x7f0a004c
+            static member abc_button_inset_horizontal_material = 2131361868
             
-            // aapt resource value: 0x7f090050
-            static member abc_button_inset_vertical_material = 2131296336
+            // aapt resource value: 0x7f0a004d
+            static member abc_button_inset_vertical_material = 2131361869
             
-            // aapt resource value: 0x7f090051
-            static member abc_button_padding_horizontal_material = 2131296337
+            // aapt resource value: 0x7f0a004e
+            static member abc_button_padding_horizontal_material = 2131361870
             
-            // aapt resource value: 0x7f090052
-            static member abc_button_padding_vertical_material = 2131296338
+            // aapt resource value: 0x7f0a004f
+            static member abc_button_padding_vertical_material = 2131361871
             
-            // aapt resource value: 0x7f090053
-            static member abc_cascading_menus_min_smallest_width = 2131296339
+            // aapt resource value: 0x7f0a0050
+            static member abc_cascading_menus_min_smallest_width = 2131361872
             
-            // aapt resource value: 0x7f090034
-            static member abc_config_prefDialogWidth = 2131296308
+            // aapt resource value: 0x7f0a0031
+            static member abc_config_prefDialogWidth = 2131361841
             
-            // aapt resource value: 0x7f090054
-            static member abc_control_corner_material = 2131296340
+            // aapt resource value: 0x7f0a0051
+            static member abc_control_corner_material = 2131361873
             
-            // aapt resource value: 0x7f090055
-            static member abc_control_inset_material = 2131296341
+            // aapt resource value: 0x7f0a0052
+            static member abc_control_inset_material = 2131361874
             
-            // aapt resource value: 0x7f090056
-            static member abc_control_padding_material = 2131296342
+            // aapt resource value: 0x7f0a0053
+            static member abc_control_padding_material = 2131361875
             
-            // aapt resource value: 0x7f090035
-            static member abc_dialog_fixed_height_major = 2131296309
+            // aapt resource value: 0x7f0a0032
+            static member abc_dialog_fixed_height_major = 2131361842
             
-            // aapt resource value: 0x7f090036
-            static member abc_dialog_fixed_height_minor = 2131296310
+            // aapt resource value: 0x7f0a0033
+            static member abc_dialog_fixed_height_minor = 2131361843
             
-            // aapt resource value: 0x7f090037
-            static member abc_dialog_fixed_width_major = 2131296311
+            // aapt resource value: 0x7f0a0034
+            static member abc_dialog_fixed_width_major = 2131361844
             
-            // aapt resource value: 0x7f090038
-            static member abc_dialog_fixed_width_minor = 2131296312
+            // aapt resource value: 0x7f0a0035
+            static member abc_dialog_fixed_width_minor = 2131361845
             
-            // aapt resource value: 0x7f090057
-            static member abc_dialog_list_padding_bottom_no_buttons = 2131296343
+            // aapt resource value: 0x7f0a0054
+            static member abc_dialog_list_padding_bottom_no_buttons = 2131361876
             
-            // aapt resource value: 0x7f090058
-            static member abc_dialog_list_padding_top_no_title = 2131296344
+            // aapt resource value: 0x7f0a0055
+            static member abc_dialog_list_padding_top_no_title = 2131361877
             
-            // aapt resource value: 0x7f090039
-            static member abc_dialog_min_width_major = 2131296313
+            // aapt resource value: 0x7f0a0036
+            static member abc_dialog_min_width_major = 2131361846
             
-            // aapt resource value: 0x7f09003a
-            static member abc_dialog_min_width_minor = 2131296314
+            // aapt resource value: 0x7f0a0037
+            static member abc_dialog_min_width_minor = 2131361847
             
-            // aapt resource value: 0x7f090059
-            static member abc_dialog_padding_material = 2131296345
+            // aapt resource value: 0x7f0a0056
+            static member abc_dialog_padding_material = 2131361878
             
-            // aapt resource value: 0x7f09005a
-            static member abc_dialog_padding_top_material = 2131296346
+            // aapt resource value: 0x7f0a0057
+            static member abc_dialog_padding_top_material = 2131361879
             
-            // aapt resource value: 0x7f09005b
-            static member abc_dialog_title_divider_material = 2131296347
+            // aapt resource value: 0x7f0a0058
+            static member abc_dialog_title_divider_material = 2131361880
             
-            // aapt resource value: 0x7f09005c
-            static member abc_disabled_alpha_material_dark = 2131296348
+            // aapt resource value: 0x7f0a0059
+            static member abc_disabled_alpha_material_dark = 2131361881
             
-            // aapt resource value: 0x7f09005d
-            static member abc_disabled_alpha_material_light = 2131296349
+            // aapt resource value: 0x7f0a005a
+            static member abc_disabled_alpha_material_light = 2131361882
             
-            // aapt resource value: 0x7f09005e
-            static member abc_dropdownitem_icon_width = 2131296350
+            // aapt resource value: 0x7f0a005b
+            static member abc_dropdownitem_icon_width = 2131361883
             
-            // aapt resource value: 0x7f09005f
-            static member abc_dropdownitem_text_padding_left = 2131296351
+            // aapt resource value: 0x7f0a005c
+            static member abc_dropdownitem_text_padding_left = 2131361884
             
-            // aapt resource value: 0x7f090060
-            static member abc_dropdownitem_text_padding_right = 2131296352
+            // aapt resource value: 0x7f0a005d
+            static member abc_dropdownitem_text_padding_right = 2131361885
             
-            // aapt resource value: 0x7f090061
-            static member abc_edit_text_inset_bottom_material = 2131296353
+            // aapt resource value: 0x7f0a005e
+            static member abc_edit_text_inset_bottom_material = 2131361886
             
-            // aapt resource value: 0x7f090062
-            static member abc_edit_text_inset_horizontal_material = 2131296354
+            // aapt resource value: 0x7f0a005f
+            static member abc_edit_text_inset_horizontal_material = 2131361887
             
-            // aapt resource value: 0x7f090063
-            static member abc_edit_text_inset_top_material = 2131296355
+            // aapt resource value: 0x7f0a0060
+            static member abc_edit_text_inset_top_material = 2131361888
             
-            // aapt resource value: 0x7f090064
-            static member abc_floating_window_z = 2131296356
+            // aapt resource value: 0x7f0a0061
+            static member abc_floating_window_z = 2131361889
             
-            // aapt resource value: 0x7f090065
-            static member abc_list_item_padding_horizontal_material = 2131296357
+            // aapt resource value: 0x7f0a0062
+            static member abc_list_item_padding_horizontal_material = 2131361890
             
-            // aapt resource value: 0x7f090066
-            static member abc_panel_menu_list_width = 2131296358
+            // aapt resource value: 0x7f0a0063
+            static member abc_panel_menu_list_width = 2131361891
             
-            // aapt resource value: 0x7f090067
-            static member abc_progress_bar_height_material = 2131296359
+            // aapt resource value: 0x7f0a0064
+            static member abc_progress_bar_height_material = 2131361892
             
-            // aapt resource value: 0x7f090068
-            static member abc_search_view_preferred_height = 2131296360
+            // aapt resource value: 0x7f0a0065
+            static member abc_search_view_preferred_height = 2131361893
             
-            // aapt resource value: 0x7f090069
-            static member abc_search_view_preferred_width = 2131296361
+            // aapt resource value: 0x7f0a0066
+            static member abc_search_view_preferred_width = 2131361894
             
-            // aapt resource value: 0x7f09006a
-            static member abc_seekbar_track_background_height_material = 2131296362
+            // aapt resource value: 0x7f0a0067
+            static member abc_seekbar_track_background_height_material = 2131361895
             
-            // aapt resource value: 0x7f09006b
-            static member abc_seekbar_track_progress_height_material = 2131296363
+            // aapt resource value: 0x7f0a0068
+            static member abc_seekbar_track_progress_height_material = 2131361896
             
-            // aapt resource value: 0x7f09006c
-            static member abc_select_dialog_padding_start_material = 2131296364
+            // aapt resource value: 0x7f0a0069
+            static member abc_select_dialog_padding_start_material = 2131361897
             
-            // aapt resource value: 0x7f090040
-            static member abc_switch_padding = 2131296320
+            // aapt resource value: 0x7f0a003d
+            static member abc_switch_padding = 2131361853
             
-            // aapt resource value: 0x7f09006d
-            static member abc_text_size_body_1_material = 2131296365
+            // aapt resource value: 0x7f0a006a
+            static member abc_text_size_body_1_material = 2131361898
             
-            // aapt resource value: 0x7f09006e
-            static member abc_text_size_body_2_material = 2131296366
+            // aapt resource value: 0x7f0a006b
+            static member abc_text_size_body_2_material = 2131361899
             
-            // aapt resource value: 0x7f09006f
-            static member abc_text_size_button_material = 2131296367
+            // aapt resource value: 0x7f0a006c
+            static member abc_text_size_button_material = 2131361900
             
-            // aapt resource value: 0x7f090070
-            static member abc_text_size_caption_material = 2131296368
+            // aapt resource value: 0x7f0a006d
+            static member abc_text_size_caption_material = 2131361901
             
-            // aapt resource value: 0x7f090071
-            static member abc_text_size_display_1_material = 2131296369
+            // aapt resource value: 0x7f0a006e
+            static member abc_text_size_display_1_material = 2131361902
             
-            // aapt resource value: 0x7f090072
-            static member abc_text_size_display_2_material = 2131296370
+            // aapt resource value: 0x7f0a006f
+            static member abc_text_size_display_2_material = 2131361903
             
-            // aapt resource value: 0x7f090073
-            static member abc_text_size_display_3_material = 2131296371
+            // aapt resource value: 0x7f0a0070
+            static member abc_text_size_display_3_material = 2131361904
             
-            // aapt resource value: 0x7f090074
-            static member abc_text_size_display_4_material = 2131296372
+            // aapt resource value: 0x7f0a0071
+            static member abc_text_size_display_4_material = 2131361905
             
-            // aapt resource value: 0x7f090075
-            static member abc_text_size_headline_material = 2131296373
+            // aapt resource value: 0x7f0a0072
+            static member abc_text_size_headline_material = 2131361906
             
-            // aapt resource value: 0x7f090076
-            static member abc_text_size_large_material = 2131296374
+            // aapt resource value: 0x7f0a0073
+            static member abc_text_size_large_material = 2131361907
             
-            // aapt resource value: 0x7f090077
-            static member abc_text_size_medium_material = 2131296375
+            // aapt resource value: 0x7f0a0074
+            static member abc_text_size_medium_material = 2131361908
             
-            // aapt resource value: 0x7f090078
-            static member abc_text_size_menu_header_material = 2131296376
+            // aapt resource value: 0x7f0a0075
+            static member abc_text_size_menu_header_material = 2131361909
             
-            // aapt resource value: 0x7f090079
-            static member abc_text_size_menu_material = 2131296377
+            // aapt resource value: 0x7f0a0076
+            static member abc_text_size_menu_material = 2131361910
             
-            // aapt resource value: 0x7f09007a
-            static member abc_text_size_small_material = 2131296378
+            // aapt resource value: 0x7f0a0077
+            static member abc_text_size_small_material = 2131361911
             
-            // aapt resource value: 0x7f09007b
-            static member abc_text_size_subhead_material = 2131296379
+            // aapt resource value: 0x7f0a0078
+            static member abc_text_size_subhead_material = 2131361912
             
-            // aapt resource value: 0x7f090032
-            static member abc_text_size_subtitle_material_toolbar = 2131296306
+            // aapt resource value: 0x7f0a002f
+            static member abc_text_size_subtitle_material_toolbar = 2131361839
             
-            // aapt resource value: 0x7f09007c
-            static member abc_text_size_title_material = 2131296380
+            // aapt resource value: 0x7f0a0079
+            static member abc_text_size_title_material = 2131361913
             
-            // aapt resource value: 0x7f090033
-            static member abc_text_size_title_material_toolbar = 2131296307
+            // aapt resource value: 0x7f0a0030
+            static member abc_text_size_title_material_toolbar = 2131361840
             
-            // aapt resource value: 0x7f090000
-            static member cardview_compat_inset_shadow = 2131296256
+            // aapt resource value: 0x7f0a0091
+            static member cardview_compat_inset_shadow = 2131361937
             
-            // aapt resource value: 0x7f090001
-            static member cardview_default_elevation = 2131296257
+            // aapt resource value: 0x7f0a0092
+            static member cardview_default_elevation = 2131361938
             
-            // aapt resource value: 0x7f090002
-            static member cardview_default_radius = 2131296258
+            // aapt resource value: 0x7f0a0093
+            static member cardview_default_radius = 2131361939
             
-            // aapt resource value: 0x7f090011
-            static member design_appbar_elevation = 2131296273
+            // aapt resource value: 0x7f0a000e
+            static member design_appbar_elevation = 2131361806
             
-            // aapt resource value: 0x7f090012
-            static member design_bottom_navigation_active_item_max_width = 2131296274
+            // aapt resource value: 0x7f0a000f
+            static member design_bottom_navigation_active_item_max_width = 2131361807
             
-            // aapt resource value: 0x7f090013
-            static member design_bottom_navigation_active_text_size = 2131296275
+            // aapt resource value: 0x7f0a0010
+            static member design_bottom_navigation_active_text_size = 2131361808
             
-            // aapt resource value: 0x7f090014
-            static member design_bottom_navigation_elevation = 2131296276
+            // aapt resource value: 0x7f0a0011
+            static member design_bottom_navigation_elevation = 2131361809
             
-            // aapt resource value: 0x7f090015
-            static member design_bottom_navigation_height = 2131296277
+            // aapt resource value: 0x7f0a0012
+            static member design_bottom_navigation_height = 2131361810
             
-            // aapt resource value: 0x7f090016
-            static member design_bottom_navigation_item_max_width = 2131296278
+            // aapt resource value: 0x7f0a0013
+            static member design_bottom_navigation_item_max_width = 2131361811
             
-            // aapt resource value: 0x7f090017
-            static member design_bottom_navigation_item_min_width = 2131296279
+            // aapt resource value: 0x7f0a0014
+            static member design_bottom_navigation_item_min_width = 2131361812
             
-            // aapt resource value: 0x7f090018
-            static member design_bottom_navigation_margin = 2131296280
+            // aapt resource value: 0x7f0a0015
+            static member design_bottom_navigation_margin = 2131361813
             
-            // aapt resource value: 0x7f090019
-            static member design_bottom_navigation_shadow_height = 2131296281
+            // aapt resource value: 0x7f0a0016
+            static member design_bottom_navigation_shadow_height = 2131361814
             
-            // aapt resource value: 0x7f09001a
-            static member design_bottom_navigation_text_size = 2131296282
+            // aapt resource value: 0x7f0a0017
+            static member design_bottom_navigation_text_size = 2131361815
             
-            // aapt resource value: 0x7f09001b
-            static member design_bottom_sheet_modal_elevation = 2131296283
+            // aapt resource value: 0x7f0a0018
+            static member design_bottom_sheet_modal_elevation = 2131361816
             
-            // aapt resource value: 0x7f09001c
-            static member design_bottom_sheet_peek_height_min = 2131296284
+            // aapt resource value: 0x7f0a0019
+            static member design_bottom_sheet_peek_height_min = 2131361817
             
-            // aapt resource value: 0x7f09001d
-            static member design_fab_border_width = 2131296285
+            // aapt resource value: 0x7f0a001a
+            static member design_fab_border_width = 2131361818
             
-            // aapt resource value: 0x7f09001e
-            static member design_fab_elevation = 2131296286
+            // aapt resource value: 0x7f0a001b
+            static member design_fab_elevation = 2131361819
             
-            // aapt resource value: 0x7f09001f
-            static member design_fab_image_size = 2131296287
+            // aapt resource value: 0x7f0a001c
+            static member design_fab_image_size = 2131361820
             
-            // aapt resource value: 0x7f090020
-            static member design_fab_size_mini = 2131296288
+            // aapt resource value: 0x7f0a001d
+            static member design_fab_size_mini = 2131361821
             
-            // aapt resource value: 0x7f090021
-            static member design_fab_size_normal = 2131296289
+            // aapt resource value: 0x7f0a001e
+            static member design_fab_size_normal = 2131361822
             
-            // aapt resource value: 0x7f090022
-            static member design_fab_translation_z_pressed = 2131296290
+            // aapt resource value: 0x7f0a001f
+            static member design_fab_translation_z_pressed = 2131361823
             
-            // aapt resource value: 0x7f090023
-            static member design_navigation_elevation = 2131296291
+            // aapt resource value: 0x7f0a0020
+            static member design_navigation_elevation = 2131361824
             
-            // aapt resource value: 0x7f090024
-            static member design_navigation_icon_padding = 2131296292
+            // aapt resource value: 0x7f0a0021
+            static member design_navigation_icon_padding = 2131361825
             
-            // aapt resource value: 0x7f090025
-            static member design_navigation_icon_size = 2131296293
+            // aapt resource value: 0x7f0a0022
+            static member design_navigation_icon_size = 2131361826
             
-            // aapt resource value: 0x7f090009
-            static member design_navigation_max_width = 2131296265
+            // aapt resource value: 0x7f0a0006
+            static member design_navigation_max_width = 2131361798
             
-            // aapt resource value: 0x7f090026
-            static member design_navigation_padding_bottom = 2131296294
+            // aapt resource value: 0x7f0a0023
+            static member design_navigation_padding_bottom = 2131361827
             
-            // aapt resource value: 0x7f090027
-            static member design_navigation_separator_vertical_padding = 2131296295
+            // aapt resource value: 0x7f0a0024
+            static member design_navigation_separator_vertical_padding = 2131361828
             
-            // aapt resource value: 0x7f09000a
-            static member design_snackbar_action_inline_max_width = 2131296266
+            // aapt resource value: 0x7f0a0007
+            static member design_snackbar_action_inline_max_width = 2131361799
             
-            // aapt resource value: 0x7f09000b
-            static member design_snackbar_background_corner_radius = 2131296267
+            // aapt resource value: 0x7f0a0008
+            static member design_snackbar_background_corner_radius = 2131361800
             
-            // aapt resource value: 0x7f090028
-            static member design_snackbar_elevation = 2131296296
+            // aapt resource value: 0x7f0a0025
+            static member design_snackbar_elevation = 2131361829
             
-            // aapt resource value: 0x7f09000c
-            static member design_snackbar_extra_spacing_horizontal = 2131296268
+            // aapt resource value: 0x7f0a0009
+            static member design_snackbar_extra_spacing_horizontal = 2131361801
             
-            // aapt resource value: 0x7f09000d
-            static member design_snackbar_max_width = 2131296269
+            // aapt resource value: 0x7f0a000a
+            static member design_snackbar_max_width = 2131361802
             
-            // aapt resource value: 0x7f09000e
-            static member design_snackbar_min_width = 2131296270
+            // aapt resource value: 0x7f0a000b
+            static member design_snackbar_min_width = 2131361803
             
-            // aapt resource value: 0x7f090029
-            static member design_snackbar_padding_horizontal = 2131296297
+            // aapt resource value: 0x7f0a0026
+            static member design_snackbar_padding_horizontal = 2131361830
             
-            // aapt resource value: 0x7f09002a
-            static member design_snackbar_padding_vertical = 2131296298
+            // aapt resource value: 0x7f0a0027
+            static member design_snackbar_padding_vertical = 2131361831
             
-            // aapt resource value: 0x7f09000f
-            static member design_snackbar_padding_vertical_2lines = 2131296271
+            // aapt resource value: 0x7f0a000c
+            static member design_snackbar_padding_vertical_2lines = 2131361804
             
-            // aapt resource value: 0x7f09002b
-            static member design_snackbar_text_size = 2131296299
+            // aapt resource value: 0x7f0a0028
+            static member design_snackbar_text_size = 2131361832
             
-            // aapt resource value: 0x7f09002c
-            static member design_tab_max_width = 2131296300
+            // aapt resource value: 0x7f0a0029
+            static member design_tab_max_width = 2131361833
             
-            // aapt resource value: 0x7f090010
-            static member design_tab_scrollable_min_width = 2131296272
+            // aapt resource value: 0x7f0a000d
+            static member design_tab_scrollable_min_width = 2131361805
             
-            // aapt resource value: 0x7f09002d
-            static member design_tab_text_size = 2131296301
+            // aapt resource value: 0x7f0a002a
+            static member design_tab_text_size = 2131361834
             
-            // aapt resource value: 0x7f09002e
-            static member design_tab_text_size_2line = 2131296302
+            // aapt resource value: 0x7f0a002b
+            static member design_tab_text_size_2line = 2131361835
             
-            // aapt resource value: 0x7f09007d
-            static member disabled_alpha_material_dark = 2131296381
+            // aapt resource value: 0x7f0a007a
+            static member disabled_alpha_material_dark = 2131361914
             
-            // aapt resource value: 0x7f09007e
-            static member disabled_alpha_material_light = 2131296382
+            // aapt resource value: 0x7f0a007b
+            static member disabled_alpha_material_light = 2131361915
             
-            // aapt resource value: 0x7f09007f
-            static member highlight_alpha_material_colored = 2131296383
+            // aapt resource value: 0x7f0a007c
+            static member highlight_alpha_material_colored = 2131361916
             
-            // aapt resource value: 0x7f090080
-            static member highlight_alpha_material_dark = 2131296384
+            // aapt resource value: 0x7f0a007d
+            static member highlight_alpha_material_dark = 2131361917
             
-            // aapt resource value: 0x7f090081
-            static member highlight_alpha_material_light = 2131296385
+            // aapt resource value: 0x7f0a007e
+            static member highlight_alpha_material_light = 2131361918
             
-            // aapt resource value: 0x7f090082
-            static member hint_alpha_material_dark = 2131296386
+            // aapt resource value: 0x7f0a007f
+            static member hint_alpha_material_dark = 2131361919
             
-            // aapt resource value: 0x7f090083
-            static member hint_alpha_material_light = 2131296387
+            // aapt resource value: 0x7f0a0080
+            static member hint_alpha_material_light = 2131361920
             
-            // aapt resource value: 0x7f090084
-            static member hint_pressed_alpha_material_dark = 2131296388
+            // aapt resource value: 0x7f0a0081
+            static member hint_pressed_alpha_material_dark = 2131361921
             
-            // aapt resource value: 0x7f090085
-            static member hint_pressed_alpha_material_light = 2131296389
+            // aapt resource value: 0x7f0a0082
+            static member hint_pressed_alpha_material_light = 2131361922
             
-            // aapt resource value: 0x7f090091
-            static member item_touch_helper_max_drag_scroll_per_frame = 2131296401
+            // aapt resource value: 0x7f0a008e
+            static member item_touch_helper_max_drag_scroll_per_frame = 2131361934
             
-            // aapt resource value: 0x7f090092
-            static member item_touch_helper_swipe_escape_max_velocity = 2131296402
+            // aapt resource value: 0x7f0a008f
+            static member item_touch_helper_swipe_escape_max_velocity = 2131361935
             
-            // aapt resource value: 0x7f090093
-            static member item_touch_helper_swipe_escape_velocity = 2131296403
+            // aapt resource value: 0x7f0a0090
+            static member item_touch_helper_swipe_escape_velocity = 2131361936
             
-            // aapt resource value: 0x7f090003
-            static member mr_controller_volume_group_list_item_height = 2131296259
+            // aapt resource value: 0x7f0a0000
+            static member mr_controller_volume_group_list_item_height = 2131361792
             
-            // aapt resource value: 0x7f090004
-            static member mr_controller_volume_group_list_item_icon_size = 2131296260
+            // aapt resource value: 0x7f0a0001
+            static member mr_controller_volume_group_list_item_icon_size = 2131361793
             
-            // aapt resource value: 0x7f090005
-            static member mr_controller_volume_group_list_max_height = 2131296261
+            // aapt resource value: 0x7f0a0002
+            static member mr_controller_volume_group_list_max_height = 2131361794
             
-            // aapt resource value: 0x7f090008
-            static member mr_controller_volume_group_list_padding_top = 2131296264
+            // aapt resource value: 0x7f0a0005
+            static member mr_controller_volume_group_list_padding_top = 2131361797
             
-            // aapt resource value: 0x7f090006
-            static member mr_dialog_fixed_width_major = 2131296262
+            // aapt resource value: 0x7f0a0003
+            static member mr_dialog_fixed_width_major = 2131361795
             
-            // aapt resource value: 0x7f090007
-            static member mr_dialog_fixed_width_minor = 2131296263
+            // aapt resource value: 0x7f0a0004
+            static member mr_dialog_fixed_width_minor = 2131361796
             
-            // aapt resource value: 0x7f090086
-            static member notification_action_icon_size = 2131296390
+            // aapt resource value: 0x7f0a0083
+            static member notification_action_icon_size = 2131361923
             
-            // aapt resource value: 0x7f090087
-            static member notification_action_text_size = 2131296391
+            // aapt resource value: 0x7f0a0084
+            static member notification_action_text_size = 2131361924
             
-            // aapt resource value: 0x7f090088
-            static member notification_big_circle_margin = 2131296392
+            // aapt resource value: 0x7f0a0085
+            static member notification_big_circle_margin = 2131361925
             
-            // aapt resource value: 0x7f090041
-            static member notification_content_margin_start = 2131296321
+            // aapt resource value: 0x7f0a003e
+            static member notification_content_margin_start = 2131361854
             
-            // aapt resource value: 0x7f090089
-            static member notification_large_icon_height = 2131296393
+            // aapt resource value: 0x7f0a0086
+            static member notification_large_icon_height = 2131361926
             
-            // aapt resource value: 0x7f09008a
-            static member notification_large_icon_width = 2131296394
+            // aapt resource value: 0x7f0a0087
+            static member notification_large_icon_width = 2131361927
             
-            // aapt resource value: 0x7f090042
-            static member notification_main_column_padding_top = 2131296322
+            // aapt resource value: 0x7f0a003f
+            static member notification_main_column_padding_top = 2131361855
             
-            // aapt resource value: 0x7f090043
-            static member notification_media_narrow_margin = 2131296323
+            // aapt resource value: 0x7f0a0040
+            static member notification_media_narrow_margin = 2131361856
             
-            // aapt resource value: 0x7f09008b
-            static member notification_right_icon_size = 2131296395
+            // aapt resource value: 0x7f0a0088
+            static member notification_right_icon_size = 2131361928
             
-            // aapt resource value: 0x7f09003f
-            static member notification_right_side_padding_top = 2131296319
+            // aapt resource value: 0x7f0a003c
+            static member notification_right_side_padding_top = 2131361852
             
-            // aapt resource value: 0x7f09008c
-            static member notification_small_icon_background_padding = 2131296396
+            // aapt resource value: 0x7f0a0089
+            static member notification_small_icon_background_padding = 2131361929
             
-            // aapt resource value: 0x7f09008d
-            static member notification_small_icon_size_as_large = 2131296397
+            // aapt resource value: 0x7f0a008a
+            static member notification_small_icon_size_as_large = 2131361930
             
-            // aapt resource value: 0x7f09008e
-            static member notification_subtext_size = 2131296398
+            // aapt resource value: 0x7f0a008b
+            static member notification_subtext_size = 2131361931
             
-            // aapt resource value: 0x7f09008f
-            static member notification_top_pad = 2131296399
+            // aapt resource value: 0x7f0a008c
+            static member notification_top_pad = 2131361932
             
-            // aapt resource value: 0x7f090090
-            static member notification_top_pad_large_text = 2131296400
+            // aapt resource value: 0x7f0a008d
+            static member notification_top_pad_large_text = 2131361933
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
 
 
@@ -2974,32 +2974,32 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c004e
             static member activity_chooser_view_content = 2131492942
             
-            // aapt resource value: 0x7f0c0038
-            static member add = 2131492920
+            // aapt resource value: 0x7f0c0042
+            static member add = 2131492930
             
-            // aapt resource value: 0x7f0c0044
-            static member adjust_height = 2131492932
+            // aapt resource value: 0x7f0c0014
+            static member adjust_height = 2131492884
             
-            // aapt resource value: 0x7f0c0045
-            static member adjust_width = 2131492933
+            // aapt resource value: 0x7f0c0015
+            static member adjust_width = 2131492885
             
             // aapt resource value: 0x7f0c0062
             static member alertTitle = 2131492962
             
-            // aapt resource value: 0x7f0c0026
-            static member all = 2131492902
+            // aapt resource value: 0x7f0c0031
+            static member all = 2131492913
             
-            // aapt resource value: 0x7f0c003c
-            static member always = 2131492924
+            // aapt resource value: 0x7f0c0046
+            static member always = 2131492934
             
-            // aapt resource value: 0x7f0c0014
-            static member auto = 2131492884
+            // aapt resource value: 0x7f0c0019
+            static member auto = 2131492889
             
-            // aapt resource value: 0x7f0c003a
-            static member beginning = 2131492922
+            // aapt resource value: 0x7f0c0044
+            static member beginning = 2131492932
             
-            // aapt resource value: 0x7f0c0015
-            static member bottom = 2131492885
+            // aapt resource value: 0x7f0c0021
+            static member bottom = 2131492897
             
             // aapt resource value: 0x7f0c0055
             static member buttonPanel = 2131492949
@@ -3007,14 +3007,14 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c00a8
             static member cancel_action = 2131493032
             
-            // aapt resource value: 0x7f0c0016
-            static member center = 2131492886
+            // aapt resource value: 0x7f0c0022
+            static member center = 2131492898
             
-            // aapt resource value: 0x7f0c0017
-            static member center_horizontal = 2131492887
+            // aapt resource value: 0x7f0c0023
+            static member center_horizontal = 2131492899
             
-            // aapt resource value: 0x7f0c0018
-            static member center_vertical = 2131492888
+            // aapt resource value: 0x7f0c0024
+            static member center_vertical = 2131492900
             
             // aapt resource value: 0x7f0c0065
             static member checkbox = 2131492965
@@ -3022,14 +3022,14 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c00b0
             static member chronometer = 2131493040
             
-            // aapt resource value: 0x7f0c0022
-            static member clip_horizontal = 2131492898
+            // aapt resource value: 0x7f0c002d
+            static member clip_horizontal = 2131492909
             
-            // aapt resource value: 0x7f0c0023
-            static member clip_vertical = 2131492899
+            // aapt resource value: 0x7f0c002e
+            static member clip_vertical = 2131492910
             
-            // aapt resource value: 0x7f0c003d
-            static member collapseActionView = 2131492925
+            // aapt resource value: 0x7f0c0047
+            static member collapseActionView = 2131492935
             
             // aapt resource value: 0x7f0c0058
             static member contentPanel = 2131492952
@@ -3040,8 +3040,8 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c005e
             static member customPanel = 2131492958
             
-            // aapt resource value: 0x7f0c0049
-            static member dark = 2131492937
+            // aapt resource value: 0x7f0c001a
+            static member dark = 2131492890
             
             // aapt resource value: 0x7f0c006c
             static member decor_content_parent = 2131492972
@@ -3064,26 +3064,26 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c0084
             static member design_navigation_view = 2131492996
             
-            // aapt resource value: 0x7f0c0032
-            static member disableHome = 2131492914
+            // aapt resource value: 0x7f0c003c
+            static member disableHome = 2131492924
             
             // aapt resource value: 0x7f0c0070
             static member edit_query = 2131492976
             
-            // aapt resource value: 0x7f0c0019
-            static member end = 2131492889
+            // aapt resource value: 0x7f0c0025
+            static member end = 2131492901
             
             // aapt resource value: 0x7f0c00ba
             static member end_padder = 2131493050
             
-            // aapt resource value: 0x7f0c000f
-            static member enterAlways = 2131492879
+            // aapt resource value: 0x7f0c001c
+            static member enterAlways = 2131492892
             
-            // aapt resource value: 0x7f0c0010
-            static member enterAlwaysCollapsed = 2131492880
+            // aapt resource value: 0x7f0c001d
+            static member enterAlwaysCollapsed = 2131492893
             
-            // aapt resource value: 0x7f0c0011
-            static member exitUntilCollapsed = 2131492881
+            // aapt resource value: 0x7f0c001e
+            static member exitUntilCollapsed = 2131492894
             
             // aapt resource value: 0x7f0c004f
             static member expand_activities_button = 2131492943
@@ -3091,26 +3091,26 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c0064
             static member expanded_menu = 2131492964
             
-            // aapt resource value: 0x7f0c0024
-            static member fill = 2131492900
+            // aapt resource value: 0x7f0c002f
+            static member fill = 2131492911
             
-            // aapt resource value: 0x7f0c0025
-            static member fill_horizontal = 2131492901
+            // aapt resource value: 0x7f0c0030
+            static member fill_horizontal = 2131492912
             
-            // aapt resource value: 0x7f0c001a
-            static member fill_vertical = 2131492890
+            // aapt resource value: 0x7f0c0026
+            static member fill_vertical = 2131492902
             
-            // aapt resource value: 0x7f0c0029
-            static member fixed = 2131492905
+            // aapt resource value: 0x7f0c0033
+            static member fixed = 2131492915
             
             // aapt resource value: 0x7f0c0007
             static member home = 2131492871
             
-            // aapt resource value: 0x7f0c0033
-            static member homeAsUp = 2131492915
+            // aapt resource value: 0x7f0c003d
+            static member homeAsUp = 2131492925
             
-            // aapt resource value: 0x7f0c0041
-            static member hybrid = 2131492929
+            // aapt resource value: 0x7f0c000f
+            static member hybrid = 2131492879
             
             // aapt resource value: 0x7f0c0053
             static member icon = 2131492947
@@ -3118,11 +3118,11 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c00b5
             static member icon_group = 2131493045
             
-            // aapt resource value: 0x7f0c0046
-            static member icon_only = 2131492934
+            // aapt resource value: 0x7f0c0016
+            static member icon_only = 2131492886
             
-            // aapt resource value: 0x7f0c003e
-            static member ifRoom = 2131492926
+            // aapt resource value: 0x7f0c0048
+            static member ifRoom = 2131492936
             
             // aapt resource value: 0x7f0c0050
             static member image = 2131492944
@@ -3136,11 +3136,11 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c007e
             static member largeLabel = 2131492990
             
-            // aapt resource value: 0x7f0c001b
-            static member left = 2131492891
+            // aapt resource value: 0x7f0c0027
+            static member left = 2131492903
             
-            // aapt resource value: 0x7f0c004a
-            static member light = 2131492938
+            // aapt resource value: 0x7f0c001b
+            static member light = 2131492891
             
             // aapt resource value: 0x7f0c00b6
             static member line1 = 2131493046
@@ -3148,8 +3148,8 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c00b8
             static member line3 = 2131493048
             
-            // aapt resource value: 0x7f0c0030
-            static member listMode = 2131492912
+            // aapt resource value: 0x7f0c003a
+            static member listMode = 2131492922
             
             // aapt resource value: 0x7f0c0052
             static member list_item = 2131492946
@@ -3160,11 +3160,11 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c00aa
             static member media_actions = 2131493034
             
-            // aapt resource value: 0x7f0c003b
-            static member middle = 2131492923
+            // aapt resource value: 0x7f0c0045
+            static member middle = 2131492933
             
-            // aapt resource value: 0x7f0c0027
-            static member mini = 2131492903
+            // aapt resource value: 0x7f0c0032
+            static member mini = 2131492914
             
             // aapt resource value: 0x7f0c0096
             static member mr_art = 2131493014
@@ -3241,20 +3241,20 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c009e
             static member mr_volume_slider = 2131493022
             
-            // aapt resource value: 0x7f0c002b
-            static member multiply = 2131492907
+            // aapt resource value: 0x7f0c0035
+            static member multiply = 2131492917
             
             // aapt resource value: 0x7f0c0083
             static member navigation_header_container = 2131492995
             
-            // aapt resource value: 0x7f0c003f
-            static member never = 2131492927
+            // aapt resource value: 0x7f0c0049
+            static member never = 2131492937
             
-            // aapt resource value: 0x7f0c001f
-            static member none = 2131492895
+            // aapt resource value: 0x7f0c0010
+            static member none = 2131492880
             
-            // aapt resource value: 0x7f0c0028
-            static member normal = 2131492904
+            // aapt resource value: 0x7f0c0011
+            static member normal = 2131492881
             
             // aapt resource value: 0x7f0c00b3
             static member notification_background = 2131493043
@@ -3265,14 +3265,14 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c00ac
             static member notification_main_column_container = 2131493036
             
-            // aapt resource value: 0x7f0c0020
-            static member parallax = 2131492896
+            // aapt resource value: 0x7f0c002b
+            static member parallax = 2131492907
             
             // aapt resource value: 0x7f0c0057
             static member parentPanel = 2131492951
             
-            // aapt resource value: 0x7f0c0021
-            static member pin = 2131492897
+            // aapt resource value: 0x7f0c002c
+            static member pin = 2131492908
             
             // aapt resource value: 0x7f0c0008
             static member progress_circular = 2131492872
@@ -3283,8 +3283,8 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c0067
             static member radio = 2131492967
             
-            // aapt resource value: 0x7f0c001c
-            static member right = 2131492892
+            // aapt resource value: 0x7f0c0028
+            static member right = 2131492904
             
             // aapt resource value: 0x7f0c00b2
             static member right_icon = 2131493042
@@ -3292,14 +3292,14 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c00ae
             static member right_side = 2131493038
             
-            // aapt resource value: 0x7f0c0042
-            static member satellite = 2131492930
-            
-            // aapt resource value: 0x7f0c002c
-            static member screen = 2131492908
-            
             // aapt resource value: 0x7f0c0012
-            static member scroll = 2131492882
+            static member satellite = 2131492882
+            
+            // aapt resource value: 0x7f0c0036
+            static member screen = 2131492918
+            
+            // aapt resource value: 0x7f0c001f
+            static member scroll = 2131492895
             
             // aapt resource value: 0x7f0c005d
             static member scrollIndicatorDown = 2131492957
@@ -3310,8 +3310,8 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c005a
             static member scrollView = 2131492954
             
-            // aapt resource value: 0x7f0c002a
-            static member scrollable = 2131492906
+            // aapt resource value: 0x7f0c0034
+            static member scrollable = 2131492916
             
             // aapt resource value: 0x7f0c0072
             static member search_badge = 2131492978
@@ -3349,14 +3349,14 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c0066
             static member shortcut = 2131492966
             
-            // aapt resource value: 0x7f0c0034
-            static member showCustom = 2131492916
+            // aapt resource value: 0x7f0c003e
+            static member showCustom = 2131492926
             
-            // aapt resource value: 0x7f0c0035
-            static member showHome = 2131492917
+            // aapt resource value: 0x7f0c003f
+            static member showHome = 2131492927
             
-            // aapt resource value: 0x7f0c0036
-            static member showTitle = 2131492918
+            // aapt resource value: 0x7f0c0040
+            static member showTitle = 2131492928
             
             // aapt resource value: 0x7f0c007d
             static member smallLabel = 2131492989
@@ -3367,8 +3367,8 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c0081
             static member snackbar_text = 2131492993
             
-            // aapt resource value: 0x7f0c0013
-            static member snap = 2131492883
+            // aapt resource value: 0x7f0c0020
+            static member snap = 2131492896
             
             // aapt resource value: 0x7f0c0056
             static member spacer = 2131492950
@@ -3376,20 +3376,20 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c000a
             static member split_action_bar = 2131492874
             
-            // aapt resource value: 0x7f0c002d
-            static member src_atop = 2131492909
+            // aapt resource value: 0x7f0c0037
+            static member src_atop = 2131492919
             
-            // aapt resource value: 0x7f0c002e
-            static member src_in = 2131492910
+            // aapt resource value: 0x7f0c0038
+            static member src_in = 2131492920
             
-            // aapt resource value: 0x7f0c002f
-            static member src_over = 2131492911
+            // aapt resource value: 0x7f0c0039
+            static member src_over = 2131492921
             
-            // aapt resource value: 0x7f0c0047
-            static member standard = 2131492935
+            // aapt resource value: 0x7f0c0017
+            static member standard = 2131492887
             
-            // aapt resource value: 0x7f0c001d
-            static member start = 2131492893
+            // aapt resource value: 0x7f0c0029
+            static member start = 2131492905
             
             // aapt resource value: 0x7f0c00a9
             static member status_bar_latest_event_content = 2131493033
@@ -3400,11 +3400,11 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c0079
             static member submit_area = 2131492985
             
-            // aapt resource value: 0x7f0c0031
-            static member tabMode = 2131492913
+            // aapt resource value: 0x7f0c003b
+            static member tabMode = 2131492923
             
-            // aapt resource value: 0x7f0c0043
-            static member terrain = 2131492931
+            // aapt resource value: 0x7f0c0013
+            static member terrain = 2131492883
             
             // aapt resource value: 0x7f0c00b9
             static member text = 2131493049
@@ -3439,8 +3439,8 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c0061
             static member title_template = 2131492961
             
-            // aapt resource value: 0x7f0c001e
-            static member top = 2131492894
+            // aapt resource value: 0x7f0c002a
+            static member top = 2131492906
             
             // aapt resource value: 0x7f0c0060
             static member topPanel = 2131492960
@@ -3457,8 +3457,8 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c000b
             static member up = 2131492875
             
-            // aapt resource value: 0x7f0c0037
-            static member useLogo = 2131492919
+            // aapt resource value: 0x7f0c0041
+            static member useLogo = 2131492929
             
             // aapt resource value: 0x7f0c0002
             static member view_offset_helper = 2131492866
@@ -3469,14 +3469,14 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f0c009c
             static member volume_item_container = 2131493020
             
-            // aapt resource value: 0x7f0c0048
-            static member wide = 2131492936
+            // aapt resource value: 0x7f0c0018
+            static member wide = 2131492888
             
-            // aapt resource value: 0x7f0c0040
-            static member withText = 2131492928
+            // aapt resource value: 0x7f0c004a
+            static member withText = 2131492938
             
-            // aapt resource value: 0x7f0c0039
-            static member wrap_content = 2131492921
+            // aapt resource value: 0x7f0c0043
+            static member wrap_content = 2131492931
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
 
 
@@ -3485,44 +3485,44 @@ namespace Astrid.Mobile.Droid
         
         (* partial *)Resource_Integer () =
             static do Android.Runtime.ResourceIdManager.UpdateIdValues()
-            // aapt resource value: 0x7f0b0008
-            static member abc_config_activityDefaultDur = 2131427336
+            // aapt resource value: 0x7f090009
+            static member abc_config_activityDefaultDur = 2131296265
             
-            // aapt resource value: 0x7f0b0009
-            static member abc_config_activityShortDur = 2131427337
+            // aapt resource value: 0x7f09000a
+            static member abc_config_activityShortDur = 2131296266
             
-            // aapt resource value: 0x7f0b0004
-            static member app_bar_elevation_anim_duration = 2131427332
+            // aapt resource value: 0x7f090005
+            static member app_bar_elevation_anim_duration = 2131296261
             
-            // aapt resource value: 0x7f0b0005
-            static member bottom_sheet_slide_duration = 2131427333
+            // aapt resource value: 0x7f090006
+            static member bottom_sheet_slide_duration = 2131296262
             
-            // aapt resource value: 0x7f0b000a
-            static member cancel_button_image_alpha = 2131427338
+            // aapt resource value: 0x7f09000b
+            static member cancel_button_image_alpha = 2131296267
             
-            // aapt resource value: 0x7f0b0003
-            static member design_snackbar_text_max_lines = 2131427331
+            // aapt resource value: 0x7f090004
+            static member design_snackbar_text_max_lines = 2131296260
             
-            // aapt resource value: 0x7f0b000c
-            static member google_play_services_version = 2131427340
+            // aapt resource value: 0x7f090000
+            static member google_play_services_version = 2131296256
             
-            // aapt resource value: 0x7f0b0006
-            static member hide_password_duration = 2131427334
+            // aapt resource value: 0x7f090007
+            static member hide_password_duration = 2131296263
             
-            // aapt resource value: 0x7f0b0000
-            static member mr_controller_volume_group_list_animation_duration_ms = 2131427328
+            // aapt resource value: 0x7f090001
+            static member mr_controller_volume_group_list_animation_duration_ms = 2131296257
             
-            // aapt resource value: 0x7f0b0001
-            static member mr_controller_volume_group_list_fade_in_duration_ms = 2131427329
+            // aapt resource value: 0x7f090002
+            static member mr_controller_volume_group_list_fade_in_duration_ms = 2131296258
             
-            // aapt resource value: 0x7f0b0002
-            static member mr_controller_volume_group_list_fade_out_duration_ms = 2131427330
+            // aapt resource value: 0x7f090003
+            static member mr_controller_volume_group_list_fade_out_duration_ms = 2131296259
             
-            // aapt resource value: 0x7f0b0007
-            static member show_password_duration = 2131427335
+            // aapt resource value: 0x7f090008
+            static member show_password_duration = 2131296264
             
-            // aapt resource value: 0x7f0b000b
-            static member status_bar_notification_info_maxnum = 2131427339
+            // aapt resource value: 0x7f09000c
+            static member status_bar_notification_info_maxnum = 2131296268
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
 
 
@@ -3752,248 +3752,248 @@ namespace Astrid.Mobile.Droid
         
         (* partial *)Resource_String () =
             static do Android.Runtime.ResourceIdManager.UpdateIdValues()
-            // aapt resource value: 0x7f0a004f
-            static member ApplicationName = 2131361871
+            // aapt resource value: 0x7f08004f
+            static member ApplicationName = 2131230799
             
-            // aapt resource value: 0x7f0a004e
-            static member Hello = 2131361870
+            // aapt resource value: 0x7f08004e
+            static member Hello = 2131230798
             
-            // aapt resource value: 0x7f0a001c
-            static member abc_action_bar_home_description = 2131361820
+            // aapt resource value: 0x7f08002d
+            static member abc_action_bar_home_description = 2131230765
             
-            // aapt resource value: 0x7f0a001d
-            static member abc_action_bar_home_description_format = 2131361821
+            // aapt resource value: 0x7f08002e
+            static member abc_action_bar_home_description_format = 2131230766
             
-            // aapt resource value: 0x7f0a001e
-            static member abc_action_bar_home_subtitle_description_format = 2131361822
+            // aapt resource value: 0x7f08002f
+            static member abc_action_bar_home_subtitle_description_format = 2131230767
             
-            // aapt resource value: 0x7f0a001f
-            static member abc_action_bar_up_description = 2131361823
+            // aapt resource value: 0x7f080030
+            static member abc_action_bar_up_description = 2131230768
             
-            // aapt resource value: 0x7f0a0020
-            static member abc_action_menu_overflow_description = 2131361824
+            // aapt resource value: 0x7f080031
+            static member abc_action_menu_overflow_description = 2131230769
             
-            // aapt resource value: 0x7f0a0021
-            static member abc_action_mode_done = 2131361825
+            // aapt resource value: 0x7f080032
+            static member abc_action_mode_done = 2131230770
             
-            // aapt resource value: 0x7f0a0022
-            static member abc_activity_chooser_view_see_all = 2131361826
+            // aapt resource value: 0x7f080033
+            static member abc_activity_chooser_view_see_all = 2131230771
             
-            // aapt resource value: 0x7f0a0023
-            static member abc_activitychooserview_choose_application = 2131361827
+            // aapt resource value: 0x7f080034
+            static member abc_activitychooserview_choose_application = 2131230772
             
-            // aapt resource value: 0x7f0a0024
-            static member abc_capital_off = 2131361828
+            // aapt resource value: 0x7f080035
+            static member abc_capital_off = 2131230773
             
-            // aapt resource value: 0x7f0a0025
-            static member abc_capital_on = 2131361829
+            // aapt resource value: 0x7f080036
+            static member abc_capital_on = 2131230774
             
-            // aapt resource value: 0x7f0a0031
-            static member abc_font_family_body_1_material = 2131361841
+            // aapt resource value: 0x7f080042
+            static member abc_font_family_body_1_material = 2131230786
             
-            // aapt resource value: 0x7f0a0032
-            static member abc_font_family_body_2_material = 2131361842
+            // aapt resource value: 0x7f080043
+            static member abc_font_family_body_2_material = 2131230787
             
-            // aapt resource value: 0x7f0a0033
-            static member abc_font_family_button_material = 2131361843
+            // aapt resource value: 0x7f080044
+            static member abc_font_family_button_material = 2131230788
             
-            // aapt resource value: 0x7f0a0034
-            static member abc_font_family_caption_material = 2131361844
+            // aapt resource value: 0x7f080045
+            static member abc_font_family_caption_material = 2131230789
             
-            // aapt resource value: 0x7f0a0035
-            static member abc_font_family_display_1_material = 2131361845
+            // aapt resource value: 0x7f080046
+            static member abc_font_family_display_1_material = 2131230790
             
-            // aapt resource value: 0x7f0a0036
-            static member abc_font_family_display_2_material = 2131361846
+            // aapt resource value: 0x7f080047
+            static member abc_font_family_display_2_material = 2131230791
             
-            // aapt resource value: 0x7f0a0037
-            static member abc_font_family_display_3_material = 2131361847
+            // aapt resource value: 0x7f080048
+            static member abc_font_family_display_3_material = 2131230792
             
-            // aapt resource value: 0x7f0a0038
-            static member abc_font_family_display_4_material = 2131361848
+            // aapt resource value: 0x7f080049
+            static member abc_font_family_display_4_material = 2131230793
             
-            // aapt resource value: 0x7f0a0039
-            static member abc_font_family_headline_material = 2131361849
+            // aapt resource value: 0x7f08004a
+            static member abc_font_family_headline_material = 2131230794
             
-            // aapt resource value: 0x7f0a003a
-            static member abc_font_family_menu_material = 2131361850
+            // aapt resource value: 0x7f08004b
+            static member abc_font_family_menu_material = 2131230795
             
-            // aapt resource value: 0x7f0a003b
-            static member abc_font_family_subhead_material = 2131361851
+            // aapt resource value: 0x7f08004c
+            static member abc_font_family_subhead_material = 2131230796
             
-            // aapt resource value: 0x7f0a003c
-            static member abc_font_family_title_material = 2131361852
+            // aapt resource value: 0x7f08004d
+            static member abc_font_family_title_material = 2131230797
             
-            // aapt resource value: 0x7f0a0026
-            static member abc_search_hint = 2131361830
+            // aapt resource value: 0x7f080037
+            static member abc_search_hint = 2131230775
             
-            // aapt resource value: 0x7f0a0027
-            static member abc_searchview_description_clear = 2131361831
+            // aapt resource value: 0x7f080038
+            static member abc_searchview_description_clear = 2131230776
             
-            // aapt resource value: 0x7f0a0028
-            static member abc_searchview_description_query = 2131361832
+            // aapt resource value: 0x7f080039
+            static member abc_searchview_description_query = 2131230777
             
-            // aapt resource value: 0x7f0a0029
-            static member abc_searchview_description_search = 2131361833
+            // aapt resource value: 0x7f08003a
+            static member abc_searchview_description_search = 2131230778
             
-            // aapt resource value: 0x7f0a002a
-            static member abc_searchview_description_submit = 2131361834
+            // aapt resource value: 0x7f08003b
+            static member abc_searchview_description_submit = 2131230779
             
-            // aapt resource value: 0x7f0a002b
-            static member abc_searchview_description_voice = 2131361835
+            // aapt resource value: 0x7f08003c
+            static member abc_searchview_description_voice = 2131230780
             
-            // aapt resource value: 0x7f0a002c
-            static member abc_shareactionprovider_share_with = 2131361836
+            // aapt resource value: 0x7f08003d
+            static member abc_shareactionprovider_share_with = 2131230781
             
-            // aapt resource value: 0x7f0a002d
-            static member abc_shareactionprovider_share_with_application = 2131361837
+            // aapt resource value: 0x7f08003e
+            static member abc_shareactionprovider_share_with_application = 2131230782
             
-            // aapt resource value: 0x7f0a002e
-            static member abc_toolbar_collapse_description = 2131361838
+            // aapt resource value: 0x7f08003f
+            static member abc_toolbar_collapse_description = 2131230783
             
-            // aapt resource value: 0x7f0a0014
-            static member appbar_scrolling_view_behavior = 2131361812
+            // aapt resource value: 0x7f080025
+            static member appbar_scrolling_view_behavior = 2131230757
             
-            // aapt resource value: 0x7f0a0015
-            static member bottom_sheet_behavior = 2131361813
+            // aapt resource value: 0x7f080026
+            static member bottom_sheet_behavior = 2131230758
             
-            // aapt resource value: 0x7f0a0016
-            static member character_counter_pattern = 2131361814
+            // aapt resource value: 0x7f080027
+            static member character_counter_pattern = 2131230759
             
-            // aapt resource value: 0x7f0a003d
-            static member common_google_play_services_enable_button = 2131361853
+            // aapt resource value: 0x7f080000
+            static member common_google_play_services_enable_button = 2131230720
             
-            // aapt resource value: 0x7f0a003e
-            static member common_google_play_services_enable_text = 2131361854
+            // aapt resource value: 0x7f080001
+            static member common_google_play_services_enable_text = 2131230721
             
-            // aapt resource value: 0x7f0a003f
-            static member common_google_play_services_enable_title = 2131361855
+            // aapt resource value: 0x7f080002
+            static member common_google_play_services_enable_title = 2131230722
             
-            // aapt resource value: 0x7f0a0040
-            static member common_google_play_services_install_button = 2131361856
+            // aapt resource value: 0x7f080003
+            static member common_google_play_services_install_button = 2131230723
             
-            // aapt resource value: 0x7f0a0041
-            static member common_google_play_services_install_text = 2131361857
+            // aapt resource value: 0x7f080004
+            static member common_google_play_services_install_text = 2131230724
             
-            // aapt resource value: 0x7f0a0042
-            static member common_google_play_services_install_title = 2131361858
+            // aapt resource value: 0x7f080005
+            static member common_google_play_services_install_title = 2131230725
             
-            // aapt resource value: 0x7f0a0043
-            static member common_google_play_services_notification_ticker = 2131361859
+            // aapt resource value: 0x7f080006
+            static member common_google_play_services_notification_ticker = 2131230726
             
-            // aapt resource value: 0x7f0a004d
-            static member common_google_play_services_unknown_issue = 2131361869
+            // aapt resource value: 0x7f080010
+            static member common_google_play_services_unknown_issue = 2131230736
             
-            // aapt resource value: 0x7f0a0044
-            static member common_google_play_services_unsupported_text = 2131361860
+            // aapt resource value: 0x7f080007
+            static member common_google_play_services_unsupported_text = 2131230727
             
-            // aapt resource value: 0x7f0a0045
-            static member common_google_play_services_update_button = 2131361861
+            // aapt resource value: 0x7f080008
+            static member common_google_play_services_update_button = 2131230728
             
-            // aapt resource value: 0x7f0a0046
-            static member common_google_play_services_update_text = 2131361862
+            // aapt resource value: 0x7f080009
+            static member common_google_play_services_update_text = 2131230729
             
-            // aapt resource value: 0x7f0a0047
-            static member common_google_play_services_update_title = 2131361863
+            // aapt resource value: 0x7f08000a
+            static member common_google_play_services_update_title = 2131230730
             
-            // aapt resource value: 0x7f0a0048
-            static member common_google_play_services_updating_text = 2131361864
+            // aapt resource value: 0x7f08000b
+            static member common_google_play_services_updating_text = 2131230731
             
-            // aapt resource value: 0x7f0a0049
-            static member common_google_play_services_wear_update_text = 2131361865
+            // aapt resource value: 0x7f08000c
+            static member common_google_play_services_wear_update_text = 2131230732
             
-            // aapt resource value: 0x7f0a004a
-            static member common_open_on_phone = 2131361866
+            // aapt resource value: 0x7f08000d
+            static member common_open_on_phone = 2131230733
             
-            // aapt resource value: 0x7f0a004b
-            static member common_signin_button_text = 2131361867
+            // aapt resource value: 0x7f08000e
+            static member common_signin_button_text = 2131230734
             
-            // aapt resource value: 0x7f0a004c
-            static member common_signin_button_text_long = 2131361868
+            // aapt resource value: 0x7f08000f
+            static member common_signin_button_text_long = 2131230735
             
-            // aapt resource value: 0x7f0a0050
-            static member library_name = 2131361872
+            // aapt resource value: 0x7f080050
+            static member library_name = 2131230800
             
-            // aapt resource value: 0x7f0a0000
-            static member mr_button_content_description = 2131361792
+            // aapt resource value: 0x7f080011
+            static member mr_button_content_description = 2131230737
             
-            // aapt resource value: 0x7f0a0001
-            static member mr_cast_button_connected = 2131361793
+            // aapt resource value: 0x7f080012
+            static member mr_cast_button_connected = 2131230738
             
-            // aapt resource value: 0x7f0a0002
-            static member mr_cast_button_connecting = 2131361794
+            // aapt resource value: 0x7f080013
+            static member mr_cast_button_connecting = 2131230739
             
-            // aapt resource value: 0x7f0a0003
-            static member mr_cast_button_disconnected = 2131361795
+            // aapt resource value: 0x7f080014
+            static member mr_cast_button_disconnected = 2131230740
             
-            // aapt resource value: 0x7f0a0004
-            static member mr_chooser_searching = 2131361796
+            // aapt resource value: 0x7f080015
+            static member mr_chooser_searching = 2131230741
             
-            // aapt resource value: 0x7f0a0005
-            static member mr_chooser_title = 2131361797
+            // aapt resource value: 0x7f080016
+            static member mr_chooser_title = 2131230742
             
-            // aapt resource value: 0x7f0a0006
-            static member mr_controller_album_art = 2131361798
+            // aapt resource value: 0x7f080017
+            static member mr_controller_album_art = 2131230743
             
-            // aapt resource value: 0x7f0a0007
-            static member mr_controller_casting_screen = 2131361799
+            // aapt resource value: 0x7f080018
+            static member mr_controller_casting_screen = 2131230744
             
-            // aapt resource value: 0x7f0a0008
-            static member mr_controller_close_description = 2131361800
+            // aapt resource value: 0x7f080019
+            static member mr_controller_close_description = 2131230745
             
-            // aapt resource value: 0x7f0a0009
-            static member mr_controller_collapse_group = 2131361801
+            // aapt resource value: 0x7f08001a
+            static member mr_controller_collapse_group = 2131230746
             
-            // aapt resource value: 0x7f0a000a
-            static member mr_controller_disconnect = 2131361802
+            // aapt resource value: 0x7f08001b
+            static member mr_controller_disconnect = 2131230747
             
-            // aapt resource value: 0x7f0a000b
-            static member mr_controller_expand_group = 2131361803
+            // aapt resource value: 0x7f08001c
+            static member mr_controller_expand_group = 2131230748
             
-            // aapt resource value: 0x7f0a000c
-            static member mr_controller_no_info_available = 2131361804
+            // aapt resource value: 0x7f08001d
+            static member mr_controller_no_info_available = 2131230749
             
-            // aapt resource value: 0x7f0a000d
-            static member mr_controller_no_media_selected = 2131361805
+            // aapt resource value: 0x7f08001e
+            static member mr_controller_no_media_selected = 2131230750
             
-            // aapt resource value: 0x7f0a000e
-            static member mr_controller_pause = 2131361806
+            // aapt resource value: 0x7f08001f
+            static member mr_controller_pause = 2131230751
             
-            // aapt resource value: 0x7f0a000f
-            static member mr_controller_play = 2131361807
+            // aapt resource value: 0x7f080020
+            static member mr_controller_play = 2131230752
             
-            // aapt resource value: 0x7f0a0010
-            static member mr_controller_stop = 2131361808
+            // aapt resource value: 0x7f080021
+            static member mr_controller_stop = 2131230753
             
-            // aapt resource value: 0x7f0a0011
-            static member mr_controller_volume_slider = 2131361809
+            // aapt resource value: 0x7f080022
+            static member mr_controller_volume_slider = 2131230754
             
-            // aapt resource value: 0x7f0a0012
-            static member mr_system_route_name = 2131361810
+            // aapt resource value: 0x7f080023
+            static member mr_system_route_name = 2131230755
             
-            // aapt resource value: 0x7f0a0013
-            static member mr_user_route_category_name = 2131361811
+            // aapt resource value: 0x7f080024
+            static member mr_user_route_category_name = 2131230756
             
-            // aapt resource value: 0x7f0a0017
-            static member password_toggle_content_description = 2131361815
+            // aapt resource value: 0x7f080028
+            static member password_toggle_content_description = 2131230760
             
-            // aapt resource value: 0x7f0a0018
-            static member path_password_eye = 2131361816
+            // aapt resource value: 0x7f080029
+            static member path_password_eye = 2131230761
             
-            // aapt resource value: 0x7f0a0019
-            static member path_password_eye_mask_strike_through = 2131361817
+            // aapt resource value: 0x7f08002a
+            static member path_password_eye_mask_strike_through = 2131230762
             
-            // aapt resource value: 0x7f0a001a
-            static member path_password_eye_mask_visible = 2131361818
+            // aapt resource value: 0x7f08002b
+            static member path_password_eye_mask_visible = 2131230763
             
-            // aapt resource value: 0x7f0a001b
-            static member path_password_strike_through = 2131361819
+            // aapt resource value: 0x7f08002c
+            static member path_password_strike_through = 2131230764
             
-            // aapt resource value: 0x7f0a002f
-            static member search_menu_title = 2131361839
+            // aapt resource value: 0x7f080040
+            static member search_menu_title = 2131230784
             
-            // aapt resource value: 0x7f0a0030
-            static member status_bar_notification_info_overflow = 2131361840
+            // aapt resource value: 0x7f080041
+            static member status_bar_notification_info_overflow = 2131230785
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
 
 
@@ -4002,1184 +4002,1184 @@ namespace Astrid.Mobile.Droid
         
         (* partial *)Resource_Style () =
             static do Android.Runtime.ResourceIdManager.UpdateIdValues()
-            // aapt resource value: 0x7f0700c9
-            static member AlertDialog_AppCompat = 2131165385
+            // aapt resource value: 0x7f0b00c5
+            static member AlertDialog_AppCompat = 2131427525
             
-            // aapt resource value: 0x7f0700ca
-            static member AlertDialog_AppCompat_Light = 2131165386
+            // aapt resource value: 0x7f0b00c6
+            static member AlertDialog_AppCompat_Light = 2131427526
             
-            // aapt resource value: 0x7f0700cb
-            static member Animation_AppCompat_Dialog = 2131165387
+            // aapt resource value: 0x7f0b00c7
+            static member Animation_AppCompat_Dialog = 2131427527
             
-            // aapt resource value: 0x7f0700cc
-            static member Animation_AppCompat_DropDownUp = 2131165388
+            // aapt resource value: 0x7f0b00c8
+            static member Animation_AppCompat_DropDownUp = 2131427528
             
-            // aapt resource value: 0x7f070011
-            static member Animation_Design_BottomSheetDialog = 2131165201
+            // aapt resource value: 0x7f0b000d
+            static member Animation_Design_BottomSheetDialog = 2131427341
             
-            // aapt resource value: 0x7f0700cd
-            static member Base_AlertDialog_AppCompat = 2131165389
+            // aapt resource value: 0x7f0b00c9
+            static member Base_AlertDialog_AppCompat = 2131427529
             
-            // aapt resource value: 0x7f0700ce
-            static member Base_AlertDialog_AppCompat_Light = 2131165390
+            // aapt resource value: 0x7f0b00ca
+            static member Base_AlertDialog_AppCompat_Light = 2131427530
             
-            // aapt resource value: 0x7f0700cf
-            static member Base_Animation_AppCompat_Dialog = 2131165391
+            // aapt resource value: 0x7f0b00cb
+            static member Base_Animation_AppCompat_Dialog = 2131427531
             
-            // aapt resource value: 0x7f0700d0
-            static member Base_Animation_AppCompat_DropDownUp = 2131165392
+            // aapt resource value: 0x7f0b00cc
+            static member Base_Animation_AppCompat_DropDownUp = 2131427532
             
-            // aapt resource value: 0x7f070001
-            static member Base_CardView = 2131165185
+            // aapt resource value: 0x7f0b0186
+            static member Base_CardView = 2131427718
             
-            // aapt resource value: 0x7f0700d1
-            static member Base_DialogWindowTitle_AppCompat = 2131165393
+            // aapt resource value: 0x7f0b00cd
+            static member Base_DialogWindowTitle_AppCompat = 2131427533
             
-            // aapt resource value: 0x7f0700d2
-            static member Base_DialogWindowTitleBackground_AppCompat = 2131165394
+            // aapt resource value: 0x7f0b00ce
+            static member Base_DialogWindowTitleBackground_AppCompat = 2131427534
             
-            // aapt resource value: 0x7f070069
-            static member Base_TextAppearance_AppCompat = 2131165289
+            // aapt resource value: 0x7f0b0065
+            static member Base_TextAppearance_AppCompat = 2131427429
             
-            // aapt resource value: 0x7f07006a
-            static member Base_TextAppearance_AppCompat_Body1 = 2131165290
+            // aapt resource value: 0x7f0b0066
+            static member Base_TextAppearance_AppCompat_Body1 = 2131427430
             
-            // aapt resource value: 0x7f07006b
-            static member Base_TextAppearance_AppCompat_Body2 = 2131165291
+            // aapt resource value: 0x7f0b0067
+            static member Base_TextAppearance_AppCompat_Body2 = 2131427431
             
-            // aapt resource value: 0x7f070051
-            static member Base_TextAppearance_AppCompat_Button = 2131165265
+            // aapt resource value: 0x7f0b004d
+            static member Base_TextAppearance_AppCompat_Button = 2131427405
             
-            // aapt resource value: 0x7f07006c
-            static member Base_TextAppearance_AppCompat_Caption = 2131165292
+            // aapt resource value: 0x7f0b0068
+            static member Base_TextAppearance_AppCompat_Caption = 2131427432
             
-            // aapt resource value: 0x7f07006d
-            static member Base_TextAppearance_AppCompat_Display1 = 2131165293
+            // aapt resource value: 0x7f0b0069
+            static member Base_TextAppearance_AppCompat_Display1 = 2131427433
             
-            // aapt resource value: 0x7f07006e
-            static member Base_TextAppearance_AppCompat_Display2 = 2131165294
+            // aapt resource value: 0x7f0b006a
+            static member Base_TextAppearance_AppCompat_Display2 = 2131427434
             
-            // aapt resource value: 0x7f07006f
-            static member Base_TextAppearance_AppCompat_Display3 = 2131165295
+            // aapt resource value: 0x7f0b006b
+            static member Base_TextAppearance_AppCompat_Display3 = 2131427435
             
-            // aapt resource value: 0x7f070070
-            static member Base_TextAppearance_AppCompat_Display4 = 2131165296
+            // aapt resource value: 0x7f0b006c
+            static member Base_TextAppearance_AppCompat_Display4 = 2131427436
             
-            // aapt resource value: 0x7f070071
-            static member Base_TextAppearance_AppCompat_Headline = 2131165297
+            // aapt resource value: 0x7f0b006d
+            static member Base_TextAppearance_AppCompat_Headline = 2131427437
             
-            // aapt resource value: 0x7f070035
-            static member Base_TextAppearance_AppCompat_Inverse = 2131165237
+            // aapt resource value: 0x7f0b0031
+            static member Base_TextAppearance_AppCompat_Inverse = 2131427377
             
-            // aapt resource value: 0x7f070072
-            static member Base_TextAppearance_AppCompat_Large = 2131165298
+            // aapt resource value: 0x7f0b006e
+            static member Base_TextAppearance_AppCompat_Large = 2131427438
             
-            // aapt resource value: 0x7f070036
-            static member Base_TextAppearance_AppCompat_Large_Inverse = 2131165238
+            // aapt resource value: 0x7f0b0032
+            static member Base_TextAppearance_AppCompat_Large_Inverse = 2131427378
             
-            // aapt resource value: 0x7f070073
-            static member Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131165299
+            // aapt resource value: 0x7f0b006f
+            static member Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131427439
             
-            // aapt resource value: 0x7f070074
-            static member Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131165300
+            // aapt resource value: 0x7f0b0070
+            static member Base_TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131427440
             
-            // aapt resource value: 0x7f070075
-            static member Base_TextAppearance_AppCompat_Medium = 2131165301
+            // aapt resource value: 0x7f0b0071
+            static member Base_TextAppearance_AppCompat_Medium = 2131427441
             
-            // aapt resource value: 0x7f070037
-            static member Base_TextAppearance_AppCompat_Medium_Inverse = 2131165239
+            // aapt resource value: 0x7f0b0033
+            static member Base_TextAppearance_AppCompat_Medium_Inverse = 2131427379
             
-            // aapt resource value: 0x7f070076
-            static member Base_TextAppearance_AppCompat_Menu = 2131165302
+            // aapt resource value: 0x7f0b0072
+            static member Base_TextAppearance_AppCompat_Menu = 2131427442
             
-            // aapt resource value: 0x7f0700d3
-            static member Base_TextAppearance_AppCompat_SearchResult = 2131165395
+            // aapt resource value: 0x7f0b00cf
+            static member Base_TextAppearance_AppCompat_SearchResult = 2131427535
             
-            // aapt resource value: 0x7f070077
-            static member Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131165303
+            // aapt resource value: 0x7f0b0073
+            static member Base_TextAppearance_AppCompat_SearchResult_Subtitle = 2131427443
             
-            // aapt resource value: 0x7f070078
-            static member Base_TextAppearance_AppCompat_SearchResult_Title = 2131165304
+            // aapt resource value: 0x7f0b0074
+            static member Base_TextAppearance_AppCompat_SearchResult_Title = 2131427444
             
-            // aapt resource value: 0x7f070079
-            static member Base_TextAppearance_AppCompat_Small = 2131165305
+            // aapt resource value: 0x7f0b0075
+            static member Base_TextAppearance_AppCompat_Small = 2131427445
             
-            // aapt resource value: 0x7f070038
-            static member Base_TextAppearance_AppCompat_Small_Inverse = 2131165240
+            // aapt resource value: 0x7f0b0034
+            static member Base_TextAppearance_AppCompat_Small_Inverse = 2131427380
             
-            // aapt resource value: 0x7f07007a
-            static member Base_TextAppearance_AppCompat_Subhead = 2131165306
+            // aapt resource value: 0x7f0b0076
+            static member Base_TextAppearance_AppCompat_Subhead = 2131427446
             
-            // aapt resource value: 0x7f070039
-            static member Base_TextAppearance_AppCompat_Subhead_Inverse = 2131165241
+            // aapt resource value: 0x7f0b0035
+            static member Base_TextAppearance_AppCompat_Subhead_Inverse = 2131427381
             
-            // aapt resource value: 0x7f07007b
-            static member Base_TextAppearance_AppCompat_Title = 2131165307
+            // aapt resource value: 0x7f0b0077
+            static member Base_TextAppearance_AppCompat_Title = 2131427447
             
-            // aapt resource value: 0x7f07003a
-            static member Base_TextAppearance_AppCompat_Title_Inverse = 2131165242
+            // aapt resource value: 0x7f0b0036
+            static member Base_TextAppearance_AppCompat_Title_Inverse = 2131427382
             
-            // aapt resource value: 0x7f0700be
-            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131165374
+            // aapt resource value: 0x7f0b00ba
+            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131427514
             
-            // aapt resource value: 0x7f07007c
-            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131165308
+            // aapt resource value: 0x7f0b0078
+            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131427448
             
-            // aapt resource value: 0x7f07007d
-            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131165309
+            // aapt resource value: 0x7f0b0079
+            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131427449
             
-            // aapt resource value: 0x7f07007e
-            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131165310
+            // aapt resource value: 0x7f0b007a
+            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Title = 2131427450
             
-            // aapt resource value: 0x7f07007f
-            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131165311
+            // aapt resource value: 0x7f0b007b
+            static member Base_TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131427451
             
-            // aapt resource value: 0x7f070080
-            static member Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131165312
+            // aapt resource value: 0x7f0b007c
+            static member Base_TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131427452
             
-            // aapt resource value: 0x7f070081
-            static member Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131165313
+            // aapt resource value: 0x7f0b007d
+            static member Base_TextAppearance_AppCompat_Widget_ActionMode_Title = 2131427453
             
-            // aapt resource value: 0x7f070082
-            static member Base_TextAppearance_AppCompat_Widget_Button = 2131165314
+            // aapt resource value: 0x7f0b007e
+            static member Base_TextAppearance_AppCompat_Widget_Button = 2131427454
             
-            // aapt resource value: 0x7f0700c5
-            static member Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131165381
+            // aapt resource value: 0x7f0b00c1
+            static member Base_TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131427521
             
-            // aapt resource value: 0x7f0700c6
-            static member Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131165382
+            // aapt resource value: 0x7f0b00c2
+            static member Base_TextAppearance_AppCompat_Widget_Button_Colored = 2131427522
             
-            // aapt resource value: 0x7f0700bf
-            static member Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131165375
+            // aapt resource value: 0x7f0b00bb
+            static member Base_TextAppearance_AppCompat_Widget_Button_Inverse = 2131427515
             
-            // aapt resource value: 0x7f0700d4
-            static member Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131165396
+            // aapt resource value: 0x7f0b00d0
+            static member Base_TextAppearance_AppCompat_Widget_DropDownItem = 2131427536
             
-            // aapt resource value: 0x7f070083
-            static member Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131165315
+            // aapt resource value: 0x7f0b007f
+            static member Base_TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131427455
             
-            // aapt resource value: 0x7f070084
-            static member Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131165316
+            // aapt resource value: 0x7f0b0080
+            static member Base_TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131427456
             
-            // aapt resource value: 0x7f070085
-            static member Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131165317
+            // aapt resource value: 0x7f0b0081
+            static member Base_TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131427457
             
-            // aapt resource value: 0x7f070086
-            static member Base_TextAppearance_AppCompat_Widget_Switch = 2131165318
+            // aapt resource value: 0x7f0b0082
+            static member Base_TextAppearance_AppCompat_Widget_Switch = 2131427458
             
-            // aapt resource value: 0x7f070087
-            static member Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131165319
+            // aapt resource value: 0x7f0b0083
+            static member Base_TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131427459
             
-            // aapt resource value: 0x7f0700d5
-            static member Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131165397
+            // aapt resource value: 0x7f0b00d1
+            static member Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131427537
             
-            // aapt resource value: 0x7f070088
-            static member Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131165320
+            // aapt resource value: 0x7f0b0084
+            static member Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131427460
             
-            // aapt resource value: 0x7f070089
-            static member Base_TextAppearance_Widget_AppCompat_Toolbar_Title = 2131165321
+            // aapt resource value: 0x7f0b0085
+            static member Base_TextAppearance_Widget_AppCompat_Toolbar_Title = 2131427461
             
-            // aapt resource value: 0x7f07008a
-            static member Base_Theme_AppCompat = 2131165322
+            // aapt resource value: 0x7f0b0086
+            static member Base_Theme_AppCompat = 2131427462
             
-            // aapt resource value: 0x7f0700d6
-            static member Base_Theme_AppCompat_CompactMenu = 2131165398
+            // aapt resource value: 0x7f0b00d2
+            static member Base_Theme_AppCompat_CompactMenu = 2131427538
             
-            // aapt resource value: 0x7f07003b
-            static member Base_Theme_AppCompat_Dialog = 2131165243
+            // aapt resource value: 0x7f0b0037
+            static member Base_Theme_AppCompat_Dialog = 2131427383
             
-            // aapt resource value: 0x7f07003c
-            static member Base_Theme_AppCompat_Dialog_Alert = 2131165244
+            // aapt resource value: 0x7f0b0038
+            static member Base_Theme_AppCompat_Dialog_Alert = 2131427384
             
-            // aapt resource value: 0x7f0700d7
-            static member Base_Theme_AppCompat_Dialog_FixedSize = 2131165399
+            // aapt resource value: 0x7f0b00d3
+            static member Base_Theme_AppCompat_Dialog_FixedSize = 2131427539
             
-            // aapt resource value: 0x7f07003d
-            static member Base_Theme_AppCompat_Dialog_MinWidth = 2131165245
+            // aapt resource value: 0x7f0b0039
+            static member Base_Theme_AppCompat_Dialog_MinWidth = 2131427385
             
-            // aapt resource value: 0x7f07002b
-            static member Base_Theme_AppCompat_DialogWhenLarge = 2131165227
+            // aapt resource value: 0x7f0b0027
+            static member Base_Theme_AppCompat_DialogWhenLarge = 2131427367
             
-            // aapt resource value: 0x7f07008b
-            static member Base_Theme_AppCompat_Light = 2131165323
+            // aapt resource value: 0x7f0b0087
+            static member Base_Theme_AppCompat_Light = 2131427463
             
-            // aapt resource value: 0x7f0700d8
-            static member Base_Theme_AppCompat_Light_DarkActionBar = 2131165400
+            // aapt resource value: 0x7f0b00d4
+            static member Base_Theme_AppCompat_Light_DarkActionBar = 2131427540
             
-            // aapt resource value: 0x7f07003e
-            static member Base_Theme_AppCompat_Light_Dialog = 2131165246
+            // aapt resource value: 0x7f0b003a
+            static member Base_Theme_AppCompat_Light_Dialog = 2131427386
             
-            // aapt resource value: 0x7f07003f
-            static member Base_Theme_AppCompat_Light_Dialog_Alert = 2131165247
+            // aapt resource value: 0x7f0b003b
+            static member Base_Theme_AppCompat_Light_Dialog_Alert = 2131427387
             
-            // aapt resource value: 0x7f0700d9
-            static member Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131165401
+            // aapt resource value: 0x7f0b00d5
+            static member Base_Theme_AppCompat_Light_Dialog_FixedSize = 2131427541
             
-            // aapt resource value: 0x7f070040
-            static member Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131165248
+            // aapt resource value: 0x7f0b003c
+            static member Base_Theme_AppCompat_Light_Dialog_MinWidth = 2131427388
             
-            // aapt resource value: 0x7f07002c
-            static member Base_Theme_AppCompat_Light_DialogWhenLarge = 2131165228
+            // aapt resource value: 0x7f0b0028
+            static member Base_Theme_AppCompat_Light_DialogWhenLarge = 2131427368
             
-            // aapt resource value: 0x7f0700da
-            static member Base_ThemeOverlay_AppCompat = 2131165402
+            // aapt resource value: 0x7f0b00d6
+            static member Base_ThemeOverlay_AppCompat = 2131427542
             
-            // aapt resource value: 0x7f0700db
-            static member Base_ThemeOverlay_AppCompat_ActionBar = 2131165403
+            // aapt resource value: 0x7f0b00d7
+            static member Base_ThemeOverlay_AppCompat_ActionBar = 2131427543
             
-            // aapt resource value: 0x7f0700dc
-            static member Base_ThemeOverlay_AppCompat_Dark = 2131165404
+            // aapt resource value: 0x7f0b00d8
+            static member Base_ThemeOverlay_AppCompat_Dark = 2131427544
             
-            // aapt resource value: 0x7f0700dd
-            static member Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131165405
+            // aapt resource value: 0x7f0b00d9
+            static member Base_ThemeOverlay_AppCompat_Dark_ActionBar = 2131427545
             
-            // aapt resource value: 0x7f070041
-            static member Base_ThemeOverlay_AppCompat_Dialog = 2131165249
+            // aapt resource value: 0x7f0b003d
+            static member Base_ThemeOverlay_AppCompat_Dialog = 2131427389
             
-            // aapt resource value: 0x7f070042
-            static member Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131165250
+            // aapt resource value: 0x7f0b003e
+            static member Base_ThemeOverlay_AppCompat_Dialog_Alert = 2131427390
             
-            // aapt resource value: 0x7f0700de
-            static member Base_ThemeOverlay_AppCompat_Light = 2131165406
+            // aapt resource value: 0x7f0b00da
+            static member Base_ThemeOverlay_AppCompat_Light = 2131427546
             
-            // aapt resource value: 0x7f070043
-            static member Base_V11_Theme_AppCompat_Dialog = 2131165251
+            // aapt resource value: 0x7f0b003f
+            static member Base_V11_Theme_AppCompat_Dialog = 2131427391
             
-            // aapt resource value: 0x7f070044
-            static member Base_V11_Theme_AppCompat_Light_Dialog = 2131165252
+            // aapt resource value: 0x7f0b0040
+            static member Base_V11_Theme_AppCompat_Light_Dialog = 2131427392
             
-            // aapt resource value: 0x7f070045
-            static member Base_V11_ThemeOverlay_AppCompat_Dialog = 2131165253
+            // aapt resource value: 0x7f0b0041
+            static member Base_V11_ThemeOverlay_AppCompat_Dialog = 2131427393
             
-            // aapt resource value: 0x7f07004d
-            static member Base_V12_Widget_AppCompat_AutoCompleteTextView = 2131165261
+            // aapt resource value: 0x7f0b0049
+            static member Base_V12_Widget_AppCompat_AutoCompleteTextView = 2131427401
             
-            // aapt resource value: 0x7f07004e
-            static member Base_V12_Widget_AppCompat_EditText = 2131165262
+            // aapt resource value: 0x7f0b004a
+            static member Base_V12_Widget_AppCompat_EditText = 2131427402
             
-            // aapt resource value: 0x7f07008c
-            static member Base_V21_Theme_AppCompat = 2131165324
+            // aapt resource value: 0x7f0b0088
+            static member Base_V21_Theme_AppCompat = 2131427464
             
-            // aapt resource value: 0x7f07008d
-            static member Base_V21_Theme_AppCompat_Dialog = 2131165325
+            // aapt resource value: 0x7f0b0089
+            static member Base_V21_Theme_AppCompat_Dialog = 2131427465
             
-            // aapt resource value: 0x7f07008e
-            static member Base_V21_Theme_AppCompat_Light = 2131165326
+            // aapt resource value: 0x7f0b008a
+            static member Base_V21_Theme_AppCompat_Light = 2131427466
             
-            // aapt resource value: 0x7f07008f
-            static member Base_V21_Theme_AppCompat_Light_Dialog = 2131165327
+            // aapt resource value: 0x7f0b008b
+            static member Base_V21_Theme_AppCompat_Light_Dialog = 2131427467
             
-            // aapt resource value: 0x7f070090
-            static member Base_V21_ThemeOverlay_AppCompat_Dialog = 2131165328
+            // aapt resource value: 0x7f0b008c
+            static member Base_V21_ThemeOverlay_AppCompat_Dialog = 2131427468
             
-            // aapt resource value: 0x7f0700bc
-            static member Base_V22_Theme_AppCompat = 2131165372
+            // aapt resource value: 0x7f0b00b8
+            static member Base_V22_Theme_AppCompat = 2131427512
             
-            // aapt resource value: 0x7f0700bd
-            static member Base_V22_Theme_AppCompat_Light = 2131165373
+            // aapt resource value: 0x7f0b00b9
+            static member Base_V22_Theme_AppCompat_Light = 2131427513
             
-            // aapt resource value: 0x7f0700c0
-            static member Base_V23_Theme_AppCompat = 2131165376
+            // aapt resource value: 0x7f0b00bc
+            static member Base_V23_Theme_AppCompat = 2131427516
             
-            // aapt resource value: 0x7f0700c1
-            static member Base_V23_Theme_AppCompat_Light = 2131165377
+            // aapt resource value: 0x7f0b00bd
+            static member Base_V23_Theme_AppCompat_Light = 2131427517
             
-            // aapt resource value: 0x7f0700df
-            static member Base_V7_Theme_AppCompat = 2131165407
+            // aapt resource value: 0x7f0b00db
+            static member Base_V7_Theme_AppCompat = 2131427547
             
-            // aapt resource value: 0x7f0700e0
-            static member Base_V7_Theme_AppCompat_Dialog = 2131165408
+            // aapt resource value: 0x7f0b00dc
+            static member Base_V7_Theme_AppCompat_Dialog = 2131427548
             
-            // aapt resource value: 0x7f0700e1
-            static member Base_V7_Theme_AppCompat_Light = 2131165409
+            // aapt resource value: 0x7f0b00dd
+            static member Base_V7_Theme_AppCompat_Light = 2131427549
             
-            // aapt resource value: 0x7f0700e2
-            static member Base_V7_Theme_AppCompat_Light_Dialog = 2131165410
+            // aapt resource value: 0x7f0b00de
+            static member Base_V7_Theme_AppCompat_Light_Dialog = 2131427550
             
-            // aapt resource value: 0x7f0700e3
-            static member Base_V7_ThemeOverlay_AppCompat_Dialog = 2131165411
+            // aapt resource value: 0x7f0b00df
+            static member Base_V7_ThemeOverlay_AppCompat_Dialog = 2131427551
             
-            // aapt resource value: 0x7f0700e4
-            static member Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131165412
+            // aapt resource value: 0x7f0b00e0
+            static member Base_V7_Widget_AppCompat_AutoCompleteTextView = 2131427552
             
-            // aapt resource value: 0x7f0700e5
-            static member Base_V7_Widget_AppCompat_EditText = 2131165413
+            // aapt resource value: 0x7f0b00e1
+            static member Base_V7_Widget_AppCompat_EditText = 2131427553
             
-            // aapt resource value: 0x7f0700e6
-            static member Base_Widget_AppCompat_ActionBar = 2131165414
+            // aapt resource value: 0x7f0b00e2
+            static member Base_Widget_AppCompat_ActionBar = 2131427554
             
-            // aapt resource value: 0x7f0700e7
-            static member Base_Widget_AppCompat_ActionBar_Solid = 2131165415
+            // aapt resource value: 0x7f0b00e3
+            static member Base_Widget_AppCompat_ActionBar_Solid = 2131427555
             
-            // aapt resource value: 0x7f0700e8
-            static member Base_Widget_AppCompat_ActionBar_TabBar = 2131165416
+            // aapt resource value: 0x7f0b00e4
+            static member Base_Widget_AppCompat_ActionBar_TabBar = 2131427556
             
-            // aapt resource value: 0x7f070091
-            static member Base_Widget_AppCompat_ActionBar_TabText = 2131165329
+            // aapt resource value: 0x7f0b008d
+            static member Base_Widget_AppCompat_ActionBar_TabText = 2131427469
             
-            // aapt resource value: 0x7f070092
-            static member Base_Widget_AppCompat_ActionBar_TabView = 2131165330
+            // aapt resource value: 0x7f0b008e
+            static member Base_Widget_AppCompat_ActionBar_TabView = 2131427470
             
-            // aapt resource value: 0x7f070093
-            static member Base_Widget_AppCompat_ActionButton = 2131165331
+            // aapt resource value: 0x7f0b008f
+            static member Base_Widget_AppCompat_ActionButton = 2131427471
             
-            // aapt resource value: 0x7f070094
-            static member Base_Widget_AppCompat_ActionButton_CloseMode = 2131165332
+            // aapt resource value: 0x7f0b0090
+            static member Base_Widget_AppCompat_ActionButton_CloseMode = 2131427472
             
-            // aapt resource value: 0x7f070095
-            static member Base_Widget_AppCompat_ActionButton_Overflow = 2131165333
+            // aapt resource value: 0x7f0b0091
+            static member Base_Widget_AppCompat_ActionButton_Overflow = 2131427473
             
-            // aapt resource value: 0x7f0700e9
-            static member Base_Widget_AppCompat_ActionMode = 2131165417
+            // aapt resource value: 0x7f0b00e5
+            static member Base_Widget_AppCompat_ActionMode = 2131427557
             
-            // aapt resource value: 0x7f0700ea
-            static member Base_Widget_AppCompat_ActivityChooserView = 2131165418
+            // aapt resource value: 0x7f0b00e6
+            static member Base_Widget_AppCompat_ActivityChooserView = 2131427558
             
-            // aapt resource value: 0x7f07004f
-            static member Base_Widget_AppCompat_AutoCompleteTextView = 2131165263
+            // aapt resource value: 0x7f0b004b
+            static member Base_Widget_AppCompat_AutoCompleteTextView = 2131427403
             
-            // aapt resource value: 0x7f070096
-            static member Base_Widget_AppCompat_Button = 2131165334
+            // aapt resource value: 0x7f0b0092
+            static member Base_Widget_AppCompat_Button = 2131427474
             
-            // aapt resource value: 0x7f070097
-            static member Base_Widget_AppCompat_Button_Borderless = 2131165335
+            // aapt resource value: 0x7f0b0093
+            static member Base_Widget_AppCompat_Button_Borderless = 2131427475
             
-            // aapt resource value: 0x7f070098
-            static member Base_Widget_AppCompat_Button_Borderless_Colored = 2131165336
+            // aapt resource value: 0x7f0b0094
+            static member Base_Widget_AppCompat_Button_Borderless_Colored = 2131427476
             
-            // aapt resource value: 0x7f0700eb
-            static member Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131165419
+            // aapt resource value: 0x7f0b00e7
+            static member Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131427559
             
-            // aapt resource value: 0x7f0700c2
-            static member Base_Widget_AppCompat_Button_Colored = 2131165378
+            // aapt resource value: 0x7f0b00be
+            static member Base_Widget_AppCompat_Button_Colored = 2131427518
             
-            // aapt resource value: 0x7f070099
-            static member Base_Widget_AppCompat_Button_Small = 2131165337
+            // aapt resource value: 0x7f0b0095
+            static member Base_Widget_AppCompat_Button_Small = 2131427477
             
-            // aapt resource value: 0x7f07009a
-            static member Base_Widget_AppCompat_ButtonBar = 2131165338
+            // aapt resource value: 0x7f0b0096
+            static member Base_Widget_AppCompat_ButtonBar = 2131427478
             
-            // aapt resource value: 0x7f0700ec
-            static member Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131165420
+            // aapt resource value: 0x7f0b00e8
+            static member Base_Widget_AppCompat_ButtonBar_AlertDialog = 2131427560
             
-            // aapt resource value: 0x7f07009b
-            static member Base_Widget_AppCompat_CompoundButton_CheckBox = 2131165339
+            // aapt resource value: 0x7f0b0097
+            static member Base_Widget_AppCompat_CompoundButton_CheckBox = 2131427479
             
-            // aapt resource value: 0x7f07009c
-            static member Base_Widget_AppCompat_CompoundButton_RadioButton = 2131165340
+            // aapt resource value: 0x7f0b0098
+            static member Base_Widget_AppCompat_CompoundButton_RadioButton = 2131427480
             
-            // aapt resource value: 0x7f0700ed
-            static member Base_Widget_AppCompat_CompoundButton_Switch = 2131165421
+            // aapt resource value: 0x7f0b00e9
+            static member Base_Widget_AppCompat_CompoundButton_Switch = 2131427561
             
-            // aapt resource value: 0x7f07002a
-            static member Base_Widget_AppCompat_DrawerArrowToggle = 2131165226
+            // aapt resource value: 0x7f0b0026
+            static member Base_Widget_AppCompat_DrawerArrowToggle = 2131427366
             
-            // aapt resource value: 0x7f0700ee
-            static member Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131165422
+            // aapt resource value: 0x7f0b00ea
+            static member Base_Widget_AppCompat_DrawerArrowToggle_Common = 2131427562
             
-            // aapt resource value: 0x7f07009d
-            static member Base_Widget_AppCompat_DropDownItem_Spinner = 2131165341
+            // aapt resource value: 0x7f0b0099
+            static member Base_Widget_AppCompat_DropDownItem_Spinner = 2131427481
             
-            // aapt resource value: 0x7f070050
-            static member Base_Widget_AppCompat_EditText = 2131165264
+            // aapt resource value: 0x7f0b004c
+            static member Base_Widget_AppCompat_EditText = 2131427404
             
-            // aapt resource value: 0x7f07009e
-            static member Base_Widget_AppCompat_ImageButton = 2131165342
+            // aapt resource value: 0x7f0b009a
+            static member Base_Widget_AppCompat_ImageButton = 2131427482
             
-            // aapt resource value: 0x7f0700ef
-            static member Base_Widget_AppCompat_Light_ActionBar = 2131165423
+            // aapt resource value: 0x7f0b00eb
+            static member Base_Widget_AppCompat_Light_ActionBar = 2131427563
             
-            // aapt resource value: 0x7f0700f0
-            static member Base_Widget_AppCompat_Light_ActionBar_Solid = 2131165424
+            // aapt resource value: 0x7f0b00ec
+            static member Base_Widget_AppCompat_Light_ActionBar_Solid = 2131427564
             
-            // aapt resource value: 0x7f0700f1
-            static member Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131165425
+            // aapt resource value: 0x7f0b00ed
+            static member Base_Widget_AppCompat_Light_ActionBar_TabBar = 2131427565
             
-            // aapt resource value: 0x7f07009f
-            static member Base_Widget_AppCompat_Light_ActionBar_TabText = 2131165343
+            // aapt resource value: 0x7f0b009b
+            static member Base_Widget_AppCompat_Light_ActionBar_TabText = 2131427483
             
-            // aapt resource value: 0x7f0700a0
-            static member Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131165344
+            // aapt resource value: 0x7f0b009c
+            static member Base_Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131427484
             
-            // aapt resource value: 0x7f0700a1
-            static member Base_Widget_AppCompat_Light_ActionBar_TabView = 2131165345
+            // aapt resource value: 0x7f0b009d
+            static member Base_Widget_AppCompat_Light_ActionBar_TabView = 2131427485
             
-            // aapt resource value: 0x7f0700a2
-            static member Base_Widget_AppCompat_Light_PopupMenu = 2131165346
+            // aapt resource value: 0x7f0b009e
+            static member Base_Widget_AppCompat_Light_PopupMenu = 2131427486
             
-            // aapt resource value: 0x7f0700a3
-            static member Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131165347
+            // aapt resource value: 0x7f0b009f
+            static member Base_Widget_AppCompat_Light_PopupMenu_Overflow = 2131427487
             
-            // aapt resource value: 0x7f0700f2
-            static member Base_Widget_AppCompat_ListMenuView = 2131165426
+            // aapt resource value: 0x7f0b00ee
+            static member Base_Widget_AppCompat_ListMenuView = 2131427566
             
-            // aapt resource value: 0x7f0700a4
-            static member Base_Widget_AppCompat_ListPopupWindow = 2131165348
+            // aapt resource value: 0x7f0b00a0
+            static member Base_Widget_AppCompat_ListPopupWindow = 2131427488
             
-            // aapt resource value: 0x7f0700a5
-            static member Base_Widget_AppCompat_ListView = 2131165349
+            // aapt resource value: 0x7f0b00a1
+            static member Base_Widget_AppCompat_ListView = 2131427489
             
-            // aapt resource value: 0x7f0700a6
-            static member Base_Widget_AppCompat_ListView_DropDown = 2131165350
+            // aapt resource value: 0x7f0b00a2
+            static member Base_Widget_AppCompat_ListView_DropDown = 2131427490
             
-            // aapt resource value: 0x7f0700a7
-            static member Base_Widget_AppCompat_ListView_Menu = 2131165351
+            // aapt resource value: 0x7f0b00a3
+            static member Base_Widget_AppCompat_ListView_Menu = 2131427491
             
-            // aapt resource value: 0x7f0700a8
-            static member Base_Widget_AppCompat_PopupMenu = 2131165352
+            // aapt resource value: 0x7f0b00a4
+            static member Base_Widget_AppCompat_PopupMenu = 2131427492
             
-            // aapt resource value: 0x7f0700a9
-            static member Base_Widget_AppCompat_PopupMenu_Overflow = 2131165353
+            // aapt resource value: 0x7f0b00a5
+            static member Base_Widget_AppCompat_PopupMenu_Overflow = 2131427493
             
-            // aapt resource value: 0x7f0700f3
-            static member Base_Widget_AppCompat_PopupWindow = 2131165427
+            // aapt resource value: 0x7f0b00ef
+            static member Base_Widget_AppCompat_PopupWindow = 2131427567
             
-            // aapt resource value: 0x7f070046
-            static member Base_Widget_AppCompat_ProgressBar = 2131165254
+            // aapt resource value: 0x7f0b0042
+            static member Base_Widget_AppCompat_ProgressBar = 2131427394
             
-            // aapt resource value: 0x7f070047
-            static member Base_Widget_AppCompat_ProgressBar_Horizontal = 2131165255
+            // aapt resource value: 0x7f0b0043
+            static member Base_Widget_AppCompat_ProgressBar_Horizontal = 2131427395
             
-            // aapt resource value: 0x7f0700aa
-            static member Base_Widget_AppCompat_RatingBar = 2131165354
+            // aapt resource value: 0x7f0b00a6
+            static member Base_Widget_AppCompat_RatingBar = 2131427494
             
-            // aapt resource value: 0x7f0700c3
-            static member Base_Widget_AppCompat_RatingBar_Indicator = 2131165379
+            // aapt resource value: 0x7f0b00bf
+            static member Base_Widget_AppCompat_RatingBar_Indicator = 2131427519
             
-            // aapt resource value: 0x7f0700c4
-            static member Base_Widget_AppCompat_RatingBar_Small = 2131165380
+            // aapt resource value: 0x7f0b00c0
+            static member Base_Widget_AppCompat_RatingBar_Small = 2131427520
             
-            // aapt resource value: 0x7f0700f4
-            static member Base_Widget_AppCompat_SearchView = 2131165428
+            // aapt resource value: 0x7f0b00f0
+            static member Base_Widget_AppCompat_SearchView = 2131427568
             
-            // aapt resource value: 0x7f0700f5
-            static member Base_Widget_AppCompat_SearchView_ActionBar = 2131165429
+            // aapt resource value: 0x7f0b00f1
+            static member Base_Widget_AppCompat_SearchView_ActionBar = 2131427569
             
-            // aapt resource value: 0x7f0700ab
-            static member Base_Widget_AppCompat_SeekBar = 2131165355
+            // aapt resource value: 0x7f0b00a7
+            static member Base_Widget_AppCompat_SeekBar = 2131427495
             
-            // aapt resource value: 0x7f0700f6
-            static member Base_Widget_AppCompat_SeekBar_Discrete = 2131165430
+            // aapt resource value: 0x7f0b00f2
+            static member Base_Widget_AppCompat_SeekBar_Discrete = 2131427570
             
-            // aapt resource value: 0x7f0700ac
-            static member Base_Widget_AppCompat_Spinner = 2131165356
+            // aapt resource value: 0x7f0b00a8
+            static member Base_Widget_AppCompat_Spinner = 2131427496
             
-            // aapt resource value: 0x7f07002d
-            static member Base_Widget_AppCompat_Spinner_Underlined = 2131165229
+            // aapt resource value: 0x7f0b0029
+            static member Base_Widget_AppCompat_Spinner_Underlined = 2131427369
             
-            // aapt resource value: 0x7f0700ad
-            static member Base_Widget_AppCompat_TextView_SpinnerItem = 2131165357
+            // aapt resource value: 0x7f0b00a9
+            static member Base_Widget_AppCompat_TextView_SpinnerItem = 2131427497
             
-            // aapt resource value: 0x7f0700f7
-            static member Base_Widget_AppCompat_Toolbar = 2131165431
+            // aapt resource value: 0x7f0b00f3
+            static member Base_Widget_AppCompat_Toolbar = 2131427571
             
-            // aapt resource value: 0x7f0700ae
-            static member Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131165358
+            // aapt resource value: 0x7f0b00aa
+            static member Base_Widget_AppCompat_Toolbar_Button_Navigation = 2131427498
             
-            // aapt resource value: 0x7f070012
-            static member Base_Widget_Design_AppBarLayout = 2131165202
+            // aapt resource value: 0x7f0b000e
+            static member Base_Widget_Design_AppBarLayout = 2131427342
             
-            // aapt resource value: 0x7f070013
-            static member Base_Widget_Design_TabLayout = 2131165203
+            // aapt resource value: 0x7f0b000f
+            static member Base_Widget_Design_TabLayout = 2131427343
             
-            // aapt resource value: 0x7f070000
-            static member CardView = 2131165184
+            // aapt resource value: 0x7f0b0185
+            static member CardView = 2131427717
             
-            // aapt resource value: 0x7f070002
-            static member CardView_Dark = 2131165186
+            // aapt resource value: 0x7f0b0187
+            static member CardView_Dark = 2131427719
             
-            // aapt resource value: 0x7f070003
-            static member CardView_Light = 2131165187
+            // aapt resource value: 0x7f0b0188
+            static member CardView_Light = 2131427720
             
-            // aapt resource value: 0x7f070048
-            static member Platform_AppCompat = 2131165256
+            // aapt resource value: 0x7f0b0044
+            static member Platform_AppCompat = 2131427396
             
-            // aapt resource value: 0x7f070049
-            static member Platform_AppCompat_Light = 2131165257
+            // aapt resource value: 0x7f0b0045
+            static member Platform_AppCompat_Light = 2131427397
             
-            // aapt resource value: 0x7f0700af
-            static member Platform_ThemeOverlay_AppCompat = 2131165359
+            // aapt resource value: 0x7f0b00ab
+            static member Platform_ThemeOverlay_AppCompat = 2131427499
             
-            // aapt resource value: 0x7f0700b0
-            static member Platform_ThemeOverlay_AppCompat_Dark = 2131165360
+            // aapt resource value: 0x7f0b00ac
+            static member Platform_ThemeOverlay_AppCompat_Dark = 2131427500
             
-            // aapt resource value: 0x7f0700b1
-            static member Platform_ThemeOverlay_AppCompat_Light = 2131165361
+            // aapt resource value: 0x7f0b00ad
+            static member Platform_ThemeOverlay_AppCompat_Light = 2131427501
             
-            // aapt resource value: 0x7f07004a
-            static member Platform_V11_AppCompat = 2131165258
+            // aapt resource value: 0x7f0b0046
+            static member Platform_V11_AppCompat = 2131427398
             
-            // aapt resource value: 0x7f07004b
-            static member Platform_V11_AppCompat_Light = 2131165259
+            // aapt resource value: 0x7f0b0047
+            static member Platform_V11_AppCompat_Light = 2131427399
             
-            // aapt resource value: 0x7f070052
-            static member Platform_V14_AppCompat = 2131165266
+            // aapt resource value: 0x7f0b004e
+            static member Platform_V14_AppCompat = 2131427406
             
-            // aapt resource value: 0x7f070053
-            static member Platform_V14_AppCompat_Light = 2131165267
+            // aapt resource value: 0x7f0b004f
+            static member Platform_V14_AppCompat_Light = 2131427407
             
-            // aapt resource value: 0x7f0700b2
-            static member Platform_V21_AppCompat = 2131165362
+            // aapt resource value: 0x7f0b00ae
+            static member Platform_V21_AppCompat = 2131427502
             
-            // aapt resource value: 0x7f0700b3
-            static member Platform_V21_AppCompat_Light = 2131165363
+            // aapt resource value: 0x7f0b00af
+            static member Platform_V21_AppCompat_Light = 2131427503
             
-            // aapt resource value: 0x7f0700c7
-            static member Platform_V25_AppCompat = 2131165383
+            // aapt resource value: 0x7f0b00c3
+            static member Platform_V25_AppCompat = 2131427523
             
-            // aapt resource value: 0x7f0700c8
-            static member Platform_V25_AppCompat_Light = 2131165384
+            // aapt resource value: 0x7f0b00c4
+            static member Platform_V25_AppCompat_Light = 2131427524
             
-            // aapt resource value: 0x7f07004c
-            static member Platform_Widget_AppCompat_Spinner = 2131165260
+            // aapt resource value: 0x7f0b0048
+            static member Platform_Widget_AppCompat_Spinner = 2131427400
             
-            // aapt resource value: 0x7f07005b
-            static member RtlOverlay_DialogWindowTitle_AppCompat = 2131165275
+            // aapt resource value: 0x7f0b0057
+            static member RtlOverlay_DialogWindowTitle_AppCompat = 2131427415
             
-            // aapt resource value: 0x7f07005c
-            static member RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131165276
+            // aapt resource value: 0x7f0b0058
+            static member RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = 2131427416
             
-            // aapt resource value: 0x7f07005d
-            static member RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131165277
+            // aapt resource value: 0x7f0b0059
+            static member RtlOverlay_Widget_AppCompat_DialogTitle_Icon = 2131427417
             
-            // aapt resource value: 0x7f07005e
-            static member RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131165278
+            // aapt resource value: 0x7f0b005a
+            static member RtlOverlay_Widget_AppCompat_PopupMenuItem = 2131427418
             
-            // aapt resource value: 0x7f07005f
-            static member RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131165279
+            // aapt resource value: 0x7f0b005b
+            static member RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = 2131427419
             
-            // aapt resource value: 0x7f070060
-            static member RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131165280
+            // aapt resource value: 0x7f0b005c
+            static member RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = 2131427420
             
-            // aapt resource value: 0x7f070061
-            static member RtlOverlay_Widget_AppCompat_Search_DropDown = 2131165281
+            // aapt resource value: 0x7f0b005d
+            static member RtlOverlay_Widget_AppCompat_Search_DropDown = 2131427421
             
-            // aapt resource value: 0x7f070062
-            static member RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131165282
+            // aapt resource value: 0x7f0b005e
+            static member RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = 2131427422
             
-            // aapt resource value: 0x7f070063
-            static member RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131165283
+            // aapt resource value: 0x7f0b005f
+            static member RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = 2131427423
             
-            // aapt resource value: 0x7f070064
-            static member RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131165284
+            // aapt resource value: 0x7f0b0060
+            static member RtlOverlay_Widget_AppCompat_Search_DropDown_Query = 2131427424
             
-            // aapt resource value: 0x7f070065
-            static member RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131165285
+            // aapt resource value: 0x7f0b0061
+            static member RtlOverlay_Widget_AppCompat_Search_DropDown_Text = 2131427425
             
-            // aapt resource value: 0x7f070066
-            static member RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131165286
+            // aapt resource value: 0x7f0b0062
+            static member RtlOverlay_Widget_AppCompat_SearchView_MagIcon = 2131427426
             
-            // aapt resource value: 0x7f070067
-            static member RtlUnderlay_Widget_AppCompat_ActionButton = 2131165287
+            // aapt resource value: 0x7f0b0063
+            static member RtlUnderlay_Widget_AppCompat_ActionButton = 2131427427
             
-            // aapt resource value: 0x7f070068
-            static member RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131165288
+            // aapt resource value: 0x7f0b0064
+            static member RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131427428
             
-            // aapt resource value: 0x7f0700f8
-            static member TextAppearance_AppCompat = 2131165432
+            // aapt resource value: 0x7f0b00f4
+            static member TextAppearance_AppCompat = 2131427572
             
-            // aapt resource value: 0x7f0700f9
-            static member TextAppearance_AppCompat_Body1 = 2131165433
+            // aapt resource value: 0x7f0b00f5
+            static member TextAppearance_AppCompat_Body1 = 2131427573
             
-            // aapt resource value: 0x7f0700fa
-            static member TextAppearance_AppCompat_Body2 = 2131165434
+            // aapt resource value: 0x7f0b00f6
+            static member TextAppearance_AppCompat_Body2 = 2131427574
             
-            // aapt resource value: 0x7f0700fb
-            static member TextAppearance_AppCompat_Button = 2131165435
+            // aapt resource value: 0x7f0b00f7
+            static member TextAppearance_AppCompat_Button = 2131427575
             
-            // aapt resource value: 0x7f0700fc
-            static member TextAppearance_AppCompat_Caption = 2131165436
+            // aapt resource value: 0x7f0b00f8
+            static member TextAppearance_AppCompat_Caption = 2131427576
             
-            // aapt resource value: 0x7f0700fd
-            static member TextAppearance_AppCompat_Display1 = 2131165437
+            // aapt resource value: 0x7f0b00f9
+            static member TextAppearance_AppCompat_Display1 = 2131427577
             
-            // aapt resource value: 0x7f0700fe
-            static member TextAppearance_AppCompat_Display2 = 2131165438
+            // aapt resource value: 0x7f0b00fa
+            static member TextAppearance_AppCompat_Display2 = 2131427578
             
-            // aapt resource value: 0x7f0700ff
-            static member TextAppearance_AppCompat_Display3 = 2131165439
+            // aapt resource value: 0x7f0b00fb
+            static member TextAppearance_AppCompat_Display3 = 2131427579
             
-            // aapt resource value: 0x7f070100
-            static member TextAppearance_AppCompat_Display4 = 2131165440
+            // aapt resource value: 0x7f0b00fc
+            static member TextAppearance_AppCompat_Display4 = 2131427580
             
-            // aapt resource value: 0x7f070101
-            static member TextAppearance_AppCompat_Headline = 2131165441
+            // aapt resource value: 0x7f0b00fd
+            static member TextAppearance_AppCompat_Headline = 2131427581
             
-            // aapt resource value: 0x7f070102
-            static member TextAppearance_AppCompat_Inverse = 2131165442
+            // aapt resource value: 0x7f0b00fe
+            static member TextAppearance_AppCompat_Inverse = 2131427582
             
-            // aapt resource value: 0x7f070103
-            static member TextAppearance_AppCompat_Large = 2131165443
+            // aapt resource value: 0x7f0b00ff
+            static member TextAppearance_AppCompat_Large = 2131427583
             
-            // aapt resource value: 0x7f070104
-            static member TextAppearance_AppCompat_Large_Inverse = 2131165444
+            // aapt resource value: 0x7f0b0100
+            static member TextAppearance_AppCompat_Large_Inverse = 2131427584
             
-            // aapt resource value: 0x7f070105
-            static member TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131165445
+            // aapt resource value: 0x7f0b0101
+            static member TextAppearance_AppCompat_Light_SearchResult_Subtitle = 2131427585
             
-            // aapt resource value: 0x7f070106
-            static member TextAppearance_AppCompat_Light_SearchResult_Title = 2131165446
+            // aapt resource value: 0x7f0b0102
+            static member TextAppearance_AppCompat_Light_SearchResult_Title = 2131427586
             
-            // aapt resource value: 0x7f070107
-            static member TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131165447
+            // aapt resource value: 0x7f0b0103
+            static member TextAppearance_AppCompat_Light_Widget_PopupMenu_Large = 2131427587
             
-            // aapt resource value: 0x7f070108
-            static member TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131165448
+            // aapt resource value: 0x7f0b0104
+            static member TextAppearance_AppCompat_Light_Widget_PopupMenu_Small = 2131427588
             
-            // aapt resource value: 0x7f070109
-            static member TextAppearance_AppCompat_Medium = 2131165449
+            // aapt resource value: 0x7f0b0105
+            static member TextAppearance_AppCompat_Medium = 2131427589
             
-            // aapt resource value: 0x7f07010a
-            static member TextAppearance_AppCompat_Medium_Inverse = 2131165450
+            // aapt resource value: 0x7f0b0106
+            static member TextAppearance_AppCompat_Medium_Inverse = 2131427590
             
-            // aapt resource value: 0x7f07010b
-            static member TextAppearance_AppCompat_Menu = 2131165451
+            // aapt resource value: 0x7f0b0107
+            static member TextAppearance_AppCompat_Menu = 2131427591
             
-            // aapt resource value: 0x7f070054
-            static member TextAppearance_AppCompat_Notification = 2131165268
+            // aapt resource value: 0x7f0b0050
+            static member TextAppearance_AppCompat_Notification = 2131427408
             
-            // aapt resource value: 0x7f0700b4
-            static member TextAppearance_AppCompat_Notification_Info = 2131165364
+            // aapt resource value: 0x7f0b00b0
+            static member TextAppearance_AppCompat_Notification_Info = 2131427504
             
-            // aapt resource value: 0x7f0700b5
-            static member TextAppearance_AppCompat_Notification_Info_Media = 2131165365
+            // aapt resource value: 0x7f0b00b1
+            static member TextAppearance_AppCompat_Notification_Info_Media = 2131427505
             
-            // aapt resource value: 0x7f07010c
-            static member TextAppearance_AppCompat_Notification_Line2 = 2131165452
+            // aapt resource value: 0x7f0b0108
+            static member TextAppearance_AppCompat_Notification_Line2 = 2131427592
             
-            // aapt resource value: 0x7f07010d
-            static member TextAppearance_AppCompat_Notification_Line2_Media = 2131165453
+            // aapt resource value: 0x7f0b0109
+            static member TextAppearance_AppCompat_Notification_Line2_Media = 2131427593
             
-            // aapt resource value: 0x7f0700b6
-            static member TextAppearance_AppCompat_Notification_Media = 2131165366
+            // aapt resource value: 0x7f0b00b2
+            static member TextAppearance_AppCompat_Notification_Media = 2131427506
             
-            // aapt resource value: 0x7f0700b7
-            static member TextAppearance_AppCompat_Notification_Time = 2131165367
+            // aapt resource value: 0x7f0b00b3
+            static member TextAppearance_AppCompat_Notification_Time = 2131427507
             
-            // aapt resource value: 0x7f0700b8
-            static member TextAppearance_AppCompat_Notification_Time_Media = 2131165368
+            // aapt resource value: 0x7f0b00b4
+            static member TextAppearance_AppCompat_Notification_Time_Media = 2131427508
             
-            // aapt resource value: 0x7f070055
-            static member TextAppearance_AppCompat_Notification_Title = 2131165269
+            // aapt resource value: 0x7f0b0051
+            static member TextAppearance_AppCompat_Notification_Title = 2131427409
             
-            // aapt resource value: 0x7f0700b9
-            static member TextAppearance_AppCompat_Notification_Title_Media = 2131165369
+            // aapt resource value: 0x7f0b00b5
+            static member TextAppearance_AppCompat_Notification_Title_Media = 2131427509
             
-            // aapt resource value: 0x7f07010e
-            static member TextAppearance_AppCompat_SearchResult_Subtitle = 2131165454
+            // aapt resource value: 0x7f0b010a
+            static member TextAppearance_AppCompat_SearchResult_Subtitle = 2131427594
             
-            // aapt resource value: 0x7f07010f
-            static member TextAppearance_AppCompat_SearchResult_Title = 2131165455
+            // aapt resource value: 0x7f0b010b
+            static member TextAppearance_AppCompat_SearchResult_Title = 2131427595
             
-            // aapt resource value: 0x7f070110
-            static member TextAppearance_AppCompat_Small = 2131165456
+            // aapt resource value: 0x7f0b010c
+            static member TextAppearance_AppCompat_Small = 2131427596
             
-            // aapt resource value: 0x7f070111
-            static member TextAppearance_AppCompat_Small_Inverse = 2131165457
+            // aapt resource value: 0x7f0b010d
+            static member TextAppearance_AppCompat_Small_Inverse = 2131427597
             
-            // aapt resource value: 0x7f070112
-            static member TextAppearance_AppCompat_Subhead = 2131165458
+            // aapt resource value: 0x7f0b010e
+            static member TextAppearance_AppCompat_Subhead = 2131427598
             
-            // aapt resource value: 0x7f070113
-            static member TextAppearance_AppCompat_Subhead_Inverse = 2131165459
+            // aapt resource value: 0x7f0b010f
+            static member TextAppearance_AppCompat_Subhead_Inverse = 2131427599
             
-            // aapt resource value: 0x7f070114
-            static member TextAppearance_AppCompat_Title = 2131165460
+            // aapt resource value: 0x7f0b0110
+            static member TextAppearance_AppCompat_Title = 2131427600
             
-            // aapt resource value: 0x7f070115
-            static member TextAppearance_AppCompat_Title_Inverse = 2131165461
+            // aapt resource value: 0x7f0b0111
+            static member TextAppearance_AppCompat_Title_Inverse = 2131427601
             
-            // aapt resource value: 0x7f070116
-            static member TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131165462
+            // aapt resource value: 0x7f0b0112
+            static member TextAppearance_AppCompat_Widget_ActionBar_Menu = 2131427602
             
-            // aapt resource value: 0x7f070117
-            static member TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131165463
+            // aapt resource value: 0x7f0b0113
+            static member TextAppearance_AppCompat_Widget_ActionBar_Subtitle = 2131427603
             
-            // aapt resource value: 0x7f070118
-            static member TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131165464
+            // aapt resource value: 0x7f0b0114
+            static member TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse = 2131427604
             
-            // aapt resource value: 0x7f070119
-            static member TextAppearance_AppCompat_Widget_ActionBar_Title = 2131165465
+            // aapt resource value: 0x7f0b0115
+            static member TextAppearance_AppCompat_Widget_ActionBar_Title = 2131427605
             
-            // aapt resource value: 0x7f07011a
-            static member TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131165466
+            // aapt resource value: 0x7f0b0116
+            static member TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse = 2131427606
             
-            // aapt resource value: 0x7f07011b
-            static member TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131165467
+            // aapt resource value: 0x7f0b0117
+            static member TextAppearance_AppCompat_Widget_ActionMode_Subtitle = 2131427607
             
-            // aapt resource value: 0x7f07011c
-            static member TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131165468
+            // aapt resource value: 0x7f0b0118
+            static member TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse = 2131427608
             
-            // aapt resource value: 0x7f07011d
-            static member TextAppearance_AppCompat_Widget_ActionMode_Title = 2131165469
+            // aapt resource value: 0x7f0b0119
+            static member TextAppearance_AppCompat_Widget_ActionMode_Title = 2131427609
             
-            // aapt resource value: 0x7f07011e
-            static member TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131165470
+            // aapt resource value: 0x7f0b011a
+            static member TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse = 2131427610
             
-            // aapt resource value: 0x7f07011f
-            static member TextAppearance_AppCompat_Widget_Button = 2131165471
+            // aapt resource value: 0x7f0b011b
+            static member TextAppearance_AppCompat_Widget_Button = 2131427611
             
-            // aapt resource value: 0x7f070120
-            static member TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131165472
+            // aapt resource value: 0x7f0b011c
+            static member TextAppearance_AppCompat_Widget_Button_Borderless_Colored = 2131427612
             
-            // aapt resource value: 0x7f070121
-            static member TextAppearance_AppCompat_Widget_Button_Colored = 2131165473
+            // aapt resource value: 0x7f0b011d
+            static member TextAppearance_AppCompat_Widget_Button_Colored = 2131427613
             
-            // aapt resource value: 0x7f070122
-            static member TextAppearance_AppCompat_Widget_Button_Inverse = 2131165474
+            // aapt resource value: 0x7f0b011e
+            static member TextAppearance_AppCompat_Widget_Button_Inverse = 2131427614
             
-            // aapt resource value: 0x7f070123
-            static member TextAppearance_AppCompat_Widget_DropDownItem = 2131165475
+            // aapt resource value: 0x7f0b011f
+            static member TextAppearance_AppCompat_Widget_DropDownItem = 2131427615
             
-            // aapt resource value: 0x7f070124
-            static member TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131165476
+            // aapt resource value: 0x7f0b0120
+            static member TextAppearance_AppCompat_Widget_PopupMenu_Header = 2131427616
             
-            // aapt resource value: 0x7f070125
-            static member TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131165477
+            // aapt resource value: 0x7f0b0121
+            static member TextAppearance_AppCompat_Widget_PopupMenu_Large = 2131427617
             
-            // aapt resource value: 0x7f070126
-            static member TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131165478
+            // aapt resource value: 0x7f0b0122
+            static member TextAppearance_AppCompat_Widget_PopupMenu_Small = 2131427618
             
-            // aapt resource value: 0x7f070127
-            static member TextAppearance_AppCompat_Widget_Switch = 2131165479
+            // aapt resource value: 0x7f0b0123
+            static member TextAppearance_AppCompat_Widget_Switch = 2131427619
             
-            // aapt resource value: 0x7f070128
-            static member TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131165480
+            // aapt resource value: 0x7f0b0124
+            static member TextAppearance_AppCompat_Widget_TextView_SpinnerItem = 2131427620
             
-            // aapt resource value: 0x7f070014
-            static member TextAppearance_Design_CollapsingToolbar_Expanded = 2131165204
+            // aapt resource value: 0x7f0b0010
+            static member TextAppearance_Design_CollapsingToolbar_Expanded = 2131427344
             
-            // aapt resource value: 0x7f070015
-            static member TextAppearance_Design_Counter = 2131165205
+            // aapt resource value: 0x7f0b0011
+            static member TextAppearance_Design_Counter = 2131427345
             
-            // aapt resource value: 0x7f070016
-            static member TextAppearance_Design_Counter_Overflow = 2131165206
+            // aapt resource value: 0x7f0b0012
+            static member TextAppearance_Design_Counter_Overflow = 2131427346
             
-            // aapt resource value: 0x7f070017
-            static member TextAppearance_Design_Error = 2131165207
+            // aapt resource value: 0x7f0b0013
+            static member TextAppearance_Design_Error = 2131427347
             
-            // aapt resource value: 0x7f070018
-            static member TextAppearance_Design_Hint = 2131165208
+            // aapt resource value: 0x7f0b0014
+            static member TextAppearance_Design_Hint = 2131427348
             
-            // aapt resource value: 0x7f070019
-            static member TextAppearance_Design_Snackbar_Message = 2131165209
+            // aapt resource value: 0x7f0b0015
+            static member TextAppearance_Design_Snackbar_Message = 2131427349
             
-            // aapt resource value: 0x7f07001a
-            static member TextAppearance_Design_Tab = 2131165210
+            // aapt resource value: 0x7f0b0016
+            static member TextAppearance_Design_Tab = 2131427350
             
-            // aapt resource value: 0x7f070004
-            static member TextAppearance_MediaRouter_PrimaryText = 2131165188
+            // aapt resource value: 0x7f0b0000
+            static member TextAppearance_MediaRouter_PrimaryText = 2131427328
             
-            // aapt resource value: 0x7f070005
-            static member TextAppearance_MediaRouter_SecondaryText = 2131165189
+            // aapt resource value: 0x7f0b0001
+            static member TextAppearance_MediaRouter_SecondaryText = 2131427329
             
-            // aapt resource value: 0x7f070006
-            static member TextAppearance_MediaRouter_Title = 2131165190
+            // aapt resource value: 0x7f0b0002
+            static member TextAppearance_MediaRouter_Title = 2131427330
             
-            // aapt resource value: 0x7f070056
-            static member TextAppearance_StatusBar_EventContent = 2131165270
+            // aapt resource value: 0x7f0b0052
+            static member TextAppearance_StatusBar_EventContent = 2131427410
             
-            // aapt resource value: 0x7f070057
-            static member TextAppearance_StatusBar_EventContent_Info = 2131165271
+            // aapt resource value: 0x7f0b0053
+            static member TextAppearance_StatusBar_EventContent_Info = 2131427411
             
-            // aapt resource value: 0x7f070058
-            static member TextAppearance_StatusBar_EventContent_Line2 = 2131165272
+            // aapt resource value: 0x7f0b0054
+            static member TextAppearance_StatusBar_EventContent_Line2 = 2131427412
             
-            // aapt resource value: 0x7f070059
-            static member TextAppearance_StatusBar_EventContent_Time = 2131165273
+            // aapt resource value: 0x7f0b0055
+            static member TextAppearance_StatusBar_EventContent_Time = 2131427413
             
-            // aapt resource value: 0x7f07005a
-            static member TextAppearance_StatusBar_EventContent_Title = 2131165274
+            // aapt resource value: 0x7f0b0056
+            static member TextAppearance_StatusBar_EventContent_Title = 2131427414
             
-            // aapt resource value: 0x7f070129
-            static member TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131165481
+            // aapt resource value: 0x7f0b0125
+            static member TextAppearance_Widget_AppCompat_ExpandedMenu_Item = 2131427621
             
-            // aapt resource value: 0x7f07012a
-            static member TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131165482
+            // aapt resource value: 0x7f0b0126
+            static member TextAppearance_Widget_AppCompat_Toolbar_Subtitle = 2131427622
             
-            // aapt resource value: 0x7f07012b
-            static member TextAppearance_Widget_AppCompat_Toolbar_Title = 2131165483
+            // aapt resource value: 0x7f0b0127
+            static member TextAppearance_Widget_AppCompat_Toolbar_Title = 2131427623
             
-            // aapt resource value: 0x7f07012c
-            static member Theme_AppCompat = 2131165484
+            // aapt resource value: 0x7f0b0128
+            static member Theme_AppCompat = 2131427624
             
-            // aapt resource value: 0x7f07012d
-            static member Theme_AppCompat_CompactMenu = 2131165485
+            // aapt resource value: 0x7f0b0129
+            static member Theme_AppCompat_CompactMenu = 2131427625
             
-            // aapt resource value: 0x7f07002e
-            static member Theme_AppCompat_DayNight = 2131165230
+            // aapt resource value: 0x7f0b002a
+            static member Theme_AppCompat_DayNight = 2131427370
             
-            // aapt resource value: 0x7f07002f
-            static member Theme_AppCompat_DayNight_DarkActionBar = 2131165231
+            // aapt resource value: 0x7f0b002b
+            static member Theme_AppCompat_DayNight_DarkActionBar = 2131427371
             
-            // aapt resource value: 0x7f070030
-            static member Theme_AppCompat_DayNight_Dialog = 2131165232
+            // aapt resource value: 0x7f0b002c
+            static member Theme_AppCompat_DayNight_Dialog = 2131427372
             
-            // aapt resource value: 0x7f070031
-            static member Theme_AppCompat_DayNight_Dialog_Alert = 2131165233
+            // aapt resource value: 0x7f0b002d
+            static member Theme_AppCompat_DayNight_Dialog_Alert = 2131427373
             
-            // aapt resource value: 0x7f070032
-            static member Theme_AppCompat_DayNight_Dialog_MinWidth = 2131165234
+            // aapt resource value: 0x7f0b002e
+            static member Theme_AppCompat_DayNight_Dialog_MinWidth = 2131427374
             
-            // aapt resource value: 0x7f070033
-            static member Theme_AppCompat_DayNight_DialogWhenLarge = 2131165235
+            // aapt resource value: 0x7f0b002f
+            static member Theme_AppCompat_DayNight_DialogWhenLarge = 2131427375
             
-            // aapt resource value: 0x7f070034
-            static member Theme_AppCompat_DayNight_NoActionBar = 2131165236
+            // aapt resource value: 0x7f0b0030
+            static member Theme_AppCompat_DayNight_NoActionBar = 2131427376
             
-            // aapt resource value: 0x7f07012e
-            static member Theme_AppCompat_Dialog = 2131165486
+            // aapt resource value: 0x7f0b012a
+            static member Theme_AppCompat_Dialog = 2131427626
             
-            // aapt resource value: 0x7f07012f
-            static member Theme_AppCompat_Dialog_Alert = 2131165487
+            // aapt resource value: 0x7f0b012b
+            static member Theme_AppCompat_Dialog_Alert = 2131427627
             
-            // aapt resource value: 0x7f070130
-            static member Theme_AppCompat_Dialog_MinWidth = 2131165488
+            // aapt resource value: 0x7f0b012c
+            static member Theme_AppCompat_Dialog_MinWidth = 2131427628
             
-            // aapt resource value: 0x7f070131
-            static member Theme_AppCompat_DialogWhenLarge = 2131165489
+            // aapt resource value: 0x7f0b012d
+            static member Theme_AppCompat_DialogWhenLarge = 2131427629
             
-            // aapt resource value: 0x7f070132
-            static member Theme_AppCompat_Light = 2131165490
+            // aapt resource value: 0x7f0b012e
+            static member Theme_AppCompat_Light = 2131427630
             
-            // aapt resource value: 0x7f070133
-            static member Theme_AppCompat_Light_DarkActionBar = 2131165491
+            // aapt resource value: 0x7f0b012f
+            static member Theme_AppCompat_Light_DarkActionBar = 2131427631
             
-            // aapt resource value: 0x7f070134
-            static member Theme_AppCompat_Light_Dialog = 2131165492
+            // aapt resource value: 0x7f0b0130
+            static member Theme_AppCompat_Light_Dialog = 2131427632
             
-            // aapt resource value: 0x7f070135
-            static member Theme_AppCompat_Light_Dialog_Alert = 2131165493
+            // aapt resource value: 0x7f0b0131
+            static member Theme_AppCompat_Light_Dialog_Alert = 2131427633
             
-            // aapt resource value: 0x7f070136
-            static member Theme_AppCompat_Light_Dialog_MinWidth = 2131165494
+            // aapt resource value: 0x7f0b0132
+            static member Theme_AppCompat_Light_Dialog_MinWidth = 2131427634
             
-            // aapt resource value: 0x7f070137
-            static member Theme_AppCompat_Light_DialogWhenLarge = 2131165495
+            // aapt resource value: 0x7f0b0133
+            static member Theme_AppCompat_Light_DialogWhenLarge = 2131427635
             
-            // aapt resource value: 0x7f070138
-            static member Theme_AppCompat_Light_NoActionBar = 2131165496
+            // aapt resource value: 0x7f0b0134
+            static member Theme_AppCompat_Light_NoActionBar = 2131427636
             
-            // aapt resource value: 0x7f070139
-            static member Theme_AppCompat_NoActionBar = 2131165497
+            // aapt resource value: 0x7f0b0135
+            static member Theme_AppCompat_NoActionBar = 2131427637
             
-            // aapt resource value: 0x7f07001b
-            static member Theme_Design = 2131165211
+            // aapt resource value: 0x7f0b0017
+            static member Theme_Design = 2131427351
             
-            // aapt resource value: 0x7f07001c
-            static member Theme_Design_BottomSheetDialog = 2131165212
+            // aapt resource value: 0x7f0b0018
+            static member Theme_Design_BottomSheetDialog = 2131427352
             
-            // aapt resource value: 0x7f07001d
-            static member Theme_Design_Light = 2131165213
+            // aapt resource value: 0x7f0b0019
+            static member Theme_Design_Light = 2131427353
             
-            // aapt resource value: 0x7f07001e
-            static member Theme_Design_Light_BottomSheetDialog = 2131165214
+            // aapt resource value: 0x7f0b001a
+            static member Theme_Design_Light_BottomSheetDialog = 2131427354
             
-            // aapt resource value: 0x7f07001f
-            static member Theme_Design_Light_NoActionBar = 2131165215
+            // aapt resource value: 0x7f0b001b
+            static member Theme_Design_Light_NoActionBar = 2131427355
             
-            // aapt resource value: 0x7f070020
-            static member Theme_Design_NoActionBar = 2131165216
+            // aapt resource value: 0x7f0b001c
+            static member Theme_Design_NoActionBar = 2131427356
             
-            // aapt resource value: 0x7f070007
-            static member Theme_MediaRouter = 2131165191
+            // aapt resource value: 0x7f0b0003
+            static member Theme_MediaRouter = 2131427331
             
-            // aapt resource value: 0x7f070008
-            static member Theme_MediaRouter_Light = 2131165192
+            // aapt resource value: 0x7f0b0004
+            static member Theme_MediaRouter_Light = 2131427332
             
-            // aapt resource value: 0x7f070009
-            static member Theme_MediaRouter_Light_DarkControlPanel = 2131165193
+            // aapt resource value: 0x7f0b0005
+            static member Theme_MediaRouter_Light_DarkControlPanel = 2131427333
             
-            // aapt resource value: 0x7f07000a
-            static member Theme_MediaRouter_LightControlPanel = 2131165194
+            // aapt resource value: 0x7f0b0006
+            static member Theme_MediaRouter_LightControlPanel = 2131427334
             
-            // aapt resource value: 0x7f07013a
-            static member ThemeOverlay_AppCompat = 2131165498
+            // aapt resource value: 0x7f0b0136
+            static member ThemeOverlay_AppCompat = 2131427638
             
-            // aapt resource value: 0x7f07013b
-            static member ThemeOverlay_AppCompat_ActionBar = 2131165499
+            // aapt resource value: 0x7f0b0137
+            static member ThemeOverlay_AppCompat_ActionBar = 2131427639
             
-            // aapt resource value: 0x7f07013c
-            static member ThemeOverlay_AppCompat_Dark = 2131165500
+            // aapt resource value: 0x7f0b0138
+            static member ThemeOverlay_AppCompat_Dark = 2131427640
             
-            // aapt resource value: 0x7f07013d
-            static member ThemeOverlay_AppCompat_Dark_ActionBar = 2131165501
+            // aapt resource value: 0x7f0b0139
+            static member ThemeOverlay_AppCompat_Dark_ActionBar = 2131427641
             
-            // aapt resource value: 0x7f07013e
-            static member ThemeOverlay_AppCompat_Dialog = 2131165502
+            // aapt resource value: 0x7f0b013a
+            static member ThemeOverlay_AppCompat_Dialog = 2131427642
             
-            // aapt resource value: 0x7f07013f
-            static member ThemeOverlay_AppCompat_Dialog_Alert = 2131165503
+            // aapt resource value: 0x7f0b013b
+            static member ThemeOverlay_AppCompat_Dialog_Alert = 2131427643
             
-            // aapt resource value: 0x7f070140
-            static member ThemeOverlay_AppCompat_Light = 2131165504
+            // aapt resource value: 0x7f0b013c
+            static member ThemeOverlay_AppCompat_Light = 2131427644
             
-            // aapt resource value: 0x7f07000b
-            static member ThemeOverlay_MediaRouter_Dark = 2131165195
+            // aapt resource value: 0x7f0b0007
+            static member ThemeOverlay_MediaRouter_Dark = 2131427335
             
-            // aapt resource value: 0x7f07000c
-            static member ThemeOverlay_MediaRouter_Light = 2131165196
+            // aapt resource value: 0x7f0b0008
+            static member ThemeOverlay_MediaRouter_Light = 2131427336
             
-            // aapt resource value: 0x7f070141
-            static member Widget_AppCompat_ActionBar = 2131165505
+            // aapt resource value: 0x7f0b013d
+            static member Widget_AppCompat_ActionBar = 2131427645
             
-            // aapt resource value: 0x7f070142
-            static member Widget_AppCompat_ActionBar_Solid = 2131165506
+            // aapt resource value: 0x7f0b013e
+            static member Widget_AppCompat_ActionBar_Solid = 2131427646
             
-            // aapt resource value: 0x7f070143
-            static member Widget_AppCompat_ActionBar_TabBar = 2131165507
+            // aapt resource value: 0x7f0b013f
+            static member Widget_AppCompat_ActionBar_TabBar = 2131427647
             
-            // aapt resource value: 0x7f070144
-            static member Widget_AppCompat_ActionBar_TabText = 2131165508
+            // aapt resource value: 0x7f0b0140
+            static member Widget_AppCompat_ActionBar_TabText = 2131427648
             
-            // aapt resource value: 0x7f070145
-            static member Widget_AppCompat_ActionBar_TabView = 2131165509
+            // aapt resource value: 0x7f0b0141
+            static member Widget_AppCompat_ActionBar_TabView = 2131427649
             
-            // aapt resource value: 0x7f070146
-            static member Widget_AppCompat_ActionButton = 2131165510
+            // aapt resource value: 0x7f0b0142
+            static member Widget_AppCompat_ActionButton = 2131427650
             
-            // aapt resource value: 0x7f070147
-            static member Widget_AppCompat_ActionButton_CloseMode = 2131165511
+            // aapt resource value: 0x7f0b0143
+            static member Widget_AppCompat_ActionButton_CloseMode = 2131427651
             
-            // aapt resource value: 0x7f070148
-            static member Widget_AppCompat_ActionButton_Overflow = 2131165512
+            // aapt resource value: 0x7f0b0144
+            static member Widget_AppCompat_ActionButton_Overflow = 2131427652
             
-            // aapt resource value: 0x7f070149
-            static member Widget_AppCompat_ActionMode = 2131165513
+            // aapt resource value: 0x7f0b0145
+            static member Widget_AppCompat_ActionMode = 2131427653
             
-            // aapt resource value: 0x7f07014a
-            static member Widget_AppCompat_ActivityChooserView = 2131165514
+            // aapt resource value: 0x7f0b0146
+            static member Widget_AppCompat_ActivityChooserView = 2131427654
             
-            // aapt resource value: 0x7f07014b
-            static member Widget_AppCompat_AutoCompleteTextView = 2131165515
+            // aapt resource value: 0x7f0b0147
+            static member Widget_AppCompat_AutoCompleteTextView = 2131427655
             
-            // aapt resource value: 0x7f07014c
-            static member Widget_AppCompat_Button = 2131165516
+            // aapt resource value: 0x7f0b0148
+            static member Widget_AppCompat_Button = 2131427656
             
-            // aapt resource value: 0x7f07014d
-            static member Widget_AppCompat_Button_Borderless = 2131165517
+            // aapt resource value: 0x7f0b0149
+            static member Widget_AppCompat_Button_Borderless = 2131427657
             
-            // aapt resource value: 0x7f07014e
-            static member Widget_AppCompat_Button_Borderless_Colored = 2131165518
+            // aapt resource value: 0x7f0b014a
+            static member Widget_AppCompat_Button_Borderless_Colored = 2131427658
             
-            // aapt resource value: 0x7f07014f
-            static member Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131165519
+            // aapt resource value: 0x7f0b014b
+            static member Widget_AppCompat_Button_ButtonBar_AlertDialog = 2131427659
             
-            // aapt resource value: 0x7f070150
-            static member Widget_AppCompat_Button_Colored = 2131165520
+            // aapt resource value: 0x7f0b014c
+            static member Widget_AppCompat_Button_Colored = 2131427660
             
-            // aapt resource value: 0x7f070151
-            static member Widget_AppCompat_Button_Small = 2131165521
+            // aapt resource value: 0x7f0b014d
+            static member Widget_AppCompat_Button_Small = 2131427661
             
-            // aapt resource value: 0x7f070152
-            static member Widget_AppCompat_ButtonBar = 2131165522
+            // aapt resource value: 0x7f0b014e
+            static member Widget_AppCompat_ButtonBar = 2131427662
             
-            // aapt resource value: 0x7f070153
-            static member Widget_AppCompat_ButtonBar_AlertDialog = 2131165523
+            // aapt resource value: 0x7f0b014f
+            static member Widget_AppCompat_ButtonBar_AlertDialog = 2131427663
             
-            // aapt resource value: 0x7f070154
-            static member Widget_AppCompat_CompoundButton_CheckBox = 2131165524
+            // aapt resource value: 0x7f0b0150
+            static member Widget_AppCompat_CompoundButton_CheckBox = 2131427664
             
-            // aapt resource value: 0x7f070155
-            static member Widget_AppCompat_CompoundButton_RadioButton = 2131165525
+            // aapt resource value: 0x7f0b0151
+            static member Widget_AppCompat_CompoundButton_RadioButton = 2131427665
             
-            // aapt resource value: 0x7f070156
-            static member Widget_AppCompat_CompoundButton_Switch = 2131165526
+            // aapt resource value: 0x7f0b0152
+            static member Widget_AppCompat_CompoundButton_Switch = 2131427666
             
-            // aapt resource value: 0x7f070157
-            static member Widget_AppCompat_DrawerArrowToggle = 2131165527
+            // aapt resource value: 0x7f0b0153
+            static member Widget_AppCompat_DrawerArrowToggle = 2131427667
             
-            // aapt resource value: 0x7f070158
-            static member Widget_AppCompat_DropDownItem_Spinner = 2131165528
+            // aapt resource value: 0x7f0b0154
+            static member Widget_AppCompat_DropDownItem_Spinner = 2131427668
             
-            // aapt resource value: 0x7f070159
-            static member Widget_AppCompat_EditText = 2131165529
+            // aapt resource value: 0x7f0b0155
+            static member Widget_AppCompat_EditText = 2131427669
             
-            // aapt resource value: 0x7f07015a
-            static member Widget_AppCompat_ImageButton = 2131165530
+            // aapt resource value: 0x7f0b0156
+            static member Widget_AppCompat_ImageButton = 2131427670
             
-            // aapt resource value: 0x7f07015b
-            static member Widget_AppCompat_Light_ActionBar = 2131165531
+            // aapt resource value: 0x7f0b0157
+            static member Widget_AppCompat_Light_ActionBar = 2131427671
             
-            // aapt resource value: 0x7f07015c
-            static member Widget_AppCompat_Light_ActionBar_Solid = 2131165532
+            // aapt resource value: 0x7f0b0158
+            static member Widget_AppCompat_Light_ActionBar_Solid = 2131427672
             
-            // aapt resource value: 0x7f07015d
-            static member Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131165533
+            // aapt resource value: 0x7f0b0159
+            static member Widget_AppCompat_Light_ActionBar_Solid_Inverse = 2131427673
             
-            // aapt resource value: 0x7f07015e
-            static member Widget_AppCompat_Light_ActionBar_TabBar = 2131165534
+            // aapt resource value: 0x7f0b015a
+            static member Widget_AppCompat_Light_ActionBar_TabBar = 2131427674
             
-            // aapt resource value: 0x7f07015f
-            static member Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131165535
+            // aapt resource value: 0x7f0b015b
+            static member Widget_AppCompat_Light_ActionBar_TabBar_Inverse = 2131427675
             
-            // aapt resource value: 0x7f070160
-            static member Widget_AppCompat_Light_ActionBar_TabText = 2131165536
+            // aapt resource value: 0x7f0b015c
+            static member Widget_AppCompat_Light_ActionBar_TabText = 2131427676
             
-            // aapt resource value: 0x7f070161
-            static member Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131165537
+            // aapt resource value: 0x7f0b015d
+            static member Widget_AppCompat_Light_ActionBar_TabText_Inverse = 2131427677
             
-            // aapt resource value: 0x7f070162
-            static member Widget_AppCompat_Light_ActionBar_TabView = 2131165538
+            // aapt resource value: 0x7f0b015e
+            static member Widget_AppCompat_Light_ActionBar_TabView = 2131427678
             
-            // aapt resource value: 0x7f070163
-            static member Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131165539
+            // aapt resource value: 0x7f0b015f
+            static member Widget_AppCompat_Light_ActionBar_TabView_Inverse = 2131427679
             
-            // aapt resource value: 0x7f070164
-            static member Widget_AppCompat_Light_ActionButton = 2131165540
+            // aapt resource value: 0x7f0b0160
+            static member Widget_AppCompat_Light_ActionButton = 2131427680
             
-            // aapt resource value: 0x7f070165
-            static member Widget_AppCompat_Light_ActionButton_CloseMode = 2131165541
+            // aapt resource value: 0x7f0b0161
+            static member Widget_AppCompat_Light_ActionButton_CloseMode = 2131427681
             
-            // aapt resource value: 0x7f070166
-            static member Widget_AppCompat_Light_ActionButton_Overflow = 2131165542
+            // aapt resource value: 0x7f0b0162
+            static member Widget_AppCompat_Light_ActionButton_Overflow = 2131427682
             
-            // aapt resource value: 0x7f070167
-            static member Widget_AppCompat_Light_ActionMode_Inverse = 2131165543
+            // aapt resource value: 0x7f0b0163
+            static member Widget_AppCompat_Light_ActionMode_Inverse = 2131427683
             
-            // aapt resource value: 0x7f070168
-            static member Widget_AppCompat_Light_ActivityChooserView = 2131165544
+            // aapt resource value: 0x7f0b0164
+            static member Widget_AppCompat_Light_ActivityChooserView = 2131427684
             
-            // aapt resource value: 0x7f070169
-            static member Widget_AppCompat_Light_AutoCompleteTextView = 2131165545
+            // aapt resource value: 0x7f0b0165
+            static member Widget_AppCompat_Light_AutoCompleteTextView = 2131427685
             
-            // aapt resource value: 0x7f07016a
-            static member Widget_AppCompat_Light_DropDownItem_Spinner = 2131165546
+            // aapt resource value: 0x7f0b0166
+            static member Widget_AppCompat_Light_DropDownItem_Spinner = 2131427686
             
-            // aapt resource value: 0x7f07016b
-            static member Widget_AppCompat_Light_ListPopupWindow = 2131165547
+            // aapt resource value: 0x7f0b0167
+            static member Widget_AppCompat_Light_ListPopupWindow = 2131427687
             
-            // aapt resource value: 0x7f07016c
-            static member Widget_AppCompat_Light_ListView_DropDown = 2131165548
+            // aapt resource value: 0x7f0b0168
+            static member Widget_AppCompat_Light_ListView_DropDown = 2131427688
             
-            // aapt resource value: 0x7f07016d
-            static member Widget_AppCompat_Light_PopupMenu = 2131165549
+            // aapt resource value: 0x7f0b0169
+            static member Widget_AppCompat_Light_PopupMenu = 2131427689
             
-            // aapt resource value: 0x7f07016e
-            static member Widget_AppCompat_Light_PopupMenu_Overflow = 2131165550
+            // aapt resource value: 0x7f0b016a
+            static member Widget_AppCompat_Light_PopupMenu_Overflow = 2131427690
             
-            // aapt resource value: 0x7f07016f
-            static member Widget_AppCompat_Light_SearchView = 2131165551
+            // aapt resource value: 0x7f0b016b
+            static member Widget_AppCompat_Light_SearchView = 2131427691
             
-            // aapt resource value: 0x7f070170
-            static member Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131165552
+            // aapt resource value: 0x7f0b016c
+            static member Widget_AppCompat_Light_Spinner_DropDown_ActionBar = 2131427692
             
-            // aapt resource value: 0x7f070171
-            static member Widget_AppCompat_ListMenuView = 2131165553
+            // aapt resource value: 0x7f0b016d
+            static member Widget_AppCompat_ListMenuView = 2131427693
             
-            // aapt resource value: 0x7f070172
-            static member Widget_AppCompat_ListPopupWindow = 2131165554
+            // aapt resource value: 0x7f0b016e
+            static member Widget_AppCompat_ListPopupWindow = 2131427694
             
-            // aapt resource value: 0x7f070173
-            static member Widget_AppCompat_ListView = 2131165555
+            // aapt resource value: 0x7f0b016f
+            static member Widget_AppCompat_ListView = 2131427695
             
-            // aapt resource value: 0x7f070174
-            static member Widget_AppCompat_ListView_DropDown = 2131165556
+            // aapt resource value: 0x7f0b0170
+            static member Widget_AppCompat_ListView_DropDown = 2131427696
             
-            // aapt resource value: 0x7f070175
-            static member Widget_AppCompat_ListView_Menu = 2131165557
+            // aapt resource value: 0x7f0b0171
+            static member Widget_AppCompat_ListView_Menu = 2131427697
             
-            // aapt resource value: 0x7f0700ba
-            static member Widget_AppCompat_NotificationActionContainer = 2131165370
+            // aapt resource value: 0x7f0b00b6
+            static member Widget_AppCompat_NotificationActionContainer = 2131427510
             
-            // aapt resource value: 0x7f0700bb
-            static member Widget_AppCompat_NotificationActionText = 2131165371
+            // aapt resource value: 0x7f0b00b7
+            static member Widget_AppCompat_NotificationActionText = 2131427511
             
-            // aapt resource value: 0x7f070176
-            static member Widget_AppCompat_PopupMenu = 2131165558
+            // aapt resource value: 0x7f0b0172
+            static member Widget_AppCompat_PopupMenu = 2131427698
             
-            // aapt resource value: 0x7f070177
-            static member Widget_AppCompat_PopupMenu_Overflow = 2131165559
+            // aapt resource value: 0x7f0b0173
+            static member Widget_AppCompat_PopupMenu_Overflow = 2131427699
             
-            // aapt resource value: 0x7f070178
-            static member Widget_AppCompat_PopupWindow = 2131165560
+            // aapt resource value: 0x7f0b0174
+            static member Widget_AppCompat_PopupWindow = 2131427700
             
-            // aapt resource value: 0x7f070179
-            static member Widget_AppCompat_ProgressBar = 2131165561
+            // aapt resource value: 0x7f0b0175
+            static member Widget_AppCompat_ProgressBar = 2131427701
             
-            // aapt resource value: 0x7f07017a
-            static member Widget_AppCompat_ProgressBar_Horizontal = 2131165562
+            // aapt resource value: 0x7f0b0176
+            static member Widget_AppCompat_ProgressBar_Horizontal = 2131427702
             
-            // aapt resource value: 0x7f07017b
-            static member Widget_AppCompat_RatingBar = 2131165563
+            // aapt resource value: 0x7f0b0177
+            static member Widget_AppCompat_RatingBar = 2131427703
             
-            // aapt resource value: 0x7f07017c
-            static member Widget_AppCompat_RatingBar_Indicator = 2131165564
+            // aapt resource value: 0x7f0b0178
+            static member Widget_AppCompat_RatingBar_Indicator = 2131427704
             
-            // aapt resource value: 0x7f07017d
-            static member Widget_AppCompat_RatingBar_Small = 2131165565
+            // aapt resource value: 0x7f0b0179
+            static member Widget_AppCompat_RatingBar_Small = 2131427705
             
-            // aapt resource value: 0x7f07017e
-            static member Widget_AppCompat_SearchView = 2131165566
+            // aapt resource value: 0x7f0b017a
+            static member Widget_AppCompat_SearchView = 2131427706
             
-            // aapt resource value: 0x7f07017f
-            static member Widget_AppCompat_SearchView_ActionBar = 2131165567
+            // aapt resource value: 0x7f0b017b
+            static member Widget_AppCompat_SearchView_ActionBar = 2131427707
             
-            // aapt resource value: 0x7f070180
-            static member Widget_AppCompat_SeekBar = 2131165568
+            // aapt resource value: 0x7f0b017c
+            static member Widget_AppCompat_SeekBar = 2131427708
             
-            // aapt resource value: 0x7f070181
-            static member Widget_AppCompat_SeekBar_Discrete = 2131165569
+            // aapt resource value: 0x7f0b017d
+            static member Widget_AppCompat_SeekBar_Discrete = 2131427709
             
-            // aapt resource value: 0x7f070182
-            static member Widget_AppCompat_Spinner = 2131165570
+            // aapt resource value: 0x7f0b017e
+            static member Widget_AppCompat_Spinner = 2131427710
             
-            // aapt resource value: 0x7f070183
-            static member Widget_AppCompat_Spinner_DropDown = 2131165571
+            // aapt resource value: 0x7f0b017f
+            static member Widget_AppCompat_Spinner_DropDown = 2131427711
             
-            // aapt resource value: 0x7f070184
-            static member Widget_AppCompat_Spinner_DropDown_ActionBar = 2131165572
+            // aapt resource value: 0x7f0b0180
+            static member Widget_AppCompat_Spinner_DropDown_ActionBar = 2131427712
             
-            // aapt resource value: 0x7f070185
-            static member Widget_AppCompat_Spinner_Underlined = 2131165573
+            // aapt resource value: 0x7f0b0181
+            static member Widget_AppCompat_Spinner_Underlined = 2131427713
             
-            // aapt resource value: 0x7f070186
-            static member Widget_AppCompat_TextView_SpinnerItem = 2131165574
+            // aapt resource value: 0x7f0b0182
+            static member Widget_AppCompat_TextView_SpinnerItem = 2131427714
             
-            // aapt resource value: 0x7f070187
-            static member Widget_AppCompat_Toolbar = 2131165575
+            // aapt resource value: 0x7f0b0183
+            static member Widget_AppCompat_Toolbar = 2131427715
             
-            // aapt resource value: 0x7f070188
-            static member Widget_AppCompat_Toolbar_Button_Navigation = 2131165576
+            // aapt resource value: 0x7f0b0184
+            static member Widget_AppCompat_Toolbar_Button_Navigation = 2131427716
             
-            // aapt resource value: 0x7f070010
-            static member Widget_Design_AppBarLayout = 2131165200
+            // aapt resource value: 0x7f0b000c
+            static member Widget_Design_AppBarLayout = 2131427340
             
-            // aapt resource value: 0x7f070021
-            static member Widget_Design_BottomNavigationView = 2131165217
+            // aapt resource value: 0x7f0b001d
+            static member Widget_Design_BottomNavigationView = 2131427357
             
-            // aapt resource value: 0x7f070022
-            static member Widget_Design_BottomSheet_Modal = 2131165218
+            // aapt resource value: 0x7f0b001e
+            static member Widget_Design_BottomSheet_Modal = 2131427358
             
-            // aapt resource value: 0x7f070023
-            static member Widget_Design_CollapsingToolbar = 2131165219
+            // aapt resource value: 0x7f0b001f
+            static member Widget_Design_CollapsingToolbar = 2131427359
             
-            // aapt resource value: 0x7f070024
-            static member Widget_Design_CoordinatorLayout = 2131165220
+            // aapt resource value: 0x7f0b0020
+            static member Widget_Design_CoordinatorLayout = 2131427360
             
-            // aapt resource value: 0x7f070025
-            static member Widget_Design_FloatingActionButton = 2131165221
+            // aapt resource value: 0x7f0b0021
+            static member Widget_Design_FloatingActionButton = 2131427361
             
-            // aapt resource value: 0x7f070026
-            static member Widget_Design_NavigationView = 2131165222
+            // aapt resource value: 0x7f0b0022
+            static member Widget_Design_NavigationView = 2131427362
             
-            // aapt resource value: 0x7f070027
-            static member Widget_Design_ScrimInsetsFrameLayout = 2131165223
+            // aapt resource value: 0x7f0b0023
+            static member Widget_Design_ScrimInsetsFrameLayout = 2131427363
             
-            // aapt resource value: 0x7f070028
-            static member Widget_Design_Snackbar = 2131165224
+            // aapt resource value: 0x7f0b0024
+            static member Widget_Design_Snackbar = 2131427364
             
-            // aapt resource value: 0x7f07000f
-            static member Widget_Design_TabLayout = 2131165199
+            // aapt resource value: 0x7f0b000b
+            static member Widget_Design_TabLayout = 2131427339
             
-            // aapt resource value: 0x7f070029
-            static member Widget_Design_TextInputLayout = 2131165225
+            // aapt resource value: 0x7f0b0025
+            static member Widget_Design_TextInputLayout = 2131427365
             
-            // aapt resource value: 0x7f07000d
-            static member Widget_MediaRouter_Light_MediaRouteButton = 2131165197
+            // aapt resource value: 0x7f0b0009
+            static member Widget_MediaRouter_Light_MediaRouteButton = 2131427337
             
-            // aapt resource value: 0x7f07000e
-            static member Widget_MediaRouter_MediaRouteButton = 2131165198
+            // aapt resource value: 0x7f0b000a
+            static member Widget_MediaRouter_MediaRouteButton = 2131427338
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
 
 
