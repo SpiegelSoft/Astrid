@@ -1,7 +1,13 @@
 namespace Astrid.Mobile.iOS
 
+open SQLite.Net.Platform.XamarinIOS
+open SQLite.Net
+
 open Xamarin.Forms.Platform.iOS
 open Xamarin.Forms.Maps
+open Xamarin.Forms
+
+open ReactiveUI.XamForms
 
 open System.IO
 open System
@@ -16,11 +22,11 @@ type IosPlatform() =
     let geocoder = new Geocoder()
     static let docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
     static let libFolder = Path.Combine(docFolder, "..", "Library", "Databases")
-    do if not (Directory.Exists(libFolder)) then Directory.CreateDirectory(libFolder)
+    do if not (Directory.Exists(libFolder)) then Directory.CreateDirectory(libFolder) |> ignore
     static let appFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal)
     let localFilePath fileName = Path.Combine(libFolder, fileName)
     let repositoryPath = localFilePath "AstridRepository"
-    let placesOfInterest = new PlaceOfInterestRepository(new SQLitePlatformAndroid(), new SQLiteConnectionString(repositoryPath, true))
+    let placesOfInterest = new PlaceOfInterestRepository(new SQLitePlatformIOS(), new SQLiteConnectionString(repositoryPath, true))
     interface IAstridPlatform with
         member __.GetMainPage() = new RoutedViewHost() :> Page
         member __.RegisterDependencies(_) = 0 |> ignore
