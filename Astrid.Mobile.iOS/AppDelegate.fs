@@ -3,11 +3,13 @@ namespace Astrid.Mobile.iOS
 open SQLite.Net.Platform.XamarinIOS
 open SQLite.Net
 
+open XamarinForms.Reactive.FSharp
+
 open Xamarin.Forms.Platform.iOS
 open Xamarin.Forms.Maps
-open Xamarin.Forms
 
 open ReactiveUI.XamForms
+open ReactiveUI
 
 open System.IO
 open System
@@ -17,6 +19,8 @@ open UIKit
 open Foundation
 
 open Astrid.Mobile.Shared
+
+type XamarinForms = Xamarin.Forms.Forms
 
 type IosPlatform() =
     let geocoder = new Geocoder()
@@ -28,7 +32,7 @@ type IosPlatform() =
     let repositoryPath = localFilePath "AstridRepository"
     let placesOfInterest = new PlaceOfInterestRepository(new SQLitePlatformIOS(), new SQLiteConnectionString(repositoryPath, true))
     interface IAstridPlatform with
-        member __.GetMainPage() = new RoutedViewHost() :> Page
+        member __.GetMainPage() = new ReactiveUI.XamForms.RoutedViewHost() :> Xamarin.Forms.Page
         member __.RegisterDependencies(_) = 0 |> ignore
         member __.Geocoder = geocoder
         member __.PlacesOfInterest = placesOfInterest
@@ -36,13 +40,12 @@ type IosPlatform() =
 
 [<Register ("AppDelegate")>]
 type AppDelegate () =
-    inherit UIApplicationDelegate ()
-
-    let window = new UIWindow (UIScreen.MainScreen.Bounds)
+    inherit FormsApplicationDelegate ()
 
     // This method is invoked when the application is ready to run.
     override this.FinishedLaunching (app, options) =
         // If you have defined a root view controller, set it here:
         // window.RootViewController <- new MyViewController ()
-        window.MakeKeyAndVisible ()
-        true
+        XamarinForms.Init()
+        this.LoadApplication(new App<IAstridPlatform>(new IosPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), fun() -> new DashboardViewModel() :> IRoutableViewModel))
+        base.FinishedLaunching(app, options)
