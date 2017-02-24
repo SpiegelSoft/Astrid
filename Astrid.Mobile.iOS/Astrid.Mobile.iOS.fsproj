@@ -10,9 +10,10 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Astrid.Mobile.iOS</AssemblyName>
     <Name>Astrid.Mobile.iOS</Name>
-    <SelectedDevice>iPhone 6 iOS 10.2</SelectedDevice>
+    <SelectedDevice>iPhone 6s iOS 10.2</SelectedDevice>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <DefaultDevice>iPhone 6s iOS 10.2</DefaultDevice>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -125,7 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
-      <HintPath>..\packages\FSharp.Core.4.1.0\lib\portable-net45+monoandroid10+monotouch10+xamarinios10\FSharp.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GeographicLib">
@@ -178,6 +178,10 @@
       <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.Forms.Core">
@@ -206,14 +210,14 @@
     </Reference>
     <Reference Include="Xamarin.iOS" />
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.2.15-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.2.16-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Astrid.Mobile.Shared\Astrid.Mobile.Shared.fsproj">
-      <Name>Astrid.Mobile.Shared</Name>
-      <Project>{3d3633b2-f30c-40ae-99f3-c6846d4d1383}</Project>
+    <ProjectReference Include="..\Astrid.Mobile.Common\Astrid.Mobile.Common.fsproj">
+      <Name>Astrid.Mobile.Common</Name>
+      <Project>{1e678abe-8872-47a9-87cd-1296824b4532}</Project>
       <Private>True</Private>
     </ProjectReference>
   </ItemGroup>

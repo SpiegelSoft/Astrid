@@ -18,7 +18,7 @@ open UIKit
 
 open Foundation
 
-open Astrid.Mobile.Shared
+open Astrid.Mobile.Common
 
 type XamarinForms = Xamarin.Forms.Forms
 

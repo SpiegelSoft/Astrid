@@ -18,7 +18,7 @@ open GeographicLib
 
 open ReactiveUI
 
-open Astrid.Mobile.Shared
+open Astrid.Mobile.Common
 
 type DashboardMap = GeographicMap<MarkedLocation>
 

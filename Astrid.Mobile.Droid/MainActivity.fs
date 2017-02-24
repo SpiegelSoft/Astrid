@@ -18,7 +18,7 @@ open SQLite.Net
 open ReactiveUI.XamForms
 open ReactiveUI
 
-open Astrid.Mobile.Shared
+open Astrid.Mobile.Common
 
 type XamarinForms = Xamarin.Forms.Forms
 
