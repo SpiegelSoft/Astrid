@@ -18,6 +18,10 @@ open GeographicLib
 type LocationDetails =
     | SearchResult of string
     | PlaceOfInterest of PlaceOfInterest
+    member this.MarkerText() =
+        match this with
+        | SearchResult result -> result
+        | PlaceOfInterest poi -> poi.Label
 
 type MarkerViewModel(location, details: LocationDetails) =
     inherit ReactiveObject()

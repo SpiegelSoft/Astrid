@@ -24,10 +24,13 @@
     <Name>Astrid.Mobile.Droid</Name>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <SelectedDevice>5.1" Marshmallow (6.0.0) XXHDPI Phone</SelectedDevice>
+    <SelectedDevice>5.1" Lollipop (5.1.1) XXHDPI Phone</SelectedDevice>
+    <DefaultDevice>5.1" Lollipop (5.1.1) XXHDPI Phone</DefaultDevice>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
@@ -38,6 +41,15 @@
     <Tailcalls>false</Tailcalls>
     <PlatformTarget>
     </PlatformTarget>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <Debugger>.Net (Xamarin)</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -74,6 +86,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Core">
+      <HintPath>..\packages\FSharp.Core.4.1.0\lib\portable-net45+monoandroid10+monotouch10+xamarinios10\FSharp.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GeographicLib">
@@ -87,11 +100,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="ReactiveUI">
-      <HintPath>..\packages\reactiveui-core.7.1.0\lib\MonoAndroid403\ReactiveUI.dll</HintPath>
+      <HintPath>..\packages\reactiveui-core.7.2.0\lib\MonoAndroid403\ReactiveUI.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ReactiveUI.XamForms">
-      <HintPath>..\packages\reactiveui-xamforms.7.1.0\lib\portable-net45+netcore45+wp8+wpa81+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ReactiveUI.XamForms.dll</HintPath>
+      <HintPath>..\packages\reactiveui-xamforms.7.2.0\lib\portable-net45+netcore45+wp8+wpa81+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ReactiveUI.XamForms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Splat">
@@ -135,13 +148,12 @@
       <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\portable-windows8+net45+wp8\System.Reactive.PlatformServices.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <ProjectReference Include="..\Astrid.Mobile.Shared\Astrid.Mobile.Shared.fsproj">
-      <Name>Astrid.Mobile.Shared</Name>
-      <Project>{3d3633b2-f30c-40ae-99f3-c6846d4d1383}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <Reference Include="Xamarin.Android.Support.Animated.Vector.Drawable">
       <HintPath>..\packages\Xamarin.Android.Support.Animated.Vector.Drawable.25.1.1\lib\MonoAndroid70\Xamarin.Android.Support.Animated.Vector.Drawable.dll</HintPath>
       <Private>True</Private>
@@ -242,10 +254,23 @@
       <HintPath>..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\lib\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.2.15-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\XamarinForms.Reactive.FSharp\XamarinForms.Reactive.FSharp\XamarinForms.Reactive.FSharp.fsproj">
+      <Name>XamarinForms.Reactive.FSharp</Name>
+      <Project>{df0b27fa-6e7d-4e1e-8a6b-02719ba4412c}</Project>
       <Private>True</Private>
-    </Reference>
+    </ProjectReference>
+    <ProjectReference Include="..\Astrid.Localisation\Astrid.Localisation.csproj">
+      <Name>Astrid.Localisation</Name>
+      <Project>{44437176-f617-4c38-9bc7-5b0b248e336e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Astrid.Mobile.Common\Astrid.Mobile.Common.fsproj">
+      <Name>Astrid.Mobile.Common</Name>
+      <Project>{1e678abe-8872-47a9-87cd-1296824b4532}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -39,9 +39,10 @@ type DroidPlatform() =
 [<Activity (Label = "Astrid.Mobile.Droid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity() =
     inherit FormsApplicationActivity()
+    let createDashboardViewModel() = new DashboardViewModel() :> IRoutableViewModel
     override this.OnCreate (bundle) =
         base.OnCreate(bundle)
         XamarinForms.Init(this, bundle)
         Xamarin.FormsMaps.Init(this, bundle)
-        let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), fun() -> new DashboardViewModel() :> IRoutableViewModel)
+        let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), createDashboardViewModel)
         this.LoadApplication application

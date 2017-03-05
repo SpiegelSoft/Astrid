@@ -15,24 +15,23 @@ type MarkedLocation(viewModel: MarkerViewModel) =
     inherit GeographicPin(viewModel.Location)
     member val ViewModel = viewModel
 
-module PinConversion =
-    let toPin (marker: MarkerViewModel) = new MarkedLocation(marker)
+module PinConversion = let toPin (marker: MarkerViewModel) = new MarkedLocation(marker)
 
-type MarkerInfoWindow(theme: Theme) =
+type MarkerView(theme: Theme) =
     inherit ContentView<MarkerViewModel>(theme)
     do base.Content <- 
         let content = 
             theme.GenerateGrid([|"*"; "*"|], [|"*"; "*"|]) |> withColumn(
                 [|
-                    theme.GenerateLabel() |> withBackgroundColor(Color.Aqua) |> withContent("Hello")
-                    theme.GenerateLabel() |> withBackgroundColor(Color.Aqua) |> withContent("World")
+                    theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Hello")
+                    theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("World")
                 |]) |> thenColumn(
                 [|
-                    theme.GenerateLabel() |> withBackgroundColor(Color.Aqua) |> withContent("Foo")
-                    theme.GenerateLabel() |> withBackgroundColor(Color.Aqua) |> withContent("Bar")
-                |]) |> createFromColumns |> withBackgroundColor(Color.Yellow)  :> View
+                    theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Foo")
+                    theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Bar")
+                |]) |> createFromColumns |> withBackgroundColor(Color.Yellow) |> withHeightRequest 10.0 |> withWidthRequest 10.0 :> View
         new Frame(Content = content)
-    new() = new MarkerInfoWindow(Themes.AstridTheme)
+    new() = new MarkerView(Themes.AstridTheme)
 
 type DashboardView(theme: Theme) as this = 
     inherit ContentPage<DashboardViewModel, DashboardView>(theme)

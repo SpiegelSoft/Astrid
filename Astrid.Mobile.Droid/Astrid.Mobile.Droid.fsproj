@@ -25,11 +25,12 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <SelectedDevice>Samsung SM-G925F</SelectedDevice>
-    <DefaultDevice>Nexus-10</DefaultDevice>
+    <DefaultDevice>5.1" Marshmallow (6.0.0) XXHDPI Phone</DefaultDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
@@ -40,6 +41,15 @@
     <Tailcalls>false</Tailcalls>
     <PlatformTarget>
     </PlatformTarget>
+    <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
+    <EmbedAssembliesIntoApk>False</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <Debugger>.Net (Xamarin)</Debugger>
+    <AotAssemblies>False</AotAssemblies>
+    <EnableLLVM>False</EnableLLVM>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <EnableProguard>False</EnableProguard>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -76,7 +86,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Core">
-      <HintPath>..\packages\FSharp.Core.4.0.0.1\lib\portable-net45+monoandroid10+monotouch10+xamarinios10\FSharp.Core.dll</HintPath>
+      <HintPath>..\packages\FSharp.Core.4.1.0\lib\portable-net45+monoandroid10+monotouch10+xamarinios10\FSharp.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="GeographicLib">
@@ -244,12 +254,21 @@
       <HintPath>..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\lib\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="XamarinForms.Maps.Android.TemporaryPatch">
+      <HintPath>..\packages\XamarinForms.Maps.Android.TemporaryPatch.1.0.0.1\lib\monoandroid71\XamarinForms.Maps.Android.TemporaryPatch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.2.17-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.3.0-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Astrid.Localisation\Astrid.Localisation.csproj">
+      <Name>Astrid.Localisation</Name>
+      <Project>{44437176-f617-4c38-9bc7-5b0b248e336e}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Astrid.Mobile.Common\Astrid.Mobile.Common.fsproj">
       <Name>Astrid.Mobile.Common</Name>
       <Project>{1e678abe-8872-47a9-87cd-1296824b4532}</Project>

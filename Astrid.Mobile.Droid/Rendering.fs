@@ -20,17 +20,21 @@ open ReactiveUI
 
 open Astrid.Mobile.Common
 
+
+open System.Reflection
+
+
 type DashboardMap = GeographicMap<MarkedLocation>
 
 type GeographicMapRenderer() =
-    inherit MapRenderer()
+    inherit XamarinForms.Maps.Android.TemporaryPatch.MapRenderer<DashboardMap>()
     let mutable formsMap = Unchecked.defaultof<DashboardMap>
     let mutable googleMap = Unchecked.defaultof<GoogleMap>
     let markerViewModel = new Dictionary<string, MarkerViewModel>()
     let subscriptions = new CompositeDisposable()
     let infoWindowClicked _ (eventArgs: GoogleMap.InfoWindowClickEventArgs) = 
         eventArgs |> ignore
-    let infoWindowEventHandler = new EventHandler<Android.Gms.Maps.GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
+    let infoWindowEventHandler = new EventHandler<GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
     override this.OnElementChanged e =
         base.OnElementChanged(e)
         match box e.OldElement with
@@ -38,10 +42,11 @@ type GeographicMapRenderer() =
         | _ -> googleMap.InfoWindowClick.RemoveHandler infoWindowEventHandler
         match box e.NewElement with
         | null -> e |> ignore
-        | _ -> formsMap <- e.NewElement :?> DashboardMap; base.Control.GetMapAsync(this)
+        | _ -> formsMap <- e.NewElement
     override __.Dispose(disposing) = if disposing then subscriptions.Clear()
     interface IOnMapReadyCallback with 
-        member this.OnMapReady map =
+        override this.OnMapReady map =
+            base.OnMapReady map
             googleMap <- map
             let pinsUpdated _ = 
                 googleMap.Clear()
@@ -57,11 +62,11 @@ type GeographicMapRenderer() =
             formsMap.PinnedLocations.ItemsRemoved.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinsUpdated) |> subscriptions.Add
             googleMap.InfoWindowClick.AddHandler infoWindowEventHandler
             googleMap.SetInfoWindowAdapter this
-    interface Android.Gms.Maps.GoogleMap.IInfoWindowAdapter with
+    interface GoogleMap.IInfoWindowAdapter with
         member this.GetInfoContents(marker: Marker): Android.Views.View = 
             marker.Title <- "Hello"
             marker.Snippet <- "World"
-            let view = markerViewModel.[marker.Id] |> ViewLocator.Current.ResolveView :?> MarkerInfoWindow
+            let view = markerViewModel.[marker.Id] |> ViewLocator.Current.ResolveView :?> MarkerView
             let renderer = Platform.CreateRenderer(view.Content)
             let vg = renderer.ViewGroup
             let androidView = vg :> Android.Views.View
