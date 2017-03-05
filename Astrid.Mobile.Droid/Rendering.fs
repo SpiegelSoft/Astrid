@@ -7,6 +7,7 @@ open System
 
 open Xamarin.Forms.Platform.Android
 open Xamarin.Forms.Maps.Android
+open Xamarin.Forms
 
 open XamarinForms.Reactive.FSharp
 
@@ -23,8 +24,12 @@ open Astrid.Mobile.Common
 
 open System.Reflection
 
-
 type DashboardMap = GeographicMap<MarkedLocation>
+
+type MarkerRenderer() =
+    inherit VisualElementRenderer<View>()
+    override this.OnLayout(change, left, top, right, bottom) =
+        base.OnLayout(change, left, top, right, bottom)
 
 type GeographicMapRenderer() =
     inherit XamarinForms.Maps.Android.TemporaryPatch.MapRenderer<DashboardMap>()
@@ -64,18 +69,16 @@ type GeographicMapRenderer() =
             googleMap.SetInfoWindowAdapter this
     interface GoogleMap.IInfoWindowAdapter with
         member this.GetInfoContents(marker: Marker): Android.Views.View = 
-            marker.Title <- "Hello"
-            marker.Snippet <- "World"
             let view = markerViewModel.[marker.Id] |> ViewLocator.Current.ResolveView :?> MarkerView
-            let renderer = Platform.CreateRenderer(view.Content)
+            view.Layout(new Rectangle(0.0, 0.0, 100.0, 100.0))
+            let renderer = Platform.CreateRenderer(view)
+            renderer.SetElement(view)
             let vg = renderer.ViewGroup
-            let androidView = vg :> Android.Views.View
-            let height, width = androidView.Height, androidView.Width
             renderer.UpdateLayout()
-            androidView.SetBackgroundColor(Android.Graphics.Color.Aqua) |> ignore
-            let cc = vg.ChildCount
-            let child = vg.GetChildAt(0)
-            androidView
+            vg.LayoutParameters <- new Android.Views.ViewGroup.LayoutParams (500, 500)
+            vg.Layout(0, 0, 500, 500)
+            vg.DrawingCacheEnabled <- true
+            vg :> Android.Views.View
         member __.GetInfoWindow(marker: Marker): Android.Views.View = Unchecked.defaultof<Android.Views.View>
     interface IJavaObject with member __.Handle = base.Handle
     interface IDisposable with member __.Dispose() = base.Dispose()

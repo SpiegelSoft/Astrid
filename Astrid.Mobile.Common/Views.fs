@@ -17,20 +17,21 @@ type MarkedLocation(viewModel: MarkerViewModel) =
 
 module PinConversion = let toPin (marker: MarkerViewModel) = new MarkedLocation(marker)
 
-type MarkerView(theme: Theme) =
+type MarkerView(theme: Theme) as this =
     inherit ContentView<MarkerViewModel>(theme)
     do base.Content <- 
-        let content = 
-            theme.GenerateGrid([|"*"; "*"|], [|"*"; "*"|]) |> withColumn(
-                [|
-                    theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Hello")
-                    theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("World")
-                |]) |> thenColumn(
-                [|
-                    theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Foo")
-                    theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Bar")
-                |]) |> createFromColumns |> withBackgroundColor(Color.Yellow) |> withHeightRequest 10.0 |> withWidthRequest 10.0 :> View
-        new Frame(Content = content)
+//        theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> with
+//            |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: MarkerViewModel) -> vm.Details @>, <@ fun (v: DashboardView) -> (v.Title: Label).Text @>, id)
+        theme.GenerateGrid([|"50"; "50"|], [|"50"; "50"|]) |> withColumn(
+            [|
+                theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Hello")
+                theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("World")
+            |]) |> thenColumn(
+            [|
+                theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Foo")
+                theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Bar")
+            |]) |> createFromColumns |> withBackgroundColor(Color.FromRgb(0, 59, 111))
+//        new Frame(Content = content)
     new() = new MarkerView(Themes.AstridTheme)
 
 type DashboardView(theme: Theme) as this = 
