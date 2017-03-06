@@ -255,7 +255,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="XamarinForms.Maps.Android.TemporaryPatch">
-      <HintPath>..\packages\XamarinForms.Maps.Android.TemporaryPatch.1.0.0.1\lib\monoandroid71\XamarinForms.Maps.Android.TemporaryPatch.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Maps.Android.TemporaryPatch.1.0.0.2\lib\monoandroid71\XamarinForms.Maps.Android.TemporaryPatch.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="XamarinForms.Reactive.FSharp">

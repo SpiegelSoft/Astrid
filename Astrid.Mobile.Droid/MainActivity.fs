@@ -36,7 +36,8 @@ type DroidPlatform() =
         member __.GetLocalFilePath fileName = localFilePath fileName
 
 [<assembly: ExportRendererAttribute (typeof<DashboardMap>, typeof<GeographicMapRenderer>)>] do ()
-[<assembly: ExportRendererAttribute (typeof<MarkerView>, typeof<MarkerRenderer>)>] do ()
+[<assembly: ExportRendererAttribute (typeof<Grid>, typeof<LayoutRenderer>)>] do ()
+[<assembly: ExportRendererAttribute (typeof<StackLayout>, typeof<LayoutRenderer>)>] do ()
 [<Activity (Label = "Astrid.Mobile.Droid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity() =
     inherit FormsApplicationActivity()
@@ -45,5 +46,6 @@ type MainActivity() =
         base.OnCreate(bundle)
         XamarinForms.Init(this, bundle)
         Xamarin.FormsMaps.Init(this, bundle)
+        XamarinForms.Maps.Android.TemporaryPatch.MapRendererConstants.Bundle <- bundle
         let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), createDashboardViewModel)
         this.LoadApplication application

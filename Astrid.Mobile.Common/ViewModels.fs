@@ -42,6 +42,7 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
             let searchAddress = vm.SearchAddress
             let! positions = geocoder.GetPositionsForAddressAsync(searchAddress) |> Async.AwaitTask
             let searchResults = positions |> Seq.map (fun r -> new MarkerViewModel(XamarinGeographic.geodesicLocation r, SearchResult searchAddress))
+            let! nearby = positions |> Seq.map (fun pos -> geocoder.GetAddressesForPositionAsync(pos) |> Async.AwaitTask) |> Async.Parallel
             searchResults |> Seq.iter markers.Add
             return searchResults
         } |> Async.StartAsTask

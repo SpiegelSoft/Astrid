@@ -19,18 +19,20 @@ module PinConversion = let toPin (marker: MarkerViewModel) = new MarkedLocation(
 
 type MarkerView(theme: Theme) as this =
     inherit ContentView<MarkerViewModel>(theme)
+    let astridBlue = Color.FromRgb(0, 59, 111)
     do base.Content <- 
+//        theme.GenerateLabel() |> withContent("Hello") |> withBackgroundColor(Color.FromRgb(0, 59, 111))
 //        theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> with
 //            |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: MarkerViewModel) -> vm.Details @>, <@ fun (v: DashboardView) -> (v.Title: Label).Text @>, id)
-        theme.GenerateGrid([|"50"; "50"|], [|"50"; "50"|]) |> withColumn(
+        theme.GenerateGrid([|"*"; "*"|], [|"*"; "*"|]) |> withColumn(
             [|
-                theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Hello")
-                theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("World")
+                theme.GenerateLabel() |> withBackgroundColor(astridBlue) |> withContent("Hello") |> withWidthRequest 1200.0 |> withHeightRequest 100.0
+                theme.GenerateLabel() |> withBackgroundColor(astridBlue) |> withContent("World") |> withWidthRequest 1200.0 |> withHeightRequest 100.0
             |]) |> thenColumn(
             [|
-                theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Foo")
-                theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> withContent("Bar")
-            |]) |> createFromColumns |> withBackgroundColor(Color.FromRgb(0, 59, 111))
+                theme.GenerateLabel() |> withBackgroundColor(astridBlue) |> withContent("Foo") |> withWidthRequest 200.0 |> withHeightRequest 20.0
+                theme.GenerateLabel() |> withBackgroundColor(astridBlue) |> withContent("Bar") |> withWidthRequest 200.0 |> withHeightRequest 20.0
+            |]) |> createFromColumns
 //        new Frame(Content = content)
     new() = new MarkerView(Themes.AstridTheme)
 
