@@ -25,7 +25,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <SelectedDevice>Samsung SM-G925F</SelectedDevice>
-    <DefaultDevice>5.1" Marshmallow (6.0.0) XXHDPI Phone</DefaultDevice>
+    <DefaultDevice>Nexus-10</DefaultDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -258,12 +258,13 @@
       <HintPath>..\packages\XamarinForms.Maps.Android.TemporaryPatch.1.0.0.2\lib\monoandroid71\XamarinForms.Maps.Android.TemporaryPatch.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.3.0-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\XamarinForms.Reactive.FSharp\XamarinForms.Reactive.FSharp\XamarinForms.Reactive.FSharp.fsproj">
+      <Name>XamarinForms.Reactive.FSharp</Name>
+      <Project>{df0b27fa-6e7d-4e1e-8a6b-02719ba4412c}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Astrid.Localisation\Astrid.Localisation.csproj">
       <Name>Astrid.Localisation</Name>
       <Project>{44437176-f617-4c38-9bc7-5b0b248e336e}</Project>

@@ -18,7 +18,7 @@ open GeographicLib
 type LocationDetails =
     | SearchResult of string
     | PlaceOfInterest of PlaceOfInterest
-    member this.MarkerText() =
+    member this.Text =
         match this with
         | SearchResult result -> result
         | PlaceOfInterest poi -> poi.Label
@@ -27,6 +27,12 @@ type MarkerViewModel(location, details: LocationDetails) =
     inherit ReactiveObject()
     member val Location = location
     member val Details = details
+    member this.HeadlineTextExpression() =
+        match details with
+        | SearchResult result -> <@ fun (vm: MarkerViewModel) -> result @>
+        | PlaceOfInterest poi -> 
+            let label = poi.Label
+            <@ fun (vm: MarkerViewModel) -> poi.Label @>
 
 type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
     inherit PageViewModel()

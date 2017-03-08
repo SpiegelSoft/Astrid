@@ -129,12 +129,13 @@
       <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.Xaml.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.3.0-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\XamarinForms.Reactive.FSharp\XamarinForms.Reactive.FSharp\XamarinForms.Reactive.FSharp.fsproj">
+      <Name>XamarinForms.Reactive.FSharp</Name>
+      <Project>{df0b27fa-6e7d-4e1e-8a6b-02719ba4412c}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Astrid.Localisation\Astrid.Localisation.csproj">
       <Name>Astrid.Localisation</Name>
       <Project>{44437176-f617-4c38-9bc7-5b0b248e336e}</Project>

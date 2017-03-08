@@ -36,8 +36,6 @@ type DroidPlatform() =
         member __.GetLocalFilePath fileName = localFilePath fileName
 
 [<assembly: ExportRendererAttribute (typeof<DashboardMap>, typeof<GeographicMapRenderer>)>] do ()
-[<assembly: ExportRendererAttribute (typeof<Grid>, typeof<LayoutRenderer>)>] do ()
-[<assembly: ExportRendererAttribute (typeof<StackLayout>, typeof<LayoutRenderer>)>] do ()
 [<Activity (Label = "Astrid.Mobile.Droid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity() =
     inherit FormsApplicationActivity()

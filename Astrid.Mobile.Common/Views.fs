@@ -20,21 +20,16 @@ module PinConversion = let toPin (marker: MarkerViewModel) = new MarkedLocation(
 type MarkerView(theme: Theme) as this =
     inherit ContentView<MarkerViewModel>(theme)
     let astridBlue = Color.FromRgb(0, 59, 111)
-    do base.Content <- 
-//        theme.GenerateLabel() |> withContent("Hello") |> withBackgroundColor(Color.FromRgb(0, 59, 111))
-//        theme.GenerateLabel() |> withBackgroundColor(Color.Green) |> with
-//            |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: MarkerViewModel) -> vm.Details @>, <@ fun (v: DashboardView) -> (v.Title: Label).Text @>, id)
-        theme.GenerateGrid([|"*"; "*"|], [|"*"; "*"|]) |> withColumn(
-            [|
-                theme.GenerateLabel() |> withBackgroundColor(astridBlue) |> withContent("Hello") |> withWidthRequest 1200.0 |> withHeightRequest 100.0
-                theme.GenerateLabel() |> withBackgroundColor(astridBlue) |> withContent("World") |> withWidthRequest 1200.0 |> withHeightRequest 100.0
-            |]) |> thenColumn(
-            [|
-                theme.GenerateLabel() |> withBackgroundColor(astridBlue) |> withContent("Foo") |> withWidthRequest 200.0 |> withHeightRequest 20.0
-                theme.GenerateLabel() |> withBackgroundColor(astridBlue) |> withContent("Bar") |> withWidthRequest 200.0 |> withHeightRequest 20.0
-            |]) |> createFromColumns
-//        new Frame(Content = content)
+    override __.CreateContent() =
+        theme.VerticalLayout()
+            |> withBlocks(
+                [|
+                    theme.GenerateLabel()
+                        |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: MarkerViewModel) -> (vm.Details : LocationDetails).Text @>, <@ fun (v: MarkerView) -> (v.Title: Label).Text @>, id)
+                        |> withHeightRequest 200.0 |> withWidthRequest 480.0 |> withBackgroundColor(astridBlue)
+                |]) |> withHeightRequest 212.0 |> withWidthRequest 492.0 |> withBackgroundColor astridBlue :> View
     new() = new MarkerView(Themes.AstridTheme)
+    member val Title = Unchecked.defaultof<Label> with get, set
 
 type DashboardView(theme: Theme) as this = 
     inherit ContentPage<DashboardViewModel, DashboardView>(theme)
@@ -45,7 +40,7 @@ type DashboardView(theme: Theme) as this =
                 theme.VerticalLayout() |> withBlocks(
                     [|
                         theme.GenerateLabel(fun l -> this.Title <- l) 
-                            |> withAlignment LayoutOptions.Center LayoutOptions.Center
+                            |> withAlignment LayoutOptions.Center LayoutOptions.End
                             |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.Title @>, <@ fun (v: DashboardView) -> (v.Title: Label).Text @>, id)
                         theme.GenerateSearchBar(fun sb -> this.AddressSearchBar <- sb)
                             |> withSearchBarPlaceholder LocalisedStrings.SearchForAPlaceOfInterest
