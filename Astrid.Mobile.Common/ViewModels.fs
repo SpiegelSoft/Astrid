@@ -18,15 +18,31 @@ open GeographicLib
 type LocationDetails =
     | SearchResult of string
     | PlaceOfInterest of PlaceOfInterest
-    member this.Text =
-        match this with
-        | SearchResult result -> result
-        | PlaceOfInterest poi -> poi.Label
 
-type MarkerViewModel(location, details: LocationDetails) =
+type EditTimelineViewModel(?host: IScreen) =
+    inherit PageViewModel()
+    let host = LocateIfNone host
+    override __.SubscribeToCommands() = host |> ignore
+    override __.UnsubscribeFromCommands() = host |> ignore
+    interface IRoutableViewModel with
+        member __.HostScreen = host
+        member __.UrlPathSegment = "Timeline"
+
+type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
     inherit ReactiveObject()
+    let host = LocateIfNone host
+    let editTimeline() = 
+        async {
+                host.Router.Navigate.Execute(new EditTimelineViewModel()) |> ignore
+                return true
+            }
+        
     member val Location = location
     member val Details = details
+    member this.Text =
+        match this.Details with
+        | SearchResult result -> result
+        | PlaceOfInterest poi -> poi.Label
     member this.HeadlineTextExpression() =
         match details with
         | SearchResult result -> <@ fun (vm: MarkerViewModel) -> result @>

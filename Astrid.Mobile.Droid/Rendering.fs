@@ -36,25 +36,24 @@ type GeographicMapRenderer() =
     inherit XamarinForms.Maps.Android.TemporaryPatch.MapRenderer<DashboardMap>()
     let toBitmap(viewGroup: AndroidViewGroup, context, width, height) =
         let viewCount = match box viewGroup with | null -> 0 | _ -> viewGroup.ChildCount
-        let bitmap = Bitmap.CreateBitmap(width, height, Bitmap.Config.Argb4444)
+        let bitmap = Bitmap.CreateBitmap(width, height, Bitmap.Config.Rgb565)
         let layout = new Android.Widget.LinearLayout(context, DrawingCacheEnabled = true)
         let canvas, paint = new Canvas(bitmap), new Paint()
         let mutable left, top = 10, 10
+        let addElement (element:VisualElement) (child:AndroidView) =
+            layout.AddView (child, int element.WidthRequest, int element.HeightRequest)
+            child.Layout(left, top, int element.WidthRequest, int element.HeightRequest)
+            child.LayoutParameters <- new AndroidViewGroup.LayoutParams (int element.WidthRequest, int element.HeightRequest)
+            child.SetBackgroundColor(ViewConversion.ToAndroidColor(element.BackgroundColor))
+            top <- top + int element.HeightRequest 
         canvas.DrawBitmap(bitmap, 0.0f, 0.0f, paint)
         for index = 0 to viewCount - 1 do
-            let view = viewGroup.GetChildAt(0)
-            viewGroup.RemoveView view
-            match view with
-            | :? ImageRenderer as imageRenderer -> 
-                let src = imageRenderer.Element.Source
-                imageRenderer.Layout(0, 0, width, height)
-            | :? LabelRenderer as labelRenderer -> 
-                let element = labelRenderer.Element
-                layout.AddView (view, int element.WidthRequest, int element.HeightRequest)
-                view.Layout(left, top, left + int element.WidthRequest, top + int element.HeightRequest)
-                view.SetBackgroundColor(ViewConversion.ToAndroidColor(element.BackgroundColor))
-                top <- top + int element.HeightRequest 
-            | _ -> view |> ignore
+            let child = viewGroup.GetChildAt(0)
+            viewGroup.RemoveView child
+            match child with
+            | :? ImageRenderer as imageRenderer -> child |> addElement imageRenderer.Element
+            | :? LabelRenderer as labelRenderer -> child |> addElement labelRenderer.Element
+            | _ -> child |> ignore
         layout.Draw(canvas)
         bitmap
     let mutable formsMap = Unchecked.defaultof<DashboardMap>
@@ -62,6 +61,8 @@ type GeographicMapRenderer() =
     let markerViewModel = new Dictionary<string, MarkerViewModel>()
     let subscriptions = new CompositeDisposable()
     let infoWindowClicked _ (eventArgs: GoogleMap.InfoWindowClickEventArgs) = 
+        let marker = eventArgs.Marker
+        let vm = markerViewModel.[marker.Id]
         eventArgs |> ignore
     let infoWindowEventHandler = new EventHandler<GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
     override this.OnElementChanged e =
@@ -95,6 +96,7 @@ type GeographicMapRenderer() =
         member this.GetInfoContents(marker: Marker): AndroidView = 
             let vm = markerViewModel.[marker.Id]
             let view = vm |> ViewLocator.Current.ResolveView :?> MarkerView
+            view.ViewModel <- vm
             view.Content <- view.CreateContent()
             let infoWidth, infoHeight = view.Content.WidthRequest, view.Content.HeightRequest
             view.WidthRequest <- infoWidth; view.HeightRequest <- infoHeight

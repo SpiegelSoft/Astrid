@@ -209,13 +209,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="XamarinForms.Reactive.FSharp">
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.3.1-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\XamarinForms.Reactive.FSharp\XamarinForms.Reactive.FSharp\XamarinForms.Reactive.FSharp.fsproj">
-      <Name>XamarinForms.Reactive.FSharp</Name>
-      <Project>{df0b27fa-6e7d-4e1e-8a6b-02719ba4412c}</Project>
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\Astrid.Mobile.Common\Astrid.Mobile.Common.fsproj">
       <Name>Astrid.Mobile.Common</Name>
       <Project>{1e678abe-8872-47a9-87cd-1296824b4532}</Project>

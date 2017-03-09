@@ -24,8 +24,8 @@ type MarkerView(theme: Theme) as this =
         theme.VerticalLayout()
             |> withBlocks(
                 [|
-                    theme.GenerateLabel()
-                        |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: MarkerViewModel) -> (vm.Details : LocationDetails).Text @>, <@ fun (v: MarkerView) -> (v.Title: Label).Text @>, id)
+                    theme.GenerateLabel(fun l -> this.Title <- l)
+                        |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: MarkerViewModel) -> vm.Text @>, <@ fun (v: MarkerView) -> (v.Title: Label).Text @>, id)
                         |> withHeightRequest 200.0 |> withWidthRequest 480.0 |> withBackgroundColor(astridBlue)
                 |]) |> withHeightRequest 212.0 |> withWidthRequest 492.0 |> withBackgroundColor astridBlue :> View
     new() = new MarkerView(Themes.AstridTheme)
