@@ -36,12 +36,12 @@ type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
         match details with
         | SearchResult result -> { PlaceOfInterestId = 0; Label = result.SearchTerm; Address = result.Address }
         | PlaceOfInterest poi -> poi
-    let editTimeline(vm: MarkerViewModel) = 
+    let editTimeline() = 
         async {
                 host.Router.Navigate.Execute(new TimelineViewModel(placeOfInterest, host)) |> ignore
                 return true
-            } |> Async.StartAsTask
-    member __.EditTimelineCommand with get() = ReactiveCommand.CreateFromTask editTimeline
+            }
+    member __.EditTimelineCommand with get() = ReactiveCommand.CreateFromTask (fun (_: MarkerViewModel) -> editTimeline() |> Async.StartAsTask :> Task)
     member val Location = location
     member val Details = details
     member this.Text =
