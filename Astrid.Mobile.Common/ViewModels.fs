@@ -1,6 +1,7 @@
 ﻿namespace Astrid.Mobile.Common
 
 open System.Reactive.Disposables
+open System.Threading.Tasks
 open System.Reactive.Linq
 open System
 
@@ -16,10 +17,10 @@ open GeographicLib
 
 [<StructuralEquality; NoComparison>]
 type LocationDetails =
-    | SearchResult of string
+    | SearchResult of SearchResult
     | PlaceOfInterest of PlaceOfInterest
 
-type EditTimelineViewModel(?host: IScreen) =
+type TimelineViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) =
     inherit PageViewModel()
     let host = LocateIfNone host
     override __.SubscribeToCommands() = host |> ignore
@@ -31,24 +32,30 @@ type EditTimelineViewModel(?host: IScreen) =
 type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
     inherit ReactiveObject()
     let host = LocateIfNone host
-    let editTimeline() = 
+    let placeOfInterest =
+        match details with
+        | SearchResult result -> { PlaceOfInterestId = 0; Label = result.SearchTerm; Address = result.Address }
+        | PlaceOfInterest poi -> poi
+    let editTimeline(vm: MarkerViewModel) = 
         async {
-                host.Router.Navigate.Execute(new EditTimelineViewModel()) |> ignore
+                host.Router.Navigate.Execute(new TimelineViewModel(placeOfInterest, host)) |> ignore
                 return true
-            }
-        
+            } |> Async.StartAsTask
+    member __.EditTimelineCommand with get() = ReactiveCommand.CreateFromTask editTimeline
     member val Location = location
     member val Details = details
     member this.Text =
         match this.Details with
-        | SearchResult result -> result
+        | SearchResult result -> result.SearchTerm
         | PlaceOfInterest poi -> poi.Label
     member this.HeadlineTextExpression() =
         match details with
-        | SearchResult result -> <@ fun (vm: MarkerViewModel) -> result @>
+        | SearchResult result -> 
+            let searchTerm = result.SearchTerm
+            <@ fun (vm: MarkerViewModel) -> searchTerm @>
         | PlaceOfInterest poi -> 
             let label = poi.Label
-            <@ fun (vm: MarkerViewModel) -> poi.Label @>
+            <@ fun (vm: MarkerViewModel) -> label @>
 
 type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
     inherit PageViewModel()
@@ -61,25 +68,25 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
         for searchMarker in searchMarkers do markers.Remove(searchMarker) |> ignore
         let vm = match box vm with | null -> this | _ -> vm
         async {
-            let searchAddress = vm.SearchAddress
-            let! positions = geocoder.GetPositionsForAddressAsync(searchAddress) |> Async.AwaitTask
-            let searchResults = positions |> Seq.map (fun r -> new MarkerViewModel(XamarinGeographic.geodesicLocation r, SearchResult searchAddress))
-            let! nearby = positions |> Seq.map (fun pos -> geocoder.GetAddressesForPositionAsync(pos) |> Async.AwaitTask) |> Async.Parallel
+            let searchTerm = vm.SearchTerm
+            let! positions = geocoder.GetPositionsForAddressAsync(searchTerm) |> Async.AwaitTask
+            let! nearby = positions |> Seq.map (fun pos -> geocoder.GetAddressesForPositionAsync(pos).ContinueWith(fun (t: Task<string seq>) -> (pos, t.Result)) |> Async.AwaitTask) |> Async.Parallel
+            let searchResults = nearby |> Seq.map (fun (pos, address) -> new MarkerViewModel(XamarinGeographic.geodesicLocation pos, SearchResult { SearchTerm = searchTerm; Address = address |> Array.ofSeq }))
             searchResults |> Seq.iter markers.Add
             return searchResults
         } |> Async.StartAsTask
     let showResults (searchResults: MarkerViewModel seq) = 
         match searchResults |> Seq.tryHead with
         | Some r -> this.Location <- r.Location
-        | None -> this.Message <- { Title = LocalisedStrings.NoResultsFound; Message = String.Format(LocalisedStrings.NoResultsFoundForAddress, this.SearchAddress); Accept = LocalisedStrings.OK }
+        | None -> this.Message <- { Title = LocalisedStrings.NoResultsFound; Message = String.Format(LocalisedStrings.NoResultsFoundForAddress, this.SearchTerm); Accept = LocalisedStrings.OK }
     let searchForAddressCommand = ReactiveCommand.CreateFromTask geocodeAddress
-    let mutable searchAddress = String.Empty
+    let mutable searchTerm = String.Empty
     let mutable location = new GeodesicLocation(51.4<deg>, -0.02<deg>)
     override __.SubscribeToCommands() = searchForAddressCommand.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults) |> commandSubscriptions.Add
     override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
     member __.Title with get() = LocalisedStrings.AppTitle
     member __.SearchForAddressCommand with get() = searchForAddressCommand
-    member this.SearchAddress with get() = searchAddress and set(value) = this.RaiseAndSetIfChanged(&searchAddress, value, "SearchAddress") |> ignore
+    member this.SearchTerm with get() = searchTerm and set(value) = this.RaiseAndSetIfChanged(&searchTerm, value, "SearchTerm") |> ignore
     member this.Location with get() = location and set(value) = this.RaiseAndSetIfChanged(&location, value, "Location") |> ignore
     member __.Markers with get() = markers
     interface IRoutableViewModel with

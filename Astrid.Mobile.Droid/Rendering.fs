@@ -63,7 +63,7 @@ type GeographicMapRenderer() =
     let infoWindowClicked _ (eventArgs: GoogleMap.InfoWindowClickEventArgs) = 
         let marker = eventArgs.Marker
         let vm = markerViewModel.[marker.Id]
-        eventArgs |> ignore
+        vm.EditTimelineCommand.Execute(vm) |> ignore
     let infoWindowEventHandler = new EventHandler<GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
     override this.OnElementChanged e =
         base.OnElementChanged(e)

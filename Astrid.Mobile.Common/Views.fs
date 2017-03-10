@@ -44,7 +44,7 @@ type DashboardView(theme: Theme) as this =
                             |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.Title @>, <@ fun (v: DashboardView) -> (v.Title: Label).Text @>, id)
                         theme.GenerateSearchBar(fun sb -> this.AddressSearchBar <- sb)
                             |> withSearchBarPlaceholder LocalisedStrings.SearchForAPlaceOfInterest
-                            |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.SearchAddress @>, <@ fun (v: DashboardView) -> (v.AddressSearchBar: SearchBar).Text @>, id, id)
+                            |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.SearchTerm @>, <@ fun (v: DashboardView) -> (v.AddressSearchBar: SearchBar).Text @>, id, id)
                             |> withSearchCommand this.ViewModel.SearchForAddressCommand
                     |])
                 theme.GenerateMap<MarkedLocation>(fun m -> this.Map <- m)
@@ -54,3 +54,12 @@ type DashboardView(theme: Theme) as this =
     member val AddressSearchBar = Unchecked.defaultof<SearchBar> with get, set
     member val Title = Unchecked.defaultof<Label> with get, set
     member val Map = Unchecked.defaultof<GeographicMap<MarkedLocation>> with get, set
+
+type TimelineView(theme: Theme) as this =
+    inherit ContentPage<TimelineViewModel, TimelineView>(theme)
+    new() = new TimelineView(Themes.AstridTheme)
+    override __.CreateContent() =
+        theme.VerticalLayout() |> withBlocks(
+            [|
+                theme.GenerateLabel() |> withContent("Timeline")
+            |]) :> View

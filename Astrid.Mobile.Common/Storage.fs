@@ -24,10 +24,11 @@ module SqliteEntities =
         member val LatitudeDegrees = location.Latitude / 1.0<deg> with get, set
         member val LongitudeDegrees = location.Longitude / 1.0<deg> with get, set
         [<OneToMany(CascadeOperations = CascadeOperation.All)>] member val Address = new List<PlaceOfInterestAddressLineEntity>() with get, set
-        new() = new PlaceOfInterestEntity({ Label = String.Empty; Address = [||] }, new GeodesicLocation())
+        new() = new PlaceOfInterestEntity({ PlaceOfInterestId = 0; Label = String.Empty; Address = [||] }, new GeodesicLocation())
         member this.PlaceOfInterest() =
             {
-                Label = this.Label;
+                PlaceOfInterestId = this.Id
+                Label = this.Label
                 Address = this.Address |> Seq.map (fun lineEntity -> lineEntity.Line) |> Array.ofSeq
             }
         member this.Location = new GeodesicLocation(1.0<deg> * this.LatitudeDegrees, 1.0<deg> * this.LongitudeDegrees)
