@@ -50,7 +50,8 @@ type SearchResultView(theme: Theme) as this =
                     |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: SearchResultViewModel) -> vm.CreatingPlaceOfInterest @>, <@ fun (v: SearchResultView) -> (v.PlaceOfInterestCreationForm: StackLayout).IsVisible @>, id)
                     |> withBlocks(
                         [|
-                            theme.GenerateBoxView() |> withHorizontalOptions LayoutOptions.FillAndExpand |> withHeightRequest 2.0
+                            theme.GenerateBoxView() |> withHorizontalOptions LayoutOptions.FillAndExpand |> withHeightRequest 1.0
+                            theme.GenerateLabel() |> withContent("Hello")
                         |])
            |]) :> View
     new() = new SearchResultView(Themes.AstridTheme)

@@ -20,16 +20,21 @@ type LocationDetails =
     | SearchResult of SearchResult
     | PlaceOfInterest of PlaceOfInterest
 
-type SearchResultViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) =
+open ExpressionConversion
+type SearchResultViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) as this =
     inherit PageViewModel()
+    let mutable creatingPlaceOfInterest = false
     let host = LocateIfNone host
-    let showPlaceOfInterestCreationForm(vm: SearchResultViewModel) = async { vm.CreatingPlaceOfInterest <- true; return true }
-    override __.SubscribeToCommands() = host |> ignore
-    override __.UnsubscribeFromCommands() = host |> ignore
+    let commandSubscriptions = new CompositeDisposable()
+    let showPlaceOfInterestCreationForm(vm: SearchResultViewModel) = async { return true } |> Async.StartAsTask
+    let showForm (vm: SearchResultViewModel) visible = vm.CreatingPlaceOfInterest <- visible
+    let showPlaceOfInterestCreationFormCommand = 
+        lazy(ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm, this.WhenAnyValue(toLinq <@ fun (vm: SearchResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c)))
     member val Headline = placeOfInterest.Label
-    member val CreatingPlaceOfInterest = false with get, set
-    member __.ShowPlaceOfInterestCreationForm 
-        with get() = ReactiveCommand.CreateFromTask (fun (vm: SearchResultViewModel) -> showPlaceOfInterestCreationForm(vm) |> Async.StartAsTask :> Task)
+    member __.CreatingPlaceOfInterest with get() = creatingPlaceOfInterest and set(value) = this.RaiseAndSetIfChanged(&creatingPlaceOfInterest, value, "CreatingPlaceOfInterest") |> ignore
+    member __.ShowPlaceOfInterestCreationForm = showPlaceOfInterestCreationFormCommand.Force()
+    override this.SubscribeToCommands() = this.ShowPlaceOfInterestCreationForm.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showForm this) |> commandSubscriptions.Add
+    override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
     interface IRoutableViewModel with
         member __.HostScreen = host
         member __.UrlPathSegment = "Timeline"
