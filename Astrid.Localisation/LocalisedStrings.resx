@@ -120,6 +120,9 @@
   <data name="AppTitle" xml:space="preserve">
     <value>Astrid</value>
   </data>
+  <data name="CreatePlaceOfInterest" xml:space="preserve">
+    <value>Create Place of Interest</value>
+  </data>
   <data name="NoResultsFound" xml:space="preserve">
     <value>No Results Found</value>
   </data>
@@ -131,5 +134,8 @@
   </data>
   <data name="SearchForAPlaceOfInterest" xml:space="preserve">
     <value>Search for a place of interest...</value>
+  </data>
+  <data name="SearchResult" xml:space="preserve">
+    <value>Search Result</value>
   </data>
 </root>

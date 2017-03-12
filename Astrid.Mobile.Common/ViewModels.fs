@@ -20,11 +20,16 @@ type LocationDetails =
     | SearchResult of SearchResult
     | PlaceOfInterest of PlaceOfInterest
 
-type TimelineViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) =
+type SearchResultViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) =
     inherit PageViewModel()
     let host = LocateIfNone host
+    let showPlaceOfInterestCreationForm(vm: SearchResultViewModel) = async { vm.CreatingPlaceOfInterest <- true; return true }
     override __.SubscribeToCommands() = host |> ignore
     override __.UnsubscribeFromCommands() = host |> ignore
+    member val Headline = placeOfInterest.Label
+    member val CreatingPlaceOfInterest = false with get, set
+    member __.ShowPlaceOfInterestCreationForm 
+        with get() = ReactiveCommand.CreateFromTask (fun (vm: SearchResultViewModel) -> showPlaceOfInterestCreationForm(vm) |> Async.StartAsTask :> Task)
     interface IRoutableViewModel with
         member __.HostScreen = host
         member __.UrlPathSegment = "Timeline"
@@ -38,16 +43,14 @@ type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
         | PlaceOfInterest poi -> poi
     let editTimeline() = 
         async {
-                host.Router.Navigate.Execute(new TimelineViewModel(placeOfInterest, host)) |> ignore
+                host.Router.Navigate.Execute(new SearchResultViewModel(placeOfInterest, host)) |> ignore
                 return true
             }
     member __.EditTimelineCommand with get() = ReactiveCommand.CreateFromTask (fun (_: MarkerViewModel) -> editTimeline() |> Async.StartAsTask :> Task)
     member val Location = location
+    member val PlaceOfInterest = placeOfInterest
     member val Details = details
-    member this.Text =
-        match this.Details with
-        | SearchResult result -> result.SearchTerm
-        | PlaceOfInterest poi -> poi.Label
+    member this.Text = placeOfInterest.Label
     member this.HeadlineTextExpression() =
         match details with
         | SearchResult result -> 
@@ -56,6 +59,7 @@ type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
         | PlaceOfInterest poi -> 
             let label = poi.Label
             <@ fun (vm: MarkerViewModel) -> label @>
+    member val Screen = host
 
 type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
     inherit PageViewModel()

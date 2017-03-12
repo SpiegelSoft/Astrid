@@ -31,6 +31,33 @@ type MarkerView(theme: Theme) as this =
     new() = new MarkerView(Themes.AstridTheme)
     member val Title = Unchecked.defaultof<Label> with get, set
 
+type SearchResultView(theme: Theme) as this =
+    inherit ContentPage<SearchResultViewModel, SearchResultView>(theme)
+    override __.CreateContent() =
+        theme.VerticalLayout() |> withBlocks(
+            [|
+                theme.GenerateBoxView() |> withHorizontalOptions LayoutOptions.FillAndExpand |> withHeightRequest 10.0
+                theme.GenerateTitle() |> withContent(LocalisedStrings.SearchResult) 
+                    |> withAlignment LayoutOptions.Center LayoutOptions.Center
+                theme.GenerateSubtitle(fun l -> this.Subtitle <- l) 
+                    |> withAlignment LayoutOptions.Center LayoutOptions.Center
+                    |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: SearchResultViewModel) -> vm.Headline @>, <@ fun (v: SearchResultView) -> (v.Subtitle: Label).Text @>, id)
+                theme.GenerateButton(fun b -> this.CreatePlaceOfInterestButton <- b)
+                    |> withAlignment LayoutOptions.Center LayoutOptions.Center
+                    |> withCaption(LocalisedStrings.CreatePlaceOfInterest)
+                    |> withCommandBinding (this.ViewModel, this, <@ fun (vm: SearchResultViewModel) -> vm.ShowPlaceOfInterestCreationForm @>, <@ fun (v: SearchResultView) -> v.CreatePlaceOfInterestButton @>)
+                theme.VerticalLayout(fun l -> this.PlaceOfInterestCreationForm <- l)
+                    |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: SearchResultViewModel) -> vm.CreatingPlaceOfInterest @>, <@ fun (v: SearchResultView) -> (v.PlaceOfInterestCreationForm: StackLayout).IsVisible @>, id)
+                    |> withBlocks(
+                        [|
+                            theme.GenerateBoxView() |> withHorizontalOptions LayoutOptions.FillAndExpand |> withHeightRequest 2.0
+                        |])
+           |]) :> View
+    new() = new SearchResultView(Themes.AstridTheme)
+    member val Subtitle = Unchecked.defaultof<Label> with get, set
+    member val CreatePlaceOfInterestButton = Unchecked.defaultof<Button> with get, set
+    member val PlaceOfInterestCreationForm = Unchecked.defaultof<StackLayout> with get, set
+
 type DashboardView(theme: Theme) as this = 
     inherit ContentPage<DashboardViewModel, DashboardView>(theme)
     new() = new DashboardView(Themes.AstridTheme)
@@ -54,12 +81,3 @@ type DashboardView(theme: Theme) as this =
     member val AddressSearchBar = Unchecked.defaultof<SearchBar> with get, set
     member val Title = Unchecked.defaultof<Label> with get, set
     member val Map = Unchecked.defaultof<GeographicMap<MarkedLocation>> with get, set
-
-type TimelineView(theme: Theme) as this =
-    inherit ContentPage<TimelineViewModel, TimelineView>(theme)
-    new() = new TimelineView(Themes.AstridTheme)
-    override __.CreateContent() =
-        theme.VerticalLayout() |> withBlocks(
-            [|
-                theme.GenerateLabel() |> withContent("Timeline")
-            |]) :> View
