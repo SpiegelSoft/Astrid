@@ -1,6 +1,7 @@
 ﻿namespace Astrid.Mobile.Common
 
 open System.Reactive.Disposables
+open System.Collections.Generic
 open System.Threading.Tasks
 open System.Reactive.Linq
 open System
@@ -24,18 +25,28 @@ type CreatePlaceOfInterestViewModel(placeOfInterest: PlaceOfInterest) =
     inherit ReactiveObject()
     let mutable title = placeOfInterest.Label
     let mutable description = String.Empty
+    let mutable address = placeOfInterest.Address.[0]
     member this.Title with get() = title and set(value) = this.RaiseAndSetIfChanged(&title, value, "Title") |> ignore
-    member this.Description with get() = description  and set(value) = this.RaiseAndSetIfChanged(&description, value, "Description") |> ignore
+    member this.Description with get() = description and set(value) = this.RaiseAndSetIfChanged(&description, value, "Description") |> ignore
+    member this.Address with get() = address and set(value) = this.RaiseAndSetIfChanged(&address, value, "Address") |> ignore
 
 open ExpressionConversion
-type SearchResultViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) as this =
+type SearchResultViewModel(location, placeOfInterest: PlaceOfInterest, ?host: IScreen) as this =
     inherit PageViewModel()
     let mutable creatingPlaceOfInterest = false
     let host = LocateIfNone host
     let commandSubscriptions = new CompositeDisposable()
     let showPlaceOfInterestCreationForm(vm: SearchResultViewModel) = async { return true } |> Async.StartAsTask
+    let createPlaceOfInterest(vm: SearchResultViewModel) = 
+        async {
+            let addressEntityLines = placeOfInterest.Address |> Array.map(fun line -> new SqliteEntities.PlaceOfInterestAddressLineEntity(line))
+            let placeOfInterestEntity = new SqliteEntities.PlaceOfInterestEntity(placeOfInterest, location, Address = new List<SqliteEntities.PlaceOfInterestAddressLineEntity>(addressEntityLines))
+            return true 
+        } |> Async.StartAsTask
     let showForm (vm: SearchResultViewModel) visible = vm.CreatingPlaceOfInterest <- visible
     let showPlaceOfInterestCreationFormCommand = 
+        lazy(ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm, this.WhenAnyValue(toLinq <@ fun (vm: SearchResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c)))
+    let createPlaceOfInterestCommand = 
         lazy(ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm, this.WhenAnyValue(toLinq <@ fun (vm: SearchResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c)))
     let placeOfInterestCreation = new CreatePlaceOfInterestViewModel(placeOfInterest)
     member val Headline = placeOfInterest.Label
@@ -53,11 +64,11 @@ type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
     let host = LocateIfNone host
     let placeOfInterest =
         match details with
-        | SearchResult result -> { PlaceOfInterestId = 0; Label = result.SearchTerm; Address = result.Address }
+        | SearchResult result -> { PlaceOfInterestId = 0; Label = result.SearchTerm; Description = None; Image = PlaceholderImage; Address = result.Address }
         | PlaceOfInterest poi -> poi
     let editTimeline() = 
         async {
-                host.Router.Navigate.Execute(new SearchResultViewModel(placeOfInterest, host)) |> ignore
+                host.Router.Navigate.Execute(new SearchResultViewModel(location, placeOfInterest, host)) |> ignore
                 return true
             }
     member __.EditTimelineCommand with get() = ReactiveCommand.CreateFromTask (fun (_: MarkerViewModel) -> editTimeline() |> Async.StartAsTask :> Task)

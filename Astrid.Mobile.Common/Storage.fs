@@ -21,14 +21,19 @@ module SqliteEntities =
     type [<Table("PlaceOfInterest")>] PlaceOfInterestEntity(placeOfInterest: PlaceOfInterest, location: GeodesicLocation) =
         [<PrimaryKey; AutoIncrement>] member val Id = 0 with get, set
         [<MaxLength(256); Unique>] member val Label = placeOfInterest.Label with get, set
+        [<MaxLength(1024)>] member val Description = (match placeOfInterest.Description with | Some description -> description | None -> Unchecked.defaultof<string>) with get, set
+        [<MaxLength(512)>] member val ImageFile = (match placeOfInterest.Image with | ImageFile file -> file | _ -> Unchecked.defaultof<string>) with get, set
+        [<MaxLength(512)>] member val ImageUrl = (match placeOfInterest.Image with | ImageUrl url -> url.ToString() | _ -> Unchecked.defaultof<string>) with get, set
         member val LatitudeDegrees = location.Latitude / 1.0<deg> with get, set
         member val LongitudeDegrees = location.Longitude / 1.0<deg> with get, set
         [<OneToMany(CascadeOperations = CascadeOperation.All)>] member val Address = new List<PlaceOfInterestAddressLineEntity>() with get, set
-        new() = new PlaceOfInterestEntity({ PlaceOfInterestId = 0; Label = String.Empty; Address = [||] }, new GeodesicLocation())
+        new() = new PlaceOfInterestEntity({ PlaceOfInterestId = 0; Label = String.Empty; Description = None; Image = HeadlineImage.PlaceholderImage; Address = [||] }, new GeodesicLocation())
         member this.PlaceOfInterest() =
             {
                 PlaceOfInterestId = this.Id
                 Label = this.Label
+                Description = match this.Description with | es when String.IsNullOrEmpty(es) -> None | _ -> Some this.Description
+                Image = match this with | e when String.IsNullOrEmpty(e.ImageFile) -> ImageFile e.ImageFile | e when String.IsNullOrEmpty(e.ImageUrl) -> ImageUrl (new Uri(e.ImageUrl)) | _ -> PlaceholderImage
                 Address = this.Address |> Seq.map (fun lineEntity -> lineEntity.Line) |> Array.ofSeq
             }
         member this.Location = new GeodesicLocation(1.0<deg> * this.LatitudeDegrees, 1.0<deg> * this.LongitudeDegrees)
