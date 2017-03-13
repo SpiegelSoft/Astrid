@@ -123,6 +123,12 @@
   <data name="CreatePlaceOfInterest" xml:space="preserve">
     <value>Create Place of Interest</value>
   </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="NewPlaceOfInterest" xml:space="preserve">
+    <value>New Place of Interest</value>
+  </data>
   <data name="NoResultsFound" xml:space="preserve">
     <value>No Results Found</value>
   </data>
@@ -137,5 +143,8 @@
   </data>
   <data name="SearchResult" xml:space="preserve">
     <value>Search Result</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
   </data>
 </root>

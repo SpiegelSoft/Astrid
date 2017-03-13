@@ -37,7 +37,7 @@ type SearchResultView(theme: Theme) as this =
         theme.VerticalLayout() |> withBlocks(
             [|
                 theme.GenerateBoxView() |> withHorizontalOptions LayoutOptions.FillAndExpand |> withHeightRequest 10.0
-                theme.GenerateTitle() |> withContent(LocalisedStrings.SearchResult) 
+                theme.GenerateTitle() |> withLabelText(LocalisedStrings.SearchResult) 
                     |> withAlignment LayoutOptions.Center LayoutOptions.Center
                 theme.GenerateSubtitle(fun l -> this.Subtitle <- l) 
                     |> withAlignment LayoutOptions.Center LayoutOptions.Center
@@ -51,13 +51,26 @@ type SearchResultView(theme: Theme) as this =
                     |> withBlocks(
                         [|
                             theme.GenerateBoxView() |> withHorizontalOptions LayoutOptions.FillAndExpand |> withHeightRequest 1.0
-                            theme.GenerateLabel() |> withContent("Hello")
+                            theme.GenerateTitle() |> withLabelText(LocalisedStrings.NewPlaceOfInterest) |> withAlignment LayoutOptions.Center LayoutOptions.Center
+                            theme.GenerateGrid(["*"; "*"], ["2*"; "5*"]) |> withRow(
+                                [|
+                                    theme.GenerateLabel() |> withLabelText(LocalisedStrings.Title)
+                                    theme.GenerateEntry(fun e -> this.NewPlaceOfInterestTitle <- e)
+                                        |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: SearchResultViewModel) -> (vm.PlaceOfInterestCreation: CreatePlaceOfInterestViewModel).Title @>, <@ fun (v: SearchResultView) -> (v.NewPlaceOfInterestTitle: Entry).Text @>, id, id)
+                                |]) |> thenRow(
+                                [|
+                                    theme.GenerateLabel() |> withLabelText(LocalisedStrings.Description)
+                                    theme.GenerateEntry(fun e -> this.NewPlaceOfInterestTitle <- e)
+                                        |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: SearchResultViewModel) -> (vm.PlaceOfInterestCreation: CreatePlaceOfInterestViewModel).Description @>, <@ fun (v: SearchResultView) -> (v.NewPlaceOfInterestDescription: Entry).Text @>, id, id)
+                                |]) |> createFromRows |> withPadding(new Thickness(20.0)) :> View
                         |])
            |]) :> View
     new() = new SearchResultView(Themes.AstridTheme)
     member val Subtitle = Unchecked.defaultof<Label> with get, set
     member val CreatePlaceOfInterestButton = Unchecked.defaultof<Button> with get, set
     member val PlaceOfInterestCreationForm = Unchecked.defaultof<StackLayout> with get, set
+    member val NewPlaceOfInterestDescription = Unchecked.defaultof<Entry> with get, set
+    member val NewPlaceOfInterestTitle = Unchecked.defaultof<Entry> with get, set
 
 type DashboardView(theme: Theme) as this = 
     inherit ContentPage<DashboardViewModel, DashboardView>(theme)

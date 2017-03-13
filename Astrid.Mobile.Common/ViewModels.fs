@@ -20,6 +20,13 @@ type LocationDetails =
     | SearchResult of SearchResult
     | PlaceOfInterest of PlaceOfInterest
 
+type CreatePlaceOfInterestViewModel(placeOfInterest: PlaceOfInterest) =
+    inherit ReactiveObject()
+    let mutable title = placeOfInterest.Label
+    let mutable description = String.Empty
+    member this.Title with get() = title and set(value) = this.RaiseAndSetIfChanged(&title, value, "Title") |> ignore
+    member this.Description with get() = description  and set(value) = this.RaiseAndSetIfChanged(&description, value, "Description") |> ignore
+
 open ExpressionConversion
 type SearchResultViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) as this =
     inherit PageViewModel()
@@ -30,9 +37,11 @@ type SearchResultViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) as 
     let showForm (vm: SearchResultViewModel) visible = vm.CreatingPlaceOfInterest <- visible
     let showPlaceOfInterestCreationFormCommand = 
         lazy(ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm, this.WhenAnyValue(toLinq <@ fun (vm: SearchResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c)))
+    let placeOfInterestCreation = new CreatePlaceOfInterestViewModel(placeOfInterest)
     member val Headline = placeOfInterest.Label
     member __.CreatingPlaceOfInterest with get() = creatingPlaceOfInterest and set(value) = this.RaiseAndSetIfChanged(&creatingPlaceOfInterest, value, "CreatingPlaceOfInterest") |> ignore
     member __.ShowPlaceOfInterestCreationForm = showPlaceOfInterestCreationFormCommand.Force()
+    member val PlaceOfInterestCreation = placeOfInterestCreation
     override this.SubscribeToCommands() = this.ShowPlaceOfInterestCreationForm.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showForm this) |> commandSubscriptions.Add
     override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
     interface IRoutableViewModel with

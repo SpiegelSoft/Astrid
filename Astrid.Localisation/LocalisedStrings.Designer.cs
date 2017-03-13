@@ -80,6 +80,24 @@ namespace Astrid.Localisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Place of Interest.
+        /// </summary>
+        public static string NewPlaceOfInterest {
+            get {
+                return ResourceManager.GetString("NewPlaceOfInterest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Results Found.
         /// </summary>
         public static string NoResultsFound {
@@ -121,6 +139,15 @@ namespace Astrid.Localisation {
         public static string SearchResult {
             get {
                 return ResourceManager.GetString("SearchResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }
