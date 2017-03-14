@@ -4,6 +4,7 @@ open System.Reactive.Disposables
 open System.Collections.Generic
 open System.Threading.Tasks
 open System.Reactive.Linq
+open System.Linq
 open System
 
 open ReactiveUI
@@ -21,39 +22,54 @@ type LocationDetails =
     | SearchResult of SearchResult
     | PlaceOfInterest of PlaceOfInterest
 
-type CreatePlaceOfInterestViewModel(placeOfInterest: PlaceOfInterest) =
+type CreatePlaceOfInterestViewModel() =
     inherit ReactiveObject()
-    let mutable title = placeOfInterest.Label
+    let mutable title = String.Empty
     let mutable description = String.Empty
-    let mutable address = placeOfInterest.Address.[0]
+    let mutable address = String.Empty
     member this.Title with get() = title and set(value) = this.RaiseAndSetIfChanged(&title, value, "Title") |> ignore
     member this.Description with get() = description and set(value) = this.RaiseAndSetIfChanged(&description, value, "Description") |> ignore
     member this.Address with get() = address and set(value) = this.RaiseAndSetIfChanged(&address, value, "Address") |> ignore
+    member this.PlaceOfInterest() =
+        {
+            PlaceOfInterestId = 0
+            Label = this.Title
+            Description = match String.IsNullOrWhiteSpace(this.Description) with | false -> Some this.Description | true -> None 
+            Image = PlaceholderImage
+            Address = this.Address.Split([|Environment.NewLine|], StringSplitOptions.RemoveEmptyEntries) |> Array.ofSeq
+        }
+    member this.CanSave() = true
+//        (String.IsNullOrEmpty(this.Title) |> not)
+//        && (String.IsNullOrEmpty(this.Address) |> not)
+//        && (this.Address.Split([|Environment.NewLine|], StringSplitOptions.RemoveEmptyEntries).Count() > 1)
 
 open ExpressionConversion
-type SearchResultViewModel(location, placeOfInterest: PlaceOfInterest, ?host: IScreen) as this =
+type SearchResultViewModel(location, placeOfInterest: PlaceOfInterest, ?host: IScreen, ?platform: IAstridPlatform) as this =
     inherit PageViewModel()
     let mutable creatingPlaceOfInterest = false
-    let host = LocateIfNone host
+    let host, platform = LocateIfNone host, LocateIfNone platform
     let commandSubscriptions = new CompositeDisposable()
     let showPlaceOfInterestCreationForm(vm: SearchResultViewModel) = async { return true } |> Async.StartAsTask
-    let createPlaceOfInterest(vm: SearchResultViewModel) = 
-        async {
-            let addressEntityLines = placeOfInterest.Address |> Array.map(fun line -> new SqliteEntities.PlaceOfInterestAddressLineEntity(line))
-            let placeOfInterestEntity = new SqliteEntities.PlaceOfInterestEntity(placeOfInterest, location, Address = new List<SqliteEntities.PlaceOfInterestAddressLineEntity>(addressEntityLines))
-            return true 
-        } |> Async.StartAsTask
     let showForm (vm: SearchResultViewModel) visible = vm.CreatingPlaceOfInterest <- visible
+    let closeForm success = host.Router.NavigateBack.Execute() |> ignore
     let showPlaceOfInterestCreationFormCommand = 
         lazy(ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm, this.WhenAnyValue(toLinq <@ fun (vm: SearchResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c)))
-    let createPlaceOfInterestCommand = 
-        lazy(ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm, this.WhenAnyValue(toLinq <@ fun (vm: SearchResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c)))
-    let placeOfInterestCreation = new CreatePlaceOfInterestViewModel(placeOfInterest)
+    let placeOfInterestCreation = new CreatePlaceOfInterestViewModel(Title = placeOfInterest.Label, Address = placeOfInterest.Address.[0])
+    let createPlaceOfInterest(vm: SearchResultViewModel) = 
+        async {
+            let newPlaceOfInterest = placeOfInterestCreation.PlaceOfInterest()
+            do! platform.PlacesOfInterest.AddPlaceOfInterestAsync(newPlaceOfInterest, location)
+            return true 
+        } |> Async.StartAsTask
+    let createPlaceOfInterestCommand = ReactiveCommand.CreateFromTask(createPlaceOfInterest, placeOfInterestCreation.Changed.Select(fun e -> e.Sender :> obj).OfType<CreatePlaceOfInterestViewModel>().Select(fun vm -> vm.CanSave()))
     member val Headline = placeOfInterest.Label
     member __.CreatingPlaceOfInterest with get() = creatingPlaceOfInterest and set(value) = this.RaiseAndSetIfChanged(&creatingPlaceOfInterest, value, "CreatingPlaceOfInterest") |> ignore
     member __.ShowPlaceOfInterestCreationForm = showPlaceOfInterestCreationFormCommand.Force()
+    member __.CreatePlaceOfInterest = createPlaceOfInterestCommand
     member val PlaceOfInterestCreation = placeOfInterestCreation
-    override this.SubscribeToCommands() = this.ShowPlaceOfInterestCreationForm.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showForm this) |> commandSubscriptions.Add
+    override this.SubscribeToCommands() = 
+        this.ShowPlaceOfInterestCreationForm.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showForm this) |> commandSubscriptions.Add
+        this.CreatePlaceOfInterest.ObserveOn(RxApp.MainThreadScheduler).Subscribe(closeForm) |> commandSubscriptions.Add
     override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
     interface IRoutableViewModel with
         member __.HostScreen = host
@@ -98,6 +114,7 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
         let vm = match box vm with | null -> this | _ -> vm
         async {
             let searchTerm = vm.SearchTerm
+            let! placesOfInterest = platform.PlacesOfInterest.SearchForPlacesOfInterestAsync(vm.SearchTerm)
             let! positions = geocoder.GetPositionsForAddressAsync(searchTerm) |> Async.AwaitTask
             let! nearby = positions |> Seq.map (fun pos -> geocoder.GetAddressesForPositionAsync(pos).ContinueWith(fun (t: Task<string seq>) -> (pos, t.Result)) |> Async.AwaitTask) |> Async.Parallel
             let searchResults = nearby |> Seq.map (fun (pos, address) -> new MarkerViewModel(XamarinGeographic.geodesicLocation pos, SearchResult { SearchTerm = searchTerm; Address = address |> Array.ofSeq }))

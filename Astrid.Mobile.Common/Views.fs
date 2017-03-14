@@ -71,16 +71,18 @@ type SearchResultView(theme: Theme) as this =
                                             |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: SearchResultViewModel) -> (vm.PlaceOfInterestCreation: CreatePlaceOfInterestViewModel).Address @>, <@ fun (v: SearchResultView) -> (v.NewPlaceOfInterestAddress: Editor).Text @>, id, id)
                                     |]) |> thenRow(
                                     [|
-                                        theme.GenerateButton() 
+                                        theme.GenerateButton(fun b -> this.SavePlaceOfInterestButton <- b) 
                                             |> withColumnSpan(2)
                                             |> withCaption LocalisedStrings.Save 
                                             |> withAlignment LayoutOptions.End LayoutOptions.Center
+                                            |> withCommandBinding (this.ViewModel, this, <@ fun (vm: SearchResultViewModel) -> vm.CreatePlaceOfInterest @>, <@ fun (v: SearchResultView) -> v.SavePlaceOfInterestButton @>)
                                     |]) |> createFromRows |> withPadding(new Thickness(20.0)) :> View)
                         |])
            |]) :> View
     new() = new SearchResultView(Themes.AstridTheme)
     member val Subtitle = Unchecked.defaultof<Label> with get, set
     member val CreatePlaceOfInterestButton = Unchecked.defaultof<Button> with get, set
+    member val SavePlaceOfInterestButton = Unchecked.defaultof<Button> with get, set
     member val PlaceOfInterestCreationForm = Unchecked.defaultof<StackLayout> with get, set
     member val NewPlaceOfInterestDescription = Unchecked.defaultof<Entry> with get, set
     member val NewPlaceOfInterestTitle = Unchecked.defaultof<Entry> with get, set

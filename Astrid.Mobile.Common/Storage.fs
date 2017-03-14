@@ -66,12 +66,17 @@ type PlaceOfInterestRepository(platform, dbPath) =
         }
     member __.AddPlaceOfInterestAsync(placeOfInterest: PlaceOfInterest, location: GeodesicLocation) =
         async {
-            let addPlaceOfInterest (c:SQLiteConnection) = c.InsertWithChildren(new PlaceOfInterestEntity(placeOfInterest, location)) |> ignore
+            let addPlaceOfInterest (c:SQLiteConnection) = c.InsertWithChildren(new PlaceOfInterestEntity(placeOfInterest, location, Address = new List<PlaceOfInterestAddressLineEntity>(placeOfInterest.Address |> Seq.map (fun lineEntity -> new PlaceOfInterestAddressLineEntity(lineEntity)) |> Array.ofSeq))) |> ignore
             do! conn.RunInTransactionAsync(addPlaceOfInterest) |> Async.AwaitTask
         }
     member __.GetAllPlacesOfInterestAsync() =
         async {
             let! entities = conn.GetAllWithChildrenAsync<PlaceOfInterestEntity>() |> Async.AwaitTask
+            return entities |> placesOfInterest
+        }
+    member __.SearchForPlacesOfInterestAsync(searchTerm) =
+        async {
+            let! entities = conn.GetAllWithChildrenAsync(toLinq <@ fun (p:PlaceOfInterestEntity) -> p.Label.Contains(searchTerm) || p.Description.Contains(searchTerm) @>) |> Async.AwaitTask
             return entities |> placesOfInterest
         }
     member __.GetPlacesOfInterestAsync(centre: GeodesicLocation, radius: float<m>) =
