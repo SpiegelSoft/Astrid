@@ -63,7 +63,9 @@ type GeographicMapRenderer() =
     let infoWindowClicked _ (eventArgs: GoogleMap.InfoWindowClickEventArgs) = 
         let marker = eventArgs.Marker
         let vm = markerViewModel.[marker.Id]
-        vm.Screen.Router.Navigate.Execute(new SearchResultViewModel(vm.Location, vm.PlaceOfInterest, vm.Screen)).Add(ignore)
+        match vm.Details with
+        | GeocodingResult result -> vm.Screen.Router.Navigate.Execute(new GeocodingResultViewModel(vm.Location, vm.PlaceOfInterest, vm.Screen)).Add(ignore)
+        | PlaceOfInterest placeOfInterest -> vm.Screen.Router.Navigate.Execute(new TimelineViewModel()).Add(ignore)
     let infoWindowEventHandler = new EventHandler<GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
     override this.OnElementChanged e =
         base.OnElementChanged(e)
@@ -84,8 +86,8 @@ type GeographicMapRenderer() =
                 for pin in formsMap.PinnedLocations do 
                     let marker = new MarkerOptions()
                     match pin.ViewModel.Details with
-                    | SearchResult _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)) |> ignore
-                    | PlaceOfInterest _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueAzure)) |> ignore
+                    | GeocodingResult _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)) |> ignore
+                    | PlaceOfInterest _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueViolet)) |> ignore
                     marker.SetPosition(new LatLng(pin.Location.Latitude / 1.0<deg>, pin.Location.Longitude / 1.0<deg>)) |> ignore
                     googleMap.AddMarker marker |> fun m -> markerViewModel.[m.Id] <- pin.ViewModel
             formsMap.PinnedLocations.ItemsAdded.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinsUpdated) |> subscriptions.Add
