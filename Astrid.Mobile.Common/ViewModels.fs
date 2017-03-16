@@ -161,10 +161,10 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
         searchForAddressCommand.Where(Seq.isEmpty).ObserveOn(RxApp.MainThreadScheduler).Subscribe(displayEmptySetMessage) |> commandSubscriptions.Add
         searchForAddressCommand.Where(Seq.isEmpty >> not).ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults) |> commandSubscriptions.Add
         initialisePageCommand.Where(Seq.isEmpty >> not).ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults) |> commandSubscriptions.Add
-        initialisePageCommand.Execute(this).Add(ignore)
     override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
     member __.Title with get() = LocalisedStrings.AppTitle
     member __.SearchForAddressCommand with get() = searchForAddressCommand
+    member __.InitialisePageCommand with get() = initialisePageCommand
     member this.SearchTerm with get() = searchTerm and set(value) = this.RaiseAndSetIfChanged(&searchTerm, value, "SearchTerm") |> ignore
     member this.Location with get() = location and set(value) = this.RaiseAndSetIfChanged(&location, value, "Location") |> ignore
     member this.Radius with get() = radius and set(value) = this.RaiseAndSetIfChanged(&radius, value, "Radius") |> ignore

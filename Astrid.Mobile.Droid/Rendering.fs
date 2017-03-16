@@ -59,6 +59,16 @@ type GeographicMapRenderer() =
     let mutable formsMap = Unchecked.defaultof<DashboardMap>
     let mutable googleMap = Unchecked.defaultof<GoogleMap>
     let markerViewModel = new Dictionary<string, MarkerViewModel>()
+    let pinsUpdated _ = 
+        googleMap.Clear()
+        markerViewModel.Clear()
+        for pin in formsMap.PinnedLocations do 
+            let marker = new MarkerOptions()
+            match pin.ViewModel.Details with
+            | GeocodingResult _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)) |> ignore
+            | PlaceOfInterest _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueViolet)) |> ignore
+            marker.SetPosition(new LatLng(pin.Location.Latitude / 1.0<deg>, pin.Location.Longitude / 1.0<deg>)) |> ignore
+            googleMap.AddMarker marker |> fun m -> markerViewModel.[m.Id] <- pin.ViewModel
     let subscriptions = new CompositeDisposable()
     let infoWindowClicked _ (eventArgs: GoogleMap.InfoWindowClickEventArgs) = 
         let marker = eventArgs.Marker
@@ -75,25 +85,21 @@ type GeographicMapRenderer() =
         match box e.NewElement with
         | null -> e |> ignore
         | _ -> formsMap <- e.NewElement
-    override __.Dispose(disposing) = if disposing then subscriptions.Clear()
+    override __.Dispose(disposing) = 
+        if disposing then 
+            formsMap.Close()
+            subscriptions.Clear()
+    override this.OnDraw(canvas) =
+        base.OnDraw(canvas)
     interface IOnMapReadyCallback with 
         override this.OnMapReady map =
             base.OnMapReady map
             googleMap <- map
-            let pinsUpdated _ = 
-                googleMap.Clear()
-                markerViewModel.Clear()
-                for pin in formsMap.PinnedLocations do 
-                    let marker = new MarkerOptions()
-                    match pin.ViewModel.Details with
-                    | GeocodingResult _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)) |> ignore
-                    | PlaceOfInterest _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueViolet)) |> ignore
-                    marker.SetPosition(new LatLng(pin.Location.Latitude / 1.0<deg>, pin.Location.Longitude / 1.0<deg>)) |> ignore
-                    googleMap.AddMarker marker |> fun m -> markerViewModel.[m.Id] <- pin.ViewModel
             formsMap.PinnedLocations.ItemsAdded.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinsUpdated) |> subscriptions.Add
             formsMap.PinnedLocations.ItemsRemoved.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinsUpdated) |> subscriptions.Add
             googleMap.InfoWindowClick.AddHandler infoWindowEventHandler
             googleMap.SetInfoWindowAdapter this
+            pinsUpdated this
     interface GoogleMap.IInfoWindowAdapter with
         member this.GetInfoContents(marker: Marker): AndroidView = 
             let vm = markerViewModel.[marker.Id]

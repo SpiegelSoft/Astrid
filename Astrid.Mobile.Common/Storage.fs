@@ -116,10 +116,16 @@ type PlaceOfInterestRepository(platform, dbPath) =
             let! entities = conn.GetAllWithChildrenAsync(toLinq <@ fun (p:PlaceOfInterestEntity) -> p.Label.Contains(searchTerm) || p.Description.Contains(searchTerm) @>) |> Async.AwaitTask
             return entities |> placesOfInterest
         }
-    member __.DeletePlaceOfInterestAsync(placeOfInterestId) =
+    member __.DeletePlaceOfInterestAsync(placeOfInterestId: int) =
         async {
-            let! id = conn.DeleteAsync<PlaceOfInterestEntity>(placeOfInterestId) |> Async.AwaitTask
-            return id
+            let deletePlaceOfInterest (c:SQLiteConnection) =
+                let placeOfInterest = c.Get<PlaceOfInterestEntity>(placeOfInterestId)
+                match box placeOfInterest with
+                | null -> placeOfInterest |> ignore
+                | _ ->
+                    c.DeleteAll(placeOfInterest.Address)
+                    c.Delete<PlaceOfInterestEntity>(placeOfInterestId) |> ignore
+            do! conn.RunInTransactionAsync(deletePlaceOfInterest) |> Async.AwaitTask
         }
     member __.GetPlacesOfInterestAsync(centre: GeodesicLocation, radius: float<m>) =
         let geodesic = Geodesic.WGS84
