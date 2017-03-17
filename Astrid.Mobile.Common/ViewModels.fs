@@ -54,7 +54,7 @@ type CreatePlaceOfInterestViewModel() =
         && (this.Address.Split([|Environment.NewLine|], StringSplitOptions.RemoveEmptyEntries).Count() > 1)
 
 open ExpressionConversion
-type GeocodingResultViewModel(location, placeOfInterest: PlaceOfInterest, ?host: IScreen, ?platform: IAstridPlatform) as this =
+type GeocodingResultViewModel(location, placeOfInterest: PlaceOfInterest, convertToPlaceOfInterestCommand: ReactiveCommand<PlaceOfInterest, PlaceOfInterest>, ?host: IScreen, ?platform: IAstridPlatform) as this =
     inherit PageViewModel()
     let mutable creatingPlaceOfInterest = false
     let host, platform = LocateIfNone host, LocateIfNone platform
@@ -69,6 +69,7 @@ type GeocodingResultViewModel(location, placeOfInterest: PlaceOfInterest, ?host:
         async {
             let newPlaceOfInterest = placeOfInterestCreation.PlaceOfInterest()
             do! platform.PlacesOfInterest.AddPlaceOfInterestAsync(newPlaceOfInterest, location)
+            convertToPlaceOfInterestCommand.Execute(newPlaceOfInterest).Add(ignore)
             return true 
         } |> Async.StartAsTask
     let createPlaceOfInterestCommand = ReactiveCommand.CreateFromTask(createPlaceOfInterest, placeOfInterestCreation.Changed.Select(fun e -> e.Sender :> obj).OfType<CreatePlaceOfInterestViewModel>().Select(fun vm -> vm.CanSave()))
@@ -93,15 +94,18 @@ type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
         match details with
         | GeocodingResult result -> { PlaceOfInterestId = 0; Label = result.SearchTerm; Description = None; Image = PlaceholderImage; Address = result.Address }
         | PlaceOfInterest poi -> poi
+    let convertToPlaceOfInterest (placeOfInterest: PlaceOfInterest) = Task.FromResult(placeOfInterest)
+    let convertToPlaceOfInterestCommand = ReactiveCommand.CreateFromTask convertToPlaceOfInterest
     let editTimeline() = 
         async {
-                host.Router.Navigate.Execute(new GeocodingResultViewModel(location, placeOfInterest, host)) |> ignore
+                host.Router.Navigate.Execute(new GeocodingResultViewModel(location, placeOfInterest, convertToPlaceOfInterestCommand, host)) |> ignore
                 return true
             }
     member __.EditTimelineCommand with get() = ReactiveCommand.CreateFromTask (fun (_: MarkerViewModel) -> editTimeline() |> Async.StartAsTask :> Task)
     member val Location = location
     member val PlaceOfInterest = placeOfInterest
     member val Details = details
+    member __.ConvertToPlaceOfInterestCommand with get() = convertToPlaceOfInterestCommand
     member this.Text = placeOfInterest.Label
     member this.HeadlineTextExpression() =
         match details with
@@ -118,10 +122,20 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
     let host, platform = LocateIfNone host, LocateIfNone platform
     let geocoder = platform.Geocoder
     let markers = new ReactiveList<MarkerViewModel>()
+    let geocodingMarkers = new ReactiveList<MarkerViewModel * IDisposable>()
     let commandSubscriptions = new CompositeDisposable()
+    let geocodingSubsriptions = new CompositeDisposable()
     let clearGeocodingResults() =
-        let geocodingMarkers = markers |> Seq.choose (fun m -> match m.Details with | GeocodingResult _ -> Some m | _ -> None) |> Array.ofSeq
-        geocodingMarkers |> Seq.iter (markers.Remove >> ignore)
+        geocodingMarkers |> Seq.iter (fun (_, s) -> s.Dispose()); geocodingMarkers.Clear()
+        let geocodingResults = markers |> Seq.choose (fun m -> match m.Details with | GeocodingResult _ -> Some m | _ -> None) |> Array.ofSeq
+        geocodingResults |> Seq.iter (markers.Remove >> ignore)
+    let addGeocodingMarker (marker: MarkerViewModel) = 
+        let command = marker.ConvertToPlaceOfInterestCommand
+        let subscription = marker.ConvertToPlaceOfInterestCommand.ObserveOn(RxApp.MainThreadScheduler).Subscribe(fun (poi: PlaceOfInterest) -> 
+            markers.Add(new MarkerViewModel(marker.Location, PlaceOfInterest poi, host))
+            clearGeocodingResults())
+        geocodingMarkers.Add(marker, subscription)
+        markers.Add(marker)
     let geocodeAddress(vm: DashboardViewModel) =
         clearGeocodingResults()
         let vm = match box vm with | null -> this | _ -> vm
@@ -135,11 +149,11 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
                 |> Seq.filter(fun (pos, address) -> poiMarkers |> Seq.exists (fun m -> m.Location = XamarinGeographic.geodesicLocation pos) |> not) 
                 |> Seq.map (fun (pos, address) -> new MarkerViewModel(XamarinGeographic.geodesicLocation pos, GeocodingResult { SearchTerm = searchTerm; Address = address |> Array.ofSeq }))
                 |> Array.ofSeq
-            geocodingMarkers |> Seq.iter markers.Add
+            geocodingMarkers |> Seq.iter addGeocodingMarker
             return geocodingMarkers
         } |> Async.StartAsTask
     let initialisePage(vm: DashboardViewModel) =
-        markers.Clear()
+        clearGeocodingResults(); markers.Clear()
         async {
             let! placesOfInterest = platform.PlacesOfInterest.GetAllPlacesOfInterestAsync()
             let poiMarkers = placesOfInterest |> Seq.map (fun (poi, location) -> new MarkerViewModel(location, PlaceOfInterest poi)) |> Array.ofSeq

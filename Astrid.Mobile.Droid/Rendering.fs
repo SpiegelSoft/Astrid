@@ -59,22 +59,26 @@ type GeographicMapRenderer() =
     let mutable formsMap = Unchecked.defaultof<DashboardMap>
     let mutable googleMap = Unchecked.defaultof<GoogleMap>
     let markerViewModel = new Dictionary<string, MarkerViewModel>()
-    let pinsUpdated _ = 
-        googleMap.Clear()
-        markerViewModel.Clear()
-        for pin in formsMap.PinnedLocations do 
-            let marker = new MarkerOptions()
-            match pin.ViewModel.Details with
-            | GeocodingResult _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)) |> ignore
-            | PlaceOfInterest _ -> marker.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueViolet)) |> ignore
-            marker.SetPosition(new LatLng(pin.Location.Latitude / 1.0<deg>, pin.Location.Longitude / 1.0<deg>)) |> ignore
-            googleMap.AddMarker marker |> fun m -> markerViewModel.[m.Id] <- pin.ViewModel
+    let googleMarker = new Dictionary<MarkedLocation, Marker>()
+    let pinAdded (markedLocation: MarkedLocation) =
+        let markerOptions = new MarkerOptions()
+        match markedLocation.ViewModel.Details with
+        | GeocodingResult _ -> markerOptions.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueRed)) |> ignore
+        | PlaceOfInterest _ -> markerOptions.SetIcon(BitmapDescriptorFactory.DefaultMarker(BitmapDescriptorFactory.HueViolet)) |> ignore
+        markerOptions.SetPosition(new LatLng(markedLocation.Location.Latitude / 1.0<deg>, markedLocation.Location.Longitude / 1.0<deg>)) |> ignore
+        let marker = googleMap.AddMarker markerOptions
+        markerViewModel.[marker.Id] <- markedLocation.ViewModel
+        googleMarker.[markedLocation] <- marker
+    let pinRemoved (markedLocation: MarkedLocation) =
+        let marker = googleMarker.[markedLocation]
+        marker.Remove()
+        marker.Dispose()
     let subscriptions = new CompositeDisposable()
     let infoWindowClicked _ (eventArgs: GoogleMap.InfoWindowClickEventArgs) = 
         let marker = eventArgs.Marker
         let vm = markerViewModel.[marker.Id]
         match vm.Details with
-        | GeocodingResult result -> vm.Screen.Router.Navigate.Execute(new GeocodingResultViewModel(vm.Location, vm.PlaceOfInterest, vm.Screen)).Add(ignore)
+        | GeocodingResult result -> vm.Screen.Router.Navigate.Execute(new GeocodingResultViewModel(vm.Location, vm.PlaceOfInterest, vm.ConvertToPlaceOfInterestCommand, vm.Screen)).Add(ignore)
         | PlaceOfInterest placeOfInterest -> vm.Screen.Router.Navigate.Execute(new TimelineViewModel()).Add(ignore)
     let infoWindowEventHandler = new EventHandler<GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
     override this.OnElementChanged e =
@@ -87,6 +91,8 @@ type GeographicMapRenderer() =
         | _ -> formsMap <- e.NewElement
     override __.Dispose(disposing) = 
         if disposing then 
+            formsMap.PinnedLocations |> Seq.iter pinRemoved
+            markerViewModel.Clear()
             formsMap.Close()
             subscriptions.Clear()
     override this.OnDraw(canvas) =
@@ -95,11 +101,13 @@ type GeographicMapRenderer() =
         override this.OnMapReady map =
             base.OnMapReady map
             googleMap <- map
-            formsMap.PinnedLocations.ItemsAdded.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinsUpdated) |> subscriptions.Add
-            formsMap.PinnedLocations.ItemsRemoved.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinsUpdated) |> subscriptions.Add
+            formsMap.PinnedLocations.ItemsAdded.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinAdded) |> subscriptions.Add
+            formsMap.PinnedLocations.ItemsRemoved.ObserveOn(RxApp.MainThreadScheduler).Subscribe(pinRemoved) |> subscriptions.Add
             googleMap.InfoWindowClick.AddHandler infoWindowEventHandler
             googleMap.SetInfoWindowAdapter this
-            pinsUpdated this
+            googleMap.Clear()
+            markerViewModel.Clear()
+            formsMap.PinnedLocations |> Seq.iter pinAdded
     interface GoogleMap.IInfoWindowAdapter with
         member this.GetInfoContents(marker: Marker): AndroidView = 
             let vm = markerViewModel.[marker.Id]
