@@ -5,9 +5,10 @@ open XamarinForms.Reactive.FSharp.Themes
 open Xamarin.Forms
 
 module Themes =
+    let AstridBlue = Color.FromRgb(0, 59, 111)
     let AstridTheme = 
         DefaultTheme 
-            |> applyBackgroundColor Color.Navy
+            |> applyBackgroundColor AstridBlue
             |> applyLabelSetters 
                 [
                     new Setter(Property = Label.TextColorProperty, Value = Color.Yellow)

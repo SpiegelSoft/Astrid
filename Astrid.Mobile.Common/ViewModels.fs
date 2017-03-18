@@ -22,7 +22,7 @@ type LocationDetails =
     | GeocodingResult of SearchResult
     | PlaceOfInterest of PlaceOfInterest
 
-type TimelineViewModel(?host: IScreen) =
+type TimelineViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) =
     inherit PageViewModel()
     let host = LocateIfNone host
     let commandSubscriptions = new CompositeDisposable()
@@ -96,12 +96,6 @@ type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
         | PlaceOfInterest poi -> poi
     let convertToPlaceOfInterest (placeOfInterest: PlaceOfInterest) = Task.FromResult(placeOfInterest)
     let convertToPlaceOfInterestCommand = ReactiveCommand.CreateFromTask convertToPlaceOfInterest
-    let editTimeline() = 
-        async {
-                host.Router.Navigate.Execute(new GeocodingResultViewModel(location, placeOfInterest, convertToPlaceOfInterestCommand, host)) |> ignore
-                return true
-            }
-    member __.EditTimelineCommand with get() = ReactiveCommand.CreateFromTask (fun (_: MarkerViewModel) -> editTimeline() |> Async.StartAsTask :> Task)
     member val Location = location
     member val PlaceOfInterest = placeOfInterest
     member val Details = details

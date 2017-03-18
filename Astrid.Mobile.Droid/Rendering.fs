@@ -79,7 +79,7 @@ type GeographicMapRenderer() =
         let vm = markerViewModel.[marker.Id]
         match vm.Details with
         | GeocodingResult result -> vm.Screen.Router.Navigate.Execute(new GeocodingResultViewModel(vm.Location, vm.PlaceOfInterest, vm.ConvertToPlaceOfInterestCommand, vm.Screen)).Add(ignore)
-        | PlaceOfInterest placeOfInterest -> vm.Screen.Router.Navigate.Execute(new TimelineViewModel()).Add(ignore)
+        | PlaceOfInterest placeOfInterest -> vm.Screen.Router.Navigate.Execute(new TimelineViewModel(placeOfInterest)).Add(ignore)
     let infoWindowEventHandler = new EventHandler<GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
     override this.OnElementChanged e =
         base.OnElementChanged(e)

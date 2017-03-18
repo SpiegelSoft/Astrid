@@ -19,17 +19,32 @@ module PinConversion = let toPin (marker: MarkerViewModel) = new MarkedLocation(
 
 type MarkerView(theme: Theme) as this =
     inherit ContentView<MarkerViewModel>(theme)
-    let astridBlue = Color.FromRgb(0, 59, 111)
     override __.CreateContent() =
         theme.VerticalLayout()
             |> withBlocks(
                 [|
                     theme.GenerateLabel(fun l -> this.Title <- l)
                         |> withOneWayBinding(this.ViewModel, this, <@ fun (vm: MarkerViewModel) -> vm.Text @>, <@ fun (v: MarkerView) -> (v.Title: Label).Text @>, id)
-                        |> withHeightRequest 200.0 |> withWidthRequest 480.0 |> withBackgroundColor(astridBlue)
-                |]) |> withHeightRequest 212.0 |> withWidthRequest 492.0 |> withBackgroundColor astridBlue :> View
+                        |> withHeightRequest 200.0 |> withWidthRequest 480.0 |> withBackgroundColor(Themes.AstridBlue)
+                |]) |> withHeightRequest 212.0 |> withWidthRequest 492.0 |> withBackgroundColor Themes.AstridBlue :> View
     new() = new MarkerView(Themes.AstridTheme)
     member val Title = Unchecked.defaultof<Label> with get, set
+
+type TimelineView(theme: Theme) =
+    inherit ContentPage<TimelineViewModel, TimelineView>(theme)
+    override __.CreateContent() =
+        theme.HorizontalLayout() |> withBlocks(
+            [|
+                theme.GenerateLabel()
+                    |> withLabelText("Timeline")
+                theme.GenerateImage() 
+                    |> withSource(ImageSource.FromResource("ic_delete_forever_black_24dp.png")) 
+                    |> withHeightAndWidthRequest (24.0, 24.0)
+                    |> withAspect Aspect.AspectFill
+                    |> withAlignment LayoutOptions.End LayoutOptions.Center
+                    |> withBackgroundColor Color.White
+            |]) |> withAlignment LayoutOptions.CenterAndExpand LayoutOptions.Start :> View
+    new() = new TimelineView(Themes.AstridTheme)
 
 type GeocodingResultView(theme: Theme) as this =
     inherit ContentPage<GeocodingResultViewModel, GeocodingResultView>(theme)

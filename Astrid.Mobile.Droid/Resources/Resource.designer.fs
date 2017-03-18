@@ -23,10 +23,10 @@ namespace Astrid.Mobile.Droid
     #nowarn "51" // address-of operator can occur in the code
     #nowarn "1183" // unused 'this' reference
     
-    exception ReturnException826e30ae80ad4a2d92bf51767be2724d of obj
-    exception ReturnNoneException826e30ae80ad4a2d92bf51767be2724d
+    exception ReturnException603a6dbcb8334b87ab7201f4f2ce64b9 of obj
+    exception ReturnNoneException603a6dbcb8334b87ab7201f4f2ce64b9
     [<AutoOpen>]
-    module FuncConvertFinalOverload826e30ae80ad4a2d92bf51767be2724d =
+    module FuncConvertFinalOverload603a6dbcb8334b87ab7201f4f2ce64b9 =
       // This extension member adds to the FuncConvert type and is the last resort member in the method overloading rules. 
       type global.Microsoft.FSharp.Core.FuncConvert with
           /// A utility function to convert function values from tupled to curried form
@@ -2279,26 +2279,26 @@ namespace Astrid.Mobile.Droid
             // aapt resource value: 0x7f020053
             static member avd_hide_password = 2130837587
             
-            // aapt resource value: 0x7f02011f
-            static member avd_hide_password_1 = 2130837791
-            
             // aapt resource value: 0x7f020120
-            static member avd_hide_password_2 = 2130837792
+            static member avd_hide_password_1 = 2130837792
             
             // aapt resource value: 0x7f020121
-            static member avd_hide_password_3 = 2130837793
+            static member avd_hide_password_2 = 2130837793
+            
+            // aapt resource value: 0x7f020122
+            static member avd_hide_password_3 = 2130837794
             
             // aapt resource value: 0x7f020054
             static member avd_show_password = 2130837588
             
-            // aapt resource value: 0x7f020122
-            static member avd_show_password_1 = 2130837794
-            
             // aapt resource value: 0x7f020123
-            static member avd_show_password_2 = 2130837795
+            static member avd_show_password_1 = 2130837795
             
             // aapt resource value: 0x7f020124
-            static member avd_show_password_3 = 2130837796
+            static member avd_show_password_2 = 2130837796
+            
+            // aapt resource value: 0x7f020125
+            static member avd_show_password_3 = 2130837797
             
             // aapt resource value: 0x7f020055
             static member common_full_open_on_phone = 2130837589
@@ -2388,523 +2388,526 @@ namespace Astrid.Mobile.Droid
             static member ic_audiotrack_light = 2130837617
             
             // aapt resource value: 0x7f020072
-            static member ic_dialog_close_dark = 2130837618
+            static member ic_delete_forever_black_24dp = 2130837618
             
             // aapt resource value: 0x7f020073
-            static member ic_dialog_close_light = 2130837619
+            static member ic_dialog_close_dark = 2130837619
             
             // aapt resource value: 0x7f020074
-            static member ic_group_collapse_00 = 2130837620
+            static member ic_dialog_close_light = 2130837620
             
             // aapt resource value: 0x7f020075
-            static member ic_group_collapse_01 = 2130837621
+            static member ic_group_collapse_00 = 2130837621
             
             // aapt resource value: 0x7f020076
-            static member ic_group_collapse_02 = 2130837622
+            static member ic_group_collapse_01 = 2130837622
             
             // aapt resource value: 0x7f020077
-            static member ic_group_collapse_03 = 2130837623
+            static member ic_group_collapse_02 = 2130837623
             
             // aapt resource value: 0x7f020078
-            static member ic_group_collapse_04 = 2130837624
+            static member ic_group_collapse_03 = 2130837624
             
             // aapt resource value: 0x7f020079
-            static member ic_group_collapse_05 = 2130837625
+            static member ic_group_collapse_04 = 2130837625
             
             // aapt resource value: 0x7f02007a
-            static member ic_group_collapse_06 = 2130837626
+            static member ic_group_collapse_05 = 2130837626
             
             // aapt resource value: 0x7f02007b
-            static member ic_group_collapse_07 = 2130837627
+            static member ic_group_collapse_06 = 2130837627
             
             // aapt resource value: 0x7f02007c
-            static member ic_group_collapse_08 = 2130837628
+            static member ic_group_collapse_07 = 2130837628
             
             // aapt resource value: 0x7f02007d
-            static member ic_group_collapse_09 = 2130837629
+            static member ic_group_collapse_08 = 2130837629
             
             // aapt resource value: 0x7f02007e
-            static member ic_group_collapse_10 = 2130837630
+            static member ic_group_collapse_09 = 2130837630
             
             // aapt resource value: 0x7f02007f
-            static member ic_group_collapse_11 = 2130837631
+            static member ic_group_collapse_10 = 2130837631
             
             // aapt resource value: 0x7f020080
-            static member ic_group_collapse_12 = 2130837632
+            static member ic_group_collapse_11 = 2130837632
             
             // aapt resource value: 0x7f020081
-            static member ic_group_collapse_13 = 2130837633
+            static member ic_group_collapse_12 = 2130837633
             
             // aapt resource value: 0x7f020082
-            static member ic_group_collapse_14 = 2130837634
+            static member ic_group_collapse_13 = 2130837634
             
             // aapt resource value: 0x7f020083
-            static member ic_group_collapse_15 = 2130837635
+            static member ic_group_collapse_14 = 2130837635
             
             // aapt resource value: 0x7f020084
-            static member ic_group_expand_00 = 2130837636
+            static member ic_group_collapse_15 = 2130837636
             
             // aapt resource value: 0x7f020085
-            static member ic_group_expand_01 = 2130837637
+            static member ic_group_expand_00 = 2130837637
             
             // aapt resource value: 0x7f020086
-            static member ic_group_expand_02 = 2130837638
+            static member ic_group_expand_01 = 2130837638
             
             // aapt resource value: 0x7f020087
-            static member ic_group_expand_03 = 2130837639
+            static member ic_group_expand_02 = 2130837639
             
             // aapt resource value: 0x7f020088
-            static member ic_group_expand_04 = 2130837640
+            static member ic_group_expand_03 = 2130837640
             
             // aapt resource value: 0x7f020089
-            static member ic_group_expand_05 = 2130837641
+            static member ic_group_expand_04 = 2130837641
             
             // aapt resource value: 0x7f02008a
-            static member ic_group_expand_06 = 2130837642
+            static member ic_group_expand_05 = 2130837642
             
             // aapt resource value: 0x7f02008b
-            static member ic_group_expand_07 = 2130837643
+            static member ic_group_expand_06 = 2130837643
             
             // aapt resource value: 0x7f02008c
-            static member ic_group_expand_08 = 2130837644
+            static member ic_group_expand_07 = 2130837644
             
             // aapt resource value: 0x7f02008d
-            static member ic_group_expand_09 = 2130837645
+            static member ic_group_expand_08 = 2130837645
             
             // aapt resource value: 0x7f02008e
-            static member ic_group_expand_10 = 2130837646
+            static member ic_group_expand_09 = 2130837646
             
             // aapt resource value: 0x7f02008f
-            static member ic_group_expand_11 = 2130837647
+            static member ic_group_expand_10 = 2130837647
             
             // aapt resource value: 0x7f020090
-            static member ic_group_expand_12 = 2130837648
+            static member ic_group_expand_11 = 2130837648
             
             // aapt resource value: 0x7f020091
-            static member ic_group_expand_13 = 2130837649
+            static member ic_group_expand_12 = 2130837649
             
             // aapt resource value: 0x7f020092
-            static member ic_group_expand_14 = 2130837650
+            static member ic_group_expand_13 = 2130837650
             
             // aapt resource value: 0x7f020093
-            static member ic_group_expand_15 = 2130837651
+            static member ic_group_expand_14 = 2130837651
             
             // aapt resource value: 0x7f020094
-            static member ic_media_pause_dark = 2130837652
+            static member ic_group_expand_15 = 2130837652
             
             // aapt resource value: 0x7f020095
-            static member ic_media_pause_light = 2130837653
+            static member ic_media_pause_dark = 2130837653
             
             // aapt resource value: 0x7f020096
-            static member ic_media_play_dark = 2130837654
+            static member ic_media_pause_light = 2130837654
             
             // aapt resource value: 0x7f020097
-            static member ic_media_play_light = 2130837655
+            static member ic_media_play_dark = 2130837655
             
             // aapt resource value: 0x7f020098
-            static member ic_mr_button_connected_00_dark = 2130837656
+            static member ic_media_play_light = 2130837656
             
             // aapt resource value: 0x7f020099
-            static member ic_mr_button_connected_00_light = 2130837657
+            static member ic_mr_button_connected_00_dark = 2130837657
             
             // aapt resource value: 0x7f02009a
-            static member ic_mr_button_connected_01_dark = 2130837658
+            static member ic_mr_button_connected_00_light = 2130837658
             
             // aapt resource value: 0x7f02009b
-            static member ic_mr_button_connected_01_light = 2130837659
+            static member ic_mr_button_connected_01_dark = 2130837659
             
             // aapt resource value: 0x7f02009c
-            static member ic_mr_button_connected_02_dark = 2130837660
+            static member ic_mr_button_connected_01_light = 2130837660
             
             // aapt resource value: 0x7f02009d
-            static member ic_mr_button_connected_02_light = 2130837661
+            static member ic_mr_button_connected_02_dark = 2130837661
             
             // aapt resource value: 0x7f02009e
-            static member ic_mr_button_connected_03_dark = 2130837662
+            static member ic_mr_button_connected_02_light = 2130837662
             
             // aapt resource value: 0x7f02009f
-            static member ic_mr_button_connected_03_light = 2130837663
+            static member ic_mr_button_connected_03_dark = 2130837663
             
             // aapt resource value: 0x7f0200a0
-            static member ic_mr_button_connected_04_dark = 2130837664
+            static member ic_mr_button_connected_03_light = 2130837664
             
             // aapt resource value: 0x7f0200a1
-            static member ic_mr_button_connected_04_light = 2130837665
+            static member ic_mr_button_connected_04_dark = 2130837665
             
             // aapt resource value: 0x7f0200a2
-            static member ic_mr_button_connected_05_dark = 2130837666
+            static member ic_mr_button_connected_04_light = 2130837666
             
             // aapt resource value: 0x7f0200a3
-            static member ic_mr_button_connected_05_light = 2130837667
+            static member ic_mr_button_connected_05_dark = 2130837667
             
             // aapt resource value: 0x7f0200a4
-            static member ic_mr_button_connected_06_dark = 2130837668
+            static member ic_mr_button_connected_05_light = 2130837668
             
             // aapt resource value: 0x7f0200a5
-            static member ic_mr_button_connected_06_light = 2130837669
+            static member ic_mr_button_connected_06_dark = 2130837669
             
             // aapt resource value: 0x7f0200a6
-            static member ic_mr_button_connected_07_dark = 2130837670
+            static member ic_mr_button_connected_06_light = 2130837670
             
             // aapt resource value: 0x7f0200a7
-            static member ic_mr_button_connected_07_light = 2130837671
+            static member ic_mr_button_connected_07_dark = 2130837671
             
             // aapt resource value: 0x7f0200a8
-            static member ic_mr_button_connected_08_dark = 2130837672
+            static member ic_mr_button_connected_07_light = 2130837672
             
             // aapt resource value: 0x7f0200a9
-            static member ic_mr_button_connected_08_light = 2130837673
+            static member ic_mr_button_connected_08_dark = 2130837673
             
             // aapt resource value: 0x7f0200aa
-            static member ic_mr_button_connected_09_dark = 2130837674
+            static member ic_mr_button_connected_08_light = 2130837674
             
             // aapt resource value: 0x7f0200ab
-            static member ic_mr_button_connected_09_light = 2130837675
+            static member ic_mr_button_connected_09_dark = 2130837675
             
             // aapt resource value: 0x7f0200ac
-            static member ic_mr_button_connected_10_dark = 2130837676
+            static member ic_mr_button_connected_09_light = 2130837676
             
             // aapt resource value: 0x7f0200ad
-            static member ic_mr_button_connected_10_light = 2130837677
+            static member ic_mr_button_connected_10_dark = 2130837677
             
             // aapt resource value: 0x7f0200ae
-            static member ic_mr_button_connected_11_dark = 2130837678
+            static member ic_mr_button_connected_10_light = 2130837678
             
             // aapt resource value: 0x7f0200af
-            static member ic_mr_button_connected_11_light = 2130837679
+            static member ic_mr_button_connected_11_dark = 2130837679
             
             // aapt resource value: 0x7f0200b0
-            static member ic_mr_button_connected_12_dark = 2130837680
+            static member ic_mr_button_connected_11_light = 2130837680
             
             // aapt resource value: 0x7f0200b1
-            static member ic_mr_button_connected_12_light = 2130837681
+            static member ic_mr_button_connected_12_dark = 2130837681
             
             // aapt resource value: 0x7f0200b2
-            static member ic_mr_button_connected_13_dark = 2130837682
+            static member ic_mr_button_connected_12_light = 2130837682
             
             // aapt resource value: 0x7f0200b3
-            static member ic_mr_button_connected_13_light = 2130837683
+            static member ic_mr_button_connected_13_dark = 2130837683
             
             // aapt resource value: 0x7f0200b4
-            static member ic_mr_button_connected_14_dark = 2130837684
+            static member ic_mr_button_connected_13_light = 2130837684
             
             // aapt resource value: 0x7f0200b5
-            static member ic_mr_button_connected_14_light = 2130837685
+            static member ic_mr_button_connected_14_dark = 2130837685
             
             // aapt resource value: 0x7f0200b6
-            static member ic_mr_button_connected_15_dark = 2130837686
+            static member ic_mr_button_connected_14_light = 2130837686
             
             // aapt resource value: 0x7f0200b7
-            static member ic_mr_button_connected_15_light = 2130837687
+            static member ic_mr_button_connected_15_dark = 2130837687
             
             // aapt resource value: 0x7f0200b8
-            static member ic_mr_button_connected_16_dark = 2130837688
+            static member ic_mr_button_connected_15_light = 2130837688
             
             // aapt resource value: 0x7f0200b9
-            static member ic_mr_button_connected_16_light = 2130837689
+            static member ic_mr_button_connected_16_dark = 2130837689
             
             // aapt resource value: 0x7f0200ba
-            static member ic_mr_button_connected_17_dark = 2130837690
+            static member ic_mr_button_connected_16_light = 2130837690
             
             // aapt resource value: 0x7f0200bb
-            static member ic_mr_button_connected_17_light = 2130837691
+            static member ic_mr_button_connected_17_dark = 2130837691
             
             // aapt resource value: 0x7f0200bc
-            static member ic_mr_button_connected_18_dark = 2130837692
+            static member ic_mr_button_connected_17_light = 2130837692
             
             // aapt resource value: 0x7f0200bd
-            static member ic_mr_button_connected_18_light = 2130837693
+            static member ic_mr_button_connected_18_dark = 2130837693
             
             // aapt resource value: 0x7f0200be
-            static member ic_mr_button_connected_19_dark = 2130837694
+            static member ic_mr_button_connected_18_light = 2130837694
             
             // aapt resource value: 0x7f0200bf
-            static member ic_mr_button_connected_19_light = 2130837695
+            static member ic_mr_button_connected_19_dark = 2130837695
             
             // aapt resource value: 0x7f0200c0
-            static member ic_mr_button_connected_20_dark = 2130837696
+            static member ic_mr_button_connected_19_light = 2130837696
             
             // aapt resource value: 0x7f0200c1
-            static member ic_mr_button_connected_20_light = 2130837697
+            static member ic_mr_button_connected_20_dark = 2130837697
             
             // aapt resource value: 0x7f0200c2
-            static member ic_mr_button_connected_21_dark = 2130837698
+            static member ic_mr_button_connected_20_light = 2130837698
             
             // aapt resource value: 0x7f0200c3
-            static member ic_mr_button_connected_21_light = 2130837699
+            static member ic_mr_button_connected_21_dark = 2130837699
             
             // aapt resource value: 0x7f0200c4
-            static member ic_mr_button_connected_22_dark = 2130837700
+            static member ic_mr_button_connected_21_light = 2130837700
             
             // aapt resource value: 0x7f0200c5
-            static member ic_mr_button_connected_22_light = 2130837701
+            static member ic_mr_button_connected_22_dark = 2130837701
             
             // aapt resource value: 0x7f0200c6
-            static member ic_mr_button_connecting_00_dark = 2130837702
+            static member ic_mr_button_connected_22_light = 2130837702
             
             // aapt resource value: 0x7f0200c7
-            static member ic_mr_button_connecting_00_light = 2130837703
+            static member ic_mr_button_connecting_00_dark = 2130837703
             
             // aapt resource value: 0x7f0200c8
-            static member ic_mr_button_connecting_01_dark = 2130837704
+            static member ic_mr_button_connecting_00_light = 2130837704
             
             // aapt resource value: 0x7f0200c9
-            static member ic_mr_button_connecting_01_light = 2130837705
+            static member ic_mr_button_connecting_01_dark = 2130837705
             
             // aapt resource value: 0x7f0200ca
-            static member ic_mr_button_connecting_02_dark = 2130837706
+            static member ic_mr_button_connecting_01_light = 2130837706
             
             // aapt resource value: 0x7f0200cb
-            static member ic_mr_button_connecting_02_light = 2130837707
+            static member ic_mr_button_connecting_02_dark = 2130837707
             
             // aapt resource value: 0x7f0200cc
-            static member ic_mr_button_connecting_03_dark = 2130837708
+            static member ic_mr_button_connecting_02_light = 2130837708
             
             // aapt resource value: 0x7f0200cd
-            static member ic_mr_button_connecting_03_light = 2130837709
+            static member ic_mr_button_connecting_03_dark = 2130837709
             
             // aapt resource value: 0x7f0200ce
-            static member ic_mr_button_connecting_04_dark = 2130837710
+            static member ic_mr_button_connecting_03_light = 2130837710
             
             // aapt resource value: 0x7f0200cf
-            static member ic_mr_button_connecting_04_light = 2130837711
+            static member ic_mr_button_connecting_04_dark = 2130837711
             
             // aapt resource value: 0x7f0200d0
-            static member ic_mr_button_connecting_05_dark = 2130837712
+            static member ic_mr_button_connecting_04_light = 2130837712
             
             // aapt resource value: 0x7f0200d1
-            static member ic_mr_button_connecting_05_light = 2130837713
+            static member ic_mr_button_connecting_05_dark = 2130837713
             
             // aapt resource value: 0x7f0200d2
-            static member ic_mr_button_connecting_06_dark = 2130837714
+            static member ic_mr_button_connecting_05_light = 2130837714
             
             // aapt resource value: 0x7f0200d3
-            static member ic_mr_button_connecting_06_light = 2130837715
+            static member ic_mr_button_connecting_06_dark = 2130837715
             
             // aapt resource value: 0x7f0200d4
-            static member ic_mr_button_connecting_07_dark = 2130837716
+            static member ic_mr_button_connecting_06_light = 2130837716
             
             // aapt resource value: 0x7f0200d5
-            static member ic_mr_button_connecting_07_light = 2130837717
+            static member ic_mr_button_connecting_07_dark = 2130837717
             
             // aapt resource value: 0x7f0200d6
-            static member ic_mr_button_connecting_08_dark = 2130837718
+            static member ic_mr_button_connecting_07_light = 2130837718
             
             // aapt resource value: 0x7f0200d7
-            static member ic_mr_button_connecting_08_light = 2130837719
+            static member ic_mr_button_connecting_08_dark = 2130837719
             
             // aapt resource value: 0x7f0200d8
-            static member ic_mr_button_connecting_09_dark = 2130837720
+            static member ic_mr_button_connecting_08_light = 2130837720
             
             // aapt resource value: 0x7f0200d9
-            static member ic_mr_button_connecting_09_light = 2130837721
+            static member ic_mr_button_connecting_09_dark = 2130837721
             
             // aapt resource value: 0x7f0200da
-            static member ic_mr_button_connecting_10_dark = 2130837722
+            static member ic_mr_button_connecting_09_light = 2130837722
             
             // aapt resource value: 0x7f0200db
-            static member ic_mr_button_connecting_10_light = 2130837723
+            static member ic_mr_button_connecting_10_dark = 2130837723
             
             // aapt resource value: 0x7f0200dc
-            static member ic_mr_button_connecting_11_dark = 2130837724
+            static member ic_mr_button_connecting_10_light = 2130837724
             
             // aapt resource value: 0x7f0200dd
-            static member ic_mr_button_connecting_11_light = 2130837725
+            static member ic_mr_button_connecting_11_dark = 2130837725
             
             // aapt resource value: 0x7f0200de
-            static member ic_mr_button_connecting_12_dark = 2130837726
+            static member ic_mr_button_connecting_11_light = 2130837726
             
             // aapt resource value: 0x7f0200df
-            static member ic_mr_button_connecting_12_light = 2130837727
+            static member ic_mr_button_connecting_12_dark = 2130837727
             
             // aapt resource value: 0x7f0200e0
-            static member ic_mr_button_connecting_13_dark = 2130837728
+            static member ic_mr_button_connecting_12_light = 2130837728
             
             // aapt resource value: 0x7f0200e1
-            static member ic_mr_button_connecting_13_light = 2130837729
+            static member ic_mr_button_connecting_13_dark = 2130837729
             
             // aapt resource value: 0x7f0200e2
-            static member ic_mr_button_connecting_14_dark = 2130837730
+            static member ic_mr_button_connecting_13_light = 2130837730
             
             // aapt resource value: 0x7f0200e3
-            static member ic_mr_button_connecting_14_light = 2130837731
+            static member ic_mr_button_connecting_14_dark = 2130837731
             
             // aapt resource value: 0x7f0200e4
-            static member ic_mr_button_connecting_15_dark = 2130837732
+            static member ic_mr_button_connecting_14_light = 2130837732
             
             // aapt resource value: 0x7f0200e5
-            static member ic_mr_button_connecting_15_light = 2130837733
+            static member ic_mr_button_connecting_15_dark = 2130837733
             
             // aapt resource value: 0x7f0200e6
-            static member ic_mr_button_connecting_16_dark = 2130837734
+            static member ic_mr_button_connecting_15_light = 2130837734
             
             // aapt resource value: 0x7f0200e7
-            static member ic_mr_button_connecting_16_light = 2130837735
+            static member ic_mr_button_connecting_16_dark = 2130837735
             
             // aapt resource value: 0x7f0200e8
-            static member ic_mr_button_connecting_17_dark = 2130837736
+            static member ic_mr_button_connecting_16_light = 2130837736
             
             // aapt resource value: 0x7f0200e9
-            static member ic_mr_button_connecting_17_light = 2130837737
+            static member ic_mr_button_connecting_17_dark = 2130837737
             
             // aapt resource value: 0x7f0200ea
-            static member ic_mr_button_connecting_18_dark = 2130837738
+            static member ic_mr_button_connecting_17_light = 2130837738
             
             // aapt resource value: 0x7f0200eb
-            static member ic_mr_button_connecting_18_light = 2130837739
+            static member ic_mr_button_connecting_18_dark = 2130837739
             
             // aapt resource value: 0x7f0200ec
-            static member ic_mr_button_connecting_19_dark = 2130837740
+            static member ic_mr_button_connecting_18_light = 2130837740
             
             // aapt resource value: 0x7f0200ed
-            static member ic_mr_button_connecting_19_light = 2130837741
+            static member ic_mr_button_connecting_19_dark = 2130837741
             
             // aapt resource value: 0x7f0200ee
-            static member ic_mr_button_connecting_20_dark = 2130837742
+            static member ic_mr_button_connecting_19_light = 2130837742
             
             // aapt resource value: 0x7f0200ef
-            static member ic_mr_button_connecting_20_light = 2130837743
+            static member ic_mr_button_connecting_20_dark = 2130837743
             
             // aapt resource value: 0x7f0200f0
-            static member ic_mr_button_connecting_21_dark = 2130837744
+            static member ic_mr_button_connecting_20_light = 2130837744
             
             // aapt resource value: 0x7f0200f1
-            static member ic_mr_button_connecting_21_light = 2130837745
+            static member ic_mr_button_connecting_21_dark = 2130837745
             
             // aapt resource value: 0x7f0200f2
-            static member ic_mr_button_connecting_22_dark = 2130837746
+            static member ic_mr_button_connecting_21_light = 2130837746
             
             // aapt resource value: 0x7f0200f3
-            static member ic_mr_button_connecting_22_light = 2130837747
+            static member ic_mr_button_connecting_22_dark = 2130837747
             
             // aapt resource value: 0x7f0200f4
-            static member ic_mr_button_disabled_dark = 2130837748
+            static member ic_mr_button_connecting_22_light = 2130837748
             
             // aapt resource value: 0x7f0200f5
-            static member ic_mr_button_disabled_light = 2130837749
+            static member ic_mr_button_disabled_dark = 2130837749
             
             // aapt resource value: 0x7f0200f6
-            static member ic_mr_button_disconnected_dark = 2130837750
+            static member ic_mr_button_disabled_light = 2130837750
             
             // aapt resource value: 0x7f0200f7
-            static member ic_mr_button_disconnected_light = 2130837751
+            static member ic_mr_button_disconnected_dark = 2130837751
             
             // aapt resource value: 0x7f0200f8
-            static member ic_mr_button_grey = 2130837752
+            static member ic_mr_button_disconnected_light = 2130837752
             
             // aapt resource value: 0x7f0200f9
-            static member ic_vol_type_speaker_dark = 2130837753
+            static member ic_mr_button_grey = 2130837753
             
             // aapt resource value: 0x7f0200fa
-            static member ic_vol_type_speaker_group_dark = 2130837754
+            static member ic_vol_type_speaker_dark = 2130837754
             
             // aapt resource value: 0x7f0200fb
-            static member ic_vol_type_speaker_group_light = 2130837755
+            static member ic_vol_type_speaker_group_dark = 2130837755
             
             // aapt resource value: 0x7f0200fc
-            static member ic_vol_type_speaker_light = 2130837756
+            static member ic_vol_type_speaker_group_light = 2130837756
             
             // aapt resource value: 0x7f0200fd
-            static member ic_vol_type_tv_dark = 2130837757
+            static member ic_vol_type_speaker_light = 2130837757
             
             // aapt resource value: 0x7f0200fe
-            static member ic_vol_type_tv_light = 2130837758
+            static member ic_vol_type_tv_dark = 2130837758
             
             // aapt resource value: 0x7f0200ff
-            static member Icon = 2130837759
+            static member ic_vol_type_tv_light = 2130837759
             
             // aapt resource value: 0x7f020100
-            static member mr_button_connected_dark = 2130837760
+            static member Icon = 2130837760
             
             // aapt resource value: 0x7f020101
-            static member mr_button_connected_light = 2130837761
+            static member mr_button_connected_dark = 2130837761
             
             // aapt resource value: 0x7f020102
-            static member mr_button_connecting_dark = 2130837762
+            static member mr_button_connected_light = 2130837762
             
             // aapt resource value: 0x7f020103
-            static member mr_button_connecting_light = 2130837763
+            static member mr_button_connecting_dark = 2130837763
             
             // aapt resource value: 0x7f020104
-            static member mr_button_dark = 2130837764
+            static member mr_button_connecting_light = 2130837764
             
             // aapt resource value: 0x7f020105
-            static member mr_button_light = 2130837765
+            static member mr_button_dark = 2130837765
             
             // aapt resource value: 0x7f020106
-            static member mr_dialog_close_dark = 2130837766
+            static member mr_button_light = 2130837766
             
             // aapt resource value: 0x7f020107
-            static member mr_dialog_close_light = 2130837767
+            static member mr_dialog_close_dark = 2130837767
             
             // aapt resource value: 0x7f020108
-            static member mr_dialog_material_background_dark = 2130837768
+            static member mr_dialog_close_light = 2130837768
             
             // aapt resource value: 0x7f020109
-            static member mr_dialog_material_background_light = 2130837769
+            static member mr_dialog_material_background_dark = 2130837769
             
             // aapt resource value: 0x7f02010a
-            static member mr_group_collapse = 2130837770
+            static member mr_dialog_material_background_light = 2130837770
             
             // aapt resource value: 0x7f02010b
-            static member mr_group_expand = 2130837771
+            static member mr_group_collapse = 2130837771
             
             // aapt resource value: 0x7f02010c
-            static member mr_media_pause_dark = 2130837772
+            static member mr_group_expand = 2130837772
             
             // aapt resource value: 0x7f02010d
-            static member mr_media_pause_light = 2130837773
+            static member mr_media_pause_dark = 2130837773
             
             // aapt resource value: 0x7f02010e
-            static member mr_media_play_dark = 2130837774
+            static member mr_media_pause_light = 2130837774
             
             // aapt resource value: 0x7f02010f
-            static member mr_media_play_light = 2130837775
+            static member mr_media_play_dark = 2130837775
             
             // aapt resource value: 0x7f020110
-            static member mr_vol_type_audiotrack_dark = 2130837776
+            static member mr_media_play_light = 2130837776
             
             // aapt resource value: 0x7f020111
-            static member mr_vol_type_audiotrack_light = 2130837777
+            static member mr_vol_type_audiotrack_dark = 2130837777
             
             // aapt resource value: 0x7f020112
-            static member navigation_empty_icon = 2130837778
+            static member mr_vol_type_audiotrack_light = 2130837778
             
             // aapt resource value: 0x7f020113
-            static member notification_action_background = 2130837779
+            static member navigation_empty_icon = 2130837779
             
             // aapt resource value: 0x7f020114
-            static member notification_bg = 2130837780
+            static member notification_action_background = 2130837780
             
             // aapt resource value: 0x7f020115
-            static member notification_bg_low = 2130837781
+            static member notification_bg = 2130837781
             
             // aapt resource value: 0x7f020116
-            static member notification_bg_low_normal = 2130837782
+            static member notification_bg_low = 2130837782
             
             // aapt resource value: 0x7f020117
-            static member notification_bg_low_pressed = 2130837783
+            static member notification_bg_low_normal = 2130837783
             
             // aapt resource value: 0x7f020118
-            static member notification_bg_normal = 2130837784
+            static member notification_bg_low_pressed = 2130837784
             
             // aapt resource value: 0x7f020119
-            static member notification_bg_normal_pressed = 2130837785
+            static member notification_bg_normal = 2130837785
             
             // aapt resource value: 0x7f02011a
-            static member notification_icon_background = 2130837786
-            
-            // aapt resource value: 0x7f02011d
-            static member notification_template_icon_bg = 2130837789
-            
-            // aapt resource value: 0x7f02011e
-            static member notification_template_icon_low_bg = 2130837790
+            static member notification_bg_normal_pressed = 2130837786
             
             // aapt resource value: 0x7f02011b
-            static member notification_tile_bg = 2130837787
+            static member notification_icon_background = 2130837787
+            
+            // aapt resource value: 0x7f02011e
+            static member notification_template_icon_bg = 2130837790
+            
+            // aapt resource value: 0x7f02011f
+            static member notification_template_icon_low_bg = 2130837791
             
             // aapt resource value: 0x7f02011c
-            static member notify_panel_notification_icon_bg = 2130837788
+            static member notification_tile_bg = 2130837788
+            
+            // aapt resource value: 0x7f02011d
+            static member notify_panel_notification_icon_bg = 2130837789
             (* Member of type 'CodeTypeConstructor' is not supported by the CodeDOM provider and was omitted *)
 
 
