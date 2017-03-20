@@ -37,10 +37,9 @@ type TimelineView(theme: Theme) =
             [|
                 theme.GenerateLabel()
                     |> withLabelText("Timeline")
-                theme.GenerateImage() 
-                    |> withSource(ImageSource.FromResource("ic_delete_forever_black_24dp.png")) 
-                    |> withHeightAndWidthRequest (24.0, 24.0)
-                    |> withAspect Aspect.AspectFill
+                theme.GenerateButton() 
+                    |> withButtonImage (new FileImageSource(File = "ic_delete_forever_black_24dp.png"))
+                    |> withHeightAndWidthRequest 24.0 24.0
                     |> withAlignment LayoutOptions.End LayoutOptions.Center
                     |> withBackgroundColor Color.White
             |]) |> withAlignment LayoutOptions.CenterAndExpand LayoutOptions.Start :> View

@@ -1,4 +1,4 @@
-﻿namespace Astrid.Mobile.Droid
+﻿namespace FSharpResourcesDemo
 module AssemblyInfo =
 
   open System.Reflection
@@ -8,11 +8,11 @@ module AssemblyInfo =
   // Information about this assembly is defined by the following attributes. 
   // Change them to the values specific to your project.
 
-  [<assembly: AssemblyTitle("Astrid")>]
+  [<assembly: AssemblyTitle("FSharpResourcesDemo")>]
   [<assembly: AssemblyDescription("")>]
   [<assembly: AssemblyConfiguration("")>]
   [<assembly: AssemblyCompany("")>]
-  [<assembly: AssemblyProduct("Astrid")>]
+  [<assembly: AssemblyProduct("FSharpResourcesDemo")>]
   [<assembly: AssemblyCopyright("Copyright ©  2017")>]
   [<assembly: AssemblyTrademark("")>]
   [<assembly: AssemblyCulture("")>]

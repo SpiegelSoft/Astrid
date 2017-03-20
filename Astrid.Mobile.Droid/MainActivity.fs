@@ -1,5 +1,6 @@
 ﻿namespace Astrid.Mobile.Droid
 
+open System.Reflection
 open System.IO
 open System
 
@@ -21,6 +22,9 @@ open ReactiveUI
 open Astrid.Mobile.Common
 
 type XamarinForms = Xamarin.Forms.Forms
+
+type Drawable() = inherit Resource_Drawable()
+type Id() = inherit Resource_Id()
 
 type DroidPlatform() =
     let geocoder = new Geocoder()

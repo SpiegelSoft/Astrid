@@ -77,6 +77,8 @@ type GeographicMapRenderer() =
     let infoWindowClicked _ (eventArgs: GoogleMap.InfoWindowClickEventArgs) = 
         let marker = eventArgs.Marker
         let vm = markerViewModel.[marker.Id]
+        let x = Xamarin.Forms.Platform.Android.ResourceManager.DrawableClass
+        let y = Xamarin.Forms.Platform.Android.ResourceManager.ResourceClass
         match vm.Details with
         | GeocodingResult result -> vm.Screen.Router.Navigate.Execute(new GeocodingResultViewModel(vm.Location, vm.PlaceOfInterest, vm.ConvertToPlaceOfInterestCommand, vm.Screen)).Add(ignore)
         | PlaceOfInterest placeOfInterest -> vm.Screen.Router.Navigate.Execute(new TimelineViewModel(placeOfInterest)).Add(ignore)
