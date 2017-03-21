@@ -129,11 +129,20 @@
   <data name="CreatePlaceOfInterest" xml:space="preserve">
     <value>Create Place of Interest</value>
   </data>
+  <data name="DeleteLocation" xml:space="preserve">
+    <value>Delete Location</value>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="DoYouReallyWishToDeleteTheLocation" xml:space="preserve">
+    <value>Do you really wish to delete the location {0}?</value>
+  </data>
   <data name="NewPlaceOfInterest" xml:space="preserve">
     <value>New Place of Interest</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
   </data>
   <data name="NoResultsFound" xml:space="preserve">
     <value>No Results Found</value>
@@ -155,5 +164,8 @@
   </data>
   <data name="Title" xml:space="preserve">
     <value>Title</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>

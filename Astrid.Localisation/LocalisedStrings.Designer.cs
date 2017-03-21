@@ -98,6 +98,15 @@ namespace Astrid.Localisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete Location.
+        /// </summary>
+        public static string DeleteLocation {
+            get {
+                return ResourceManager.GetString("DeleteLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Description {
@@ -107,11 +116,29 @@ namespace Astrid.Localisation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you really wish to delete the location {0}?.
+        /// </summary>
+        public static string DoYouReallyWishToDeleteTheLocation {
+            get {
+                return ResourceManager.GetString("DoYouReallyWishToDeleteTheLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Place of Interest.
         /// </summary>
         public static string NewPlaceOfInterest {
             get {
                 return ResourceManager.GetString("NewPlaceOfInterest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        public static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
             }
         }
         
@@ -175,6 +202,15 @@ namespace Astrid.Localisation {
         public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        public static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

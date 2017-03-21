@@ -32,18 +32,20 @@ type MarkerView(theme: Theme) as this =
 
 type TimelineView(theme: Theme) =
     inherit ContentPage<TimelineViewModel, TimelineView>(theme)
-    override __.CreateContent() =
+    override this.CreateContent() =
         theme.HorizontalLayout() |> withBlocks(
             [|
                 theme.GenerateLabel()
                     |> withLabelText("Timeline")
-                theme.GenerateButton() 
-                    |> withButtonImage (new FileImageSource(File = "ic_delete_forever_black_24dp.png"))
+                theme.GenerateButton(fun b -> this.DeleteButton <- b) 
+                    // |> withButtonImage (new FileImageSource(File = "ic_delete_forever_black_24dp.png"))
                     |> withHeightAndWidthRequest 24.0 24.0
                     |> withAlignment LayoutOptions.End LayoutOptions.Center
                     |> withBackgroundColor Color.White
+                    |> withCommandBinding (this.ViewModel, this, <@ fun (vm: TimelineViewModel) -> vm.DeletePlaceOfInterest @>, <@ fun (v: TimelineView) -> v.DeleteButton @>)
             |]) |> withAlignment LayoutOptions.CenterAndExpand LayoutOptions.Start :> View
     new() = new TimelineView(Themes.AstridTheme)
+    member val DeleteButton = Unchecked.defaultof<Button> with get, set
 
 type GeocodingResultView(theme: Theme) as this =
     inherit ContentPage<GeocodingResultViewModel, GeocodingResultView>(theme)

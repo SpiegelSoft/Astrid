@@ -26,8 +26,22 @@ type TimelineViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) =
     inherit PageViewModel()
     let host = LocateIfNone host
     let commandSubscriptions = new CompositeDisposable()
+    let delete confirmed =
+        match confirmed with
+        | false -> confirmed |> ignore
+        | true -> 0 |> ignore
+    let deletePlaceOfInterest (vm: TimelineViewModel) (_: TimelineViewModel) =
+        vm.DisplayConfirmation(
+            { 
+                Title = LocalisedStrings.DeleteLocation
+                Message = String.Format(LocalisedStrings.DoYouReallyWishToDeleteTheLocation, placeOfInterest.Label)
+                Accept = LocalisedStrings.Yes
+                Decline = LocalisedStrings.No 
+            }).FirstAsync().Subscribe(delete) |> ignore
+        Task.FromResult(0) :> Task
     override __.SubscribeToCommands() = commandSubscriptions |> ignore
     override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
+    member this.DeletePlaceOfInterest = deletePlaceOfInterest this |> ReactiveCommand.CreateFromTask
     interface IRoutableViewModel with
         member __.HostScreen = host
         member __.UrlPathSegment = "Timeline"
@@ -159,7 +173,7 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
         this.Location <- centre
         this.Radius <- radius
     let displayEmptySetMessage (_: MarkerViewModel seq) =
-        this.Message <-  { Title = LocalisedStrings.NoResultsFound; Message = String.Format(LocalisedStrings.NoResultsFoundForAddress, this.SearchTerm); Accept = LocalisedStrings.OK }
+        this.DisplayAlertMessage({ Title = LocalisedStrings.NoResultsFound; Message = String.Format(LocalisedStrings.NoResultsFoundForAddress, this.SearchTerm); Accept = LocalisedStrings.OK }) |> ignore
     let searchForAddressCommand = ReactiveCommand.CreateFromTask geocodeAddress
     let initialisePageCommand = ReactiveCommand.CreateFromTask initialisePage
     let mutable searchTerm = String.Empty
