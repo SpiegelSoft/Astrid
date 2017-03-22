@@ -22,15 +22,15 @@ type LocationDetails =
     | GeocodingResult of SearchResult
     | PlaceOfInterest of PlaceOfInterest
 
-type TimelineViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) =
+type TimelineViewModel(placeOfInterest: PlaceOfInterest, deletePlaceOfInterestCommand: ReactiveCommand<PlaceOfInterest, Reactive.Unit>, ?host: IScreen) =
     inherit PageViewModel()
     let host = LocateIfNone host
     let commandSubscriptions = new CompositeDisposable()
     let delete confirmed =
         match confirmed with
         | false -> confirmed |> ignore
-        | true -> 0 |> ignore
-    let deletePlaceOfInterest (vm: TimelineViewModel) (_: TimelineViewModel) =
+        | true -> deletePlaceOfInterestCommand.Execute(placeOfInterest) |> ignore
+    let deletePlaceOfInterest (vm: TimelineViewModel) (_: Reactive.Unit) = 
         vm.DisplayConfirmation(
             { 
                 Title = LocalisedStrings.DeleteLocation
@@ -38,10 +38,13 @@ type TimelineViewModel(placeOfInterest: PlaceOfInterest, ?host: IScreen) =
                 Accept = LocalisedStrings.Yes
                 Decline = LocalisedStrings.No 
             }).FirstAsync().Subscribe(delete) |> ignore
-        Task.FromResult(0) :> Task
-    override __.SubscribeToCommands() = commandSubscriptions |> ignore
-    override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
-    member this.DeletePlaceOfInterest = deletePlaceOfInterest this |> ReactiveCommand.CreateFromTask
+        Task.FromResult(true)
+    member val DeletePlaceOfInterest = Unchecked.defaultof<ReactiveCommand<Reactive.Unit, bool>> with get, set
+    override this.SubscribeToCommands() = 
+        this.DeletePlaceOfInterest <- deletePlaceOfInterest this |> ReactiveCommand.CreateFromTask
+        commandSubscriptions.Add(this.DeletePlaceOfInterest)
+    override __.UnsubscribeFromCommands() = 
+        commandSubscriptions.Clear()
     interface IRoutableViewModel with
         member __.HostScreen = host
         member __.UrlPathSegment = "Timeline"
@@ -68,35 +71,42 @@ type CreatePlaceOfInterestViewModel() =
         && (this.Address.Split([|Environment.NewLine|], StringSplitOptions.RemoveEmptyEntries).Count() > 1)
 
 open ExpressionConversion
-type GeocodingResultViewModel(location, placeOfInterest: PlaceOfInterest, convertToPlaceOfInterestCommand: ReactiveCommand<PlaceOfInterest, PlaceOfInterest>, ?host: IScreen, ?platform: IAstridPlatform) as this =
+type GeocodingResultViewModel(location, placeOfInterest: PlaceOfInterest, convertToPlaceOfInterestCommand: ReactiveCommand<PlaceOfInterest, PlaceOfInterest>, ?host: IScreen, ?platform: IAstridPlatform) =
     inherit PageViewModel()
     let mutable creatingPlaceOfInterest = false
     let host, platform = LocateIfNone host, LocateIfNone platform
     let commandSubscriptions = new CompositeDisposable()
-    let showPlaceOfInterestCreationForm(vm: GeocodingResultViewModel) = async { return true } |> Async.StartAsTask
+    let showPlaceOfInterestCreationForm (_: Reactive.Unit) = async { return true } |> Async.StartAsTask
     let showForm (vm: GeocodingResultViewModel) visible = vm.CreatingPlaceOfInterest <- visible
     let closeForm success = host.Router.NavigateBack.Execute() |> ignore
-    let showPlaceOfInterestCreationFormCommand = 
-        lazy(ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm, this.WhenAnyValue(toLinq <@ fun (vm: GeocodingResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c)))
     let placeOfInterestCreation = new CreatePlaceOfInterestViewModel()
-    let createPlaceOfInterest(vm: GeocodingResultViewModel) = 
+    let createPlaceOfInterest (_: Reactive.Unit) = 
         async {
             let newPlaceOfInterest = placeOfInterestCreation.PlaceOfInterest()
             do! platform.PlacesOfInterest.AddPlaceOfInterestAsync(newPlaceOfInterest, location)
-            convertToPlaceOfInterestCommand.Execute(newPlaceOfInterest).Add(ignore)
+            convertToPlaceOfInterestCommand.Execute(newPlaceOfInterest) |> CommandExtensions.ignoreOnce
             return true 
         } |> Async.StartAsTask
-    let createPlaceOfInterestCommand = ReactiveCommand.CreateFromTask(createPlaceOfInterest, placeOfInterestCreation.Changed.Select(fun e -> e.Sender :> obj).OfType<CreatePlaceOfInterestViewModel>().Select(fun vm -> vm.CanSave()))
     do placeOfInterestCreation.Title <- placeOfInterest.Label; placeOfInterestCreation.Address <- placeOfInterest.Address.[0]
     member val Headline = placeOfInterest.Label
-    member __.CreatingPlaceOfInterest with get() = creatingPlaceOfInterest and set(value) = this.RaiseAndSetIfChanged(&creatingPlaceOfInterest, value, "CreatingPlaceOfInterest") |> ignore
-    member __.ShowPlaceOfInterestCreationForm = showPlaceOfInterestCreationFormCommand.Force()
-    member __.CreatePlaceOfInterest = createPlaceOfInterestCommand
+    member this.CreatingPlaceOfInterest with get() = creatingPlaceOfInterest and set(value) = this.RaiseAndSetIfChanged(&creatingPlaceOfInterest, value, "CreatingPlaceOfInterest") |> ignore
+    member val ShowPlaceOfInterestCreationForm = Unchecked.defaultof<ReactiveCommand<Reactive.Unit, bool>> with get, set
+    member val CreatePlaceOfInterest = Unchecked.defaultof<ReactiveCommand<Reactive.Unit, bool>> with get, set
     member val PlaceOfInterestCreation = placeOfInterestCreation
     override this.SubscribeToCommands() = 
+        this.CreatePlaceOfInterest <- 
+            ReactiveCommand.CreateFromTask(createPlaceOfInterest, 
+                placeOfInterestCreation.Changed.Select(fun e -> e.Sender :> obj).OfType<CreatePlaceOfInterestViewModel>().Select(fun vm -> vm.CanSave())
+                |> Observable.merge (Observable.Return(placeOfInterestCreation.CanSave())))
+        this.ShowPlaceOfInterestCreationForm <-
+            ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm,
+                this.WhenAnyValue(toLinq <@ fun (vm: GeocodingResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c))
         this.ShowPlaceOfInterestCreationForm.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showForm this) |> commandSubscriptions.Add
         this.CreatePlaceOfInterest.ObserveOn(RxApp.MainThreadScheduler).Subscribe(closeForm) |> commandSubscriptions.Add
-    override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
+        this.CreatePlaceOfInterest |> commandSubscriptions.Add
+        this.ShowPlaceOfInterestCreationForm |> commandSubscriptions.Add
+    override __.UnsubscribeFromCommands() = 
+        commandSubscriptions.Clear()
     interface IRoutableViewModel with
         member __.HostScreen = host
         member __.UrlPathSegment = "Search Result"
@@ -110,10 +120,13 @@ type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
         | PlaceOfInterest poi -> poi
     let convertToPlaceOfInterest (placeOfInterest: PlaceOfInterest) = Task.FromResult(placeOfInterest)
     let convertToPlaceOfInterestCommand = ReactiveCommand.CreateFromTask convertToPlaceOfInterest
+    let deletePlaceOfInterest (placeOfInterest: PlaceOfInterest) = Task.FromResult(0) :> Task
+    let deletePlaceOfInterestCommand = ReactiveCommand.CreateFromTask deletePlaceOfInterest
     member val Location = location
     member val PlaceOfInterest = placeOfInterest
     member val Details = details
-    member __.ConvertToPlaceOfInterestCommand with get() = convertToPlaceOfInterestCommand
+    member val ConvertToPlaceOfInterestCommand = convertToPlaceOfInterestCommand
+    member val DeletePlaceOfInterestCommand = deletePlaceOfInterestCommand
     member this.Text = placeOfInterest.Label
     member this.HeadlineTextExpression() =
         match details with

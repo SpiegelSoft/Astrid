@@ -95,11 +95,11 @@
     <Error Condition="!Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.v7.AppCompat.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Android.Support.Design.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.Design.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.Android.Support.v7.MediaRouter.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Android.Support.v7.MediaRouter.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets'))" />
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Basement.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Basement.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Base.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Base.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets'))" />
     <Error Condition="!Exists('..\packages\Xamarin.GooglePlayServices.Maps.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Maps.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.GooglePlayServices.Maps.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Maps.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets'))" />
   </Target>
   <Import Project="..\packages\Xamarin.Build.Download.0.4.2\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.2\build\Xamarin.Build.Download.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Compat.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Compat.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.Compat.targets')" />
@@ -117,7 +117,6 @@
   <Import Project="..\packages\Xamarin.Android.Support.v7.AppCompat.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.AppCompat.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.v7.AppCompat.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.Design.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Design.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.Design.targets')" />
   <Import Project="..\packages\Xamarin.Android.Support.v7.MediaRouter.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets" Condition="Exists('..\packages\Xamarin.Android.Support.v7.MediaRouter.25.1.1\build\MonoAndroid70\Xamarin.Android.Support.v7.MediaRouter.targets')" />
-  <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Basement.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Basement.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Basement.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Tasks.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Tasks.targets')" />
   <Import Project="..\packages\Xamarin.GooglePlayServices.Base.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets" Condition="Exists('..\packages\Xamarin.GooglePlayServices.Base.42.1001.0\build\MonoAndroid70\Xamarin.GooglePlayServices.Base.targets')" />
@@ -350,8 +349,9 @@
       <Private>True</Private>
     </ProjectReference>
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.4.2-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.4.4-alpha\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

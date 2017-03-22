@@ -80,8 +80,8 @@ type GeographicMapRenderer() =
         let x = Xamarin.Forms.Platform.Android.ResourceManager.DrawableClass
         let y = Xamarin.Forms.Platform.Android.ResourceManager.ResourceClass
         match vm.Details with
-        | GeocodingResult result -> vm.Screen.Router.Navigate.Execute(new GeocodingResultViewModel(vm.Location, vm.PlaceOfInterest, vm.ConvertToPlaceOfInterestCommand, vm.Screen)).Add(ignore)
-        | PlaceOfInterest placeOfInterest -> vm.Screen.Router.Navigate.Execute(new TimelineViewModel(placeOfInterest)).Add(ignore)
+        | GeocodingResult result -> vm.Screen.Router.Navigate.Execute(new GeocodingResultViewModel(vm.Location, vm.PlaceOfInterest, vm.ConvertToPlaceOfInterestCommand, vm.Screen)) |> CommandExtensions.ignoreOnce
+        | PlaceOfInterest placeOfInterest -> vm.Screen.Router.Navigate.Execute(new TimelineViewModel(placeOfInterest, vm.DeletePlaceOfInterestCommand)) |> CommandExtensions.ignoreOnce
     let infoWindowEventHandler = new EventHandler<GoogleMap.InfoWindowClickEventArgs>(infoWindowClicked)
     override this.OnElementChanged e =
         base.OnElementChanged(e)

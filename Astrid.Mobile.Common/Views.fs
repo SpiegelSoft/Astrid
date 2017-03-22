@@ -125,7 +125,7 @@ type DashboardView(theme: Theme)=
                     |> withTwoWayBinding(this.ViewModel, this, <@ fun (vm: DashboardViewModel) -> vm.Radius @>, <@ fun (v:DashboardView) -> (v.Map: GeographicMap<MarkedLocation>).Radius @>, id, id)
                     |> withPinBinding(this.ViewModel.Markers, PinConversion.toPin)
             |]) |> createFromColumns :> View
-    override this.OnContentCreated() = base.OnContentCreated(); this.ViewModel.InitialisePageCommand.Execute(this.ViewModel).Add(ignore)
+    override this.OnContentCreated() = base.OnContentCreated(); this.ViewModel.InitialisePageCommand.Execute(this.ViewModel) |> CommandExtensions.ignoreOnce
     member val AddressSearchBar = Unchecked.defaultof<SearchBar> with get, set
     member val Title = Unchecked.defaultof<Label> with get, set
     member val Map = Unchecked.defaultof<GeographicMap<MarkedLocation>> with get, set
