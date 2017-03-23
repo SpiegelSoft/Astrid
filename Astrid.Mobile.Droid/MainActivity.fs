@@ -40,7 +40,7 @@ type DroidPlatform() =
         member __.GetLocalFilePath fileName = localFilePath fileName
 
 [<assembly: ExportRendererAttribute (typeof<DashboardMap>, typeof<GeographicMapRenderer>)>] do ()
-[<Activity (Label = "Astrid.Mobile.Droid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
+[<Activity (Label = "Astrid", MainLauncher = true, ConfigurationChanges = (ConfigChanges.ScreenSize ||| ConfigChanges.Orientation))>]
 type MainActivity() =
     inherit FormsApplicationActivity()
     let createDashboardViewModel() = new DashboardViewModel() :> IRoutableViewModel

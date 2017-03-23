@@ -25,7 +25,6 @@ type LocationDetails =
 type TimelineViewModel(placeOfInterest: PlaceOfInterest, deletePlaceOfInterestCommand: ReactiveCommand<PlaceOfInterest, Reactive.Unit>, ?host: IScreen) =
     inherit PageViewModel()
     let host = LocateIfNone host
-    let commandSubscriptions = new CompositeDisposable()
     let delete confirmed =
         match confirmed with
         | false -> confirmed |> ignore
@@ -40,11 +39,10 @@ type TimelineViewModel(placeOfInterest: PlaceOfInterest, deletePlaceOfInterestCo
             }).FirstAsync().Subscribe(delete) |> ignore
         Task.FromResult(true)
     member val DeletePlaceOfInterest = Unchecked.defaultof<ReactiveCommand<Reactive.Unit, bool>> with get, set
-    override this.SubscribeToCommands() = 
-        this.DeletePlaceOfInterest <- deletePlaceOfInterest this |> ReactiveCommand.CreateFromTask
-        commandSubscriptions.Add(this.DeletePlaceOfInterest)
-    override __.UnsubscribeFromCommands() = 
-        commandSubscriptions.Clear()
+    override this.SetUpCommands() = 
+        this.DeletePlaceOfInterest <- deletePlaceOfInterest this |> ReactiveCommand.CreateFromTask |> ObservableExtensions.disposeWith this.PageDisposables
+    override this.TearDownCommands() = 
+        this.PageDisposables.Clear()
     interface IRoutableViewModel with
         member __.HostScreen = host
         member __.UrlPathSegment = "Timeline"
@@ -75,7 +73,6 @@ type GeocodingResultViewModel(location, placeOfInterest: PlaceOfInterest, conver
     inherit PageViewModel()
     let mutable creatingPlaceOfInterest = false
     let host, platform = LocateIfNone host, LocateIfNone platform
-    let commandSubscriptions = new CompositeDisposable()
     let showPlaceOfInterestCreationForm (_: Reactive.Unit) = async { return true } |> Async.StartAsTask
     let showForm (vm: GeocodingResultViewModel) visible = vm.CreatingPlaceOfInterest <- visible
     let closeForm success = host.Router.NavigateBack.Execute() |> ignore
@@ -84,7 +81,7 @@ type GeocodingResultViewModel(location, placeOfInterest: PlaceOfInterest, conver
         async {
             let newPlaceOfInterest = placeOfInterestCreation.PlaceOfInterest()
             do! platform.PlacesOfInterest.AddPlaceOfInterestAsync(newPlaceOfInterest, location)
-            convertToPlaceOfInterestCommand.Execute(newPlaceOfInterest) |> CommandExtensions.ignoreOnce
+            convertToPlaceOfInterestCommand.Execute(newPlaceOfInterest) |> ObservableExtensions.ignoreOnce
             return true 
         } |> Async.StartAsTask
     do placeOfInterestCreation.Title <- placeOfInterest.Label; placeOfInterestCreation.Address <- placeOfInterest.Address.[0]
@@ -93,20 +90,20 @@ type GeocodingResultViewModel(location, placeOfInterest: PlaceOfInterest, conver
     member val ShowPlaceOfInterestCreationForm = Unchecked.defaultof<ReactiveCommand<Reactive.Unit, bool>> with get, set
     member val CreatePlaceOfInterest = Unchecked.defaultof<ReactiveCommand<Reactive.Unit, bool>> with get, set
     member val PlaceOfInterestCreation = placeOfInterestCreation
-    override this.SubscribeToCommands() = 
+    override this.SetUpCommands() = 
         this.CreatePlaceOfInterest <- 
             ReactiveCommand.CreateFromTask(createPlaceOfInterest, 
                 placeOfInterestCreation.Changed.Select(fun e -> e.Sender :> obj).OfType<CreatePlaceOfInterestViewModel>().Select(fun vm -> vm.CanSave())
                 |> Observable.merge (Observable.Return(placeOfInterestCreation.CanSave())))
+                |> ObservableExtensions.disposeWith this.PageDisposables
         this.ShowPlaceOfInterestCreationForm <-
             ReactiveCommand.CreateFromTask(showPlaceOfInterestCreationForm,
                 this.WhenAnyValue(toLinq <@ fun (vm: GeocodingResultViewModel) -> vm.CreatingPlaceOfInterest @>).Select(fun c -> not c))
-        this.ShowPlaceOfInterestCreationForm.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showForm this) |> commandSubscriptions.Add
-        this.CreatePlaceOfInterest.ObserveOn(RxApp.MainThreadScheduler).Subscribe(closeForm) |> commandSubscriptions.Add
-        this.CreatePlaceOfInterest |> commandSubscriptions.Add
-        this.ShowPlaceOfInterestCreationForm |> commandSubscriptions.Add
-    override __.UnsubscribeFromCommands() = 
-        commandSubscriptions.Clear()
+                |> ObservableExtensions.disposeWith this.PageDisposables
+        this.ShowPlaceOfInterestCreationForm.ObserveOn(RxApp.MainThreadScheduler).Subscribe(showForm this) |> ObservableExtensions.disposeWith this.PageDisposables |> ignore
+        this.CreatePlaceOfInterest.ObserveOn(RxApp.MainThreadScheduler).Subscribe(closeForm) |> ObservableExtensions.disposeWith this.PageDisposables |> ignore
+    override this.TearDownCommands() = 
+        this.PageDisposables.Clear()
     interface IRoutableViewModel with
         member __.HostScreen = host
         member __.UrlPathSegment = "Search Result"
@@ -138,13 +135,12 @@ type MarkerViewModel(location, details: LocationDetails, ?host: IScreen) =
             <@ fun (vm: MarkerViewModel) -> label @>
     member val Screen = host
 
-type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
+type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) =
     inherit PageViewModel()
     let host, platform = LocateIfNone host, LocateIfNone platform
     let geocoder = platform.Geocoder
     let markers = new ReactiveList<MarkerViewModel>()
     let geocodingMarkers = new ReactiveList<MarkerViewModel * IDisposable>()
-    let commandSubscriptions = new CompositeDisposable()
     let geocodingSubsriptions = new CompositeDisposable()
     let clearGeocodingResults() =
         geocodingMarkers |> Seq.iter (fun (_, s) -> s.Dispose()); geocodingMarkers.Clear()
@@ -157,9 +153,8 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
             clearGeocodingResults())
         geocodingMarkers.Add(marker, subscription)
         markers.Add(marker)
-    let geocodeAddress(vm: DashboardViewModel) =
+    let geocodeAddress(vm: DashboardViewModel) (_: Reactive.Unit) =
         clearGeocodingResults()
-        let vm = match box vm with | null -> this | _ -> vm
         async {
             let searchTerm = vm.SearchTerm
             let! positions = geocoder.GetPositionsForAddressAsync(searchTerm) |> Async.AwaitTask
@@ -173,7 +168,7 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
             geocodingMarkers |> Seq.iter addGeocodingMarker
             return geocodingMarkers
         } |> Async.StartAsTask
-    let initialisePage(vm: DashboardViewModel) =
+    let initialisePage (vm: DashboardViewModel) (_:Reactive.Unit) =
         clearGeocodingResults(); markers.Clear()
         async {
             let! placesOfInterest = platform.PlacesOfInterest.GetAllPlacesOfInterestAsync()
@@ -181,25 +176,26 @@ type DashboardViewModel(?host: IScreen, ?platform: IAstridPlatform) as this =
             poiMarkers |> Seq.iter markers.Add
             return poiMarkers
         } |> Async.StartAsTask
-    let showResults (results: MarkerViewModel[]) = 
+    let showResults (vm: DashboardViewModel) (results: MarkerViewModel[]) = 
         let radius, centre = results |> Array.map (fun m -> m.Location) |> GeographicMapScaling.scaleToMarkers
-        this.Location <- centre
-        this.Radius <- radius
-    let displayEmptySetMessage (_: MarkerViewModel seq) =
-        this.DisplayAlertMessage({ Title = LocalisedStrings.NoResultsFound; Message = String.Format(LocalisedStrings.NoResultsFoundForAddress, this.SearchTerm); Accept = LocalisedStrings.OK }) |> ignore
-    let searchForAddressCommand = ReactiveCommand.CreateFromTask geocodeAddress
-    let initialisePageCommand = ReactiveCommand.CreateFromTask initialisePage
+        vm.Location <- centre
+        vm.Radius <- radius
+    let displayEmptySetMessage (vm: DashboardViewModel) (_: MarkerViewModel[]) =
+        vm.DisplayAlertMessage({ Title = LocalisedStrings.NoResultsFound; Message = String.Format(LocalisedStrings.NoResultsFoundForAddress, vm.SearchTerm); Accept = LocalisedStrings.OK }) |> ignore
     let mutable searchTerm = String.Empty
     let mutable location = new GeodesicLocation(51.49996<deg>, -0.13663<deg>)
     let mutable radius = 2.0<km>
-    override this.SubscribeToCommands() = 
-        searchForAddressCommand.Where(Seq.isEmpty).ObserveOn(RxApp.MainThreadScheduler).Subscribe(displayEmptySetMessage) |> commandSubscriptions.Add
-        searchForAddressCommand.Where(Seq.isEmpty >> not).ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults) |> commandSubscriptions.Add
-        initialisePageCommand.Where(Seq.isEmpty >> not).ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults) |> commandSubscriptions.Add
-    override __.UnsubscribeFromCommands() = commandSubscriptions.Clear()
+    override this.SetUpCommands() = 
+        this.SearchForAddressCommand <- geocodeAddress this |> ReactiveCommand.CreateFromTask |> ObservableExtensions.disposeWith this.PageDisposables
+        this.InitialisePageCommand <- initialisePage this |> ReactiveCommand.CreateFromTask |> ObservableExtensions.disposeWith this.PageDisposables
+        (this.SearchForAddressCommand :> IObservable<MarkerViewModel[]>).Where(Seq.isEmpty).ObserveOn(RxApp.MainThreadScheduler).Subscribe(displayEmptySetMessage this) |> ObservableExtensions.disposeWith this.PageDisposables |> ignore
+        (this.SearchForAddressCommand :> IObservable<MarkerViewModel[]>).Where(Seq.isEmpty >> not).ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults this) |> ObservableExtensions.disposeWith this.PageDisposables |> ignore
+        (this.InitialisePageCommand :> IObservable<MarkerViewModel[]>).Where(Seq.isEmpty >> not).ObserveOn(RxApp.MainThreadScheduler).Subscribe(showResults this) |> ObservableExtensions.disposeWith this.PageDisposables |> ignore
+    override this.TearDownCommands() = 
+        this.PageDisposables.Clear()
     member __.Title with get() = LocalisedStrings.AppTitle
-    member __.SearchForAddressCommand with get() = searchForAddressCommand
-    member __.InitialisePageCommand with get() = initialisePageCommand
+    member val SearchForAddressCommand = Unchecked.defaultof<ReactiveCommand<Reactive.Unit, MarkerViewModel[]>> with get, set
+    member val InitialisePageCommand = Unchecked.defaultof<ReactiveCommand<Reactive.Unit, MarkerViewModel[]>> with get, set
     member this.SearchTerm with get() = searchTerm and set(value) = this.RaiseAndSetIfChanged(&searchTerm, value, "SearchTerm") |> ignore
     member this.Location with get() = location and set(value) = this.RaiseAndSetIfChanged(&location, value, "Location") |> ignore
     member this.Radius with get() = radius and set(value) = this.RaiseAndSetIfChanged(&radius, value, "Radius") |> ignore

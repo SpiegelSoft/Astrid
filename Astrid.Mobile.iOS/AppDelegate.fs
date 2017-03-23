@@ -41,11 +41,7 @@ type IosPlatform() =
 [<Register ("AppDelegate")>]
 type AppDelegate () =
     inherit FormsApplicationDelegate ()
-
-    // This method is invoked when the application is ready to run.
     override this.FinishedLaunching (app, options) =
-        // If you have defined a root view controller, set it here:
-        // window.RootViewController <- new MyViewController ()
         XamarinForms.Init()
         this.LoadApplication(new App<IAstridPlatform>(new IosPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), fun() -> new DashboardViewModel() :> IRoutableViewModel))
         base.FinishedLaunching(app, options)
