@@ -24,7 +24,7 @@
     <Name>Astrid.Mobile.Droid</Name>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <SelectedDevice>5" KitKat (4.4) XXHDPI Phone</SelectedDevice>
+    <SelectedDevice>Samsung SM-G925F</SelectedDevice>
     <DefaultDevice>5" KitKat (4.4) XXHDPI Phone</DefaultDevice>
     <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -349,7 +349,7 @@
       <Private>True</Private>
     </ProjectReference>
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.5.0-beta\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.5.2-beta\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>

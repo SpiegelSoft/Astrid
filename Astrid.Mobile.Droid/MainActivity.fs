@@ -49,5 +49,5 @@ type MainActivity() =
         XamarinForms.Init(this, bundle)
         Xamarin.FormsMaps.Init(this, bundle)
         XamarinForms.Maps.Android.TemporaryPatch.MapRendererConstants.Bundle <- bundle
-        let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), createDashboardViewModel)
+        let application = new App<IAstridPlatform>(new DroidPlatform() :> IAstridPlatform, new UiContext(this), createDashboardViewModel)
         this.LoadApplication application

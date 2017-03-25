@@ -43,5 +43,5 @@ type AppDelegate () =
     inherit FormsApplicationDelegate ()
     override this.FinishedLaunching (app, options) =
         XamarinForms.Init()
-        this.LoadApplication(new App<IAstridPlatform>(new IosPlatform() :> IAstridPlatform, new UiContext(this), new Configuration(), fun() -> new DashboardViewModel() :> IRoutableViewModel))
+        this.LoadApplication(new App<IAstridPlatform>(new IosPlatform() :> IAstridPlatform, new UiContext(this), fun() -> new DashboardViewModel() :> IRoutableViewModel))
         base.FinishedLaunching(app, options)
