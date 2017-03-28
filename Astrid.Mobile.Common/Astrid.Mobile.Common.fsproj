@@ -143,8 +143,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="XamarinForms.Reactive.FSharp">
-      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.5.2-beta\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\XamarinForms.Reactive.FSharp.0.5.6-beta\lib\portable45-net45+win8+wp8+wpa81\XamarinForms.Reactive.FSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
